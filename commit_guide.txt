@@ -1,0 +1,21 @@
+cd "J:\react PRA TA\AutoCodeGeneration"
+
+git status
+git add .
+git commit -m "type: deskripsi perubahan kamu"
+git push
+
+Aturan type commit yang umum:
+feat: fitur baru
+fix: perbaikan bug
+docs: perubahan dokumentasi
+refactor: perapihan kode tanpa ubah fitur
+test: tambah atau ubah test
+chore: perubahan pendukung seperti config atau file umum
+
+Contoh:
+git commit -m "feat: tambah parser BPMN baru"
+git commit -m "fix: perbaiki bug parsing di main.py"
+git commit -m "docs: update panduan penggunaan"
+git commit -m "refactor: rapikan fungsi parser"
+git commit -m "chore: update struktur dataset"
