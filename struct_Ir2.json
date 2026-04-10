@@ -1,0 +1,10 @@
+Core Files
+src/App.tsx - Root app + router setup
+src/shared/pages/LoginPage.tsx - Halaman login
+src/shared/components/Layout.tsx - Komponen layout utama
+src/shared/components/ProtectedRoute.tsx - Guard route berbasis role
+
+Dynamic Files (bergantung BPMN)
+Satu file per page per module (participant), dengan pola path:
+src/modules/{ModuleName}/pages/{PageName}.tsx
+Contoh: jika BPMN punya 2 participant (Applicant dan Reviewer) masing-masing 3 task, maka ada 6 dynamic files tambahan.
