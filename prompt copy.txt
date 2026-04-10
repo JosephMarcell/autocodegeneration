@@ -1,0 +1,18 @@
+Buatkan grand plan projek aplikasi BPMN to React.js di PLAN.md
+
+Cara kerja aplikasi
+1. Menerima file .BPMN
+2. Melakukan parsing bpmn untuk mendapatkan:
+- ir1.json ( Intermediate Representation 1 )
+- ir2.json ( Intermediate Representation 2)
+3. Memasukkan ir2.json ke Fine tuned LLM ( Qwen2.5-Coder-7B)
+4. LLM menghasilkan Output.json ( file path dan isinya ) 
+5. Melakukan builder, mengambil file dan memasangkan di template projek
+6. npm install dan npm run dev
+
+Tasks: 
+1. Perumusan algoritma IR1&IR2 
+2. Membuat dataset 
+3. Fine tuning 
+4. Sistem RAG dan CoT
+5. App builder 

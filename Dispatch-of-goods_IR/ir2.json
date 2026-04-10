@@ -1,0 +1,787 @@
+{
+  "project": "DispatchOfGoodsApp",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Logistics",
+        "value": "logistics",
+        "internal": "logistics",
+        "pool": "Dispatch of goods Computer Hardware Shop"
+      },
+      {
+        "display": "Secretary",
+        "value": "secretary",
+        "internal": "secretary",
+        "pool": "Dispatch of goods Computer Hardware Shop"
+      },
+      {
+        "display": "Warehouse",
+        "value": "warehouse",
+        "internal": "warehouse",
+        "pool": "Dispatch of goods Computer Hardware Shop"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "logistics": "/logistics/insure-parcel",
+      "secretary": "/secretary/clarify-shipment-method",
+      "warehouse": "/warehouse/package-goods"
+    },
+    "stateSchema": {
+      "insure_parcel_completed": false,
+      "write_package_label_completed": false,
+      "clarify_shipment_method_completed": false,
+      "get_3_offers_from_logistic_companies_completed": false,
+      "select_logistic_company_and_place_order_completed": false,
+      "package_goods_completed": false,
+      "prepare_for_picking_up_goods_completed": false,
+      "special_sandling_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/logistics/insure-parcel",
+        "role": "logistics",
+        "component": "InsureParcelPage",
+        "allowedRoles": [
+          "logistics"
+        ]
+      },
+      {
+        "route": "/secretary/clarify-shipment-method",
+        "role": "secretary",
+        "component": "ClarifyShipmentMethodPage",
+        "allowedRoles": [
+          "secretary"
+        ]
+      },
+      {
+        "route": "/secretary/get-3-offers-from-logistic-companies",
+        "role": "secretary",
+        "component": "Get3OffersFromLogisticCompaniesPage",
+        "allowedRoles": [
+          "secretary"
+        ]
+      },
+      {
+        "route": "/secretary/write-package-label",
+        "role": "secretary",
+        "component": "WritePackageLabelPage",
+        "allowedRoles": [
+          "secretary"
+        ]
+      },
+      {
+        "route": "/secretary/select-logistic-company-and-place-order",
+        "role": "secretary",
+        "component": "SelectLogisticCompanyAndPlaceOrderPage",
+        "allowedRoles": [
+          "secretary"
+        ]
+      },
+      {
+        "route": "/warehouse/package-goods",
+        "role": "warehouse",
+        "component": "PackageGoodsPage",
+        "allowedRoles": [
+          "warehouse"
+        ]
+      },
+      {
+        "route": "/warehouse/prepare-for-picking-up-goods",
+        "role": "warehouse",
+        "component": "PrepareForPickingUpGoodsPage",
+        "allowedRoles": [
+          "warehouse"
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "task": "generate",
+      "description": "Zustand store: auth session + per-task workflow state. MUST export useGlobalState() hook and GlobalState interface.",
+      "path": "src/shared/state/globalState.ts",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Logistics",
+            "value": "logistics",
+            "internal": "logistics",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Secretary",
+            "value": "secretary",
+            "internal": "secretary",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Warehouse",
+            "value": "warehouse",
+            "internal": "warehouse",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          }
+        ],
+        "stateSchema": {
+          "insure_parcel_completed": false,
+          "write_package_label_completed": false,
+          "clarify_shipment_method_completed": false,
+          "get_3_offers_from_logistic_companies_completed": false,
+          "select_logistic_company_and_place_order_completed": false,
+          "package_goods_completed": false,
+          "prepare_for_picking_up_goods_completed": false,
+          "special_sandling_result": ""
+        }
+      },
+      "schema": {
+        "exports": [
+          "export interface GlobalState",
+          "export const useGlobalState: () => GlobalState & GlobalActions"
+        ],
+        "fields": {
+          "isAuthenticated": "boolean",
+          "role": "string | null",
+          "userName": "string",
+          "token": "string | null",
+          "workflowState": "Initialized with all keys from stateSchema: {\"insure_parcel_completed\": false, \"write_package_label_completed\": false, \"clarify_shipment_method_completed\": false, \"get_3_offers_from_logistic_companies_completed\": false, \"select_logistic_company_and_place_order_completed\": false, \"package_goods_completed\": false, \"prepare_for_picking_up_goods_completed\": false, \"special_sandling_result\": \"\"}"
+        },
+        "actions": {
+          "login": "(userName: string, role: string, token?: string) => void",
+          "logout": "() => void",
+          "updateWorkflow": "(key: string, value: boolean | string) => void"
+        }
+      },
+      "constraints": {
+        "output_format": "ts",
+        "imports": [
+          "zustand",
+          "zustand/middleware"
+        ],
+        "persist_session": true,
+        "max_lines": 120
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Layout shell for DispatchOfGoodsApp: sticky top navbar with project title, role badge (useGlobalState().role), and a Logout button calling logout(). Body: <main><Outlet /></main>.",
+      "path": "src/shared/components/Layout.tsx",
+      "group": "shared",
+      "input": {
+        "projectName": "DispatchOfGoodsApp",
+        "roles": [
+          {
+            "display": "Logistics",
+            "value": "logistics",
+            "internal": "logistics",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Secretary",
+            "value": "secretary",
+            "internal": "secretary",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Warehouse",
+            "value": "warehouse",
+            "internal": "warehouse",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function Layout()"
+        ]
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "no_external_ui_lib": true,
+        "max_lines": 70
+      }
+    },
+    {
+      "task": "generate",
+      "description": "ProtectedRoute component: (1) if not isAuthenticated → <Navigate to='/login' />. (2) if allowedRoles provided and role NOT in allowedRoles → <Navigate to='/login' />. (3) else render <Outlet />.",
+      "path": "src/shared/components/ProtectedRoute.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Logistics",
+            "value": "logistics",
+            "internal": "logistics",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Secretary",
+            "value": "secretary",
+            "internal": "secretary",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Warehouse",
+            "value": "warehouse",
+            "internal": "warehouse",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function ProtectedRoute(props: ProtectedRouteProps)"
+        ],
+        "props": {
+          "allowedRoles": "string[]  // optional — if absent, any authenticated role passes"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "max_lines": 50
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Login page: centered card with 'userName' text input and a 'role' <select> populated from roles list. On submit: call useGlobalState().login(userName, role), then navigate to defaultRoutesPerRole[role]. Disable submit if userName is empty or role not selected.",
+      "path": "src/shared/pages/LoginPage.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Logistics",
+            "value": "logistics",
+            "internal": "logistics",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Secretary",
+            "value": "secretary",
+            "internal": "secretary",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Warehouse",
+            "value": "warehouse",
+            "internal": "warehouse",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          }
+        ],
+        "defaultRoutesPerRole": {
+          "logistics": "/logistics/insure-parcel",
+          "secretary": "/secretary/clarify-shipment-method",
+          "warehouse": "/warehouse/package-goods"
+        }
+      },
+      "schema": {
+        "exports": [
+          "export default function LoginPage()"
+        ]
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "no_external_ui_lib": true,
+        "max_lines": 80
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Root App.tsx using BrowserRouter. Register ALL routes flat inside <Routes> — NEVER use conditional JSX around <Route>. Wrap all protected routes with <ProtectedRoute allowedRoles={[...]}> via Route element prop. Route '/' redirects to defaultRoute for current role (or /login). Route '/login' renders <LoginPage /> (public). Add /:role/complete routes with a plain 'Process Completed' message. Add catch-all '*' with a 404 message.",
+      "path": "src/App.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Logistics",
+            "value": "logistics",
+            "internal": "logistics",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Secretary",
+            "value": "secretary",
+            "internal": "secretary",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          },
+          {
+            "display": "Warehouse",
+            "value": "warehouse",
+            "internal": "warehouse",
+            "pool": "Dispatch of goods Computer Hardware Shop"
+          }
+        ],
+        "defaultRoutesPerRole": {
+          "logistics": "/logistics/insure-parcel",
+          "secretary": "/secretary/clarify-shipment-method",
+          "warehouse": "/warehouse/package-goods"
+        },
+        "routes": [
+          {
+            "path": "/logistics/insure-parcel",
+            "component": "InsureParcelPage",
+            "allowedRoles": [
+              "logistics"
+            ]
+          },
+          {
+            "path": "/secretary/clarify-shipment-method",
+            "component": "ClarifyShipmentMethodPage",
+            "allowedRoles": [
+              "secretary"
+            ]
+          },
+          {
+            "path": "/secretary/get-3-offers-from-logistic-companies",
+            "component": "Get3OffersFromLogisticCompaniesPage",
+            "allowedRoles": [
+              "secretary"
+            ]
+          },
+          {
+            "path": "/secretary/write-package-label",
+            "component": "WritePackageLabelPage",
+            "allowedRoles": [
+              "secretary"
+            ]
+          },
+          {
+            "path": "/secretary/select-logistic-company-and-place-order",
+            "component": "SelectLogisticCompanyAndPlaceOrderPage",
+            "allowedRoles": [
+              "secretary"
+            ]
+          },
+          {
+            "path": "/warehouse/package-goods",
+            "component": "PackageGoodsPage",
+            "allowedRoles": [
+              "warehouse"
+            ]
+          },
+          {
+            "path": "/warehouse/prepare-for-picking-up-goods",
+            "component": "PrepareForPickingUpGoodsPage",
+            "allowedRoles": [
+              "warehouse"
+            ]
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function App()"
+        ],
+        "CRITICAL": "NEVER put <Route> inside {condition && ...}. ALL <Route> elements must be direct children of <Routes>. Use allowedRoles prop on <ProtectedRoute> wrapping the route element."
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "src/shared/pages/LoginPage",
+          "src/shared/components/ProtectedRoute",
+          "src/shared/components/Layout",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Logistics/pages/InsureParcelPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/ClarifyShipmentMethodPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/Get3OffersFromLogisticCompaniesPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/WritePackageLabelPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/SelectLogisticCompanyAndPlaceOrderPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Warehouse/pages/PackageGoodsPage",
+          "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Warehouse/pages/PrepareForPickingUpGoodsPage"
+        ],
+        "max_lines": 130
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Logistics / role:logistics] Page for BPMN task 'Insure parcel' (task). UI: action. On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Logistics/pages/InsureParcelPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Logistics",
+      "input": {
+        "taskName": "Insure parcel",
+        "taskType": "task",
+        "role": "logistics",
+        "allowedRoles": [
+          "logistics"
+        ],
+        "lane": "Logistics",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/warehouse/prepare-for-picking-up-goods",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function InsureParcelPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Insure parcel' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'logistics') navigate('/login')",
+        "state_key": "updateWorkflow key: 'insure_parcel_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Secretary / role:secretary] Page for BPMN task 'Clarify shipment method' (task). UI: action. Show a choice selector: 'no > always' → navigate('/secretary/write-package-label'), 'yes' → navigate('/secretary/get-3-offers-from-logistic-companies'). Default: navigate('/secretary/write-package-label'). PARALLEL BPMN BRANCHES (inclusive/parallel gateway — these run concurrently in the process but are handled by other roles): 'no > If insurance necessary' triggers role at '/logistics/insure-parcel'. NOTE: this page should navigate its own primaryRoute only; the parallel branch is initiated independently by the target role's login.",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/ClarifyShipmentMethodPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Secretary",
+      "input": {
+        "taskName": "Clarify shipment method",
+        "taskType": "task",
+        "role": "secretary",
+        "allowedRoles": [
+          "secretary"
+        ],
+        "lane": "Secretary",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/secretary/write-package-label",
+        "conditionalRoutes": [
+          {
+            "route": "/secretary/write-package-label",
+            "condition": "no > always"
+          },
+          {
+            "route": "/secretary/get-3-offers-from-logistic-companies",
+            "condition": "yes"
+          }
+        ],
+        "parallelTriggers": [
+          {
+            "route": "/logistics/insure-parcel",
+            "condition": "no > If insurance necessary"
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function ClarifyShipmentMethodPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Clarify shipment method' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "Show a choice selector: 'no > always' → navigate('/secretary/write-package-label'), 'yes' → navigate('/secretary/get-3-offers-from-logistic-companies'). Default: navigate('/secretary/write-package-label'). PARALLEL BPMN BRANCHES (inclusive/parallel gateway — these run concurrently in the process but are handled by other roles): 'no > If insurance necessary' triggers role at '/logistics/insure-parcel'. NOTE: this page should navigate its own primaryRoute only; the parallel branch is initiated independently by the target role's login.",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'secretary') navigate('/login')",
+        "state_key": "updateWorkflow key: 'clarify_shipment_method_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Secretary / role:secretary] Page for BPMN task 'Get 3 offers from logistic companies' (task). UI: action. On action complete: navigate('/secretary/select-logistic-company-and-place-order').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/Get3OffersFromLogisticCompaniesPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Secretary",
+      "input": {
+        "taskName": "Get 3 offers from logistic companies",
+        "taskType": "task",
+        "role": "secretary",
+        "allowedRoles": [
+          "secretary"
+        ],
+        "lane": "Secretary",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/secretary/select-logistic-company-and-place-order",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function Get3OffersFromLogisticCompaniesPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Get 3 offers from logistic companies' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/secretary/select-logistic-company-and-place-order').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'secretary') navigate('/login')",
+        "state_key": "updateWorkflow key: 'get_3_offers_from_logistic_companies_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Secretary / role:secretary] Page for BPMN task 'Write package label' (task). UI: action. On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/WritePackageLabelPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Secretary",
+      "input": {
+        "taskName": "Write package label",
+        "taskType": "task",
+        "role": "secretary",
+        "allowedRoles": [
+          "secretary"
+        ],
+        "lane": "Secretary",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/warehouse/prepare-for-picking-up-goods",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function WritePackageLabelPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Write package label' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'secretary') navigate('/login')",
+        "state_key": "updateWorkflow key: 'write_package_label_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Secretary / role:secretary] Page for BPMN task 'Select logistic company and place order' (task). UI: action. On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Secretary/pages/SelectLogisticCompanyAndPlaceOrderPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Secretary",
+      "input": {
+        "taskName": "Select logistic company and place order",
+        "taskType": "task",
+        "role": "secretary",
+        "allowedRoles": [
+          "secretary"
+        ],
+        "lane": "Secretary",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/warehouse/prepare-for-picking-up-goods",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function SelectLogisticCompanyAndPlaceOrderPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Select logistic company and place order' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'secretary') navigate('/login')",
+        "state_key": "updateWorkflow key: 'select_logistic_company_and_place_order_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Warehouse / role:warehouse] Page for BPMN task 'Package goods' (task). UI: action. On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Warehouse/pages/PackageGoodsPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Warehouse",
+      "input": {
+        "taskName": "Package goods",
+        "taskType": "task",
+        "role": "warehouse",
+        "allowedRoles": [
+          "warehouse"
+        ],
+        "lane": "Warehouse",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/warehouse/prepare-for-picking-up-goods",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function PackageGoodsPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Package goods' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/warehouse/prepare-for-picking-up-goods').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'warehouse') navigate('/login')",
+        "state_key": "updateWorkflow key: 'package_goods_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[DispatchOfGoodsComputerHardwareShop / lane:Warehouse / role:warehouse] Page for BPMN task 'Prepare for picking up goods' (task). UI: action. On action complete: navigate('/warehouse/complete').",
+      "path": "src/modules/DispatchOfGoodsComputerHardwareShop/lanes/Warehouse/pages/PrepareForPickingUpGoodsPage.tsx",
+      "group": "module:DispatchOfGoodsComputerHardwareShop/lane:Warehouse",
+      "input": {
+        "taskName": "Prepare for picking up goods",
+        "taskType": "task",
+        "role": "warehouse",
+        "allowedRoles": [
+          "warehouse"
+        ],
+        "lane": "Warehouse",
+        "poolModule": "DispatchOfGoodsComputerHardwareShop",
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/warehouse/complete",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function PrepareForPickingUpGoodsPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Prepare for picking up goods' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/warehouse/complete').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'warehouse') navigate('/login')",
+        "state_key": "updateWorkflow key: 'prepare_for_picking_up_goods_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    }
+  ]
+}
