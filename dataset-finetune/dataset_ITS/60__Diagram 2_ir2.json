@@ -1,0 +1,311 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Reprint hospitalization receipts",
+        "value": "reprinthospitalizationreceipts",
+        "internal": "reprinthospitalizationreceipts"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "reprinthospitalizationreceipts": "/reprint-hospitalization-receipts/wants-to-make-reprint-hospitalization-receipts"
+    },
+    "stateSchema": {
+      "wants_to_make_reprint_hospitalization_receipts_completed": false,
+      "displays_the_reprint_hospitalization_receipts_form_completed": false,
+      "enters_the_receipt_number_completed": false,
+      "selects_a_print_button_completed": false,
+      "displays_payment_information_completed": false,
+      "displays_the_message_data_not_found_completed": false,
+      "searches_for_the_receipt_number_completed": false,
+      "prints_the_receipt_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/reprint-hospitalization-receipts/wants-to-make-reprint-hospitalization-receipts",
+        "role": "reprinthospitalizationreceipts",
+        "component": "WantsToMakeReprintHospitalizationReceiptsPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/displays-the-reprint-hospitalization-receipts-form",
+        "role": "reprinthospitalizationreceipts",
+        "component": "DisplaysTheReprintHospitalizationReceiptsFormPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/enters-the-receipt-number",
+        "role": "reprinthospitalizationreceipts",
+        "component": "EntersTheReceiptNumberPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/selects-a-print-button",
+        "role": "reprinthospitalizationreceipts",
+        "component": "SelectsAPrintButtonPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/displays-payment-information",
+        "role": "reprinthospitalizationreceipts",
+        "component": "DisplaysPaymentInformationPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/displays-the-message-data-not-found",
+        "role": "reprinthospitalizationreceipts",
+        "component": "DisplaysTheMessage\"dataNotFound\"Page",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/searches-for-the-receipt-number",
+        "role": "reprinthospitalizationreceipts",
+        "component": "SearchesForTheReceiptNumberPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      },
+      {
+        "route": "/reprint-hospitalization-receipts/prints-the-receipt",
+        "role": "reprinthospitalizationreceipts",
+        "component": "PrintsTheReceiptPage",
+        "allowedRoles": [
+          "reprinthospitalizationreceipts"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ReprintHospitalizationReceipts",
+      "role": "reprinthospitalizationreceipts",
+      "defaultRoute": "/reprint-hospitalization-receipts/wants-to-make-reprint-hospitalization-receipts",
+      "tasks": [
+        {
+          "taskId": "reprinthospitalizationreceipts-wants-to-make-reprint-hospitalization-receipts",
+          "name": "WantsToMakeReprintHospitalizationReceipts",
+          "route": "/reprint-hospitalization-receipts/wants-to-make-reprint-hospitalization-receipts",
+          "component": "WantsToMakeReprintHospitalizationReceiptsPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Wants to make Reprint hospitalization receipts.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_make_reprint_hospitalization_receipts_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/displays-the-reprint-hospitalization-receipts-form",
+          "ui": {
+            "title": "Wants to make Reprint hospitalization receipts",
+            "hint": "Page for BPMN task 'Wants to make Reprint hospitalization receipts' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-displays-the-reprint-hospitalization-receipts-form",
+          "name": "DisplaysTheReprintHospitalizationReceiptsForm",
+          "route": "/reprint-hospitalization-receipts/displays-the-reprint-hospitalization-receipts-form",
+          "component": "DisplaysTheReprintHospitalizationReceiptsFormPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Displays the Reprint hospitalization receipts form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_reprint_hospitalization_receipts_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/enters-the-receipt-number",
+          "ui": {
+            "title": "Displays the Reprint hospitalization receipts form",
+            "hint": "Page for BPMN task 'Displays the Reprint hospitalization receipts form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-enters-the-receipt-number",
+          "name": "EntersTheReceiptNumber",
+          "route": "/reprint-hospitalization-receipts/enters-the-receipt-number",
+          "component": "EntersTheReceiptNumberPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Enters the receipt number.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_receipt_number_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/searches-for-the-receipt-number",
+          "ui": {
+            "title": "Enters the receipt number",
+            "hint": "Page for BPMN task 'Enters the receipt number' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-selects-a-print-button",
+          "name": "SelectsAPrintButton",
+          "route": "/reprint-hospitalization-receipts/selects-a-print-button",
+          "component": "SelectsAPrintButtonPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Selects a print button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_a_print_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/prints-the-receipt",
+          "ui": {
+            "title": "Selects a print button",
+            "hint": "Page for BPMN task 'Selects a print button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/reprint-hospitalization-receipts/prints-the-receipt",
+              "condition": "print"
+            }
+          ]
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-displays-payment-information",
+          "name": "DisplaysPaymentInformation",
+          "route": "/reprint-hospitalization-receipts/displays-payment-information",
+          "component": "DisplaysPaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Displays payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/complete",
+          "ui": {
+            "title": "Displays payment information",
+            "hint": "Page for BPMN task 'Displays payment information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-displays-the-message-data-not-found",
+          "name": "DisplaysTheMessage\"dataNotFound\"",
+          "route": "/reprint-hospitalization-receipts/displays-the-message-data-not-found",
+          "component": "DisplaysTheMessage\"dataNotFound\"Page",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Displays the message \"data not found\".",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_message_data_not_found_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/complete",
+          "ui": {
+            "title": "Displays the message \"data not found\"",
+            "hint": "Page for BPMN task 'Displays the message \"data not found\"' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-searches-for-the-receipt-number",
+          "name": "SearchesForTheReceiptNumber",
+          "route": "/reprint-hospitalization-receipts/searches-for-the-receipt-number",
+          "component": "SearchesForTheReceiptNumberPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Searches for the receipt number.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_for_the_receipt_number_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/displays-payment-information",
+          "ui": {
+            "title": "Searches for the receipt number",
+            "hint": "Page for BPMN task 'Searches for the receipt number' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/reprint-hospitalization-receipts/displays-payment-information",
+              "condition": "found"
+            },
+            {
+              "route": "/reprint-hospitalization-receipts/displays-the-message-data-not-found",
+              "condition": "DisplaysTheMessage\"dataNotFound\""
+            }
+          ]
+        },
+        {
+          "taskId": "reprinthospitalizationreceipts-prints-the-receipt",
+          "name": "PrintsTheReceipt",
+          "route": "/reprint-hospitalization-receipts/prints-the-receipt",
+          "component": "PrintsTheReceiptPage",
+          "pageType": "write-navigate",
+          "description": "Reprint hospitalization receipts: Prints the receipt.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_receipt_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reprint-hospitalization-receipts/complete",
+          "ui": {
+            "title": "Prints the receipt",
+            "hint": "Page for BPMN task 'Prints the receipt' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

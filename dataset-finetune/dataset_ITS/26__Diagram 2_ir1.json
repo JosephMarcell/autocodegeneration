@@ -1,0 +1,367 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_8b898e14-f96f-41bf-835e-bfe0486131d7"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Realize a member loan (SIPA unit)",
+      "processRef": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_8b898e14-f96f-41bf-835e-bfe0486131d7": "Main Process",
+    "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569": "Realize a member loan (SIPA unit)"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+        "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+        "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+        "Id_54bf0852-1897-4666-8f42-8bf033856156",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_be8d9acc-2ed1-4b58-8676-89f481c42246"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb": "System",
+    "Id_bf8db104-94fe-43d9-b858-43e2e47663dd": "System",
+    "Id_6e01f2e6-ef04-43e4-8794-2410499d25be": "System",
+    "Id_54bf0852-1897-4666-8f42-8bf033856156": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_be8d9acc-2ed1-4b58-8676-89f481c42246": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to realize a member loan",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads the Member & Unit Work database",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters information about realizing member",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a form of realizing a member loan",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the member information",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_62057387-9b64-451e-9fcd-2a9203b62555"
+      ]
+    },
+    {
+      "id": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "name": "Reads the Loan database",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_62057387-9b64-451e-9fcd-2a9203b62555"
+      ],
+      "outgoing": [
+        "Id_85a7937e-1a16-412a-9871-c3af3135efb5"
+      ]
+    },
+    {
+      "id": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "name": "Updates the loan status",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336"
+      ],
+      "outgoing": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081"
+      ]
+    },
+    {
+      "id": "Id_54bf0852-1897-4666-8f42-8bf033856156",
+      "name": "Displays information about realizing a member loan",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_85a7937e-1a16-412a-9871-c3af3135efb5"
+      ],
+      "outgoing": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ]
+    },
+    {
+      "id": "Id_be8d9acc-2ed1-4b58-8676-89f481c42246",
+      "name": "Display loan infomation",
+      "type": "task",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081"
+      ],
+      "outgoing": [
+        "Id_4c171cb8-09ac-49ba-8785-f99319785074"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "incoming": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ],
+      "outgoing": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ]
+    },
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "incoming": [
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04",
+        "Id_4c171cb8-09ac-49ba-8785-f99319785074"
+      ],
+      "outgoing": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Realize a member loan (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569",
+      "incoming": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+      "source": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "target": "Id_be8d9acc-2ed1-4b58-8676-89f481c42246",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_62057387-9b64-451e-9fcd-2a9203b62555",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_3585c84b-af74-4919-a4ce-e3c1f5027607",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_85a7937e-1a16-412a-9871-c3af3135efb5",
+      "source": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "target": "Id_54bf0852-1897-4666-8f42-8bf033856156",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_f5cefc12-deef-47e1-aadf-36e12d213469",
+      "source": "Id_54bf0852-1897-4666-8f42-8bf033856156",
+      "target": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "condition": "Realization",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    },
+    {
+      "id": "Id_4c171cb8-09ac-49ba-8785-f99319785074",
+      "source": "Id_be8d9acc-2ed1-4b58-8676-89f481c42246",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_eaf27810-bc5b-4ffa-a11d-a0010d52f569"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_realize_a_member_loan_completed": false,
+    "reads_the_member_unit_work_database_completed": false,
+    "enters_information_about_realizing_member_completed": false,
+    "displays_a_form_of_realizing_a_member_loan_completed": false,
+    "displays_the_member_information_completed": false,
+    "reads_the_loan_database_completed": false,
+    "updates_the_loan_status_completed": false,
+    "displays_information_about_realizing_a_member_loan_completed": false,
+    "display_loan_infomation_completed": false
+  }
+}

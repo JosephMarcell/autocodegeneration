@@ -1,0 +1,301 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Updates Patient Information",
+        "value": "updatespatientinformation",
+        "internal": "updatespatientinformation"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "updatespatientinformation": "/updates-patient-information/wants-to-update-patient-information"
+    },
+    "stateSchema": {
+      "wants_to_update_patient_information_completed": false,
+      "displays_the_query_result_completed": false,
+      "displays_form_of_updates_patient_information_completed": false,
+      "enters_the_medical_record_id_number_completed": false,
+      "queries_database_completed": false,
+      "enter_an_update_information_completed": false,
+      "select_an_update_button_completed": false,
+      "saves_the_patient_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/updates-patient-information/wants-to-update-patient-information",
+        "role": "updatespatientinformation",
+        "component": "WantsToUpdatePatientInformationPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/displays-the-query-result",
+        "role": "updatespatientinformation",
+        "component": "DisplaysTheQueryResultPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/displays-form-of-updates-patient-information",
+        "role": "updatespatientinformation",
+        "component": "DisplaysFormOfUpdatesPatientInformationPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/enters-the-medical-record-id-number",
+        "role": "updatespatientinformation",
+        "component": "EntersTheMedicalRecordIdNumberPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/queries-database",
+        "role": "updatespatientinformation",
+        "component": "QueriesDatabasePage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/enter-an-update-information",
+        "role": "updatespatientinformation",
+        "component": "EnterAnUpdateInformationPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/select-an-update-button",
+        "role": "updatespatientinformation",
+        "component": "SelectAnUpdateButtonPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      },
+      {
+        "route": "/updates-patient-information/saves-the-patient-information",
+        "role": "updatespatientinformation",
+        "component": "SavesThePatientInformationPage",
+        "allowedRoles": [
+          "updatespatientinformation"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "UpdatesPatientInformation",
+      "role": "updatespatientinformation",
+      "defaultRoute": "/updates-patient-information/wants-to-update-patient-information",
+      "tasks": [
+        {
+          "taskId": "updatespatientinformation-wants-to-update-patient-information",
+          "name": "WantsToUpdatePatientInformation",
+          "route": "/updates-patient-information/wants-to-update-patient-information",
+          "component": "WantsToUpdatePatientInformationPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Wants to Update Patient Information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_update_patient_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/displays-form-of-updates-patient-information",
+          "ui": {
+            "title": "Wants to Update Patient Information",
+            "hint": "Page for BPMN task 'Wants to Update Patient Information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-displays-form-of-updates-patient-information",
+          "name": "DisplaysFormOfUpdatesPatientInformation",
+          "route": "/updates-patient-information/displays-form-of-updates-patient-information",
+          "component": "DisplaysFormOfUpdatesPatientInformationPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Displays form of Updates Patient Information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_updates_patient_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/enters-the-medical-record-id-number",
+          "ui": {
+            "title": "Displays form of Updates Patient Information",
+            "hint": "Page for BPMN task 'Displays form of Updates Patient Information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-enters-the-medical-record-id-number",
+          "name": "EntersTheMedicalRecordIdNumber",
+          "route": "/updates-patient-information/enters-the-medical-record-id-number",
+          "component": "EntersTheMedicalRecordIdNumberPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Enters the medical record ID number.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_medical_record_id_number_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/queries-database",
+          "ui": {
+            "title": "Enters the medical record ID number",
+            "hint": "Page for BPMN task 'Enters the medical record ID number' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-queries-database",
+          "name": "QueriesDatabase",
+          "route": "/updates-patient-information/queries-database",
+          "component": "QueriesDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Queries database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/displays-the-query-result",
+          "ui": {
+            "title": "Queries database",
+            "hint": "Page for BPMN task 'Queries database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-displays-the-query-result",
+          "name": "DisplaysTheQueryResult",
+          "route": "/updates-patient-information/displays-the-query-result",
+          "component": "DisplaysTheQueryResultPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Displays the query result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_result_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/enter-an-update-information",
+          "ui": {
+            "title": "Displays the query result",
+            "hint": "Page for BPMN task 'Displays the query result' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-enter-an-update-information",
+          "name": "EnterAnUpdateInformation",
+          "route": "/updates-patient-information/enter-an-update-information",
+          "component": "EnterAnUpdateInformationPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Enter an update information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enter_an_update_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/select-an-update-button",
+          "ui": {
+            "title": "Enter an update information",
+            "hint": "Page for BPMN task 'Enter an update information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatespatientinformation-select-an-update-button",
+          "name": "SelectAnUpdateButton",
+          "route": "/updates-patient-information/select-an-update-button",
+          "component": "SelectAnUpdateButtonPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Select  an update button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_an_update_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/saves-the-patient-information",
+          "ui": {
+            "title": "Select  an update button",
+            "hint": "Page for BPMN task 'Select  an update button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/updates-patient-information/saves-the-patient-information",
+              "condition": "SavesThePatientInformation"
+            }
+          ]
+        },
+        {
+          "taskId": "updatespatientinformation-saves-the-patient-information",
+          "name": "SavesThePatientInformation",
+          "route": "/updates-patient-information/saves-the-patient-information",
+          "component": "SavesThePatientInformationPage",
+          "pageType": "write-navigate",
+          "description": "Updates Patient Information: Saves the Patient information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_patient_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/updates-patient-information/complete",
+          "ui": {
+            "title": "Saves the Patient information",
+            "hint": "Page for BPMN task 'Saves the Patient information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

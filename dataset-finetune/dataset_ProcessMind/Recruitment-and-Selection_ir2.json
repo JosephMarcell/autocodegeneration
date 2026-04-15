@@ -1,0 +1,673 @@
+{
+  "project": "EmployeeSelectionAndRecruitment",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Employee selection and recruitment",
+        "value": "employeeselectionandrecruitment",
+        "internal": "employeeselectionandrecruitment"
+      },
+      {
+        "display": "Candidate interviews",
+        "value": "candidateinterviews",
+        "internal": "candidateinterviews"
+      },
+      {
+        "display": "Reject candidate",
+        "value": "rejectcandidate",
+        "internal": "rejectcandidate"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "employeeselectionandrecruitment": "/employee-selection-and-recruitment/open-position",
+      "candidateinterviews": "/candidate-interviews/perform-hr-interview",
+      "rejectcandidate": "/reject-candidate/send-rejection-message"
+    },
+    "stateSchema": {
+      "open_position_completed": false,
+      "retrieve_applications_completed": false,
+      "pre_select_candidates_for_interview_completed": false,
+      "select_candidate_for_offer_completed": false,
+      "prepare_offer_completed": false,
+      "get_candidate_reply_completed": false,
+      "publish_completed": false,
+      "distribute_on_job_boards_completed": false,
+      "advertise_on_social_media_completed": false,
+      "send_offer_to_candidate_completed": false,
+      "congratulate_new_hre_completed": false,
+      "interview_pre_selected_candidates_completed": false,
+      "informe_other_candidates_completed": false,
+      "perform_hr_interview_completed": false,
+      "perform_manager_interview_completed": false,
+      "inform_rejection_completed": false,
+      "send_rejection_message_completed": false,
+      "candidates_selected_after_interview_process_result": "",
+      "is_offer_validated_result": "",
+      "other_candidates_selected_result": "",
+      "offer_dispatch_result": "",
+      "hr_interview_passed_result": "",
+      "manager_interview_passed_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/employee-selection-and-recruitment/open-position",
+        "role": "employeeselectionandrecruitment",
+        "component": "OpenPositionPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/retrieve-applications",
+        "role": "employeeselectionandrecruitment",
+        "component": "RetrieveApplicationsPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/preselect-candidates-for-interview",
+        "role": "employeeselectionandrecruitment",
+        "component": "PreSelectCandidatesForInterviewPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/select-candidate-for-offer",
+        "role": "employeeselectionandrecruitment",
+        "component": "SelectCandidateForOfferPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/prepare-offer",
+        "role": "employeeselectionandrecruitment",
+        "component": "PrepareOfferPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/get-candidate-reply",
+        "role": "employeeselectionandrecruitment",
+        "component": "GetCandidateReplyPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/publish",
+        "role": "employeeselectionandrecruitment",
+        "component": "PublishPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/distribute-on-job-boards",
+        "role": "employeeselectionandrecruitment",
+        "component": "DistributeOnJobBoardsPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/advertise-on-social-media",
+        "role": "employeeselectionandrecruitment",
+        "component": "AdvertiseOnSocialMediaPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/send-offer-to-candidate",
+        "role": "employeeselectionandrecruitment",
+        "component": "SendOfferToCandidatePage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/congratulate-new-hre",
+        "role": "employeeselectionandrecruitment",
+        "component": "CongratulateNewHrePage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/interview-preselected-candidates",
+        "role": "employeeselectionandrecruitment",
+        "component": "InterviewPreSelectedCandidatesPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/employee-selection-and-recruitment/informe-other-candidates",
+        "role": "employeeselectionandrecruitment",
+        "component": "InformeOtherCandidatesPage",
+        "allowedRoles": [
+          "employeeselectionandrecruitment"
+        ]
+      },
+      {
+        "route": "/candidate-interviews/perform-hr-interview",
+        "role": "candidateinterviews",
+        "component": "PerformHrInterviewPage",
+        "allowedRoles": [
+          "candidateinterviews"
+        ]
+      },
+      {
+        "route": "/candidate-interviews/perform-manager-interview",
+        "role": "candidateinterviews",
+        "component": "PerformManagerInterviewPage",
+        "allowedRoles": [
+          "candidateinterviews"
+        ]
+      },
+      {
+        "route": "/candidate-interviews/inform-rejection",
+        "role": "candidateinterviews",
+        "component": "InformRejectionPage",
+        "allowedRoles": [
+          "candidateinterviews"
+        ]
+      },
+      {
+        "route": "/reject-candidate/send-rejection-message",
+        "role": "rejectcandidate",
+        "component": "SendRejectionMessagePage",
+        "allowedRoles": [
+          "rejectcandidate"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "EmployeeSelectionAndRecruitment",
+      "role": "employeeselectionandrecruitment",
+      "defaultRoute": "/employee-selection-and-recruitment/open-position",
+      "tasks": [
+        {
+          "taskId": "employeeselectionandrecruitment-open-position",
+          "name": "OpenPosition",
+          "route": "/employee-selection-and-recruitment/open-position",
+          "component": "OpenPositionPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Open position.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "open_position_completed",
+              "value": true
+            },
+            {
+              "field": "offer_dispatch_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/publish",
+          "ui": {
+            "title": "Open position",
+            "hint": "Page for BPMN task 'Open position' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/employee-selection-and-recruitment/publish",
+              "condition": "__parallel__"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/distribute-on-job-boards",
+              "condition": "__parallel__"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/advertise-on-social-media",
+              "condition": "__parallel__"
+            }
+          ]
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-publish",
+          "name": "Publish",
+          "route": "/employee-selection-and-recruitment/publish",
+          "component": "PublishPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Publish.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "publish_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/retrieve-applications",
+          "ui": {
+            "title": "Publish",
+            "hint": "Page for BPMN task 'Publish' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-distribute-on-job-boards",
+          "name": "DistributeOnJobBoards",
+          "route": "/employee-selection-and-recruitment/distribute-on-job-boards",
+          "component": "DistributeOnJobBoardsPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Distribute on job boards.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "distribute_on_job_boards_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/retrieve-applications",
+          "ui": {
+            "title": "Distribute on job boards",
+            "hint": "Page for BPMN task 'Distribute on job boards' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-advertise-on-social-media",
+          "name": "AdvertiseOnSocialMedia",
+          "route": "/employee-selection-and-recruitment/advertise-on-social-media",
+          "component": "AdvertiseOnSocialMediaPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Advertise on social media.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "advertise_on_social_media_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/retrieve-applications",
+          "ui": {
+            "title": "Advertise on social media",
+            "hint": "Page for BPMN task 'Advertise on social media' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-retrieve-applications",
+          "name": "RetrieveApplications",
+          "route": "/employee-selection-and-recruitment/retrieve-applications",
+          "component": "RetrieveApplicationsPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Retrieve applications.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "retrieve_applications_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/preselect-candidates-for-interview",
+          "ui": {
+            "title": "Retrieve applications",
+            "hint": "Page for BPMN task 'Retrieve applications' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-preselect-candidates-for-interview",
+          "name": "PreSelectCandidatesForInterview",
+          "route": "/employee-selection-and-recruitment/preselect-candidates-for-interview",
+          "component": "PreSelectCandidatesForInterviewPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Pre-select candidates for interview.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "preselect_candidates_for_interview_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/interview-preselected-candidates",
+          "ui": {
+            "title": "Pre-select candidates for interview",
+            "hint": "Page for BPMN task 'Pre-select candidates for interview' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-select-candidate-for-offer",
+          "name": "SelectCandidateForOffer",
+          "route": "/employee-selection-and-recruitment/select-candidate-for-offer",
+          "component": "SelectCandidateForOfferPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Select candidate for offer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_candidate_for_offer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/prepare-offer",
+          "ui": {
+            "title": "Select candidate for offer",
+            "hint": "Page for BPMN task 'Select candidate for offer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-prepare-offer",
+          "name": "PrepareOffer",
+          "route": "/employee-selection-and-recruitment/prepare-offer",
+          "component": "PrepareOfferPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Prepare offer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prepare_offer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/send-offer-to-candidate",
+          "ui": {
+            "title": "Prepare offer",
+            "hint": "Page for BPMN task 'Prepare offer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-get-candidate-reply",
+          "name": "GetCandidateReply",
+          "route": "/employee-selection-and-recruitment/get-candidate-reply",
+          "component": "GetCandidateReplyPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Get candidate reply.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "get_candidate_reply_completed",
+              "value": true
+            },
+            {
+              "field": "is_offer_validated_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/select-candidate-for-offer",
+          "ui": {
+            "title": "Get candidate reply",
+            "hint": "Page for BPMN task 'Get candidate reply' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/employee-selection-and-recruitment/select-candidate-for-offer",
+              "condition": "yes"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/preselect-candidates-for-interview",
+              "condition": "no"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/congratulate-new-hre",
+              "condition": "CongratulateNewHre"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/informe-other-candidates",
+              "condition": "InformeOtherCandidates"
+            }
+          ]
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-send-offer-to-candidate",
+          "name": "SendOfferToCandidate",
+          "route": "/employee-selection-and-recruitment/send-offer-to-candidate",
+          "component": "SendOfferToCandidatePage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Send offer to candidate.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_offer_to_candidate_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/get-candidate-reply",
+          "ui": {
+            "title": "Send offer to candidate",
+            "hint": "Page for BPMN task 'Send offer to candidate' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-congratulate-new-hre",
+          "name": "CongratulateNewHre",
+          "route": "/employee-selection-and-recruitment/congratulate-new-hre",
+          "component": "CongratulateNewHrePage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Congratulate new hre.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "congratulate_new_hre_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/complete",
+          "ui": {
+            "title": "Congratulate new hre",
+            "hint": "Page for BPMN task 'Congratulate new hre' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-interview-preselected-candidates",
+          "name": "InterviewPreSelectedCandidates",
+          "route": "/employee-selection-and-recruitment/interview-preselected-candidates",
+          "component": "InterviewPreSelectedCandidatesPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Interview pre-selected candidates.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "interview_preselected_candidates_completed",
+              "value": true
+            },
+            {
+              "field": "candidates_selected_after_interview_process_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/retrieve-applications",
+          "ui": {
+            "title": "Interview pre-selected candidates",
+            "hint": "Page for BPMN task 'Interview pre-selected candidates' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/employee-selection-and-recruitment/retrieve-applications",
+              "condition": "no"
+            },
+            {
+              "route": "/employee-selection-and-recruitment/select-candidate-for-offer",
+              "condition": "yes"
+            }
+          ]
+        },
+        {
+          "taskId": "employeeselectionandrecruitment-informe-other-candidates",
+          "name": "InformeOtherCandidates",
+          "route": "/employee-selection-and-recruitment/informe-other-candidates",
+          "component": "InformeOtherCandidatesPage",
+          "pageType": "write-navigate",
+          "description": "Employee selection and recruitment: Informe other candidates.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "informe_other_candidates_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-selection-and-recruitment/complete",
+          "ui": {
+            "title": "Informe other candidates",
+            "hint": "Page for BPMN task 'Informe other candidates' (write-navigate)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "CandidateInterviews",
+      "role": "candidateinterviews",
+      "defaultRoute": "/candidate-interviews/perform-hr-interview",
+      "tasks": [
+        {
+          "taskId": "candidateinterviews-perform-hr-interview",
+          "name": "PerformHrInterview",
+          "route": "/candidate-interviews/perform-hr-interview",
+          "component": "PerformHrInterviewPage",
+          "pageType": "write-navigate",
+          "description": "Candidate interviews: Perform HR interview.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "perform_hr_interview_completed",
+              "value": true
+            },
+            {
+              "field": "hr_interview_passed_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/candidate-interviews/perform-manager-interview",
+          "ui": {
+            "title": "Perform HR interview",
+            "hint": "Page for BPMN task 'Perform HR interview' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/candidate-interviews/perform-manager-interview",
+              "condition": "PerformManagerInterview"
+            },
+            {
+              "route": "/candidate-interviews/inform-rejection",
+              "condition": "InformRejection"
+            }
+          ]
+        },
+        {
+          "taskId": "candidateinterviews-perform-manager-interview",
+          "name": "PerformManagerInterview",
+          "route": "/candidate-interviews/perform-manager-interview",
+          "component": "PerformManagerInterviewPage",
+          "pageType": "write-navigate",
+          "description": "Candidate interviews: Perform Manager interview.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "perform_manager_interview_completed",
+              "value": true
+            },
+            {
+              "field": "manager_interview_passed_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/candidate-interviews/inform-rejection",
+          "ui": {
+            "title": "Perform Manager interview",
+            "hint": "Page for BPMN task 'Perform Manager interview' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/candidate-interviews/inform-rejection",
+              "condition": "no"
+            }
+          ]
+        },
+        {
+          "taskId": "candidateinterviews-inform-rejection",
+          "name": "InformRejection",
+          "route": "/candidate-interviews/inform-rejection",
+          "component": "InformRejectionPage",
+          "pageType": "write-navigate",
+          "description": "Candidate interviews: Inform rejection.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "inform_rejection_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/candidate-interviews/complete",
+          "ui": {
+            "title": "Inform rejection",
+            "hint": "Page for BPMN task 'Inform rejection' (write-navigate)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "RejectCandidate",
+      "role": "rejectcandidate",
+      "defaultRoute": "/reject-candidate/send-rejection-message",
+      "tasks": [
+        {
+          "taskId": "rejectcandidate-send-rejection-message",
+          "name": "SendRejectionMessage",
+          "route": "/reject-candidate/send-rejection-message",
+          "component": "SendRejectionMessagePage",
+          "pageType": "write-navigate",
+          "description": "Reject candidate: Send rejection message.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_rejection_message_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/reject-candidate/complete",
+          "ui": {
+            "title": "Send rejection message",
+            "hint": "Page for BPMN task 'Send rejection message' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

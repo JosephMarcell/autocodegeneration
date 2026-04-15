@@ -1,0 +1,433 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_fb93d0a2-9451-47b0-b6a9-f1ae602ec111"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Daily revenue report",
+      "processRef": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_fb93d0a2-9451-47b0-b6a9-f1ae602ec111": "Main Process",
+    "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0": "Daily revenue report"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+        "Id_e024b86e-10e6-46f3-891a-4cf17601323b"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_082521f7-2373-493e-b116-ed46f8443646",
+        "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+        "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+        "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+        "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518",
+        "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599",
+        "Id_e6c0a380-c841-46ba-8f65-097f2445aa77"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "Cashier",
+    "Id_082521f7-2373-493e-b116-ed46f8443646": "System",
+    "Id_d7a120da-02a8-4de0-b984-e63dd5cda792": "Cashier",
+    "Id_e024b86e-10e6-46f3-891a-4cf17601323b": "Cashier",
+    "Id_259b95ad-426d-4d16-8f7b-6371212aaf57": "System",
+    "Id_ccb484c1-0a50-4c27-be4e-ac809400520e": "System",
+    "Id_7a3f28d2-8c48-4551-9672-ee6753bda510": "System",
+    "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518": "System",
+    "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599": "System",
+    "Id_e6c0a380-c841-46ba-8f65-097f2445aa77": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to create a Daily revenue report",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the query result",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ],
+      "outgoing": [
+        "Id_3f1e9853-60de-4b0b-9878-49a2b806c1ab"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays the Daily revenue report form",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enters the start date, end date, and category",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ]
+    },
+    {
+      "id": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "name": "Queries the Revenue database",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_2ca1e729-e96f-4153-b536-64968988a5fc"
+      ],
+      "outgoing": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ]
+    },
+    {
+      "id": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "name": "Selects the search button",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ],
+      "outgoing": [
+        "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f"
+      ]
+    },
+    {
+      "id": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "name": "Select  a print  button",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_039d68f0-645b-4182-96f5-9532e43906d3"
+      ],
+      "outgoing": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ]
+    },
+    {
+      "id": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "name": "Prints to printer",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_43f5c04e-075e-4220-9295-d43d3b5d64db"
+      ],
+      "outgoing": [
+        "Id_4073648d-1456-40f1-847c-8cc97a261566"
+      ]
+    },
+    {
+      "id": "Id_e6c0a380-c841-46ba-8f65-097f2445aa77",
+      "name": "Print to xcell file",
+      "type": "task",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_58e95752-49b6-439a-b3eb-b5f5541c34f2"
+      ],
+      "outgoing": [
+        "Id_d10f3ddd-45d4-4330-bb9a-906fe72ea7ed"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ],
+      "outgoing": [
+        "Id_43f5c04e-075e-4220-9295-d43d3b5d64db",
+        "Id_320f95a9-0342-4016-abc5-df9cf0e487ce",
+        "Id_58e95752-49b6-439a-b3eb-b5f5541c34f2"
+      ]
+    },
+    {
+      "id": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [
+        "Id_4073648d-1456-40f1-847c-8cc97a261566",
+        "Id_320f95a9-0342-4016-abc5-df9cf0e487ce",
+        "Id_d10f3ddd-45d4-4330-bb9a-906fe72ea7ed"
+      ],
+      "outgoing": [
+        "Id_ef3a6276-6d46-49be-97f6-3f485f60d389"
+      ]
+    },
+    {
+      "id": "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [
+        "Id_3f1e9853-60de-4b0b-9878-49a2b806c1ab",
+        "Id_bbcc27b9-660d-46b9-8ee4-4d3e0c301448"
+      ],
+      "outgoing": [
+        "Id_039d68f0-645b-4182-96f5-9532e43906d3"
+      ]
+    },
+    {
+      "id": "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [
+        "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f"
+      ],
+      "outgoing": [
+        "Id_2ca1e729-e96f-4153-b536-64968988a5fc",
+        "Id_bbcc27b9-660d-46b9-8ee4-4d3e0c301448"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Daily revenue report",
+      "laneName": "Cashier",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Daily revenue report",
+      "laneName": "System",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0",
+      "incoming": [
+        "Id_ef3a6276-6d46-49be-97f6-3f485f60d389"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82",
+      "source": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f",
+      "source": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "target": "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_3d1beec5-cff3-4443-bdcf-5426c230101a",
+      "source": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "target": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_43f5c04e-075e-4220-9295-d43d3b5d64db",
+      "source": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "target": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "condition": "Print",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_4073648d-1456-40f1-847c-8cc97a261566",
+      "source": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_320f95a9-0342-4016-abc5-df9cf0e487ce",
+      "source": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_3f1e9853-60de-4b0b-9878-49a2b806c1ab",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_2ca1e729-e96f-4153-b536-64968988a5fc",
+      "source": "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599",
+      "target": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "condition": "Search",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_bbcc27b9-660d-46b9-8ee4-4d3e0c301448",
+      "source": "Id_c5ee00ff-cc1f-4267-9efc-8ea408868599",
+      "target": "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_039d68f0-645b-4182-96f5-9532e43906d3",
+      "source": "Id_6f3fadd9-7ee1-4626-be74-4ac3327fe518",
+      "target": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_58e95752-49b6-439a-b3eb-b5f5541c34f2",
+      "source": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "target": "Id_e6c0a380-c841-46ba-8f65-097f2445aa77",
+      "condition": "Excell",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_d10f3ddd-45d4-4330-bb9a-906fe72ea7ed",
+      "source": "Id_e6c0a380-c841-46ba-8f65-097f2445aa77",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    },
+    {
+      "id": "Id_ef3a6276-6d46-49be-97f6-3f485f60d389",
+      "source": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_cd5dcd1c-7887-4c19-85e2-120ce90ba7a0"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_create_a_daily_revenue_report_completed": false,
+    "displays_the_query_result_completed": false,
+    "displays_the_daily_revenue_report_form_completed": false,
+    "enters_the_start_date_end_date_and_category_completed": false,
+    "queries_the_revenue_database_completed": false,
+    "selects_the_search_button_completed": false,
+    "select_a_print_button_completed": false,
+    "prints_to_printer_completed": false,
+    "print_to_xcell_file_completed": false
+  }
+}

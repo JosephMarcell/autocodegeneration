@@ -1,0 +1,274 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make bill reports (SIPA unit)",
+        "value": "makebillreports(sipaunit)",
+        "internal": "makebillreports(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makebillreports(sipaunit)": "/make-bill-reports-sipa-unit/asks-to-make-bill-reports"
+    },
+    "stateSchema": {
+      "asks_to_make_bill_reports_completed": false,
+      "displays_the_form_of_making_bill_reports_completed": false,
+      "reads_the_bill_database_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "enters_the_bill_report_information_completed": false,
+      "displays_the_total_bill_and_bill_details_in_the_table_completed": false,
+      "prints_the_information_to_the_printer_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-bill-reports-sipa-unit/asks-to-make-bill-reports",
+        "role": "makebillreports(sipaunit)",
+        "component": "AsksToMakeBillReportsPage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/displays-the-form-of-making-bill-reports",
+        "role": "makebillreports(sipaunit)",
+        "component": "DisplaysTheFormOfMakingBillReportsPage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/reads-the-bill-database",
+        "role": "makebillreports(sipaunit)",
+        "component": "ReadsTheBillDatabasePage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/reads-the-work-unit-database",
+        "role": "makebillreports(sipaunit)",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/enters-the-bill-report-information",
+        "role": "makebillreports(sipaunit)",
+        "component": "EntersTheBillReportInformationPage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/displays-the-total-bill-and-bill-details-in-the-table",
+        "role": "makebillreports(sipaunit)",
+        "component": "DisplaysTheTotalBillAndBillDetailsInTheTablePage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-bill-reports-sipa-unit/prints-the-information-to-the-printer",
+        "role": "makebillreports(sipaunit)",
+        "component": "PrintsTheInformationToThePrinterPage",
+        "allowedRoles": [
+          "makebillreports(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeBillReports(sipaUnit)",
+      "role": "makebillreports(sipaunit)",
+      "defaultRoute": "/make-bill-reports-sipa-unit/asks-to-make-bill-reports",
+      "tasks": [
+        {
+          "taskId": "makebillreports(sipaunit)-asks-to-make-bill-reports",
+          "name": "AsksToMakeBillReports",
+          "route": "/make-bill-reports-sipa-unit/asks-to-make-bill-reports",
+          "component": "AsksToMakeBillReportsPage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Asks to make bill reports.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_bill_reports_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make bill reports",
+            "hint": "Page for BPMN task 'Asks to make bill reports' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-bill-reports-sipa-unit/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/displays-the-form-of-making-bill-reports",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-displays-the-form-of-making-bill-reports",
+          "name": "DisplaysTheFormOfMakingBillReports",
+          "route": "/make-bill-reports-sipa-unit/displays-the-form-of-making-bill-reports",
+          "component": "DisplaysTheFormOfMakingBillReportsPage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Displays the form of making bill reports.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_of_making_bill_reports_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/enters-the-bill-report-information",
+          "ui": {
+            "title": "Displays the form of making bill reports",
+            "hint": "Page for BPMN task 'Displays the form of making bill reports' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-enters-the-bill-report-information",
+          "name": "EntersTheBillReportInformation",
+          "route": "/make-bill-reports-sipa-unit/enters-the-bill-report-information",
+          "component": "EntersTheBillReportInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Enters the bill report information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_bill_report_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/reads-the-bill-database",
+          "ui": {
+            "title": "Enters the bill report information",
+            "hint": "Page for BPMN task 'Enters the bill report information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-bill-reports-sipa-unit/reads-the-bill-database",
+              "condition": "Show"
+            },
+            {
+              "route": "/make-bill-reports-sipa-unit/prints-the-information-to-the-printer",
+              "condition": "Print"
+            }
+          ]
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-reads-the-bill-database",
+          "name": "ReadsTheBillDatabase",
+          "route": "/make-bill-reports-sipa-unit/reads-the-bill-database",
+          "component": "ReadsTheBillDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Reads the Bill database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_bill_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/displays-the-total-bill-and-bill-details-in-the-table",
+          "ui": {
+            "title": "Reads the Bill database",
+            "hint": "Page for BPMN task 'Reads the Bill database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-prints-the-information-to-the-printer",
+          "name": "PrintsTheInformationToThePrinter",
+          "route": "/make-bill-reports-sipa-unit/prints-the-information-to-the-printer",
+          "component": "PrintsTheInformationToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Prints the information to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_information_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/complete",
+          "ui": {
+            "title": "Prints the information to the printer",
+            "hint": "Page for BPMN task 'Prints the information to the printer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makebillreports(sipaunit)-displays-the-total-bill-and-bill-details-in-the-table",
+          "name": "DisplaysTheTotalBillAndBillDetailsInTheTable",
+          "route": "/make-bill-reports-sipa-unit/displays-the-total-bill-and-bill-details-in-the-table",
+          "component": "DisplaysTheTotalBillAndBillDetailsInTheTablePage",
+          "pageType": "write-navigate",
+          "description": "Make bill reports (SIPA unit): Displays the total bill and bill details in the table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_total_bill_and_bill_details_in_the_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-bill-reports-sipa-unit/complete",
+          "ui": {
+            "title": "Displays the total bill and bill details in the table",
+            "hint": "Page for BPMN task 'Displays the total bill and bill details in the table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

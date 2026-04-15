@@ -1,0 +1,379 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Display member list",
+        "value": "displaymemberlist",
+        "internal": "displaymemberlist"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "displaymemberlist": "/display-member-list/asks-for-a-member-display"
+    },
+    "stateSchema": {
+      "asks_for_a_member_display_completed": false,
+      "enters_wotk_unit_and_name_or_id_member_completed": false,
+      "queries_to_the_member_completed": false,
+      "displays_a_member_list_form_completed": false,
+      "display_the_main_menu_completed": false,
+      "runs_the_update_member_form_completed": false,
+      "runs_the_form_of_the_new_member_completed": false,
+      "runs_the_switch_work_unit_form_completed": false,
+      "runs_the_form_of_the_work_unit_history_completed": false,
+      "runs_the_form_of_change_status_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/display-member-list/asks-for-a-member-display",
+        "role": "displaymemberlist",
+        "component": "AsksForAMemberDisplayPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/enters-wotk-unit-and-name-or-id-member",
+        "role": "displaymemberlist",
+        "component": "EntersWotkUnitAndNameOrIdMemberPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/queries-to-the-member",
+        "role": "displaymemberlist",
+        "component": "QueriesToTheMemberPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/displays-a-member-list-form",
+        "role": "displaymemberlist",
+        "component": "DisplaysAMemberListFormPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/display-the-main-menu",
+        "role": "displaymemberlist",
+        "component": "DisplayTheMainMenuPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/runs-the-update-member-form",
+        "role": "displaymemberlist",
+        "component": "RunsTheUpdateMemberFormPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/runs-the-form-of-the-new-member",
+        "role": "displaymemberlist",
+        "component": "RunsTheFormOfTheNewMemberPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/runs-the-switch-work-unit-form",
+        "role": "displaymemberlist",
+        "component": "RunsTheSwitchWorkUnitFormPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/runs-the-form-of-the-work-unit-history",
+        "role": "displaymemberlist",
+        "component": "RunsTheFormOfTheWorkUnitHistoryPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      },
+      {
+        "route": "/display-member-list/runs-the-form-of-change-status",
+        "role": "displaymemberlist",
+        "component": "RunsTheFormOfChangeStatusPage",
+        "allowedRoles": [
+          "displaymemberlist"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DisplayMemberList",
+      "role": "displaymemberlist",
+      "defaultRoute": "/display-member-list/asks-for-a-member-display",
+      "tasks": [
+        {
+          "taskId": "displaymemberlist-asks-for-a-member-display",
+          "name": "AsksForAMemberDisplay",
+          "route": "/display-member-list/asks-for-a-member-display",
+          "component": "AsksForAMemberDisplayPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Asks for a member display.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_for_a_member_display_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/displays-a-member-list-form",
+          "ui": {
+            "title": "Asks for a member display",
+            "hint": "Page for BPMN task 'Asks for a member display' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-displays-a-member-list-form",
+          "name": "DisplaysAMemberListForm",
+          "route": "/display-member-list/displays-a-member-list-form",
+          "component": "DisplaysAMemberListFormPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Displays a member list form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_member_list_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/enters-wotk-unit-and-name-or-id-member",
+          "ui": {
+            "title": "Displays a member list form",
+            "hint": "Page for BPMN task 'Displays a member list form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-enters-wotk-unit-and-name-or-id-member",
+          "name": "EntersWotkUnitAndNameOrIdMember",
+          "route": "/display-member-list/enters-wotk-unit-and-name-or-id-member",
+          "component": "EntersWotkUnitAndNameOrIdMemberPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Enters  wotk unit and name or ID member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_wotk_unit_and_name_or_id_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/queries-to-the-member",
+          "ui": {
+            "title": "Enters  wotk unit and name or ID member",
+            "hint": "Page for BPMN task 'Enters  wotk unit and name or ID member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-queries-to-the-member",
+          "name": "QueriesToTheMember",
+          "route": "/display-member-list/queries-to-the-member",
+          "component": "QueriesToTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: queries to the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_to_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/display-the-main-menu",
+          "ui": {
+            "title": "queries to the member",
+            "hint": "Page for BPMN task 'queries to the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-display-the-main-menu",
+          "name": "DisplayTheMainMenu",
+          "route": "/display-member-list/display-the-main-menu",
+          "component": "DisplayTheMainMenuPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Display the main menu.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_the_main_menu_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/runs-the-update-member-form",
+          "ui": {
+            "title": "Display the main menu",
+            "hint": "Page for BPMN task 'Display the main menu' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/display-member-list/runs-the-update-member-form",
+              "condition": "RunsTheUpdateMemberForm"
+            },
+            {
+              "route": "/display-member-list/runs-the-switch-work-unit-form",
+              "condition": "RunsTheSwitchWorkUnitForm"
+            },
+            {
+              "route": "/display-member-list/runs-the-form-of-the-work-unit-history",
+              "condition": "RunsTheFormOfTheWorkUnitHistory"
+            },
+            {
+              "route": "/display-member-list/runs-the-form-of-change-status",
+              "condition": "RunsTheFormOfChangeStatus"
+            },
+            {
+              "route": "/display-member-list/runs-the-form-of-the-new-member",
+              "condition": "RunsTheFormOfTheNewMember"
+            }
+          ]
+        },
+        {
+          "taskId": "displaymemberlist-runs-the-update-member-form",
+          "name": "RunsTheUpdateMemberForm",
+          "route": "/display-member-list/runs-the-update-member-form",
+          "component": "RunsTheUpdateMemberFormPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Runs the update member form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_update_member_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/complete",
+          "ui": {
+            "title": "Runs the update member form",
+            "hint": "Page for BPMN task 'Runs the update member form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-runs-the-switch-work-unit-form",
+          "name": "RunsTheSwitchWorkUnitForm",
+          "route": "/display-member-list/runs-the-switch-work-unit-form",
+          "component": "RunsTheSwitchWorkUnitFormPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Runs the switch work unit form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_switch_work_unit_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/complete",
+          "ui": {
+            "title": "Runs the switch work unit form",
+            "hint": "Page for BPMN task 'Runs the switch work unit form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-runs-the-form-of-the-work-unit-history",
+          "name": "RunsTheFormOfTheWorkUnitHistory",
+          "route": "/display-member-list/runs-the-form-of-the-work-unit-history",
+          "component": "RunsTheFormOfTheWorkUnitHistoryPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Runs the form of the work unit history.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_form_of_the_work_unit_history_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/complete",
+          "ui": {
+            "title": "Runs the form of the work unit history",
+            "hint": "Page for BPMN task 'Runs the form of the work unit history' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-runs-the-form-of-change-status",
+          "name": "RunsTheFormOfChangeStatus",
+          "route": "/display-member-list/runs-the-form-of-change-status",
+          "component": "RunsTheFormOfChangeStatusPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Runs the form of change status.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_form_of_change_status_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/complete",
+          "ui": {
+            "title": "Runs the form of change status",
+            "hint": "Page for BPMN task 'Runs the form of change status' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymemberlist-runs-the-form-of-the-new-member",
+          "name": "RunsTheFormOfTheNewMember",
+          "route": "/display-member-list/runs-the-form-of-the-new-member",
+          "component": "RunsTheFormOfTheNewMemberPage",
+          "pageType": "write-navigate",
+          "description": "Display member list: Runs the form of the new member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_form_of_the_new_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-member-list/complete",
+          "ui": {
+            "title": "Runs the form of the new member",
+            "hint": "Page for BPMN task 'Runs the form of the new member' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

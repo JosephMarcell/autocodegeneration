@@ -1,0 +1,264 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Update member status",
+        "value": "updatememberstatus",
+        "internal": "updatememberstatus"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "updatememberstatus": "/update-member-status/asks-tfor-a-member-status-update"
+    },
+    "stateSchema": {
+      "asks_tfor_a_member_status_update_completed": false,
+      "reads_for_information_about_the_member_completed": false,
+      "enters_id_or_name_of_member_completed": false,
+      "displays_form_of_a_member_status_update_completed": false,
+      "displays_information_about_the_member_completed": false,
+      "enters_the_new_status_and_mutation_date_completed": false,
+      "stores_the_new_status_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/update-member-status/asks-tfor-a-member-status-update",
+        "role": "updatememberstatus",
+        "component": "AsksTforAMemberStatusUpdatePage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/reads-for-information-about-the-member",
+        "role": "updatememberstatus",
+        "component": "ReadsForInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/enters-id-or-name-of-member",
+        "role": "updatememberstatus",
+        "component": "EntersIdOrNameOfMemberPage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/displays-form-of-a-member-status-update",
+        "role": "updatememberstatus",
+        "component": "DisplaysFormOfAMemberStatusUpdatePage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/displays-information-about-the-member",
+        "role": "updatememberstatus",
+        "component": "DisplaysInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/enters-the-new-status-and-mutation-date",
+        "role": "updatememberstatus",
+        "component": "EntersTheNewStatusAndMutationDatePage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      },
+      {
+        "route": "/update-member-status/stores-the-new-status-information",
+        "role": "updatememberstatus",
+        "component": "StoresTheNewStatusInformationPage",
+        "allowedRoles": [
+          "updatememberstatus"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "UpdateMemberStatus",
+      "role": "updatememberstatus",
+      "defaultRoute": "/update-member-status/asks-tfor-a-member-status-update",
+      "tasks": [
+        {
+          "taskId": "updatememberstatus-asks-tfor-a-member-status-update",
+          "name": "AsksTforAMemberStatusUpdate",
+          "route": "/update-member-status/asks-tfor-a-member-status-update",
+          "component": "AsksTforAMemberStatusUpdatePage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Asks tfor a member status update.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_tfor_a_member_status_update_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/displays-form-of-a-member-status-update",
+          "ui": {
+            "title": "Asks tfor a member status update",
+            "hint": "Page for BPMN task 'Asks tfor a member status update' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-displays-form-of-a-member-status-update",
+          "name": "DisplaysFormOfAMemberStatusUpdate",
+          "route": "/update-member-status/displays-form-of-a-member-status-update",
+          "component": "DisplaysFormOfAMemberStatusUpdatePage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Displays form of a member status update.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_a_member_status_update_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/enters-id-or-name-of-member",
+          "ui": {
+            "title": "Displays form of a member status update",
+            "hint": "Page for BPMN task 'Displays form of a member status update' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-enters-id-or-name-of-member",
+          "name": "EntersIdOrNameOfMember",
+          "route": "/update-member-status/enters-id-or-name-of-member",
+          "component": "EntersIdOrNameOfMemberPage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Enters ID or name of member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_id_or_name_of_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/reads-for-information-about-the-member",
+          "ui": {
+            "title": "Enters ID or name of member",
+            "hint": "Page for BPMN task 'Enters ID or name of member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-reads-for-information-about-the-member",
+          "name": "ReadsForInformationAboutTheMember",
+          "route": "/update-member-status/reads-for-information-about-the-member",
+          "component": "ReadsForInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Reads for information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_for_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/displays-information-about-the-member",
+          "ui": {
+            "title": "Reads for information about the member",
+            "hint": "Page for BPMN task 'Reads for information about the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-displays-information-about-the-member",
+          "name": "DisplaysInformationAboutTheMember",
+          "route": "/update-member-status/displays-information-about-the-member",
+          "component": "DisplaysInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Displays information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/complete",
+          "ui": {
+            "title": "Displays information about the member",
+            "hint": "Page for BPMN task 'Displays information about the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-enters-the-new-status-and-mutation-date",
+          "name": "EntersTheNewStatusAndMutationDate",
+          "route": "/update-member-status/enters-the-new-status-and-mutation-date",
+          "component": "EntersTheNewStatusAndMutationDatePage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Enters the new status and mutation date.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_new_status_and_mutation_date_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/complete",
+          "ui": {
+            "title": "Enters the new status and mutation date",
+            "hint": "Page for BPMN task 'Enters the new status and mutation date' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updatememberstatus-stores-the-new-status-information",
+          "name": "StoresTheNewStatusInformation",
+          "route": "/update-member-status/stores-the-new-status-information",
+          "component": "StoresTheNewStatusInformationPage",
+          "pageType": "write-navigate",
+          "description": "Update member status: Stores the new status information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_the_new_status_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-member-status/complete",
+          "ui": {
+            "title": "Stores the new status information",
+            "hint": "Page for BPMN task 'Stores the new status information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

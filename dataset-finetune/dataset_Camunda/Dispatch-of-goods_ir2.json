@@ -1,0 +1,270 @@
+{
+  "project": "App",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Dispatch of goods\nComputer Hardware Shop",
+        "value": "dispatchofgoodscomputerhardwareshop",
+        "internal": "dispatchofgoodscomputerhardwareshop"
+      }
+    ],
+    "defaultRoutesPerRole": {},
+    "stateSchema": {
+      "insure_parcel_completed": false,
+      "write_package_label_completed": false,
+      "clarify_shipment_method_completed": false,
+      "get_3_offers_from_logistic_companies_completed": false,
+      "select_logistic_company_and_place_order_completed": false,
+      "package_goods_completed": false,
+      "prepare_for_picking_up_goods_completed": false,
+      "special_sandling_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/insure-parcel",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "InsureParcelPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/write-package-label",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "WritePackageLabelPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/clarify-shipment-method",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "ClarifyShipmentMethodPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/get-3-offers-from-logistic-companies",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "Get3OffersFromLogisticCompaniesPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/select-logistic-company-and-place-order",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "SelectLogisticCompanyAndPlaceOrderPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/package-goods",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "PackageGoodsPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      },
+      {
+        "route": "/dispatch-of-goods-computer-hardware-shop/prepare-for-picking-up-goods",
+        "role": "dispatchofgoodscomputerhardwareshop",
+        "component": "PrepareForPickingUpGoodsPage",
+        "allowedRoles": [
+          "dispatchofgoodscomputerhardwareshop"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "DispatchOfGoodsComputerHardwareShop",
+      "role": "dispatchofgoodscomputerhardwareshop",
+      "defaultRoute": "/dispatch-of-goods-computer-hardware-shop/complete",
+      "tasks": [
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-clarify-shipment-method",
+          "name": "ClarifyShipmentMethod",
+          "route": "/dispatch-of-goods-computer-hardware-shop/clarify-shipment-method",
+          "component": "ClarifyShipmentMethodPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Clarify shipment method.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "clarify_shipment_method_completed",
+              "value": true
+            },
+            {
+              "field": "special_sandling_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/insure-parcel",
+          "ui": {
+            "title": "Clarify shipment method",
+            "hint": "Page for BPMN task 'Clarify shipment method' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/dispatch-of-goods-computer-hardware-shop/insure-parcel",
+              "condition": "If insurance necessary"
+            },
+            {
+              "route": "/dispatch-of-goods-computer-hardware-shop/write-package-label",
+              "condition": "always"
+            },
+            {
+              "route": "/dispatch-of-goods-computer-hardware-shop/get-3-offers-from-logistic-companies",
+              "condition": "yes"
+            }
+          ]
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-package-goods",
+          "name": "PackageGoods",
+          "route": "/dispatch-of-goods-computer-hardware-shop/package-goods",
+          "component": "PackageGoodsPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Package goods.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "package_goods_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/prepare-for-picking-up-goods",
+          "ui": {
+            "title": "Package goods",
+            "hint": "Page for BPMN task 'Package goods' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-insure-parcel",
+          "name": "InsureParcel",
+          "route": "/dispatch-of-goods-computer-hardware-shop/insure-parcel",
+          "component": "InsureParcelPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Insure parcel.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "insure_parcel_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/complete",
+          "ui": {
+            "title": "Insure parcel",
+            "hint": "Page for BPMN task 'Insure parcel' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-write-package-label",
+          "name": "WritePackageLabel",
+          "route": "/dispatch-of-goods-computer-hardware-shop/write-package-label",
+          "component": "WritePackageLabelPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Write package\nlabel.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "write_package_label_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/complete",
+          "ui": {
+            "title": "Write package\nlabel",
+            "hint": "Page for BPMN task 'Write package\nlabel' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-get-3-offers-from-logistic-companies",
+          "name": "Get3OffersFromLogisticCompanies",
+          "route": "/dispatch-of-goods-computer-hardware-shop/get-3-offers-from-logistic-companies",
+          "component": "Get3OffersFromLogisticCompaniesPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Get 3 offers\nfrom logistic\ncompanies.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "get_3_offers_from_logistic_companies_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/select-logistic-company-and-place-order",
+          "ui": {
+            "title": "Get 3 offers\nfrom logistic\ncompanies",
+            "hint": "Page for BPMN task 'Get 3 offers\nfrom logistic\ncompanies' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-select-logistic-company-and-place-order",
+          "name": "SelectLogisticCompanyAndPlaceOrder",
+          "route": "/dispatch-of-goods-computer-hardware-shop/select-logistic-company-and-place-order",
+          "component": "SelectLogisticCompanyAndPlaceOrderPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Select logistic\ncompany and\nplace order.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_logistic_company_and_place_order_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/complete",
+          "ui": {
+            "title": "Select logistic\ncompany and\nplace order",
+            "hint": "Page for BPMN task 'Select logistic\ncompany and\nplace order' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dispatchofgoodscomputerhardwareshop-prepare-for-picking-up-goods",
+          "name": "PrepareForPickingUpGoods",
+          "route": "/dispatch-of-goods-computer-hardware-shop/prepare-for-picking-up-goods",
+          "component": "PrepareForPickingUpGoodsPage",
+          "pageType": "write-navigate",
+          "description": "Dispatch of goods\nComputer Hardware Shop: Prepare for\npicking up\ngoods.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prepare_for_picking_up_goods_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/dispatch-of-goods-computer-hardware-shop/complete",
+          "ui": {
+            "title": "Prepare for\npicking up\ngoods",
+            "hint": "Page for BPMN task 'Prepare for\npicking up\ngoods' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

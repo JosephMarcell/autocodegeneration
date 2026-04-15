@@ -1,0 +1,668 @@
+{
+  "project": "App",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Guest\nfood consumption",
+        "value": "guestfoodconsumption",
+        "internal": "guestfoodconsumption"
+      },
+      {
+        "display": "Employee\norder processing",
+        "value": "employeeorderprocessing",
+        "internal": "employeeorderprocessing"
+      },
+      {
+        "display": "Chef\nmeal preparation",
+        "value": "chefmealpreparation",
+        "internal": "chefmealpreparation"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "guestfoodconsumption": "/guest-food-consumption/enter-restaurant",
+      "employeeorderprocessing": "/employee-order-processing/enter-order",
+      "chefmealpreparation": "/chef-meal-preparation/prepare-meal"
+    },
+    "stateSchema": {
+      "enter_restaurant_completed": false,
+      "choose_dish_completed": false,
+      "place_order_completed": false,
+      "pay_money_completed": false,
+      "take_buzzer_completed": false,
+      "get_meal_completed": false,
+      "eat_meal_completed": false,
+      "enter_order_completed": false,
+      "collect_money_completed": false,
+      "set_up_buzzer_completed": false,
+      "hand_over_buzzer_completed": false,
+      "inform_chef_completed": false,
+      "set_off_buzzer_completed": false,
+      "hand_over_meal_completed": false,
+      "call_guest_completed": false,
+      "prepare_meal_completed": false,
+      "place_meal_in_hatch_completed": false,
+      "inform_employee_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/guest-food-consumption/enter-restaurant",
+        "role": "guestfoodconsumption",
+        "component": "EnterRestaurantPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/choose-dish",
+        "role": "guestfoodconsumption",
+        "component": "ChooseDishPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/place-order",
+        "role": "guestfoodconsumption",
+        "component": "PlaceOrderPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/pay-money",
+        "role": "guestfoodconsumption",
+        "component": "PayMoneyPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/take-buzzer",
+        "role": "guestfoodconsumption",
+        "component": "TakeBuzzerPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/get-meal",
+        "role": "guestfoodconsumption",
+        "component": "GetMealPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/guest-food-consumption/eat-meal",
+        "role": "guestfoodconsumption",
+        "component": "EatMealPage",
+        "allowedRoles": [
+          "guestfoodconsumption"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/enter-order",
+        "role": "employeeorderprocessing",
+        "component": "EnterOrderPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/collect-money",
+        "role": "employeeorderprocessing",
+        "component": "CollectMoneyPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/set-up-buzzer",
+        "role": "employeeorderprocessing",
+        "component": "SetUpBuzzerPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/hand-over-buzzer",
+        "role": "employeeorderprocessing",
+        "component": "HandOverBuzzerPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/inform-chef",
+        "role": "employeeorderprocessing",
+        "component": "InformChefPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/set-off-buzzer",
+        "role": "employeeorderprocessing",
+        "component": "SetOffBuzzerPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/hand-over-meal",
+        "role": "employeeorderprocessing",
+        "component": "HandOverMealPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/employee-order-processing/call-guest",
+        "role": "employeeorderprocessing",
+        "component": "CallGuestPage",
+        "allowedRoles": [
+          "employeeorderprocessing"
+        ]
+      },
+      {
+        "route": "/chef-meal-preparation/prepare-meal",
+        "role": "chefmealpreparation",
+        "component": "PrepareMealPage",
+        "allowedRoles": [
+          "chefmealpreparation"
+        ]
+      },
+      {
+        "route": "/chef-meal-preparation/place-meal-in-hatch",
+        "role": "chefmealpreparation",
+        "component": "PlaceMealInHatchPage",
+        "allowedRoles": [
+          "chefmealpreparation"
+        ]
+      },
+      {
+        "route": "/chef-meal-preparation/inform-employee",
+        "role": "chefmealpreparation",
+        "component": "InformEmployeePage",
+        "allowedRoles": [
+          "chefmealpreparation"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "GuestFoodConsumption",
+      "role": "guestfoodconsumption",
+      "defaultRoute": "/guest-food-consumption/enter-restaurant",
+      "tasks": [
+        {
+          "taskId": "guestfoodconsumption-place-order",
+          "name": "PlaceOrder",
+          "route": "/guest-food-consumption/place-order",
+          "component": "PlaceOrderPage",
+          "pageType": "write-navigate",
+          "description": "Guest\nfood consumption: Place order.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "place_order_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/pay-money",
+          "ui": {
+            "title": "Place order",
+            "hint": "Page for BPMN task 'Place order' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-eat-meal",
+          "name": "EatMeal",
+          "route": "/guest-food-consumption/eat-meal",
+          "component": "EatMealPage",
+          "pageType": "write-navigate",
+          "description": "Guest\nfood consumption: Eat meal.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "eat_meal_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/complete",
+          "ui": {
+            "title": "Eat meal",
+            "hint": "Page for BPMN task 'Eat meal' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-enter-restaurant",
+          "name": "EnterRestaurant",
+          "route": "/guest-food-consumption/enter-restaurant",
+          "component": "EnterRestaurantPage",
+          "pageType": "write-navigate",
+          "description": "Guest\nfood consumption: Enter restaurant.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enter_restaurant_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/choose-dish",
+          "ui": {
+            "title": "Enter restaurant",
+            "hint": "Page for BPMN task 'Enter restaurant' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-choose-dish",
+          "name": "ChooseDish",
+          "route": "/guest-food-consumption/choose-dish",
+          "component": "ChooseDishPage",
+          "pageType": "write-navigate",
+          "description": "Guest\nfood consumption: Choose dish.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "choose_dish_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/complete",
+          "ui": {
+            "title": "Choose dish",
+            "hint": "Page for BPMN task 'Choose dish' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-pay-money",
+          "name": "PayMoney",
+          "route": "/guest-food-consumption/pay-money",
+          "component": "PayMoneyPage",
+          "pageType": "wait-then-write",
+          "description": "Guest\nfood consumption: Pay money.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pay_money_completed",
+              "value": true
+            },
+            {
+              "field": "pay_money_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "collect_money_completed",
+            "readableLabel": "Waiting for collect money..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/take-buzzer",
+          "ui": {
+            "title": "Pay money",
+            "hint": "Page for BPMN task 'Pay money' (wait-then-write)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-take-buzzer",
+          "name": "TakeBuzzer",
+          "route": "/guest-food-consumption/take-buzzer",
+          "component": "TakeBuzzerPage",
+          "pageType": "wait-then-write",
+          "description": "Guest\nfood consumption: Take buzzer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "take_buzzer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "hand_over_buzzer_completed",
+            "readableLabel": "Waiting for hand over buzzer..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/complete",
+          "ui": {
+            "title": "Take buzzer",
+            "hint": "Page for BPMN task 'Take buzzer' (wait-then-write)."
+          }
+        },
+        {
+          "taskId": "guestfoodconsumption-get-meal",
+          "name": "GetMeal",
+          "route": "/guest-food-consumption/get-meal",
+          "component": "GetMealPage",
+          "pageType": "wait-then-write",
+          "description": "Guest\nfood consumption: Get meal.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "get_meal_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "hand_over_meal_completed",
+            "readableLabel": "Waiting for hand over meal..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/guest-food-consumption/eat-meal",
+          "ui": {
+            "title": "Get meal",
+            "hint": "Page for BPMN task 'Get meal' (wait-then-write)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "EmployeeOrderProcessing",
+      "role": "employeeorderprocessing",
+      "defaultRoute": "/employee-order-processing/enter-order",
+      "tasks": [
+        {
+          "taskId": "employeeorderprocessing-set-off-buzzer",
+          "name": "SetOffBuzzer",
+          "route": "/employee-order-processing/set-off-buzzer",
+          "component": "SetOffBuzzerPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Set off buzzer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "set_off_buzzer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/hand-over-meal",
+          "ui": {
+            "title": "Set off buzzer",
+            "hint": "Page for BPMN task 'Set off buzzer' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/employee-order-processing/hand-over-meal",
+              "condition": "__eventBased__Guest appears"
+            },
+            {
+              "route": "/employee-order-processing/call-guest",
+              "condition": "__eventBased__5 minutes"
+            }
+          ]
+        },
+        {
+          "taskId": "employeeorderprocessing-hand-over-meal",
+          "name": "HandOverMeal",
+          "route": "/employee-order-processing/hand-over-meal",
+          "component": "HandOverMealPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Hand over meal.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "hand_over_meal_completed",
+              "value": true
+            },
+            {
+              "field": "hand_over_meal_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/complete",
+          "ui": {
+            "title": "Hand over meal",
+            "hint": "Page for BPMN task 'Hand over meal' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeorderprocessing-set-up-buzzer",
+          "name": "SetUpBuzzer",
+          "route": "/employee-order-processing/set-up-buzzer",
+          "component": "SetUpBuzzerPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Set up buzzer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "set_up_buzzer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/hand-over-buzzer",
+          "ui": {
+            "title": "Set up buzzer",
+            "hint": "Page for BPMN task 'Set up buzzer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeorderprocessing-enter-order",
+          "name": "EnterOrder",
+          "route": "/employee-order-processing/enter-order",
+          "component": "EnterOrderPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Enter order.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enter_order_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/collect-money",
+          "ui": {
+            "title": "Enter order",
+            "hint": "Page for BPMN task 'Enter order' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeorderprocessing-call-guest",
+          "name": "CallGuest",
+          "route": "/employee-order-processing/call-guest",
+          "component": "CallGuestPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Call guest.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "call_guest_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/hand-over-meal",
+          "ui": {
+            "title": "Call guest",
+            "hint": "Page for BPMN task 'Call guest' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/employee-order-processing/hand-over-meal",
+              "condition": "__eventBased__Guest appears"
+            },
+            {
+              "route": "/employee-order-processing/call-guest",
+              "condition": "__eventBased__5 minutes"
+            }
+          ]
+        },
+        {
+          "taskId": "employeeorderprocessing-hand-over-buzzer",
+          "name": "HandOverBuzzer",
+          "route": "/employee-order-processing/hand-over-buzzer",
+          "component": "HandOverBuzzerPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Hand over buzzer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "hand_over_buzzer_completed",
+              "value": true
+            },
+            {
+              "field": "hand_over_buzzer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/inform-chef",
+          "ui": {
+            "title": "Hand over buzzer",
+            "hint": "Page for BPMN task 'Hand over buzzer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeorderprocessing-inform-chef",
+          "name": "InformChef",
+          "route": "/employee-order-processing/inform-chef",
+          "component": "InformChefPage",
+          "pageType": "write-navigate",
+          "description": "Employee\norder processing: Inform chef.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "inform_chef_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/complete",
+          "ui": {
+            "title": "Inform chef",
+            "hint": "Page for BPMN task 'Inform chef' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "employeeorderprocessing-collect-money",
+          "name": "CollectMoney",
+          "route": "/employee-order-processing/collect-money",
+          "component": "CollectMoneyPage",
+          "pageType": "wait-then-write",
+          "description": "Employee\norder processing: Collect money.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "collect_money_completed",
+              "value": true
+            },
+            {
+              "field": "collect_money_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "pay_money_completed",
+            "readableLabel": "Waiting for pay money..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/employee-order-processing/set-up-buzzer",
+          "ui": {
+            "title": "Collect money",
+            "hint": "Page for BPMN task 'Collect money' (wait-then-write)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ChefMealPreparation",
+      "role": "chefmealpreparation",
+      "defaultRoute": "/chef-meal-preparation/prepare-meal",
+      "tasks": [
+        {
+          "taskId": "chefmealpreparation-prepare-meal",
+          "name": "PrepareMeal",
+          "route": "/chef-meal-preparation/prepare-meal",
+          "component": "PrepareMealPage",
+          "pageType": "write-navigate",
+          "description": "Chef\nmeal preparation: Prepare meal.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prepare_meal_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/chef-meal-preparation/place-meal-in-hatch",
+          "ui": {
+            "title": "Prepare meal",
+            "hint": "Page for BPMN task 'Prepare meal' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "chefmealpreparation-place-meal-in-hatch",
+          "name": "PlaceMealInHatch",
+          "route": "/chef-meal-preparation/place-meal-in-hatch",
+          "component": "PlaceMealInHatchPage",
+          "pageType": "write-navigate",
+          "description": "Chef\nmeal preparation: Place meal in hatch.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "place_meal_in_hatch_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/chef-meal-preparation/inform-employee",
+          "ui": {
+            "title": "Place meal in hatch",
+            "hint": "Page for BPMN task 'Place meal in hatch' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "chefmealpreparation-inform-employee",
+          "name": "InformEmployee",
+          "route": "/chef-meal-preparation/inform-employee",
+          "component": "InformEmployeePage",
+          "pageType": "write-navigate",
+          "description": "Chef\nmeal preparation: Inform employee.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "inform_employee_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/chef-meal-preparation/complete",
+          "ui": {
+            "title": "Inform employee",
+            "hint": "Page for BPMN task 'Inform employee' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

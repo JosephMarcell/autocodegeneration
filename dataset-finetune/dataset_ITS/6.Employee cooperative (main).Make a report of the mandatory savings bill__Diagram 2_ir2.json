@@ -1,0 +1,305 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a report of the mandatory savings bill",
+        "value": "makeareportofthemandatorysavingsbill",
+        "internal": "makeareportofthemandatorysavingsbill"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeareportofthemandatorysavingsbill": "/make-a-report-of-the-mandatory-savings-bill/asks-to-make-a-report-of-the-mandatory-savings-bill"
+    },
+    "stateSchema": {
+      "asks_to_make_a_report_of_the_mandatory_savings_bill_completed": false,
+      "reads_the_mandatory_savings_database_completed": false,
+      "selects_the_billing_data_completed": false,
+      "displays_a_form_to_make_a_report_of_the_mandatory_savinggs_bill_completed": false,
+      "displays_ithe_billing_details_in_the_table_completed": false,
+      "prints_to_the_printer_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "displays_the_total_bill_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/asks-to-make-a-report-of-the-mandatory-savings-bill",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "AsksToMakeAReportOfTheMandatorySavingsBillPage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/reads-the-mandatory-savings-database",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "ReadsTheMandatorySavingsDatabasePage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/selects-the-billing-data",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "SelectsTheBillingDataPage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/displays-a-form-to-make-a-report-of-the-mandatory-savinggs-bill",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "DisplaysAFormToMakeAReportOfTheMandatorySavinggsBillPage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/displays-ithe-billing-details-in-the-table",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "DisplaysItheBillingDetailsInTheTablePage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/prints-to-the-printer",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "PrintsToThePrinterPage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/reads-the-work-unit-database",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      },
+      {
+        "route": "/make-a-report-of-the-mandatory-savings-bill/displays-the-total-bill",
+        "role": "makeareportofthemandatorysavingsbill",
+        "component": "DisplaysTheTotalBillPage",
+        "allowedRoles": [
+          "makeareportofthemandatorysavingsbill"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeAReportOfTheMandatorySavingsBill",
+      "role": "makeareportofthemandatorysavingsbill",
+      "defaultRoute": "/make-a-report-of-the-mandatory-savings-bill/asks-to-make-a-report-of-the-mandatory-savings-bill",
+      "tasks": [
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-asks-to-make-a-report-of-the-mandatory-savings-bill",
+          "name": "AsksToMakeAReportOfTheMandatorySavingsBill",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/asks-to-make-a-report-of-the-mandatory-savings-bill",
+          "component": "AsksToMakeAReportOfTheMandatorySavingsBillPage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Asks to make a report of the mandatory savings bill.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_report_of_the_mandatory_savings_bill_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a report of the mandatory savings bill",
+            "hint": "Page for BPMN task 'Asks to make a report of the mandatory savings bill' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/displays-a-form-to-make-a-report-of-the-mandatory-savinggs-bill",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-displays-a-form-to-make-a-report-of-the-mandatory-savinggs-bill",
+          "name": "DisplaysAFormToMakeAReportOfTheMandatorySavinggsBill",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/displays-a-form-to-make-a-report-of-the-mandatory-savinggs-bill",
+          "component": "DisplaysAFormToMakeAReportOfTheMandatorySavinggsBillPage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Displays a form to make a report of the mandatory savinggs bill.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_to_make_a_report_of_the_mandatory_savinggs_bill_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/selects-the-billing-data",
+          "ui": {
+            "title": "Displays a form to make a report of the mandatory savinggs bill",
+            "hint": "Page for BPMN task 'Displays a form to make a report of the mandatory savinggs bill' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-selects-the-billing-data",
+          "name": "SelectsTheBillingData",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/selects-the-billing-data",
+          "component": "SelectsTheBillingDataPage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Selects the billing data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_billing_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/reads-the-mandatory-savings-database",
+          "ui": {
+            "title": "Selects the billing data",
+            "hint": "Page for BPMN task 'Selects the billing data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-reads-the-mandatory-savings-database",
+          "name": "ReadsTheMandatorySavingsDatabase",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/reads-the-mandatory-savings-database",
+          "component": "ReadsTheMandatorySavingsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Reads the mandatory savings database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_mandatory_savings_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/displays-the-total-bill",
+          "ui": {
+            "title": "Reads the mandatory savings database",
+            "hint": "Page for BPMN task 'Reads the mandatory savings database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-displays-the-total-bill",
+          "name": "DisplaysTheTotalBill",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/displays-the-total-bill",
+          "component": "DisplaysTheTotalBillPage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Displays the total bill.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_total_bill_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/displays-ithe-billing-details-in-the-table",
+          "ui": {
+            "title": "Displays the total bill",
+            "hint": "Page for BPMN task 'Displays the total bill' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-report-of-the-mandatory-savings-bill/displays-ithe-billing-details-in-the-table",
+              "condition": "DisplaysItheBillingDetailsInTheTable"
+            },
+            {
+              "route": "/make-a-report-of-the-mandatory-savings-bill/prints-to-the-printer",
+              "condition": "PrintsToThePrinter"
+            }
+          ]
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-displays-ithe-billing-details-in-the-table",
+          "name": "DisplaysItheBillingDetailsInTheTable",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/displays-ithe-billing-details-in-the-table",
+          "component": "DisplaysItheBillingDetailsInTheTablePage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Displays ithe billing details in the table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_ithe_billing_details_in_the_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/complete",
+          "ui": {
+            "title": "Displays ithe billing details in the table",
+            "hint": "Page for BPMN task 'Displays ithe billing details in the table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportofthemandatorysavingsbill-prints-to-the-printer",
+          "name": "PrintsToThePrinter",
+          "route": "/make-a-report-of-the-mandatory-savings-bill/prints-to-the-printer",
+          "component": "PrintsToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Make a report of the mandatory savings bill: Prints to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-of-the-mandatory-savings-bill/complete",
+          "ui": {
+            "title": "Prints to the printer",
+            "hint": "Page for BPMN task 'Prints to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_f1471b77-3a31-49fe-b8ed-b16eba80e0da"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make member recap",
+      "processRef": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_f1471b77-3a31-49fe-b8ed-b16eba80e0da": "Main Process",
+    "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe": "Make member recap"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+        "Id_c56b439c-6442-480c-90a2-f922d93dabcf",
+        "Id_349cd4b0-458b-472b-bf11-c998d356f85e",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_08d34cfa-40b7-4973-89b4-6854e44815c3": "System",
+    "Id_c56b439c-6442-480c-90a2-f922d93dabcf": "System",
+    "Id_349cd4b0-458b-472b-bf11-c998d356f85e": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make member recap",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "Officer",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads the member database",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_6cfbcf49-6fff-4ee0-933d-5692c66a33c7"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Select option",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "Officer",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form to make member recap",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the member recap",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_644fdf72-c64d-4496-a8da-57e233a94c5f"
+      ]
+    },
+    {
+      "id": "Id_c56b439c-6442-480c-90a2-f922d93dabcf",
+      "name": "Reads the member database",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5a8657ea-9c83-47ce-95d8-896469113a77"
+      ],
+      "outgoing": [
+        "Id_69c6cce2-b151-443c-aa7e-767a9854a6fc"
+      ]
+    },
+    {
+      "id": "Id_349cd4b0-458b-472b-bf11-c998d356f85e",
+      "name": "Prints the recap to the printer",
+      "type": "task",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_69c6cce2-b151-443c-aa7e-767a9854a6fc"
+      ],
+      "outgoing": [
+        "Id_b80d410a-c5b3-48cb-9e43-f8ddbdaa451d"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_5a8657ea-9c83-47ce-95d8-896469113a77",
+        "Id_6cfbcf49-6fff-4ee0-933d-5692c66a33c7",
+        "Id_7324fe41-95e6-44d6-9d4a-7e14b6746043"
+      ]
+    },
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make member recap",
+      "laneName": "System",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "incoming": [
+        "Id_b80d410a-c5b3-48cb-9e43-f8ddbdaa451d",
+        "Id_644fdf72-c64d-4496-a8da-57e233a94c5f",
+        "Id_7324fe41-95e6-44d6-9d4a-7e14b6746043"
+      ],
+      "outgoing": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make member recap",
+      "laneName": "Officer",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make member recap",
+      "laneName": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe",
+      "incoming": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_3585c84b-af74-4919-a4ce-e3c1f5027607",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_5a8657ea-9c83-47ce-95d8-896469113a77",
+      "source": "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+      "target": "Id_c56b439c-6442-480c-90a2-f922d93dabcf",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_6cfbcf49-6fff-4ee0-933d-5692c66a33c7",
+      "source": "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_69c6cce2-b151-443c-aa7e-767a9854a6fc",
+      "source": "Id_c56b439c-6442-480c-90a2-f922d93dabcf",
+      "target": "Id_349cd4b0-458b-472b-bf11-c998d356f85e",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_b80d410a-c5b3-48cb-9e43-f8ddbdaa451d",
+      "source": "Id_349cd4b0-458b-472b-bf11-c998d356f85e",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_644fdf72-c64d-4496-a8da-57e233a94c5f",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    },
+    {
+      "id": "Id_7324fe41-95e6-44d6-9d4a-7e14b6746043",
+      "source": "Id_08d34cfa-40b7-4973-89b4-6854e44815c3",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_559f54cb-ccf0-41a5-b108-870f2db8c2fe"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_member_recap_completed": false,
+    "reads_the_member_database_completed": false,
+    "select_option_completed": false,
+    "displays_form_to_make_member_recap_completed": false,
+    "displays_the_member_recap_completed": false,
+    "prints_the_recap_to_the_printer_completed": false
+  }
+}

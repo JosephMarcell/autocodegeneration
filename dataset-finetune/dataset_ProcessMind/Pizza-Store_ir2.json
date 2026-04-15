@@ -1,0 +1,369 @@
+{
+  "project": "PizzaCustomer",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Pizza customer",
+        "value": "pizzacustomer",
+        "internal": "pizzacustomer"
+      },
+      {
+        "display": "Pizza vendor",
+        "value": "pizzavendor",
+        "internal": "pizzavendor"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "pizzacustomer": "/pizza-customer/select-a-pizza",
+      "pizzavendor": "/pizza-vendor/receive-payment"
+    },
+    "stateSchema": {
+      "select_a_pizza_completed": false,
+      "order_a_pizza_completed": false,
+      "ask_for_the_pizza_completed": false,
+      "pay_the_pizza_completed": false,
+      "eat_the_pizza_completed": false,
+      "calm_customer_completed": false,
+      "bake_the_pizza_completed": false,
+      "deliver_the_pizza_completed": false,
+      "receive_payment_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/pizza-customer/select-a-pizza",
+        "role": "pizzacustomer",
+        "component": "SelectAPizzaPage",
+        "allowedRoles": [
+          "pizzacustomer"
+        ]
+      },
+      {
+        "route": "/pizza-customer/order-a-pizza",
+        "role": "pizzacustomer",
+        "component": "OrderAPizzaPage",
+        "allowedRoles": [
+          "pizzacustomer"
+        ]
+      },
+      {
+        "route": "/pizza-customer/ask-for-the-pizza",
+        "role": "pizzacustomer",
+        "component": "AskForThePizzaPage",
+        "allowedRoles": [
+          "pizzacustomer"
+        ]
+      },
+      {
+        "route": "/pizza-customer/pay-the-pizza",
+        "role": "pizzacustomer",
+        "component": "PayThePizzaPage",
+        "allowedRoles": [
+          "pizzacustomer"
+        ]
+      },
+      {
+        "route": "/pizza-customer/eat-the-pizza",
+        "role": "pizzacustomer",
+        "component": "EatThePizzaPage",
+        "allowedRoles": [
+          "pizzacustomer"
+        ]
+      },
+      {
+        "route": "/pizza-vendor/calm-customer",
+        "role": "pizzavendor",
+        "component": "CalmCustomerPage",
+        "allowedRoles": [
+          "pizzavendor"
+        ]
+      },
+      {
+        "route": "/pizza-vendor/bake-the-pizza",
+        "role": "pizzavendor",
+        "component": "BakeThePizzaPage",
+        "allowedRoles": [
+          "pizzavendor"
+        ]
+      },
+      {
+        "route": "/pizza-vendor/deliver-the-pizza",
+        "role": "pizzavendor",
+        "component": "DeliverThePizzaPage",
+        "allowedRoles": [
+          "pizzavendor"
+        ]
+      },
+      {
+        "route": "/pizza-vendor/receive-payment",
+        "role": "pizzavendor",
+        "component": "ReceivePaymentPage",
+        "allowedRoles": [
+          "pizzavendor"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "PizzaCustomer",
+      "role": "pizzacustomer",
+      "defaultRoute": "/pizza-customer/select-a-pizza",
+      "tasks": [
+        {
+          "taskId": "pizzacustomer-eat-the-pizza",
+          "name": "EatThePizza",
+          "route": "/pizza-customer/eat-the-pizza",
+          "component": "EatThePizzaPage",
+          "pageType": "write-navigate",
+          "description": "Pizza customer: Eat the pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "eat_the_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-customer/complete",
+          "ui": {
+            "title": "Eat the pizza",
+            "hint": "Page for BPMN task 'Eat the pizza' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "pizzacustomer-select-a-pizza",
+          "name": "SelectAPizza",
+          "route": "/pizza-customer/select-a-pizza",
+          "component": "SelectAPizzaPage",
+          "pageType": "write-navigate",
+          "description": "Pizza customer: Select a pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_a_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-customer/order-a-pizza",
+          "ui": {
+            "title": "Select a pizza",
+            "hint": "Page for BPMN task 'Select a pizza' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "pizzacustomer-order-a-pizza",
+          "name": "OrderAPizza",
+          "route": "/pizza-customer/order-a-pizza",
+          "component": "OrderAPizzaPage",
+          "pageType": "write-navigate",
+          "description": "Pizza customer: Order a pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "order_a_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-customer/ask-for-the-pizza",
+          "ui": {
+            "title": "Order a pizza",
+            "hint": "Page for BPMN task 'Order a pizza' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/pizza-customer/ask-for-the-pizza",
+              "condition": "__eventBased__60 minutes"
+            },
+            {
+              "route": "/pizza-customer/pay-the-pizza",
+              "condition": "__eventBased__pizza received"
+            }
+          ]
+        },
+        {
+          "taskId": "pizzacustomer-ask-for-the-pizza",
+          "name": "AskForThePizza",
+          "route": "/pizza-customer/ask-for-the-pizza",
+          "component": "AskForThePizzaPage",
+          "pageType": "wait-then-write",
+          "description": "Pizza customer: Ask for the pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "ask_for_the_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "calm_customer_completed",
+            "readableLabel": "Waiting for calm customer..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-customer/ask-for-the-pizza",
+          "ui": {
+            "title": "Ask for the pizza",
+            "hint": "Page for BPMN task 'Ask for the pizza' (wait-then-write)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/pizza-customer/ask-for-the-pizza",
+              "condition": "__eventBased__60 minutes"
+            },
+            {
+              "route": "/pizza-customer/pay-the-pizza",
+              "condition": "__eventBased__pizza received"
+            }
+          ]
+        },
+        {
+          "taskId": "pizzacustomer-pay-the-pizza",
+          "name": "PayThePizza",
+          "route": "/pizza-customer/pay-the-pizza",
+          "component": "PayThePizzaPage",
+          "pageType": "wait-then-write",
+          "description": "Pizza customer: Pay the pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pay_the_pizza_completed",
+              "value": true
+            },
+            {
+              "field": "pay_the_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "receive_payment_completed",
+            "readableLabel": "Waiting for receive payment..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-customer/eat-the-pizza",
+          "ui": {
+            "title": "Pay the pizza",
+            "hint": "Page for BPMN task 'Pay the pizza' (wait-then-write)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "PizzaVendor",
+      "role": "pizzavendor",
+      "defaultRoute": "/pizza-vendor/receive-payment",
+      "tasks": [
+        {
+          "taskId": "pizzavendor-bake-the-pizza",
+          "name": "BakeThePizza",
+          "route": "/pizza-vendor/bake-the-pizza",
+          "component": "BakeThePizzaPage",
+          "pageType": "write-navigate",
+          "description": "Pizza vendor: Bake the pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "bake_the_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-vendor/deliver-the-pizza",
+          "ui": {
+            "title": "Bake the pizza",
+            "hint": "Page for BPMN task 'Bake the pizza' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "pizzavendor-calm-customer",
+          "name": "CalmCustomer",
+          "route": "/pizza-vendor/calm-customer",
+          "component": "CalmCustomerPage",
+          "pageType": "write-navigate",
+          "description": "Pizza vendor: Calm customer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "calm_customer_completed",
+              "value": true
+            },
+            {
+              "field": "calm_customer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-vendor/complete",
+          "ui": {
+            "title": "Calm customer",
+            "hint": "Page for BPMN task 'Calm customer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "pizzavendor-deliver-the-pizza",
+          "name": "DeliverThePizza",
+          "route": "/pizza-vendor/deliver-the-pizza",
+          "component": "DeliverThePizzaPage",
+          "pageType": "write-navigate",
+          "description": "Pizza vendor: Deliver the pizza.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "deliver_the_pizza_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-vendor/receive-payment",
+          "ui": {
+            "title": "Deliver the pizza",
+            "hint": "Page for BPMN task 'Deliver the pizza' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "pizzavendor-receive-payment",
+          "name": "ReceivePayment",
+          "route": "/pizza-vendor/receive-payment",
+          "component": "ReceivePaymentPage",
+          "pageType": "wait-then-write",
+          "description": "Pizza vendor: Receive payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "receive_payment_completed",
+              "value": true
+            },
+            {
+              "field": "receive_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "pay_the_pizza_completed",
+            "readableLabel": "Waiting for pay the pizza..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/pizza-vendor/complete",
+          "ui": {
+            "title": "Receive payment",
+            "hint": "Page for BPMN task 'Receive payment' (wait-then-write)."
+          }
+        }
+      ]
+    }
+  ]
+}

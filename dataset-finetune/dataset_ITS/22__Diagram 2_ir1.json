@@ -1,0 +1,374 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_5fc152b7-f8bc-4fd6-acdb-decb55647be8"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make bill reports (SIPA unit)",
+      "processRef": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_5fc152b7-f8bc-4fd6-acdb-decb55647be8": "Main Process",
+    "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19": "Make bill reports (SIPA unit)"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8",
+        "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+        "Id_a12eec8e-7158-4a9d-bc40-3290c0c5acce",
+        "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Officer",
+    "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8": "System",
+    "Id_604a8497-d2c1-437f-83a2-5252921a1cf8": "System",
+    "Id_a12eec8e-7158-4a9d-bc40-3290c0c5acce": "System",
+    "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make bill reports",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the form of making bill reports",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Reads the Bill database",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915"
+      ],
+      "outgoing": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Enters the bill report information",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ]
+    },
+    {
+      "id": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "name": "Displays the total bill and bill details in the table",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ],
+      "outgoing": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21"
+      ]
+    },
+    {
+      "id": "Id_a12eec8e-7158-4a9d-bc40-3290c0c5acce",
+      "name": "Prints the information to the printer",
+      "type": "task",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a81ec452-9c59-4f9a-8ed8-7186fa487696"
+      ],
+      "outgoing": [
+        "Id_9bea7aa0-79ad-40c6-bdd8-69730b6db5e8"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ],
+      "outgoing": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915",
+        "Id_4759401b-438b-459f-a83f-b516b60e5383"
+      ]
+    },
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+        "Id_9bea7aa0-79ad-40c6-bdd8-69730b6db5e8"
+      ],
+      "outgoing": [
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ]
+    },
+    {
+      "id": "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [
+        "Id_4759401b-438b-459f-a83f-b516b60e5383"
+      ],
+      "outgoing": [
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+        "Id_a81ec452-9c59-4f9a-8ed8-7186fa487696"
+      ]
+    },
+    {
+      "id": "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ],
+      "outgoing": [
+        "Id_fa5c5e39-55df-4ac0-ba1d-1b150da51bbc"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make bill reports (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19",
+      "incoming": [
+        "Id_fa5c5e39-55df-4ac0-ba1d-1b150da51bbc"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_265c0788-445b-4639-88a2-b0df8456a915",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "Show",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+      "source": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "target": "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+      "source": "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_4759401b-438b-459f-a83f-b516b60e5383",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_a81ec452-9c59-4f9a-8ed8-7186fa487696",
+      "source": "Id_65978481-a2e5-4c3e-92f5-8ea2bfb6a9e8",
+      "target": "Id_a12eec8e-7158-4a9d-bc40-3290c0c5acce",
+      "condition": "Print",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_9bea7aa0-79ad-40c6-bdd8-69730b6db5e8",
+      "source": "Id_a12eec8e-7158-4a9d-bc40-3290c0c5acce",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    },
+    {
+      "id": "Id_fa5c5e39-55df-4ac0-ba1d-1b150da51bbc",
+      "source": "Id_3f9aa739-7045-4043-b3b4-d919c97c6e56",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_ef25b9f9-f501-43d4-b34f-16ce3def2a19"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_bill_reports_completed": false,
+    "displays_the_form_of_making_bill_reports_completed": false,
+    "reads_the_bill_database_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "enters_the_bill_report_information_completed": false,
+    "displays_the_total_bill_and_bill_details_in_the_table_completed": false,
+    "prints_the_information_to_the_printer_completed": false
+  }
+}

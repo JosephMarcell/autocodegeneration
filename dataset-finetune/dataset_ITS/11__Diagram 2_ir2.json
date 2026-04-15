@@ -1,0 +1,243 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make cash inflow",
+        "value": "makecashinflow",
+        "internal": "makecashinflow"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makecashinflow": "/make-cash-inflow/asks-to-make-cash-inflow"
+    },
+    "stateSchema": {
+      "asks_to_make_cash_inflow_completed": false,
+      "verifies_the_input_completed": false,
+      "enters_transaction_data_completed": false,
+      "displays_the_cash_inflow_form_completed": false,
+      "saves_the_information_to_the_cash_database_completed": false,
+      "display_transaction_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-cash-inflow/asks-to-make-cash-inflow",
+        "role": "makecashinflow",
+        "component": "AsksToMakeCashInflowPage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      },
+      {
+        "route": "/make-cash-inflow/verifies-the-input",
+        "role": "makecashinflow",
+        "component": "VerifiesTheInputPage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      },
+      {
+        "route": "/make-cash-inflow/enters-transaction-data",
+        "role": "makecashinflow",
+        "component": "EntersTransactionDataPage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      },
+      {
+        "route": "/make-cash-inflow/displays-the-cash-inflow-form",
+        "role": "makecashinflow",
+        "component": "DisplaysTheCashInflowFormPage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      },
+      {
+        "route": "/make-cash-inflow/saves-the-information-to-the-cash-database",
+        "role": "makecashinflow",
+        "component": "SavesTheInformationToTheCashDatabasePage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      },
+      {
+        "route": "/make-cash-inflow/display-transaction-information",
+        "role": "makecashinflow",
+        "component": "DisplayTransactionInformationPage",
+        "allowedRoles": [
+          "makecashinflow"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeCashInflow",
+      "role": "makecashinflow",
+      "defaultRoute": "/make-cash-inflow/asks-to-make-cash-inflow",
+      "tasks": [
+        {
+          "taskId": "makecashinflow-asks-to-make-cash-inflow",
+          "name": "AsksToMakeCashInflow",
+          "route": "/make-cash-inflow/asks-to-make-cash-inflow",
+          "component": "AsksToMakeCashInflowPage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Asks to make cash inflow.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_cash_inflow_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/displays-the-cash-inflow-form",
+          "ui": {
+            "title": "Asks to make cash inflow",
+            "hint": "Page for BPMN task 'Asks to make cash inflow' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecashinflow-displays-the-cash-inflow-form",
+          "name": "DisplaysTheCashInflowForm",
+          "route": "/make-cash-inflow/displays-the-cash-inflow-form",
+          "component": "DisplaysTheCashInflowFormPage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Displays the cash inflow form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_cash_inflow_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/enters-transaction-data",
+          "ui": {
+            "title": "Displays the cash inflow form",
+            "hint": "Page for BPMN task 'Displays the cash inflow form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecashinflow-verifies-the-input",
+          "name": "VerifiesTheInput",
+          "route": "/make-cash-inflow/verifies-the-input",
+          "component": "VerifiesTheInputPage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Verifies the input.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "verifies_the_input_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/display-transaction-information",
+          "ui": {
+            "title": "Verifies the input",
+            "hint": "Page for BPMN task 'Verifies the input' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-cash-inflow/display-transaction-information",
+              "condition": "Okay"
+            },
+            {
+              "route": "/make-cash-inflow/enters-transaction-data",
+              "condition": "EntersTransactionData"
+            }
+          ]
+        },
+        {
+          "taskId": "makecashinflow-enters-transaction-data",
+          "name": "EntersTransactionData",
+          "route": "/make-cash-inflow/enters-transaction-data",
+          "component": "EntersTransactionDataPage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Enters transaction data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_transaction_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/verifies-the-input",
+          "ui": {
+            "title": "Enters transaction data",
+            "hint": "Page for BPMN task 'Enters transaction data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecashinflow-saves-the-information-to-the-cash-database",
+          "name": "SavesTheInformationToTheCashDatabase",
+          "route": "/make-cash-inflow/saves-the-information-to-the-cash-database",
+          "component": "SavesTheInformationToTheCashDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Saves the information to the cash database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_information_to_the_cash_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/complete",
+          "ui": {
+            "title": "Saves the information to the cash database",
+            "hint": "Page for BPMN task 'Saves the information to the cash database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecashinflow-display-transaction-information",
+          "name": "DisplayTransactionInformation",
+          "route": "/make-cash-inflow/display-transaction-information",
+          "component": "DisplayTransactionInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make cash inflow: Display transaction information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_transaction_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-cash-inflow/saves-the-information-to-the-cash-database",
+          "ui": {
+            "title": "Display transaction information",
+            "hint": "Page for BPMN task 'Display transaction information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

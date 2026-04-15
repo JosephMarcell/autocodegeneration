@@ -1,0 +1,234 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_36734553-b471-48b1-ad3b-764340916b40"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Looking for room data",
+      "processRef": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_36734553-b471-48b1-ad3b-764340916b40": "Main Process",
+    "Id_16841f37-c50e-4a70-939b-fdb598cff0a1": "Looking for room data"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "FO",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+        "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "FO",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "FO",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "FO",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49": "System",
+    "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants Looking for room data",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "FO",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Selects the room category",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "FO",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the Looking for room data form",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Reads the Room database",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "name": "Queries to the Rooms database",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660"
+      ],
+      "outgoing": [
+        "Id_020b66b9-eef9-4687-bffe-51dc41bb63d3"
+      ]
+    },
+    {
+      "id": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "name": "Displays the query results to a table",
+      "type": "task",
+      "participantName": "Looking for room data",
+      "laneName": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_020b66b9-eef9-4687-bffe-51dc41bb63d3"
+      ],
+      "outgoing": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ]
+    }
+  ],
+  "gateways": [],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Looking for room data",
+      "laneName": "FO",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Looking for room data",
+      "laneName": "System",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1",
+      "incoming": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_020b66b9-eef9-4687-bffe-51dc41bb63d3",
+      "source": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "target": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    },
+    {
+      "id": "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39",
+      "source": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_16841f37-c50e-4a70-939b-fdb598cff0a1"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_looking_for_room_data_completed": false,
+    "selects_the_room_category_completed": false,
+    "displays_the_looking_for_room_data_form_completed": false,
+    "reads_the_room_database_completed": false,
+    "queries_to_the_rooms_database_completed": false,
+    "displays_the_query_results_to_a_table_completed": false
+  }
+}

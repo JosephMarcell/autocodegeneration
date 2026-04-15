@@ -1,0 +1,342 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a new sales transaction",
+        "value": "makeanewsalestransaction",
+        "internal": "makeanewsalestransaction"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeanewsalestransaction": "/make-a-new-sales-transaction/asks-to-make-a-new-sales-transaction"
+    },
+    "stateSchema": {
+      "asks_to_make_a_new_sales_transaction_completed": false,
+      "queries_member_work_unit_completed": false,
+      "enters_the_member_id_completed": false,
+      "displays_a_form_of_making_a_new_sales_transaction_completed": false,
+      "displays_information_about_the_member_completed": false,
+      "enters_information_on_the_goods_sold_completed": false,
+      "saves_the_information_on_the_sales_and_loan_database_completed": false,
+      "queries_member_loan_completed": false,
+      "display_member_loan_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-new-sales-transaction/asks-to-make-a-new-sales-transaction",
+        "role": "makeanewsalestransaction",
+        "component": "AsksToMakeANewSalesTransactionPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/queries-member-work-unit",
+        "role": "makeanewsalestransaction",
+        "component": "QueriesMember&WorkUnitPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/enters-the-member-id",
+        "role": "makeanewsalestransaction",
+        "component": "EntersTheMemberIdPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/displays-a-form-of-making-a-new-sales-transaction",
+        "role": "makeanewsalestransaction",
+        "component": "DisplaysAFormOfMakingANewSalesTransactionPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/displays-information-about-the-member",
+        "role": "makeanewsalestransaction",
+        "component": "DisplaysInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/enters-information-on-the-goods-sold",
+        "role": "makeanewsalestransaction",
+        "component": "EntersInformationOnTheGoodsSoldPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/saves-the-information-on-the-sales-and-loan-database",
+        "role": "makeanewsalestransaction",
+        "component": "SavesTheInformationOnTheSalesAndLoanDatabasePage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/queries-member-loan",
+        "role": "makeanewsalestransaction",
+        "component": "QueriesMemberLoanPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      },
+      {
+        "route": "/make-a-new-sales-transaction/display-member-loan",
+        "role": "makeanewsalestransaction",
+        "component": "DisplayMemberLoanPage",
+        "allowedRoles": [
+          "makeanewsalestransaction"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeANewSalesTransaction",
+      "role": "makeanewsalestransaction",
+      "defaultRoute": "/make-a-new-sales-transaction/asks-to-make-a-new-sales-transaction",
+      "tasks": [
+        {
+          "taskId": "makeanewsalestransaction-asks-to-make-a-new-sales-transaction",
+          "name": "AsksToMakeANewSalesTransaction",
+          "route": "/make-a-new-sales-transaction/asks-to-make-a-new-sales-transaction",
+          "component": "AsksToMakeANewSalesTransactionPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Asks to make a new sales transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_new_sales_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/displays-a-form-of-making-a-new-sales-transaction",
+          "ui": {
+            "title": "Asks to make a new sales transaction",
+            "hint": "Page for BPMN task 'Asks to make a new sales transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-displays-a-form-of-making-a-new-sales-transaction",
+          "name": "DisplaysAFormOfMakingANewSalesTransaction",
+          "route": "/make-a-new-sales-transaction/displays-a-form-of-making-a-new-sales-transaction",
+          "component": "DisplaysAFormOfMakingANewSalesTransactionPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Displays a form of making a new sales transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_of_making_a_new_sales_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/enters-the-member-id",
+          "ui": {
+            "title": "Displays a form of making a new sales transaction",
+            "hint": "Page for BPMN task 'Displays a form of making a new sales transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-enters-the-member-id",
+          "name": "EntersTheMemberId",
+          "route": "/make-a-new-sales-transaction/enters-the-member-id",
+          "component": "EntersTheMemberIdPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Enters the member ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_member_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/queries-member-work-unit",
+          "ui": {
+            "title": "Enters the member ID",
+            "hint": "Page for BPMN task 'Enters the member ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-queries-member-work-unit",
+          "name": "QueriesMember&WorkUnit",
+          "route": "/make-a-new-sales-transaction/queries-member-work-unit",
+          "component": "QueriesMember&WorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Queries  Member & Work Unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_member_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/displays-information-about-the-member",
+          "ui": {
+            "title": "Queries  Member & Work Unit",
+            "hint": "Page for BPMN task 'Queries  Member & Work Unit' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-new-sales-transaction/displays-information-about-the-member",
+              "condition": "DisplaysInformationAboutTheMember"
+            },
+            {
+              "route": "/make-a-new-sales-transaction/queries-member-loan",
+              "condition": "QueriesMemberLoan"
+            }
+          ]
+        },
+        {
+          "taskId": "makeanewsalestransaction-displays-information-about-the-member",
+          "name": "DisplaysInformationAboutTheMember",
+          "route": "/make-a-new-sales-transaction/displays-information-about-the-member",
+          "component": "DisplaysInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Displays information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/queries-member-loan",
+          "ui": {
+            "title": "Displays information about the member",
+            "hint": "Page for BPMN task 'Displays information about the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-queries-member-loan",
+          "name": "QueriesMemberLoan",
+          "route": "/make-a-new-sales-transaction/queries-member-loan",
+          "component": "QueriesMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Queries Member Loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/display-member-loan",
+          "ui": {
+            "title": "Queries Member Loan",
+            "hint": "Page for BPMN task 'Queries Member Loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-display-member-loan",
+          "name": "DisplayMemberLoan",
+          "route": "/make-a-new-sales-transaction/display-member-loan",
+          "component": "DisplayMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Display Member Loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/enters-information-on-the-goods-sold",
+          "ui": {
+            "title": "Display Member Loan",
+            "hint": "Page for BPMN task 'Display Member Loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewsalestransaction-enters-information-on-the-goods-sold",
+          "name": "EntersInformationOnTheGoodsSold",
+          "route": "/make-a-new-sales-transaction/enters-information-on-the-goods-sold",
+          "component": "EntersInformationOnTheGoodsSoldPage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Enters information on the goods sold.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_information_on_the_goods_sold_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/saves-the-information-on-the-sales-and-loan-database",
+          "ui": {
+            "title": "Enters information on the goods sold",
+            "hint": "Page for BPMN task 'Enters information on the goods sold' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-new-sales-transaction/saves-the-information-on-the-sales-and-loan-database",
+              "condition": "SavesTheInformationOnTheSalesAndLoanDatabase"
+            }
+          ]
+        },
+        {
+          "taskId": "makeanewsalestransaction-saves-the-information-on-the-sales-and-loan-database",
+          "name": "SavesTheInformationOnTheSalesAndLoanDatabase",
+          "route": "/make-a-new-sales-transaction/saves-the-information-on-the-sales-and-loan-database",
+          "component": "SavesTheInformationOnTheSalesAndLoanDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a new sales transaction: Saves the information on the Sales and Loan database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_information_on_the_sales_and_loan_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-sales-transaction/complete",
+          "ui": {
+            "title": "Saves the information on the Sales and Loan database",
+            "hint": "Page for BPMN task 'Saves the information on the Sales and Loan database' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

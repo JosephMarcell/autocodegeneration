@@ -1,0 +1,126 @@
+{
+  "task": "generate",
+  "description": "Generate React TypeScript source files for a web app based on the given IR2 intermediate representation.",
+  "input_schema": {
+    "project": "string — app name (PascalCase, no spaces)",
+    "stack": {
+      "framework": "React 18",
+      "language": "TypeScript",
+      "router": "React Router v6",
+      "styling": "Tailwind CSS",
+      "stateLib": "Zustand",
+      "stateImport": "src/shared/state/globalState.ts"
+    },
+    "sharedContext": {
+      "roles": [
+        { "display": "string — label shown in login form", "value": "string — role internal key", "internal": "string — same as value" }
+      ],
+      "defaultRoutesPerRole": {
+        "<role_value>": "string — first route after login for this role"
+      },
+      "stateSchema": {
+        "<fieldName>": "default value (false | '' | null | {} shape)"
+      },
+      "allRoutes": [
+        {
+          "route": "string — URL path",
+          "role": "string — owner role",
+          "component": "string — PascalCase component name",
+          "allowedRoles": ["string"]
+        }
+      ]
+    },
+    "participants": [
+      {
+        "name": "string — PascalCase module folder name (e.g. GuestFoodConsumption)",
+        "role": "string — matches sharedContext.roles[].internal",
+        "defaultRoute": "string — first route for this participant",
+        "tasks": [
+          {
+            "taskId": "string — unique ID, format: {role}-{task-name-kebab}",
+            "name": "string — PascalCase task name (used as component name prefix)",
+            "route": "string — URL path for this page",
+            "component": "string — {name}Page",
+            "pageType": "write-navigate | wait-then-write | form-write-navigate | read-display-navigate | auto-write-on-mount",
+            "description": "string — intent of the page for LLM",
+            "stateReads": [
+              { "field": "string — processState key", "use": "string — how it is displayed" }
+            ],
+            "stateWrites": [
+              { "field": "string — processState key", "value": "string | boolean | object — value or description of value" }
+            ],
+            "waitCondition": { "field": "string — processState key that must be truthy", "readableLabel": "string — UI message while waiting" },
+            "autoWriteOnMount": { "field": "string — processState key", "value": "boolean | string — value written in useEffect on mount" },
+            "nextRoute": "string — navigate() target after main action",
+            "ui": {
+              "title": "string — page heading",
+              "hint": "string — UI layout or interaction hints for LLM"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "output_schema": {
+    "fields": [
+      {
+        "name": "files",
+        "type": "array",
+        "description": "List of all source files to generate.",
+        "items": {
+          "path": "string — relative file path (e.g. src/App.tsx)",
+          "content": "string — full file content"
+        }
+      }
+    ]
+  },
+  "file_structure": {
+    "core": [
+      {
+        "path": "src/App.tsx",
+        "description": "Root app + router setup. Register all routes from IR2 sharedContext.allRoutes, wrap each with ProtectedRoute using allowedRoles."
+      },
+      {
+        "path": "src/shared/state/globalState.ts",
+        "description": "Zustand store. Auth state (isAuthenticated, user, login, logout) uses sessionStorage. ProcessState uses localStorage with cross-tab sync via window.dispatchEvent(StorageEvent). Export type Role from sharedContext.roles[].internal. Build ProcessState type from sharedContext.stateSchema keys."
+      },
+      {
+        "path": "src/shared/pages/LoginPage.tsx",
+        "description": "Login page. Render role selector from IR2 sharedContext.roles (display + value) and a name input. On submit, call login() from globalState then navigate to sharedContext.defaultRoutesPerRole[selectedRole]."
+      },
+      {
+        "path": "src/shared/components/Layout.tsx",
+        "description": "Sidebar layout using Outlet. Navigation links per role filtered from sharedContext.allRoutes by user.role. Includes logout button and process reset button (calls resetProcess())."
+      },
+      {
+        "path": "src/shared/components/ProtectedRoute.tsx",
+        "description": "Route guard. Redirect unauthenticated users to /login. Redirect wrong-role users to sharedContext.defaultRoutesPerRole[user.role]."
+      },
+      {
+        "path": "src/shared/components/UI.tsx",
+        "description": "Reusable atomic components: Card (title prop + children), Button (type, onClick, disabled, fullWidth, className), Input (label, value, onChange, placeholder)."
+      }
+    ],
+    "dynamic": {
+      "pattern": "src/modules/{ModuleName}/pages/{PageName}.tsx",
+      "source": "IR2 participants[].tasks[] → {ModuleName} = participant.name, {PageName} = task.component",
+      "pageType_logic": {
+        "write-navigate": "Render action UI. On button click: call updateProcessState(stateWrites), then navigate(nextRoute). No conditions.",
+        "wait-then-write": "Read waitCondition.field from processState. If falsy: show waiting UI with readableLabel. If truthy: activate main action button. On click: call updateProcessState(stateWrites), then navigate(nextRoute).",
+        "form-write-navigate": "Render form with inputs. Pre-fill from stateReads if specified. On submit: collect form values, call updateProcessState(stateWrites) with form data, then navigate(nextRoute).",
+        "read-display-navigate": "Read stateReads fields from processState for display only. No updateProcessState calls. On button click: navigate(nextRoute).",
+        "auto-write-on-mount": "On mount (useEffect): call updateProcessState({ [autoWriteOnMount.field]: autoWriteOnMount.value }) if not already set. Then behave as wait-then-write for the waitCondition."
+      }
+    }
+  },
+  "constraints": {
+    "output_format": "JSON",
+    "stack": {
+      "framework": "React 18",
+      "language": "TypeScript",
+      "router": "React Router v6",
+      "styling": "Tailwind CSS",
+      "state": "Zustand — import from src/shared/state/globalState.ts"
+    }
+  }
+}

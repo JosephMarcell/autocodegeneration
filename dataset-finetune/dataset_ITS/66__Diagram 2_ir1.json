@@ -1,0 +1,159 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_4b84070a-4557-4ac9-a475-9f7d80cf9ccb"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "View Today Triage results",
+      "processRef": "Id_0d50de29-82dd-4f54-a6f1-176734439003"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_4b84070a-4557-4ac9-a475-9f7d80cf9ccb": "Main Process",
+    "Id_0d50de29-82dd-4f54-a6f1-176734439003": "View Today Triage results"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "ED",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "ED",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "ED",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to View Today Triage results",
+      "type": "task",
+      "participantName": "View Today Triage results",
+      "laneName": "ED",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the query results to a table in the form",
+      "type": "task",
+      "participantName": "View Today Triage results",
+      "laneName": "System",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Queries the Triage and Registration database",
+      "type": "task",
+      "participantName": "View Today Triage results",
+      "laneName": "System",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    }
+  ],
+  "gateways": [],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "View Today Triage results",
+      "laneName": "ED",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "View Today Triage results",
+      "laneName": "System",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003",
+      "incoming": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003"
+    },
+    {
+      "id": "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_0d50de29-82dd-4f54-a6f1-176734439003"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_view_today_triage_results_completed": false,
+    "displays_the_query_results_to_a_table_in_the_form_completed": false,
+    "queries_the_triage_and_registration_database_completed": false
+  }
+}

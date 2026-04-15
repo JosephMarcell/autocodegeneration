@@ -1,0 +1,344 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make recapitulation",
+        "value": "makerecapitulation",
+        "internal": "makerecapitulation"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makerecapitulation": "/make-recapitulation/asks-to-make-recapitulation"
+    },
+    "stateSchema": {
+      "queries_the_current_month_s_sales_completed": false,
+      "displays_the_query_results_to_a_table_completed": false,
+      "asks_to_make_recapitulation_completed": false,
+      "displays_form_of_the_making_recapitulation_completed": false,
+      "queries_today_s_sales_completed": false,
+      "queries_the_daily_recap_of_this_month_completed": false,
+      "chooses_option_completed": false,
+      "queries_the_spesific_date_completed": false,
+      "enters_the_spesific_date_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-recapitulation/queries-the-current-months-sales",
+        "role": "makerecapitulation",
+        "component": "QueriesTheCurrentMonth'sSalesPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/displays-the-query-results-to-a-table",
+        "role": "makerecapitulation",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/asks-to-make-recapitulation",
+        "role": "makerecapitulation",
+        "component": "AsksToMakeRecapitulationPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/displays-form-of-the-making-recapitulation",
+        "role": "makerecapitulation",
+        "component": "DisplaysFormOfTheMakingRecapitulationPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/queries-todays-sales",
+        "role": "makerecapitulation",
+        "component": "QueriesToday'sSalesPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/queries-the-daily-recap-of-this-month",
+        "role": "makerecapitulation",
+        "component": "QueriesTheDailyRecapOfThisMonthPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/chooses-option",
+        "role": "makerecapitulation",
+        "component": "ChoosesOptionPage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/queries-the-spesific-date",
+        "role": "makerecapitulation",
+        "component": "QueriesTheSpesificDatePage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      },
+      {
+        "route": "/make-recapitulation/enters-the-spesific-date",
+        "role": "makerecapitulation",
+        "component": "EntersTheSpesificDatePage",
+        "allowedRoles": [
+          "makerecapitulation"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeRecapitulation",
+      "role": "makerecapitulation",
+      "defaultRoute": "/make-recapitulation/asks-to-make-recapitulation",
+      "tasks": [
+        {
+          "taskId": "makerecapitulation-asks-to-make-recapitulation",
+          "name": "AsksToMakeRecapitulation",
+          "route": "/make-recapitulation/asks-to-make-recapitulation",
+          "component": "AsksToMakeRecapitulationPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Asks to make recapitulation.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_recapitulation_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/displays-form-of-the-making-recapitulation",
+          "ui": {
+            "title": "Asks to make recapitulation",
+            "hint": "Page for BPMN task 'Asks to make recapitulation' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-displays-form-of-the-making-recapitulation",
+          "name": "DisplaysFormOfTheMakingRecapitulation",
+          "route": "/make-recapitulation/displays-form-of-the-making-recapitulation",
+          "component": "DisplaysFormOfTheMakingRecapitulationPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Displays form of  the making recapitulation.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_the_making_recapitulation_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/chooses-option",
+          "ui": {
+            "title": "Displays form of  the making recapitulation",
+            "hint": "Page for BPMN task 'Displays form of  the making recapitulation' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-chooses-option",
+          "name": "ChoosesOption",
+          "route": "/make-recapitulation/chooses-option",
+          "component": "ChoosesOptionPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Chooses option.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_option_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/queries-todays-sales",
+          "ui": {
+            "title": "Chooses option",
+            "hint": "Page for BPMN task 'Chooses option' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-recapitulation/queries-todays-sales",
+              "condition": "today"
+            },
+            {
+              "route": "/make-recapitulation/queries-the-current-months-sales",
+              "condition": "This month"
+            },
+            {
+              "route": "/make-recapitulation/queries-the-daily-recap-of-this-month",
+              "condition": "Daily recap of this month"
+            },
+            {
+              "route": "/make-recapitulation/enters-the-spesific-date",
+              "condition": "Recap a specific date"
+            }
+          ]
+        },
+        {
+          "taskId": "makerecapitulation-queries-todays-sales",
+          "name": "QueriesToday'sSales",
+          "route": "/make-recapitulation/queries-todays-sales",
+          "component": "QueriesToday'sSalesPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Queries today's sales.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_todays_sales_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries today's sales",
+            "hint": "Page for BPMN task 'Queries today's sales' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-queries-the-current-months-sales",
+          "name": "QueriesTheCurrentMonth'sSales",
+          "route": "/make-recapitulation/queries-the-current-months-sales",
+          "component": "QueriesTheCurrentMonth'sSalesPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Queries the current month's sales.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_current_months_sales_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the current month's sales",
+            "hint": "Page for BPMN task 'Queries the current month's sales' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-queries-the-daily-recap-of-this-month",
+          "name": "QueriesTheDailyRecapOfThisMonth",
+          "route": "/make-recapitulation/queries-the-daily-recap-of-this-month",
+          "component": "QueriesTheDailyRecapOfThisMonthPage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Queries the daily recap of this month.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_daily_recap_of_this_month_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the daily recap of this month",
+            "hint": "Page for BPMN task 'Queries the daily recap of this month' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-enters-the-spesific-date",
+          "name": "EntersTheSpesificDate",
+          "route": "/make-recapitulation/enters-the-spesific-date",
+          "component": "EntersTheSpesificDatePage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Enters the spesific date.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_spesific_date_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/queries-the-spesific-date",
+          "ui": {
+            "title": "Enters the spesific date",
+            "hint": "Page for BPMN task 'Enters the spesific date' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-queries-the-spesific-date",
+          "name": "QueriesTheSpesificDate",
+          "route": "/make-recapitulation/queries-the-spesific-date",
+          "component": "QueriesTheSpesificDatePage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Queries the spesific date.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_spesific_date_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the spesific date",
+            "hint": "Page for BPMN task 'Queries the spesific date' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makerecapitulation-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/make-recapitulation/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make recapitulation: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-recapitulation/complete",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

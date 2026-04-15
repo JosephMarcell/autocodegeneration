@@ -1,0 +1,342 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Emergency room Triage",
+        "value": "emergencyroomtriage",
+        "internal": "emergencyroomtriage"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "emergencyroomtriage": "/emergency-room-triage/wants-to-create-an-emergency-room-triage"
+    },
+    "stateSchema": {
+      "wants_to_create_an_emergency_room_triage_completed": false,
+      "displays_patient_information_completed": false,
+      "displays_the_emergency_room_triage_form_completed": false,
+      "enters_register_number_of_a_patient_completed": false,
+      "sreads_the_registration_database_completed": false,
+      "selects_the_condition_button_completed": false,
+      "displays_the_message_data_not_found_completed": false,
+      "selects_the_save_button_completed": false,
+      "saves_the_triages_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/emergency-room-triage/wants-to-create-an-emergency-room-triage",
+        "role": "emergencyroomtriage",
+        "component": "WantsToCreateAnEmergencyRoomTriagePage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/displays-patient-information",
+        "role": "emergencyroomtriage",
+        "component": "DisplaysPatientInformationPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/displays-the-emergency-room-triage-form",
+        "role": "emergencyroomtriage",
+        "component": "DisplaysTheEmergencyRoomTriageFormPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/enters-register-number-of-a-patient",
+        "role": "emergencyroomtriage",
+        "component": "EntersRegisterNumberOfAPatientPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/sreads-the-registration-database",
+        "role": "emergencyroomtriage",
+        "component": "SreadsTheRegistrationDatabasePage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/selects-the-condition-button",
+        "role": "emergencyroomtriage",
+        "component": "SelectsTheConditionButtonPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/displays-the-message-data-not-found",
+        "role": "emergencyroomtriage",
+        "component": "DisplaysTheMessage\"dataNotFound\".Page",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/selects-the-save-button",
+        "role": "emergencyroomtriage",
+        "component": "SelectsTheSaveButtonPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      },
+      {
+        "route": "/emergency-room-triage/saves-the-triages",
+        "role": "emergencyroomtriage",
+        "component": "SavesTheTriagesPage",
+        "allowedRoles": [
+          "emergencyroomtriage"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "EmergencyRoomTriage",
+      "role": "emergencyroomtriage",
+      "defaultRoute": "/emergency-room-triage/wants-to-create-an-emergency-room-triage",
+      "tasks": [
+        {
+          "taskId": "emergencyroomtriage-wants-to-create-an-emergency-room-triage",
+          "name": "WantsToCreateAnEmergencyRoomTriage",
+          "route": "/emergency-room-triage/wants-to-create-an-emergency-room-triage",
+          "component": "WantsToCreateAnEmergencyRoomTriagePage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Wants to create an Emergency room Triage.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_create_an_emergency_room_triage_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/displays-the-emergency-room-triage-form",
+          "ui": {
+            "title": "Wants to create an Emergency room Triage",
+            "hint": "Page for BPMN task 'Wants to create an Emergency room Triage' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-selects-the-save-button",
+          "name": "SelectsTheSaveButton",
+          "route": "/emergency-room-triage/selects-the-save-button",
+          "component": "SelectsTheSaveButtonPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Selects the save button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_save_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/saves-the-triages",
+          "ui": {
+            "title": "Selects the save button",
+            "hint": "Page for BPMN task 'Selects the save button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/emergency-room-triage/saves-the-triages",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "emergencyroomtriage-displays-the-emergency-room-triage-form",
+          "name": "DisplaysTheEmergencyRoomTriageForm",
+          "route": "/emergency-room-triage/displays-the-emergency-room-triage-form",
+          "component": "DisplaysTheEmergencyRoomTriageFormPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Displays the Emergency room Triage form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_emergency_room_triage_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/enters-register-number-of-a-patient",
+          "ui": {
+            "title": "Displays the Emergency room Triage form",
+            "hint": "Page for BPMN task 'Displays the Emergency room Triage form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-saves-the-triages",
+          "name": "SavesTheTriages",
+          "route": "/emergency-room-triage/saves-the-triages",
+          "component": "SavesTheTriagesPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Saves the triages.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_triages_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/complete",
+          "ui": {
+            "title": "Saves the triages",
+            "hint": "Page for BPMN task 'Saves the triages' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-enters-register-number-of-a-patient",
+          "name": "EntersRegisterNumberOfAPatient",
+          "route": "/emergency-room-triage/enters-register-number-of-a-patient",
+          "component": "EntersRegisterNumberOfAPatientPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Enters register number of a patient.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_register_number_of_a_patient_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/sreads-the-registration-database",
+          "ui": {
+            "title": "Enters register number of a patient",
+            "hint": "Page for BPMN task 'Enters register number of a patient' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-sreads-the-registration-database",
+          "name": "SreadsTheRegistrationDatabase",
+          "route": "/emergency-room-triage/sreads-the-registration-database",
+          "component": "SreadsTheRegistrationDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Sreads the Registration database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "sreads_the_registration_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/displays-patient-information",
+          "ui": {
+            "title": "Sreads the Registration database",
+            "hint": "Page for BPMN task 'Sreads the Registration database' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/emergency-room-triage/displays-patient-information",
+              "condition": "found"
+            },
+            {
+              "route": "/emergency-room-triage/displays-the-message-data-not-found",
+              "condition": "DisplaysTheMessage\"dataNotFound\"."
+            }
+          ]
+        },
+        {
+          "taskId": "emergencyroomtriage-displays-patient-information",
+          "name": "DisplaysPatientInformation",
+          "route": "/emergency-room-triage/displays-patient-information",
+          "component": "DisplaysPatientInformationPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Displays patient information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_patient_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/selects-the-condition-button",
+          "ui": {
+            "title": "Displays patient information",
+            "hint": "Page for BPMN task 'Displays patient information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-displays-the-message-data-not-found",
+          "name": "DisplaysTheMessage\"dataNotFound\".",
+          "route": "/emergency-room-triage/displays-the-message-data-not-found",
+          "component": "DisplaysTheMessage\"dataNotFound\".Page",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Displays the message \"data not found\"..",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_message_data_not_found_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/selects-the-condition-button",
+          "ui": {
+            "title": "Displays the message \"data not found\".",
+            "hint": "Page for BPMN task 'Displays the message \"data not found\".' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "emergencyroomtriage-selects-the-condition-button",
+          "name": "SelectsTheConditionButton",
+          "route": "/emergency-room-triage/selects-the-condition-button",
+          "component": "SelectsTheConditionButtonPage",
+          "pageType": "write-navigate",
+          "description": "Emergency room Triage: Selects the condition button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_condition_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/emergency-room-triage/complete",
+          "ui": {
+            "title": "Selects the condition button",
+            "hint": "Page for BPMN task 'Selects the condition button' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

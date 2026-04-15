@@ -1,0 +1,292 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_b88cd8e6-af68-4119-a4c9-d6c75b687621"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make cash outflow",
+      "processRef": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_b88cd8e6-af68-4119-a4c9-d6c75b687621": "Main Process",
+    "Id_c8c57249-5f61-4404-aca6-384a7e41d05c": "Make cash outflow"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_a749c77d-8746-4271-9d35-792ab829623f"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_358efcb3-65f8-474b-a31c-b1ef455560f4",
+        "Id_ec5962cd-c8df-45dd-9738-62140624b43c"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_a749c77d-8746-4271-9d35-792ab829623f": "Officer",
+    "Id_358efcb3-65f8-474b-a31c-b1ef455560f4": "System",
+    "Id_ec5962cd-c8df-45dd-9738-62140624b43c": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make cash outflow",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "Officer",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Verifies the input",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters transaction data",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "Officer",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3effd49c-7c09-4edb-a15a-e7ffdf59d0c2"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the cash outflow form",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Saves the information to the cash database",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c1d71457-1543-45d8-a842-00b7e873cd55"
+      ],
+      "outgoing": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ]
+    },
+    {
+      "id": "Id_ec5962cd-c8df-45dd-9738-62140624b43c",
+      "name": "Display transaction information",
+      "type": "task",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_9f49b32c-7fab-45d4-a6bf-4629d4dfac41"
+      ],
+      "outgoing": [
+        "Id_c1d71457-1543-45d8-a842-00b7e873cd55"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_a749c77d-8746-4271-9d35-792ab829623f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make cash outflow",
+      "laneName": "Officer",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+        "Id_90fd16df-90bc-45fc-bb23-e7aa1b737fc4"
+      ],
+      "outgoing": [
+        "Id_3effd49c-7c09-4edb-a15a-e7ffdf59d0c2"
+      ]
+    },
+    {
+      "id": "Id_358efcb3-65f8-474b-a31c-b1ef455560f4",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "incoming": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ],
+      "outgoing": [
+        "Id_9f49b32c-7fab-45d4-a6bf-4629d4dfac41",
+        "Id_90fd16df-90bc-45fc-bb23-e7aa1b737fc4"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make cash outflow",
+      "laneName": "Officer",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make cash outflow",
+      "laneName": "System",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c",
+      "incoming": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_a749c77d-8746-4271-9d35-792ab829623f",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_358efcb3-65f8-474b-a31c-b1ef455560f4",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_3585c84b-af74-4919-a4ce-e3c1f5027607",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_3effd49c-7c09-4edb-a15a-e7ffdf59d0c2",
+      "source": "Id_a749c77d-8746-4271-9d35-792ab829623f",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_9f49b32c-7fab-45d4-a6bf-4629d4dfac41",
+      "source": "Id_358efcb3-65f8-474b-a31c-b1ef455560f4",
+      "target": "Id_ec5962cd-c8df-45dd-9738-62140624b43c",
+      "condition": "Okay",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_90fd16df-90bc-45fc-bb23-e7aa1b737fc4",
+      "source": "Id_358efcb3-65f8-474b-a31c-b1ef455560f4",
+      "target": "Id_a749c77d-8746-4271-9d35-792ab829623f",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    },
+    {
+      "id": "Id_c1d71457-1543-45d8-a842-00b7e873cd55",
+      "source": "Id_ec5962cd-c8df-45dd-9738-62140624b43c",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_c8c57249-5f61-4404-aca6-384a7e41d05c"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_cash_outflow_completed": false,
+    "verifies_the_input_completed": false,
+    "enters_transaction_data_completed": false,
+    "displays_the_cash_outflow_form_completed": false,
+    "saves_the_information_to_the_cash_database_completed": false,
+    "display_transaction_information_completed": false
+  }
+}

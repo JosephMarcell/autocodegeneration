@@ -1,0 +1,239 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Display cash inflow",
+        "value": "displaycashinflow",
+        "internal": "displaycashinflow"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "displaycashinflow": "/display-cash-inflow/wants-to-display-cash-inflow"
+    },
+    "stateSchema": {
+      "wants_to_display_cash_inflow_completed": false,
+      "queries_about_the_cash_inflow_in_the_cash_database_completed": false,
+      "fills_in_the_year_and_month_completed": false,
+      "displays_the_cash_inflow_form_completed": false,
+      "displays_the_query_result_completed": false,
+      "prints_a_report_to_the_printer_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/display-cash-inflow/wants-to-display-cash-inflow",
+        "role": "displaycashinflow",
+        "component": "WantsToDisplayCashInflowPage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      },
+      {
+        "route": "/display-cash-inflow/queries-about-the-cash-inflow-in-the-cash-database",
+        "role": "displaycashinflow",
+        "component": "QueriesAboutTheCashInflowInTheCashDatabasePage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      },
+      {
+        "route": "/display-cash-inflow/fills-in-the-year-and-month",
+        "role": "displaycashinflow",
+        "component": "FillsInTheYearAndMonthPage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      },
+      {
+        "route": "/display-cash-inflow/displays-the-cash-inflow-form",
+        "role": "displaycashinflow",
+        "component": "DisplaysTheCashInflowFormPage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      },
+      {
+        "route": "/display-cash-inflow/displays-the-query-result",
+        "role": "displaycashinflow",
+        "component": "DisplaysTheQueryResultPage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      },
+      {
+        "route": "/display-cash-inflow/prints-a-report-to-the-printer",
+        "role": "displaycashinflow",
+        "component": "PrintsAReportToThePrinterPage",
+        "allowedRoles": [
+          "displaycashinflow"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DisplayCashInflow",
+      "role": "displaycashinflow",
+      "defaultRoute": "/display-cash-inflow/wants-to-display-cash-inflow",
+      "tasks": [
+        {
+          "taskId": "displaycashinflow-wants-to-display-cash-inflow",
+          "name": "WantsToDisplayCashInflow",
+          "route": "/display-cash-inflow/wants-to-display-cash-inflow",
+          "component": "WantsToDisplayCashInflowPage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Wants to display cash inflow.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_display_cash_inflow_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/displays-the-cash-inflow-form",
+          "ui": {
+            "title": "Wants to display cash inflow",
+            "hint": "Page for BPMN task 'Wants to display cash inflow' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaycashinflow-displays-the-cash-inflow-form",
+          "name": "DisplaysTheCashInflowForm",
+          "route": "/display-cash-inflow/displays-the-cash-inflow-form",
+          "component": "DisplaysTheCashInflowFormPage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Displays the cash inflow form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_cash_inflow_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/fills-in-the-year-and-month",
+          "ui": {
+            "title": "Displays the cash inflow form",
+            "hint": "Page for BPMN task 'Displays the cash inflow form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaycashinflow-fills-in-the-year-and-month",
+          "name": "FillsInTheYearAndMonth",
+          "route": "/display-cash-inflow/fills-in-the-year-and-month",
+          "component": "FillsInTheYearAndMonthPage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Fills in the year and month.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "fills_in_the_year_and_month_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/queries-about-the-cash-inflow-in-the-cash-database",
+          "ui": {
+            "title": "Fills in the year and month",
+            "hint": "Page for BPMN task 'Fills in the year and month' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaycashinflow-queries-about-the-cash-inflow-in-the-cash-database",
+          "name": "QueriesAboutTheCashInflowInTheCashDatabase",
+          "route": "/display-cash-inflow/queries-about-the-cash-inflow-in-the-cash-database",
+          "component": "QueriesAboutTheCashInflowInTheCashDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Queries about the cash inflow in the cash database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_about_the_cash_inflow_in_the_cash_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/displays-the-query-result",
+          "ui": {
+            "title": "Queries about the cash inflow in the cash database",
+            "hint": "Page for BPMN task 'Queries about the cash inflow in the cash database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaycashinflow-displays-the-query-result",
+          "name": "DisplaysTheQueryResult",
+          "route": "/display-cash-inflow/displays-the-query-result",
+          "component": "DisplaysTheQueryResultPage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Displays the query result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_result_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/prints-a-report-to-the-printer",
+          "ui": {
+            "title": "Displays the query result",
+            "hint": "Page for BPMN task 'Displays the query result' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/display-cash-inflow/prints-a-report-to-the-printer",
+              "condition": "PrintsAReportToThePrinter"
+            }
+          ]
+        },
+        {
+          "taskId": "displaycashinflow-prints-a-report-to-the-printer",
+          "name": "PrintsAReportToThePrinter",
+          "route": "/display-cash-inflow/prints-a-report-to-the-printer",
+          "component": "PrintsAReportToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Display cash inflow: Prints a report to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_a_report_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-cash-inflow/complete",
+          "ui": {
+            "title": "Prints a report to the printer",
+            "hint": "Page for BPMN task 'Prints a report to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

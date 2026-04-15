@@ -1,0 +1,437 @@
+{
+  "project_name": "App",
+  "participants": [
+    {
+      "id": "Participant_1x9zkso",
+      "name": "credit scoring frontend (bank)",
+      "processRef": "Process_1"
+    },
+    {
+      "id": "Participant_0e81yis",
+      "name": "credit scoring (bank)",
+      "processRef": "Process_0hiditg"
+    },
+    {
+      "id": "Participant_1xfb3ml",
+      "name": "scoring service",
+      "processRef": "Process_1dc1p3b"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_1": "credit scoring frontend (bank)",
+    "Process_0hiditg": "credit scoring (bank)",
+    "Process_1dc1p3b": "scoring service"
+  },
+  "lanes": [],
+  "node_to_lane": {},
+  "tasks": [
+    {
+      "id": "Task_16winvj",
+      "name": "request credit score",
+      "type": "task",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0rrtx7k"
+      ],
+      "outgoing": [
+        "SequenceFlow_06b4pjd"
+      ]
+    },
+    {
+      "id": "Task_1fzfxey",
+      "name": "send credit score",
+      "type": "task",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_12a77en"
+      ],
+      "outgoing": [
+        "SequenceFlow_1nyeozm"
+      ]
+    },
+    {
+      "id": "Task_0l942o9",
+      "name": "report delay",
+      "type": "task",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_14gfddm"
+      ],
+      "outgoing": [
+        "SequenceFlow_08fsgff"
+      ]
+    },
+    {
+      "id": "Task_1r15hqs",
+      "name": "compute credit score (level 1)",
+      "type": "task",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_158pur5"
+      ],
+      "outgoing": [
+        "SequenceFlow_049ghuo"
+      ]
+    },
+    {
+      "id": "Task_04l4kzo",
+      "name": "send result",
+      "type": "task",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_049ghuo"
+      ],
+      "outgoing": [
+        "SequenceFlow_04a402p"
+      ]
+    },
+    {
+      "id": "Task_1hd2ybe",
+      "name": "compute credit score (level 2)",
+      "type": "task",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_154teg7"
+      ],
+      "outgoing": [
+        "SequenceFlow_1o0d2v1"
+      ]
+    },
+    {
+      "id": "Task_07vbn2i",
+      "name": "send credit score",
+      "type": "task",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1o0d2v1"
+      ],
+      "outgoing": [
+        "SequenceFlow_1xqy47o"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "ExclusiveGateway_0e5en8h",
+      "name": "score received?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "incoming": [
+        "SequenceFlow_06b4pjd"
+      ],
+      "outgoing": [
+        "SequenceFlow_14gfddm",
+        "SequenceFlow_0upas8x"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_11dldcm",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "incoming": [
+        "SequenceFlow_1i1amgb",
+        "SequenceFlow_0upas8x"
+      ],
+      "outgoing": [
+        "SequenceFlow_12a77en"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_0rtdod4",
+      "name": "score available?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "incoming": [
+        "SequenceFlow_04a402p"
+      ],
+      "outgoing": [
+        "SequenceFlow_154teg7",
+        "SequenceFlow_0jh32vv"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_125lzox",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "incoming": [
+        "SequenceFlow_1xqy47o",
+        "SequenceFlow_0jh32vv"
+      ],
+      "outgoing": [
+        "SequenceFlow_0t0wbx3"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "StartEvent_1els7eb",
+      "name": "scoring request received",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_0rrtx7k"
+      ]
+    },
+    {
+      "id": "EndEvent_0rp5trg",
+      "name": "scoring request handled",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "incoming": [
+        "SequenceFlow_1nyeozm"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "IntermediateCatchEvent_0a8iz14",
+      "name": "credit score received",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "credit scoring (bank)",
+      "laneName": "",
+      "processId": "Process_0hiditg",
+      "incoming": [
+        "SequenceFlow_08fsgff"
+      ],
+      "outgoing": [
+        "SequenceFlow_1i1amgb"
+      ]
+    },
+    {
+      "id": "StartEvent_0o849un",
+      "name": "scoring request received",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_158pur5"
+      ]
+    },
+    {
+      "id": "EndEvent_0khk0tq",
+      "name": "scoring request handled",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "scoring service",
+      "laneName": "",
+      "processId": "Process_1dc1p3b",
+      "incoming": [
+        "SequenceFlow_0t0wbx3"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "SequenceFlow_0rrtx7k",
+      "source": "StartEvent_1els7eb",
+      "target": "Task_16winvj",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_06b4pjd",
+      "source": "Task_16winvj",
+      "target": "ExclusiveGateway_0e5en8h",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_14gfddm",
+      "source": "ExclusiveGateway_0e5en8h",
+      "target": "Task_0l942o9",
+      "condition": "no",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_08fsgff",
+      "source": "Task_0l942o9",
+      "target": "IntermediateCatchEvent_0a8iz14",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_1i1amgb",
+      "source": "IntermediateCatchEvent_0a8iz14",
+      "target": "ExclusiveGateway_11dldcm",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_0upas8x",
+      "source": "ExclusiveGateway_0e5en8h",
+      "target": "ExclusiveGateway_11dldcm",
+      "condition": "yes",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_12a77en",
+      "source": "ExclusiveGateway_11dldcm",
+      "target": "Task_1fzfxey",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_1nyeozm",
+      "source": "Task_1fzfxey",
+      "target": "EndEvent_0rp5trg",
+      "condition": "",
+      "processId": "Process_0hiditg"
+    },
+    {
+      "id": "SequenceFlow_158pur5",
+      "source": "StartEvent_0o849un",
+      "target": "Task_1r15hqs",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_049ghuo",
+      "source": "Task_1r15hqs",
+      "target": "Task_04l4kzo",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_04a402p",
+      "source": "Task_04l4kzo",
+      "target": "ExclusiveGateway_0rtdod4",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_154teg7",
+      "source": "ExclusiveGateway_0rtdod4",
+      "target": "Task_1hd2ybe",
+      "condition": "no",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_1o0d2v1",
+      "source": "Task_1hd2ybe",
+      "target": "Task_07vbn2i",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_1xqy47o",
+      "source": "Task_07vbn2i",
+      "target": "ExclusiveGateway_125lzox",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_0t0wbx3",
+      "source": "ExclusiveGateway_125lzox",
+      "target": "EndEvent_0khk0tq",
+      "condition": "",
+      "processId": "Process_1dc1p3b"
+    },
+    {
+      "id": "SequenceFlow_0jh32vv",
+      "source": "ExclusiveGateway_0rtdod4",
+      "target": "ExclusiveGateway_125lzox",
+      "condition": "yes",
+      "processId": "Process_1dc1p3b"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "MessageFlow_1pkfls0",
+      "sourceRef": "Participant_1x9zkso",
+      "targetRef": "StartEvent_1els7eb",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1m6362g",
+      "sourceRef": "Task_0l942o9",
+      "targetRef": "Participant_1x9zkso",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1i21wes",
+      "sourceRef": "Task_1fzfxey",
+      "targetRef": "Participant_1x9zkso",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1mm30jd",
+      "sourceRef": "Task_16winvj",
+      "targetRef": "StartEvent_0o849un",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_13j4vf5",
+      "sourceRef": "Task_04l4kzo",
+      "targetRef": "Task_16winvj",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1nttl77",
+      "sourceRef": "Task_07vbn2i",
+      "targetRef": "IntermediateCatchEvent_0a8iz14",
+      "name": ""
+    }
+  ],
+  "stateSchema": {
+    "request_credit_score_completed": false,
+    "send_credit_score_completed": false,
+    "report_delay_completed": false,
+    "compute_credit_score_level_1_completed": false,
+    "send_result_completed": false,
+    "compute_credit_score_level_2_completed": false,
+    "score_received_result": "",
+    "score_available_result": ""
+  }
+}

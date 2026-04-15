@@ -1,0 +1,478 @@
+{
+  "project_name": "App",
+  "participants": [
+    {
+      "id": "Participant_11xqomt",
+      "name": "Recourse \nClerk",
+      "processRef": "Process_1"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_1": "Recourse \nClerk"
+  },
+  "lanes": [],
+  "node_to_lane": {},
+  "tasks": [
+    {
+      "id": "Task_0iirfhd",
+      "name": "check case",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1jrsqqc"
+      ],
+      "outgoing": [
+        "SequenceFlow_0h9s0mp"
+      ]
+    },
+    {
+      "id": "Task_02fdytg",
+      "name": "send request for payment",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0pqo7zt"
+      ],
+      "outgoing": [
+        "SequenceFlow_152w54z"
+      ]
+    },
+    {
+      "id": "Task_04aofbe",
+      "name": "close case",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1qt82pt"
+      ],
+      "outgoing": [
+        "SequenceFlow_17ohrlh"
+      ]
+    },
+    {
+      "id": "Task_12lthpj",
+      "name": "send reminder",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_152w54z"
+      ],
+      "outgoing": [
+        "SequenceFlow_1xvnonz"
+      ]
+    },
+    {
+      "id": "Task_0eti3m2",
+      "name": "check reasoning",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_01w8xpk"
+      ],
+      "outgoing": [
+        "SequenceFlow_17fk7n7"
+      ]
+    },
+    {
+      "id": "Task_1qlbv5i",
+      "name": "close case",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1hytpfi"
+      ],
+      "outgoing": [
+        "SequenceFlow_1u8uz5a"
+      ]
+    },
+    {
+      "id": "Task_1w7bb1w",
+      "name": "hand over to collection agency",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_096z65r",
+        "SequenceFlow_17yh2em"
+      ],
+      "outgoing": [
+        "SequenceFlow_0ld619c"
+      ]
+    },
+    {
+      "id": "Task_1bwmf45",
+      "name": "make booking",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0rng9d2"
+      ],
+      "outgoing": [
+        "SequenceFlow_0krol9j"
+      ]
+    },
+    {
+      "id": "Task_0yan60f",
+      "name": "close case",
+      "type": "task",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0krol9j"
+      ],
+      "outgoing": [
+        "SequenceFlow_1h7edo4"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "ExclusiveGateway_092mc05",
+      "name": "recourse possible?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0h9s0mp"
+      ],
+      "outgoing": [
+        "SequenceFlow_0pqo7zt",
+        "SequenceFlow_1qt82pt"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_0lk2nir",
+      "name": "OK?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_17fk7n7"
+      ],
+      "outgoing": [
+        "SequenceFlow_1hytpfi",
+        "SequenceFlow_17yh2em"
+      ]
+    },
+    {
+      "id": "EventBasedGateway_0qdxz70",
+      "name": "",
+      "gatewayType": "eventBased",
+      "gatewayDirection": "Diverging",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_1xvnonz"
+      ],
+      "outgoing": [
+        "SequenceFlow_0mbw4et",
+        "SequenceFlow_024djlt",
+        "SequenceFlow_02klp91"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "StartEvent_1mnut37",
+      "name": "probable\nrecourse\ndetected",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_1jrsqqc"
+      ]
+    },
+    {
+      "id": "EndEvent_01a6rq8",
+      "name": "case closed",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_17ohrlh"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "EndEvent_0k9uozu",
+      "name": "case closed",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_1u8uz5a"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "EndEvent_0nfuudw",
+      "name": "case open",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0ld619c"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "EndEvent_119yhl0",
+      "name": "case closed",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_1h7edo4"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "IntermediateCatchEvent_1ias0p2",
+      "name": "disagreement\nletter received",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0mbw4et"
+      ],
+      "outgoing": [
+        "SequenceFlow_01w8xpk"
+      ]
+    },
+    {
+      "id": "IntermediateCatchEvent_037r6f2",
+      "name": "Reminder \nis due",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "timerEventDefinition"
+      ],
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_024djlt"
+      ],
+      "outgoing": [
+        "SequenceFlow_096z65r"
+      ]
+    },
+    {
+      "id": "IntermediateCatchEvent_0d430z1",
+      "name": "Money\nreceived",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Recourse \nClerk",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_02klp91"
+      ],
+      "outgoing": [
+        "SequenceFlow_0rng9d2"
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "SequenceFlow_1jrsqqc",
+      "source": "StartEvent_1mnut37",
+      "target": "Task_0iirfhd",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0h9s0mp",
+      "source": "Task_0iirfhd",
+      "target": "ExclusiveGateway_092mc05",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0pqo7zt",
+      "source": "ExclusiveGateway_092mc05",
+      "target": "Task_02fdytg",
+      "condition": "yes",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1qt82pt",
+      "source": "ExclusiveGateway_092mc05",
+      "target": "Task_04aofbe",
+      "condition": "no",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_17ohrlh",
+      "source": "Task_04aofbe",
+      "target": "EndEvent_01a6rq8",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_152w54z",
+      "source": "Task_02fdytg",
+      "target": "Task_12lthpj",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1xvnonz",
+      "source": "Task_12lthpj",
+      "target": "EventBasedGateway_0qdxz70",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0mbw4et",
+      "source": "EventBasedGateway_0qdxz70",
+      "target": "IntermediateCatchEvent_1ias0p2",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_01w8xpk",
+      "source": "IntermediateCatchEvent_1ias0p2",
+      "target": "Task_0eti3m2",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_17fk7n7",
+      "source": "Task_0eti3m2",
+      "target": "ExclusiveGateway_0lk2nir",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1hytpfi",
+      "source": "ExclusiveGateway_0lk2nir",
+      "target": "Task_1qlbv5i",
+      "condition": "yes",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1u8uz5a",
+      "source": "Task_1qlbv5i",
+      "target": "EndEvent_0k9uozu",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_024djlt",
+      "source": "EventBasedGateway_0qdxz70",
+      "target": "IntermediateCatchEvent_037r6f2",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_096z65r",
+      "source": "IntermediateCatchEvent_037r6f2",
+      "target": "Task_1w7bb1w",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_17yh2em",
+      "source": "ExclusiveGateway_0lk2nir",
+      "target": "Task_1w7bb1w",
+      "condition": "no",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0ld619c",
+      "source": "Task_1w7bb1w",
+      "target": "EndEvent_0nfuudw",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_02klp91",
+      "source": "EventBasedGateway_0qdxz70",
+      "target": "IntermediateCatchEvent_0d430z1",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0rng9d2",
+      "source": "IntermediateCatchEvent_0d430z1",
+      "target": "Task_1bwmf45",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0krol9j",
+      "source": "Task_1bwmf45",
+      "target": "Task_0yan60f",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1h7edo4",
+      "source": "Task_0yan60f",
+      "target": "EndEvent_119yhl0",
+      "condition": "",
+      "processId": "Process_1"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "check_case_completed": false,
+    "send_request_for_payment_completed": false,
+    "close_case_completed": false,
+    "send_reminder_completed": false,
+    "check_reasoning_completed": false,
+    "hand_over_to_collection_agency_completed": false,
+    "make_booking_completed": false,
+    "recourse_possible_result": "",
+    "ok_result": ""
+  }
+}

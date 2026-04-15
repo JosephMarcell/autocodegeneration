@@ -1,0 +1,311 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Resign member",
+        "value": "resignmember",
+        "internal": "resignmember"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "resignmember": "/resign-member/asks-to-resign-the-cooperative-member"
+    },
+    "stateSchema": {
+      "asks_to_resign_the_cooperative_member_completed": false,
+      "searches_for_information_about_the_member_completed": false,
+      "enters_the_id_or_name_completed": false,
+      "displays_a_form_to_resign_the_cooperative_member_completed": false,
+      "stores_information_about_resign_member_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "displays_information_about_the_member_completed": false,
+      "selects_one_of_the_descriptions_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/resign-member/asks-to-resign-the-cooperative-member",
+        "role": "resignmember",
+        "component": "AsksToResignTheCooperativeMemberPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/searches-for-information-about-the-member",
+        "role": "resignmember",
+        "component": "SearchesForInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/enters-the-id-or-name",
+        "role": "resignmember",
+        "component": "EntersTheIdOrNamePage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/displays-a-form-to-resign-the-cooperative-member",
+        "role": "resignmember",
+        "component": "DisplaysAFormToResignTheCooperativeMemberPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/stores-information-about-resign-member",
+        "role": "resignmember",
+        "component": "StoresInformationAboutResignMemberPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/reads-the-work-unit-database",
+        "role": "resignmember",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/displays-information-about-the-member",
+        "role": "resignmember",
+        "component": "DisplaysInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      },
+      {
+        "route": "/resign-member/selects-one-of-the-descriptions",
+        "role": "resignmember",
+        "component": "SelectsOneOfTheDescriptionsPage",
+        "allowedRoles": [
+          "resignmember"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ResignMember",
+      "role": "resignmember",
+      "defaultRoute": "/resign-member/asks-to-resign-the-cooperative-member",
+      "tasks": [
+        {
+          "taskId": "resignmember-asks-to-resign-the-cooperative-member",
+          "name": "AsksToResignTheCooperativeMember",
+          "route": "/resign-member/asks-to-resign-the-cooperative-member",
+          "component": "AsksToResignTheCooperativeMemberPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Asks to resign the cooperative member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_resign_the_cooperative_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to resign the cooperative member",
+            "hint": "Page for BPMN task 'Asks to resign the cooperative member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/resign-member/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/displays-a-form-to-resign-the-cooperative-member",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-displays-a-form-to-resign-the-cooperative-member",
+          "name": "DisplaysAFormToResignTheCooperativeMember",
+          "route": "/resign-member/displays-a-form-to-resign-the-cooperative-member",
+          "component": "DisplaysAFormToResignTheCooperativeMemberPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Displays a form to resign the cooperative member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_to_resign_the_cooperative_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/enters-the-id-or-name",
+          "ui": {
+            "title": "Displays a form to resign the cooperative member",
+            "hint": "Page for BPMN task 'Displays a form to resign the cooperative member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-searches-for-information-about-the-member",
+          "name": "SearchesForInformationAboutTheMember",
+          "route": "/resign-member/searches-for-information-about-the-member",
+          "component": "SearchesForInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Searches for information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_for_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/displays-information-about-the-member",
+          "ui": {
+            "title": "Searches for information about the member",
+            "hint": "Page for BPMN task 'Searches for information about the member' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/resign-member/displays-information-about-the-member",
+              "condition": "available"
+            },
+            {
+              "route": "/resign-member/enters-the-id-or-name",
+              "condition": "EntersTheIdOrName"
+            }
+          ]
+        },
+        {
+          "taskId": "resignmember-enters-the-id-or-name",
+          "name": "EntersTheIdOrName",
+          "route": "/resign-member/enters-the-id-or-name",
+          "component": "EntersTheIdOrNamePage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Enters the ID or name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_id_or_name_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/searches-for-information-about-the-member",
+          "ui": {
+            "title": "Enters the ID or name",
+            "hint": "Page for BPMN task 'Enters the ID or name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-stores-information-about-resign-member",
+          "name": "StoresInformationAboutResignMember",
+          "route": "/resign-member/stores-information-about-resign-member",
+          "component": "StoresInformationAboutResignMemberPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Stores information about resign member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_information_about_resign_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/complete",
+          "ui": {
+            "title": "Stores information about resign member",
+            "hint": "Page for BPMN task 'Stores information about resign member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-displays-information-about-the-member",
+          "name": "DisplaysInformationAboutTheMember",
+          "route": "/resign-member/displays-information-about-the-member",
+          "component": "DisplaysInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Displays information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/selects-one-of-the-descriptions",
+          "ui": {
+            "title": "Displays information about the member",
+            "hint": "Page for BPMN task 'Displays information about the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "resignmember-selects-one-of-the-descriptions",
+          "name": "SelectsOneOfTheDescriptions",
+          "route": "/resign-member/selects-one-of-the-descriptions",
+          "component": "SelectsOneOfTheDescriptionsPage",
+          "pageType": "write-navigate",
+          "description": "Resign member: Selects one of the descriptions.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_descriptions_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/resign-member/stores-information-about-resign-member",
+          "ui": {
+            "title": "Selects one of the descriptions",
+            "hint": "Page for BPMN task 'Selects one of the descriptions' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/resign-member/stores-information-about-resign-member",
+              "condition": "Process"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

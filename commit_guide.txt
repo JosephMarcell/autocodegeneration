@@ -19,3 +19,7 @@ git commit -m "fix: perbaiki bug parsing di main.py"
 git commit -m "docs: update panduan penggunaan"
 git commit -m "refactor: rapikan fungsi parser"
 git commit -m "chore: update struktur dataset"
+
+
+
+python parser/main.py dataset/BPMN_Camunda/Dispatch-of-goods.bpmn ./Dispatch-of-goods_IR --no-llm   

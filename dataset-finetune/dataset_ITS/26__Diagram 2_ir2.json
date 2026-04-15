@@ -1,0 +1,332 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Realize a member loan (SIPA unit)",
+        "value": "realizeamemberloan(sipaunit)",
+        "internal": "realizeamemberloan(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "realizeamemberloan(sipaunit)": "/realize-a-member-loan-sipa-unit/asks-to-realize-a-member-loan"
+    },
+    "stateSchema": {
+      "asks_to_realize_a_member_loan_completed": false,
+      "reads_the_member_unit_work_database_completed": false,
+      "enters_information_about_realizing_member_completed": false,
+      "displays_a_form_of_realizing_a_member_loan_completed": false,
+      "displays_the_member_information_completed": false,
+      "reads_the_loan_database_completed": false,
+      "updates_the_loan_status_completed": false,
+      "displays_information_about_realizing_a_member_loan_completed": false,
+      "display_loan_infomation_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/realize-a-member-loan-sipa-unit/asks-to-realize-a-member-loan",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "AsksToRealizeAMemberLoanPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/reads-the-member-unit-work-database",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "ReadsTheMember&UnitWorkDatabasePage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/enters-information-about-realizing-member",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "EntersInformationAboutRealizingMemberPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/displays-a-form-of-realizing-a-member-loan",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "DisplaysAFormOfRealizingAMemberLoanPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/displays-the-member-information",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "DisplaysTheMemberInformationPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/reads-the-loan-database",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "ReadsTheLoanDatabasePage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/updates-the-loan-status",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "UpdatesTheLoanStatusPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/displays-information-about-realizing-a-member-loan",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "DisplaysInformationAboutRealizingAMemberLoanPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/realize-a-member-loan-sipa-unit/display-loan-infomation",
+        "role": "realizeamemberloan(sipaunit)",
+        "component": "DisplayLoanInfomationPage",
+        "allowedRoles": [
+          "realizeamemberloan(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "RealizeAMemberLoan(sipaUnit)",
+      "role": "realizeamemberloan(sipaunit)",
+      "defaultRoute": "/realize-a-member-loan-sipa-unit/asks-to-realize-a-member-loan",
+      "tasks": [
+        {
+          "taskId": "realizeamemberloan(sipaunit)-asks-to-realize-a-member-loan",
+          "name": "AsksToRealizeAMemberLoan",
+          "route": "/realize-a-member-loan-sipa-unit/asks-to-realize-a-member-loan",
+          "component": "AsksToRealizeAMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Asks to realize a member loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_realize_a_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/displays-a-form-of-realizing-a-member-loan",
+          "ui": {
+            "title": "Asks to realize a member loan",
+            "hint": "Page for BPMN task 'Asks to realize a member loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-displays-a-form-of-realizing-a-member-loan",
+          "name": "DisplaysAFormOfRealizingAMemberLoan",
+          "route": "/realize-a-member-loan-sipa-unit/displays-a-form-of-realizing-a-member-loan",
+          "component": "DisplaysAFormOfRealizingAMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Displays a form of realizing a member loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_of_realizing_a_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/enters-information-about-realizing-member",
+          "ui": {
+            "title": "Displays a form of realizing a member loan",
+            "hint": "Page for BPMN task 'Displays a form of realizing a member loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-enters-information-about-realizing-member",
+          "name": "EntersInformationAboutRealizingMember",
+          "route": "/realize-a-member-loan-sipa-unit/enters-information-about-realizing-member",
+          "component": "EntersInformationAboutRealizingMemberPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Enters information about realizing member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_information_about_realizing_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/reads-the-member-unit-work-database",
+          "ui": {
+            "title": "Enters information about realizing member",
+            "hint": "Page for BPMN task 'Enters information about realizing member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-reads-the-member-unit-work-database",
+          "name": "ReadsTheMember&UnitWorkDatabase",
+          "route": "/realize-a-member-loan-sipa-unit/reads-the-member-unit-work-database",
+          "component": "ReadsTheMember&UnitWorkDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Reads the Member & Unit Work database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_member_unit_work_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/displays-the-member-information",
+          "ui": {
+            "title": "Reads the Member & Unit Work database",
+            "hint": "Page for BPMN task 'Reads the Member & Unit Work database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-displays-the-member-information",
+          "name": "DisplaysTheMemberInformation",
+          "route": "/realize-a-member-loan-sipa-unit/displays-the-member-information",
+          "component": "DisplaysTheMemberInformationPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Displays the member information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_member_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/reads-the-loan-database",
+          "ui": {
+            "title": "Displays the member information",
+            "hint": "Page for BPMN task 'Displays the member information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-reads-the-loan-database",
+          "name": "ReadsTheLoanDatabase",
+          "route": "/realize-a-member-loan-sipa-unit/reads-the-loan-database",
+          "component": "ReadsTheLoanDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Reads the Loan database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_loan_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/displays-information-about-realizing-a-member-loan",
+          "ui": {
+            "title": "Reads the Loan database",
+            "hint": "Page for BPMN task 'Reads the Loan database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-displays-information-about-realizing-a-member-loan",
+          "name": "DisplaysInformationAboutRealizingAMemberLoan",
+          "route": "/realize-a-member-loan-sipa-unit/displays-information-about-realizing-a-member-loan",
+          "component": "DisplaysInformationAboutRealizingAMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Displays information about realizing a member loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_about_realizing_a_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/updates-the-loan-status",
+          "ui": {
+            "title": "Displays information about realizing a member loan",
+            "hint": "Page for BPMN task 'Displays information about realizing a member loan' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/realize-a-member-loan-sipa-unit/updates-the-loan-status",
+              "condition": "UpdatesTheLoanStatus"
+            }
+          ]
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-updates-the-loan-status",
+          "name": "UpdatesTheLoanStatus",
+          "route": "/realize-a-member-loan-sipa-unit/updates-the-loan-status",
+          "component": "UpdatesTheLoanStatusPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Updates the loan status.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "updates_the_loan_status_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/display-loan-infomation",
+          "ui": {
+            "title": "Updates the loan status",
+            "hint": "Page for BPMN task 'Updates the loan status' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "realizeamemberloan(sipaunit)-display-loan-infomation",
+          "name": "DisplayLoanInfomation",
+          "route": "/realize-a-member-loan-sipa-unit/display-loan-infomation",
+          "component": "DisplayLoanInfomationPage",
+          "pageType": "write-navigate",
+          "description": "Realize a member loan (SIPA unit): Display loan infomation.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_loan_infomation_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/realize-a-member-loan-sipa-unit/complete",
+          "ui": {
+            "title": "Display loan infomation",
+            "hint": "Page for BPMN task 'Display loan infomation' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

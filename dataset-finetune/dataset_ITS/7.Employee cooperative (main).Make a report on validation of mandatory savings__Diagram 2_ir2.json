@@ -1,0 +1,433 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a report on validation of mandatory savings",
+        "value": "makeareportonvalidationofmandatorysavings",
+        "internal": "makeareportonvalidationofmandatorysavings"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeareportonvalidationofmandatorysavings": "/make-a-report-on-validation-of-mandatory-savings/asks-to-make-a-report-on-validation-of-mandatory-savings"
+    },
+    "stateSchema": {
+      "asks_to_make_a_report_on_validation_of_mandatory_savings_completed": false,
+      "reads_member_completed": false,
+      "selects_validation_data_completed": false,
+      "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed": false,
+      "prints_the_receipt_completed": false,
+      "prints_validation_information_completed": false,
+      "select_show_menu_completed": false,
+      "displays_member_list_completed": false,
+      "selects_one_of_the_members_completed": false,
+      "reads_the_mandatory_savings_database_completed": false,
+      "displays_member_mandatory_savings_information_completed": false,
+      "deletes_the_mandatory_savings_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/asks-to-make-a-report-on-validation-of-mandatory-savings",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "AsksToMakeAReportOnValidationOfMandatorySavingsPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/reads-member",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "ReadsMemberPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/selects-validation-data",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "SelectsValidationDataPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavingsPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/prints-the-receipt",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "PrintsTheReceiptPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/prints-validation-information",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "PrintsValidationInformationPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/select-show-menu",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "SelectShowMenuPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/displays-member-list",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "DisplaysMemberListPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/selects-one-of-the-members",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/reads-the-mandatory-savings-database",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "ReadsTheMandatorySavingsDatabasePage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/displays-membermandatory-savings-information",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "DisplaysMemberMandatorySavingsInformationPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-validation-of-mandatory-savings/deletes-the-mandatory-savings-information",
+        "role": "makeareportonvalidationofmandatorysavings",
+        "component": "DeletesTheMandatorySavingsInformationPage",
+        "allowedRoles": [
+          "makeareportonvalidationofmandatorysavings"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeAReportOnValidationOfMandatorySavings",
+      "role": "makeareportonvalidationofmandatorysavings",
+      "defaultRoute": "/make-a-report-on-validation-of-mandatory-savings/asks-to-make-a-report-on-validation-of-mandatory-savings",
+      "tasks": [
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-asks-to-make-a-report-on-validation-of-mandatory-savings",
+          "name": "AsksToMakeAReportOnValidationOfMandatorySavings",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/asks-to-make-a-report-on-validation-of-mandatory-savings",
+          "component": "AsksToMakeAReportOnValidationOfMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Asks to make a report on validation of mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_report_on_validation_of_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "ui": {
+            "title": "Asks to make a report on validation of mandatory savings",
+            "hint": "Page for BPMN task 'Asks to make a report on validation of mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "name": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavings",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "component": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Displays the form of making a report on validation of mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/selects-validation-data",
+          "ui": {
+            "title": "Displays the form of making a report on validation of mandatory savings",
+            "hint": "Page for BPMN task 'Displays the form of making a report on validation of mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-selects-validation-data",
+          "name": "SelectsValidationData",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/selects-validation-data",
+          "component": "SelectsValidationDataPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Selects  validation data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_validation_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/select-show-menu",
+          "ui": {
+            "title": "Selects  validation data",
+            "hint": "Page for BPMN task 'Selects  validation data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-select-show-menu",
+          "name": "SelectShowMenu",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/select-show-menu",
+          "component": "SelectShowMenuPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Select show menu.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_show_menu_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/reads-member",
+          "ui": {
+            "title": "Select show menu",
+            "hint": "Page for BPMN task 'Select show menu' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-reads-member",
+          "name": "ReadsMember",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/reads-member",
+          "component": "ReadsMemberPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Reads Member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/displays-member-list",
+          "ui": {
+            "title": "Reads Member",
+            "hint": "Page for BPMN task 'Reads Member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-displays-member-list",
+          "name": "DisplaysMemberList",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/displays-member-list",
+          "component": "DisplaysMemberListPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Displays member list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_member_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/selects-one-of-the-members",
+          "ui": {
+            "title": "Displays member list",
+            "hint": "Page for BPMN task 'Displays member list' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/reads-the-mandatory-savings-database",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-reads-the-mandatory-savings-database",
+          "name": "ReadsTheMandatorySavingsDatabase",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/reads-the-mandatory-savings-database",
+          "component": "ReadsTheMandatorySavingsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Reads the Mandatory Savings database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_mandatory_savings_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/displays-membermandatory-savings-information",
+          "ui": {
+            "title": "Reads the Mandatory Savings database",
+            "hint": "Page for BPMN task 'Reads the Mandatory Savings database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-displays-membermandatory-savings-information",
+          "name": "DisplaysMemberMandatorySavingsInformation",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/displays-membermandatory-savings-information",
+          "component": "DisplaysMemberMandatorySavingsInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Displays member-mandatory savings information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_membermandatory_savings_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/prints-validation-information",
+          "ui": {
+            "title": "Displays member-mandatory savings information",
+            "hint": "Page for BPMN task 'Displays member-mandatory savings information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-report-on-validation-of-mandatory-savings/prints-validation-information",
+              "condition": "Print"
+            },
+            {
+              "route": "/make-a-report-on-validation-of-mandatory-savings/prints-the-receipt",
+              "condition": "PrintsTheReceipt"
+            },
+            {
+              "route": "/make-a-report-on-validation-of-mandatory-savings/deletes-the-mandatory-savings-information",
+              "condition": "DeletesTheMandatorySavingsInformation"
+            }
+          ]
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-prints-validation-information",
+          "name": "PrintsValidationInformation",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/prints-validation-information",
+          "component": "PrintsValidationInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Prints validation information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_validation_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/complete",
+          "ui": {
+            "title": "Prints validation information",
+            "hint": "Page for BPMN task 'Prints validation information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-prints-the-receipt",
+          "name": "PrintsTheReceipt",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/prints-the-receipt",
+          "component": "PrintsTheReceiptPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: Prints the receipt.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_receipt_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/complete",
+          "ui": {
+            "title": "Prints the receipt",
+            "hint": "Page for BPMN task 'Prints the receipt' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonvalidationofmandatorysavings-deletes-the-mandatory-savings-information",
+          "name": "DeletesTheMandatorySavingsInformation",
+          "route": "/make-a-report-on-validation-of-mandatory-savings/deletes-the-mandatory-savings-information",
+          "component": "DeletesTheMandatorySavingsInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on validation of mandatory savings: deletes the mandatory savings information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "deletes_the_mandatory_savings_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-validation-of-mandatory-savings/complete",
+          "ui": {
+            "title": "deletes the mandatory savings information",
+            "hint": "Page for BPMN task 'deletes the mandatory savings information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

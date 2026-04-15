@@ -1,0 +1,270 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View items sold",
+        "value": "viewitemssold",
+        "internal": "viewitemssold"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewitemssold": "/view-items-sold/asks-to-view-items-sold"
+    },
+    "stateSchema": {
+      "asks_to_view_items_sold_completed": false,
+      "displays_form_of_view_items_sold_completed": false,
+      "chooses_the_year_month_and_category_completed": false,
+      "queries_the_stock_database_completed": false,
+      "prints_the_table_completed": false,
+      "queries_goods_on_category_database_completed": false,
+      "displays_the_query_results_to_the_table_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-items-sold/asks-to-view-items-sold",
+        "role": "viewitemssold",
+        "component": "AsksToViewItemsSoldPage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/displays-form-of-view-items-sold",
+        "role": "viewitemssold",
+        "component": "DisplaysFormOfViewItemsSoldPage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/chooses-the-year-month-and-category",
+        "role": "viewitemssold",
+        "component": "ChoosesTheYear,Month,AndCategoryPage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/queries-the-stock-database",
+        "role": "viewitemssold",
+        "component": "QueriesTheStockDatabasePage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/prints-the-table",
+        "role": "viewitemssold",
+        "component": "PrintsTheTablePage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/queries-goods-on-category-database",
+        "role": "viewitemssold",
+        "component": "QueriesGoodsOnCategoryDatabasePage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      },
+      {
+        "route": "/view-items-sold/displays-the-query-results-to-the-table",
+        "role": "viewitemssold",
+        "component": "DisplaysTheQueryResultsToTheTablePage",
+        "allowedRoles": [
+          "viewitemssold"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewItemsSold",
+      "role": "viewitemssold",
+      "defaultRoute": "/view-items-sold/asks-to-view-items-sold",
+      "tasks": [
+        {
+          "taskId": "viewitemssold-asks-to-view-items-sold",
+          "name": "AsksToViewItemsSold",
+          "route": "/view-items-sold/asks-to-view-items-sold",
+          "component": "AsksToViewItemsSoldPage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Asks to view items sold.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_view_items_sold_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/queries-goods-on-category-database",
+          "ui": {
+            "title": "Asks to view items sold",
+            "hint": "Page for BPMN task 'Asks to view items sold' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemssold-queries-goods-on-category-database",
+          "name": "QueriesGoodsOnCategoryDatabase",
+          "route": "/view-items-sold/queries-goods-on-category-database",
+          "component": "QueriesGoodsOnCategoryDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Queries goods on Category database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_goods_on_category_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/displays-form-of-view-items-sold",
+          "ui": {
+            "title": "Queries goods on Category database",
+            "hint": "Page for BPMN task 'Queries goods on Category database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemssold-displays-form-of-view-items-sold",
+          "name": "DisplaysFormOfViewItemsSold",
+          "route": "/view-items-sold/displays-form-of-view-items-sold",
+          "component": "DisplaysFormOfViewItemsSoldPage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Displays form of view items sold.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_view_items_sold_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/chooses-the-year-month-and-category",
+          "ui": {
+            "title": "Displays form of view items sold",
+            "hint": "Page for BPMN task 'Displays form of view items sold' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemssold-chooses-the-year-month-and-category",
+          "name": "ChoosesTheYear,Month,AndCategory",
+          "route": "/view-items-sold/chooses-the-year-month-and-category",
+          "component": "ChoosesTheYear,Month,AndCategoryPage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Chooses the year, month, and category.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_the_year_month_and_category_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/queries-the-stock-database",
+          "ui": {
+            "title": "Chooses the year, month, and category",
+            "hint": "Page for BPMN task 'Chooses the year, month, and category' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/view-items-sold/queries-the-stock-database",
+              "condition": "Process"
+            }
+          ]
+        },
+        {
+          "taskId": "viewitemssold-queries-the-stock-database",
+          "name": "QueriesTheStockDatabase",
+          "route": "/view-items-sold/queries-the-stock-database",
+          "component": "QueriesTheStockDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Queries the Stock database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_stock_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/displays-the-query-results-to-the-table",
+          "ui": {
+            "title": "Queries the Stock database",
+            "hint": "Page for BPMN task 'Queries the Stock database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemssold-displays-the-query-results-to-the-table",
+          "name": "DisplaysTheQueryResultsToTheTable",
+          "route": "/view-items-sold/displays-the-query-results-to-the-table",
+          "component": "DisplaysTheQueryResultsToTheTablePage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Displays the query results to the table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_the_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/complete",
+          "ui": {
+            "title": "Displays the query results to the table",
+            "hint": "Page for BPMN task 'Displays the query results to the table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemssold-prints-the-table",
+          "name": "PrintsTheTable",
+          "route": "/view-items-sold/prints-the-table",
+          "component": "PrintsTheTablePage",
+          "pageType": "write-navigate",
+          "description": "View items sold: Prints the table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-sold/complete",
+          "ui": {
+            "title": "Prints the table",
+            "hint": "Page for BPMN task 'Prints the table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

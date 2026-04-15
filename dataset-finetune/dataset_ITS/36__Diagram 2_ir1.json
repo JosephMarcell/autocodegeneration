@@ -1,0 +1,207 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_7b252373-790f-4614-9053-8479fcb27d5c"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "View items in the store",
+      "processRef": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_7b252373-790f-4614-9053-8479fcb27d5c": "Main Process",
+    "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8": "View items in the store"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Cashier",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to view items in the store",
+      "type": "task",
+      "participantName": "View items in the store",
+      "laneName": "Cashier",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries for goods in the Item database",
+      "type": "task",
+      "participantName": "View items in the store",
+      "laneName": "System",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the ID or name of the item",
+      "type": "task",
+      "participantName": "View items in the store",
+      "laneName": "Cashier",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of  view items in the store",
+      "type": "task",
+      "participantName": "View items in the store",
+      "laneName": "System",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the query results to a table",
+      "type": "task",
+      "participantName": "View items in the store",
+      "laneName": "System",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ]
+    }
+  ],
+  "gateways": [],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "View items in the store",
+      "laneName": "Cashier",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "View items in the store",
+      "laneName": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8",
+      "incoming": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    },
+    {
+      "id": "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_0fd97195-7253-4a9c-9594-b9c15d9afba8"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_view_items_in_the_store_completed": false,
+    "queries_for_goods_in_the_item_database_completed": false,
+    "enters_the_id_or_name_of_the_item_completed": false,
+    "displays_form_of_view_items_in_the_store_completed": false,
+    "displays_the_query_results_to_a_table_completed": false
+  }
+}

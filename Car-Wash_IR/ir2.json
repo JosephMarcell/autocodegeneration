@@ -1,0 +1,1012 @@
+{
+  "project": "CarWashApp",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Customer",
+        "value": "customer",
+        "internal": "customer"
+      },
+      {
+        "display": "Car Wash Machine",
+        "value": "carwashmachine",
+        "internal": "carwashmachine"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "customer": "/customer/pulls-car-up-to-car-wash",
+      "carwashmachine": "/carwashmachine/double-polish"
+    },
+    "stateSchema": {
+      "drives_away_completed": false,
+      "pulls_car_up_to_car_wash_completed": false,
+      "chooses_wash_completed": false,
+      "pay_8_completed": false,
+      "pays_15_completed": false,
+      "double_polish_completed": false,
+      "dry_completed": false,
+      "wheel_luster_wheel_clean_completed": false,
+      "soft_cloth_wash_completed": false,
+      "wheel_clean_completed": false,
+      "clear_coat_protection_completed": false,
+      "which_wash_program_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/customer/pulls-car-up-to-car-wash",
+        "role": "customer",
+        "component": "PullsCarUpToCarWashPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/chooses-wash",
+        "role": "customer",
+        "component": "ChoosesWashPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/pays-15",
+        "role": "customer",
+        "component": "Pays15Page",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/pay-8",
+        "role": "customer",
+        "component": "Pay8Page",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/drives-away",
+        "role": "customer",
+        "component": "DrivesAwayPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/carwashmachine/double-polish",
+        "role": "carwashmachine",
+        "component": "DoublePolishPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/carwashmachine/dry",
+        "role": "carwashmachine",
+        "component": "DryPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/carwashmachine/wheel-luster-wheel-clean",
+        "role": "carwashmachine",
+        "component": "WheelLusterWheelCleanPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/carwashmachine/soft-cloth-wash",
+        "role": "carwashmachine",
+        "component": "SoftClothWashPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/carwashmachine/wheel-clean",
+        "role": "carwashmachine",
+        "component": "WheelCleanPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/carwashmachine/clear-coat-protection",
+        "role": "carwashmachine",
+        "component": "ClearCoatProtectionPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "task": "generate",
+      "description": "Zustand store: auth session + per-task workflow state. MUST export useGlobalState() hook and GlobalState interface.",
+      "path": "src/shared/state/globalState.ts",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Customer",
+            "value": "customer",
+            "internal": "customer"
+          },
+          {
+            "display": "Car Wash Machine",
+            "value": "carwashmachine",
+            "internal": "carwashmachine"
+          }
+        ],
+        "stateSchema": {
+          "drives_away_completed": false,
+          "pulls_car_up_to_car_wash_completed": false,
+          "chooses_wash_completed": false,
+          "pay_8_completed": false,
+          "pays_15_completed": false,
+          "double_polish_completed": false,
+          "dry_completed": false,
+          "wheel_luster_wheel_clean_completed": false,
+          "soft_cloth_wash_completed": false,
+          "wheel_clean_completed": false,
+          "clear_coat_protection_completed": false,
+          "which_wash_program_result": ""
+        }
+      },
+      "schema": {
+        "exports": [
+          "export interface GlobalState",
+          "export const useGlobalState: () => GlobalState & GlobalActions"
+        ],
+        "fields": {
+          "isAuthenticated": "boolean",
+          "role": "string | null",
+          "userName": "string",
+          "token": "string | null",
+          "workflowState": "Initialized with all keys from stateSchema: {\"drives_away_completed\": false, \"pulls_car_up_to_car_wash_completed\": false, \"chooses_wash_completed\": false, \"pay_8_completed\": false, \"pays_15_completed\": false, \"double_polish_completed\": false, \"dry_completed\": false, \"wheel_luster_wheel_clean_completed\": false, \"soft_cloth_wash_completed\": false, \"wheel_clean_completed\": false, \"clear_coat_protection_completed\": false, \"which_wash_program_result\": \"\"}"
+        },
+        "actions": {
+          "login": "(userName: string, role: string, token?: string) => void",
+          "logout": "() => void",
+          "updateWorkflow": "(key: string, value: boolean | string) => void"
+        }
+      },
+      "constraints": {
+        "output_format": "ts",
+        "imports": [
+          "zustand",
+          "zustand/middleware"
+        ],
+        "persist_session": true,
+        "max_lines": 120
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Layout shell for CarWashApp: sticky top navbar with project title, role badge (useGlobalState().role), and a Logout button calling logout(). Body: <main><Outlet /></main>.",
+      "path": "src/shared/components/Layout.tsx",
+      "group": "shared",
+      "input": {
+        "projectName": "CarWashApp",
+        "roles": [
+          {
+            "display": "Customer",
+            "value": "customer",
+            "internal": "customer"
+          },
+          {
+            "display": "Car Wash Machine",
+            "value": "carwashmachine",
+            "internal": "carwashmachine"
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function Layout()"
+        ]
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "no_external_ui_lib": true,
+        "max_lines": 70
+      }
+    },
+    {
+      "task": "generate",
+      "description": "ProtectedRoute component: (1) if not isAuthenticated → <Navigate to='/login' />. (2) if allowedRoles provided and role NOT in allowedRoles → <Navigate to='/login' />. (3) else render <Outlet />.",
+      "path": "src/shared/components/ProtectedRoute.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Customer",
+            "value": "customer",
+            "internal": "customer"
+          },
+          {
+            "display": "Car Wash Machine",
+            "value": "carwashmachine",
+            "internal": "carwashmachine"
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function ProtectedRoute(props: ProtectedRouteProps)"
+        ],
+        "props": {
+          "allowedRoles": "string[]  // optional — if absent, any authenticated role passes"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "max_lines": 50
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Login page: centered card with 'userName' text input and a 'role' <select> populated from roles list. On submit: call useGlobalState().login(userName, role), then navigate to defaultRoutesPerRole[role]. Disable submit if userName is empty or role not selected.",
+      "path": "src/shared/pages/LoginPage.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Customer",
+            "value": "customer",
+            "internal": "customer"
+          },
+          {
+            "display": "Car Wash Machine",
+            "value": "carwashmachine",
+            "internal": "carwashmachine"
+          }
+        ],
+        "defaultRoutesPerRole": {
+          "customer": "/customer/pulls-car-up-to-car-wash",
+          "carwashmachine": "/carwashmachine/double-polish"
+        }
+      },
+      "schema": {
+        "exports": [
+          "export default function LoginPage()"
+        ]
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)"
+        ],
+        "no_external_ui_lib": true,
+        "max_lines": 80
+      }
+    },
+    {
+      "task": "generate",
+      "description": "Root App.tsx using BrowserRouter. Register ALL routes flat inside <Routes> — NEVER use conditional JSX around <Route>. Wrap all protected routes with <ProtectedRoute allowedRoles={[...]}> via Route element prop. Route '/' redirects to defaultRoute for current role (or /login). Route '/login' renders <LoginPage /> (public). Add /:role/complete routes with a plain 'Process Completed' message. Add catch-all '*' with a 404 message.",
+      "path": "src/App.tsx",
+      "group": "shared",
+      "input": {
+        "roles": [
+          {
+            "display": "Customer",
+            "value": "customer",
+            "internal": "customer"
+          },
+          {
+            "display": "Car Wash Machine",
+            "value": "carwashmachine",
+            "internal": "carwashmachine"
+          }
+        ],
+        "defaultRoutesPerRole": {
+          "customer": "/customer/pulls-car-up-to-car-wash",
+          "carwashmachine": "/carwashmachine/double-polish"
+        },
+        "routes": [
+          {
+            "path": "/customer/pulls-car-up-to-car-wash",
+            "component": "PullsCarUpToCarWashPage",
+            "allowedRoles": [
+              "customer"
+            ]
+          },
+          {
+            "path": "/customer/chooses-wash",
+            "component": "ChoosesWashPage",
+            "allowedRoles": [
+              "customer"
+            ]
+          },
+          {
+            "path": "/customer/pays-15",
+            "component": "Pays15Page",
+            "allowedRoles": [
+              "customer"
+            ]
+          },
+          {
+            "path": "/customer/pay-8",
+            "component": "Pay8Page",
+            "allowedRoles": [
+              "customer"
+            ]
+          },
+          {
+            "path": "/customer/drives-away",
+            "component": "DrivesAwayPage",
+            "allowedRoles": [
+              "customer"
+            ]
+          },
+          {
+            "path": "/carwashmachine/double-polish",
+            "component": "DoublePolishPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          },
+          {
+            "path": "/carwashmachine/dry",
+            "component": "DryPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          },
+          {
+            "path": "/carwashmachine/wheel-luster-wheel-clean",
+            "component": "WheelLusterWheelCleanPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          },
+          {
+            "path": "/carwashmachine/soft-cloth-wash",
+            "component": "SoftClothWashPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          },
+          {
+            "path": "/carwashmachine/wheel-clean",
+            "component": "WheelCleanPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          },
+          {
+            "path": "/carwashmachine/clear-coat-protection",
+            "component": "ClearCoatProtectionPage",
+            "allowedRoles": [
+              "carwashmachine"
+            ]
+          }
+        ]
+      },
+      "schema": {
+        "exports": [
+          "export default function App()"
+        ],
+        "CRITICAL": "NEVER put <Route> inside {condition && ...}. ALL <Route> elements must be direct children of <Routes>. Use allowedRoles prop on <ProtectedRoute> wrapping the route element."
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "src/shared/pages/LoginPage",
+          "src/shared/components/ProtectedRoute",
+          "src/shared/components/Layout",
+          "src/modules/Customer/pages/PullsCarUpToCarWashPage",
+          "src/modules/Customer/pages/ChoosesWashPage",
+          "src/modules/Customer/pages/Pays15Page",
+          "src/modules/Customer/pages/Pay8Page",
+          "src/modules/Customer/pages/DrivesAwayPage",
+          "src/modules/CarWashMachine/pages/DoublePolishPage",
+          "src/modules/CarWashMachine/pages/DryPage",
+          "src/modules/CarWashMachine/pages/WheelLusterWheelCleanPage",
+          "src/modules/CarWashMachine/pages/SoftClothWashPage",
+          "src/modules/CarWashMachine/pages/WheelCleanPage",
+          "src/modules/CarWashMachine/pages/ClearCoatProtectionPage"
+        ],
+        "max_lines": 130
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[Customer / role:customer] Page for BPMN task 'Pulls car up to car wash' (task). UI: action. On action complete: navigate('/customer/chooses-wash').",
+      "path": "src/modules/Customer/pages/PullsCarUpToCarWashPage.tsx",
+      "group": "module:Customer",
+      "input": {
+        "taskName": "Pulls car up to car wash",
+        "taskType": "task",
+        "role": "customer",
+        "allowedRoles": [
+          "customer"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/customer/chooses-wash",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function PullsCarUpToCarWashPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Pulls car up to car wash' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/customer/chooses-wash').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'customer') navigate('/login')",
+        "state_key": "updateWorkflow key: 'pulls_car_up_to_car_wash_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[Customer / role:customer] Page for BPMN task 'Chooses wash' (task). UI: action. Show a choice selector: 'Polish Plus' → navigate('/customer/pays-15'), 'ECO' → navigate('/customer/pay-8'). Default: navigate('/customer/pays-15').",
+      "path": "src/modules/Customer/pages/ChoosesWashPage.tsx",
+      "group": "module:Customer",
+      "input": {
+        "taskName": "Chooses wash",
+        "taskType": "task",
+        "role": "customer",
+        "allowedRoles": [
+          "customer"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/customer/pays-15",
+        "conditionalRoutes": [
+          {
+            "route": "/customer/pays-15",
+            "condition": "Polish Plus"
+          },
+          {
+            "route": "/customer/pay-8",
+            "condition": "ECO"
+          }
+        ],
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function ChoosesWashPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Chooses wash' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "Show a choice selector: 'Polish Plus' → navigate('/customer/pays-15'), 'ECO' → navigate('/customer/pay-8'). Default: navigate('/customer/pays-15').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'customer') navigate('/login')",
+        "state_key": "updateWorkflow key: 'chooses_wash_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[Customer / role:customer] Page for BPMN task 'Pays 15' (task). UI: action. On action complete: navigate('/customer/complete').",
+      "path": "src/modules/Customer/pages/Pays15Page.tsx",
+      "group": "module:Customer",
+      "input": {
+        "taskName": "Pays 15",
+        "taskType": "task",
+        "role": "customer",
+        "allowedRoles": [
+          "customer"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/customer/complete",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function Pays15Page()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Pays 15' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/customer/complete').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'customer') navigate('/login')",
+        "state_key": "updateWorkflow key: 'pays_15_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[Customer / role:customer] Page for BPMN task 'Pay 8' (task). UI: action. On action complete: navigate('/customer/complete').",
+      "path": "src/modules/Customer/pages/Pay8Page.tsx",
+      "group": "module:Customer",
+      "input": {
+        "taskName": "Pay 8",
+        "taskType": "task",
+        "role": "customer",
+        "allowedRoles": [
+          "customer"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/customer/complete",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function Pay8Page()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Pay 8' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/customer/complete').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'customer') navigate('/login')",
+        "state_key": "updateWorkflow key: 'pay_8_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[Customer / role:customer] Page for BPMN task 'Drives away' (task). UI: action. On action complete: navigate('/customer/complete').",
+      "path": "src/modules/Customer/pages/DrivesAwayPage.tsx",
+      "group": "module:Customer",
+      "input": {
+        "taskName": "Drives away",
+        "taskType": "task",
+        "role": "customer",
+        "allowedRoles": [
+          "customer"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/customer/complete",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function DrivesAwayPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Drives away' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/customer/complete').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'customer') navigate('/login')",
+        "state_key": "updateWorkflow key: 'drives_away_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Double Polish' (task). UI: action. On action complete: navigate('/carwashmachine/clear-coat-protection').",
+      "path": "src/modules/CarWashMachine/pages/DoublePolishPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Double Polish",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/clear-coat-protection",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function DoublePolishPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Double Polish' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/carwashmachine/clear-coat-protection').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'double_polish_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Dry' (task). UI: action. On action complete: navigate('/carwashmachine/complete').",
+      "path": "src/modules/CarWashMachine/pages/DryPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Dry",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/complete",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function DryPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Dry' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/carwashmachine/complete').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'dry_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Wheel Luster Wheel Clean' (task). UI: action. On action complete: navigate('/carwashmachine/dry').",
+      "path": "src/modules/CarWashMachine/pages/WheelLusterWheelCleanPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Wheel Luster Wheel Clean",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/dry",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function WheelLusterWheelCleanPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Wheel Luster Wheel Clean' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/carwashmachine/dry').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'wheel_luster_wheel_clean_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Soft Cloth Wash' (task). UI: action. Show a choice selector: 'ECO' → navigate('/carwashmachine/wheel-clean'), 'Polish Plus' → navigate('/carwashmachine/double-polish'). Default: navigate('/carwashmachine/wheel-clean').",
+      "path": "src/modules/CarWashMachine/pages/SoftClothWashPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Soft Cloth Wash",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/wheel-clean",
+        "conditionalRoutes": [
+          {
+            "route": "/carwashmachine/wheel-clean",
+            "condition": "ECO"
+          },
+          {
+            "route": "/carwashmachine/double-polish",
+            "condition": "Polish Plus"
+          }
+        ],
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function SoftClothWashPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Soft Cloth Wash' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "Show a choice selector: 'ECO' → navigate('/carwashmachine/wheel-clean'), 'Polish Plus' → navigate('/carwashmachine/double-polish'). Default: navigate('/carwashmachine/wheel-clean').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'soft_cloth_wash_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Wheel Clean' (task). UI: action. On action complete: navigate('/carwashmachine/dry').",
+      "path": "src/modules/CarWashMachine/pages/WheelCleanPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Wheel Clean",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/dry",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function WheelCleanPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Wheel Clean' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/carwashmachine/dry').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'wheel_clean_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    },
+    {
+      "task": "generate",
+      "description": "[CarWashMachine / role:carwashmachine] Page for BPMN task 'Clear Coat Protection' (task). UI: action. On action complete: navigate('/carwashmachine/wheel-luster-wheel-clean').",
+      "path": "src/modules/CarWashMachine/pages/ClearCoatProtectionPage.tsx",
+      "group": "module:CarWashMachine",
+      "input": {
+        "taskName": "Clear Coat Protection",
+        "taskType": "task",
+        "role": "carwashmachine",
+        "allowedRoles": [
+          "carwashmachine"
+        ],
+        "lane": null,
+        "poolModule": null,
+        "uiType": "action",
+        "asyncFlag": false,
+        "waitingFor": null,
+        "nextRoute": "/carwashmachine/wheel-luster-wheel-clean",
+        "conditionalRoutes": null,
+        "parallelTriggers": null
+      },
+      "schema": {
+        "exports": [
+          "export default function ClearCoatProtectionPage()"
+        ],
+        "ui": {
+          "fields": [
+            "Status card: 'Clear Coat Protection' in progress",
+            "Action button: updateWorkflow(key, true) → routing action"
+          ],
+          "routing": "On action complete: navigate('/carwashmachine/wheel-luster-wheel-clean').",
+          "layout": "white card, page heading, Tailwind"
+        }
+      },
+      "constraints": {
+        "output_format": "tsx",
+        "imports": [
+          "react",
+          "react-router-dom",
+          "zustand",
+          "src/shared/state/globalState.ts  (useGlobalState — MUST NOT regenerate this file)",
+          "../../../../shared/state/globalState  (useGlobalState)",
+          "DO NOT wrap in Layout — it is already in the router"
+        ],
+        "role_guard": "if (role !== 'carwashmachine') navigate('/login')",
+        "state_key": "updateWorkflow key: 'clear_coat_protection_completed'",
+        "async_pattern": null,
+        "max_lines": 110
+      }
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_3b38505d-46b2-492c-94f0-bbc4b43bb4ca"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a new member loan",
+      "processRef": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_3b38505d-46b2-492c-94f0-bbc4b43bb4ca": "Main Process",
+    "Id_b1349b98-0330-40ff-b8e6-f740435390a2": "Make a new member loan"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+        "Id_0ed17198-7beb-4299-8570-874e04b20749",
+        "Id_66283be5-974b-42ef-849e-31b88be41ea1"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+        "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+        "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+        "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+        "Id_c58e0bfb-e614-4469-bac2-f558d73ed8f0"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Officer",
+    "Id_69e84749-141a-4442-83d7-4f8f834246a1": "System",
+    "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50": "System",
+    "Id_0ed17198-7beb-4299-8570-874e04b20749": "Officer",
+    "Id_98591417-09e8-4e86-9de6-a3a11b4326d5": "System",
+    "Id_66283be5-974b-42ef-849e-31b88be41ea1": "Officer",
+    "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e": "System",
+    "Id_c58e0bfb-e614-4469-bac2-f558d73ed8f0": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a new member loan",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a form of member search",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Saves the new borrowing information",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4759401b-438b-459f-a83f-b516b60e5383"
+      ],
+      "outgoing": [
+        "Id_6c9d277c-f89f-4c66-9bf2-e2179ff026ff"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Enters the work unit and ID/Name",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ]
+    },
+    {
+      "id": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "name": "Queries the Member & Work Unit database",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ],
+      "outgoing": [
+        "Id_609a3ca1-9061-42bc-867b-aa866142e15f"
+      ]
+    },
+    {
+      "id": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "name": "Displays the list of members",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_609a3ca1-9061-42bc-867b-aa866142e15f"
+      ],
+      "outgoing": [
+        "Id_23691415-c8a4-4b05-8b40-4121c26b07e8"
+      ]
+    },
+    {
+      "id": "Id_0ed17198-7beb-4299-8570-874e04b20749",
+      "name": "Selects one of the members",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_23691415-c8a4-4b05-8b40-4121c26b07e8"
+      ],
+      "outgoing": [
+        "Id_7c3d0674-4715-4bbd-9161-bf14e14d2191"
+      ]
+    },
+    {
+      "id": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "name": "Displays a new loan form",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7c3d0674-4715-4bbd-9161-bf14e14d2191"
+      ],
+      "outgoing": [
+        "Id_1866f829-173e-4815-8ead-defe386d9e4f"
+      ]
+    },
+    {
+      "id": "Id_66283be5-974b-42ef-849e-31b88be41ea1",
+      "name": "Enters new loan information",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_1866f829-173e-4815-8ead-defe386d9e4f"
+      ],
+      "outgoing": [
+        "Id_03cbde38-4b7c-451b-af6e-2bdf1ed93494"
+      ]
+    },
+    {
+      "id": "Id_c58e0bfb-e614-4469-bac2-f558d73ed8f0",
+      "name": "Save member status",
+      "type": "task",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_6c9d277c-f89f-4c66-9bf2-e2179ff026ff"
+      ],
+      "outgoing": [
+        "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "incoming": [
+        "Id_03cbde38-4b7c-451b-af6e-2bdf1ed93494"
+      ],
+      "outgoing": [
+        "Id_4759401b-438b-459f-a83f-b516b60e5383",
+        "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76"
+      ]
+    },
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "incoming": [
+        "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1",
+        "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76"
+      ],
+      "outgoing": [
+        "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a new member loan",
+      "laneName": "Officer",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a new member loan",
+      "laneName": "System",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2",
+      "incoming": [
+        "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_4759401b-438b-459f-a83f-b516b60e5383",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "Save",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_609a3ca1-9061-42bc-867b-aa866142e15f",
+      "source": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "target": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_23691415-c8a4-4b05-8b40-4121c26b07e8",
+      "source": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "target": "Id_0ed17198-7beb-4299-8570-874e04b20749",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_7c3d0674-4715-4bbd-9161-bf14e14d2191",
+      "source": "Id_0ed17198-7beb-4299-8570-874e04b20749",
+      "target": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_1866f829-173e-4815-8ead-defe386d9e4f",
+      "source": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "target": "Id_66283be5-974b-42ef-849e-31b88be41ea1",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_03cbde38-4b7c-451b-af6e-2bdf1ed93494",
+      "source": "Id_66283be5-974b-42ef-849e-31b88be41ea1",
+      "target": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1",
+      "source": "Id_c58e0bfb-e614-4469-bac2-f558d73ed8f0",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    },
+    {
+      "id": "Id_6c9d277c-f89f-4c66-9bf2-e2179ff026ff",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_c58e0bfb-e614-4469-bac2-f558d73ed8f0",
+      "condition": "",
+      "processId": "Id_b1349b98-0330-40ff-b8e6-f740435390a2"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_new_member_loan_completed": false,
+    "displays_a_form_of_member_search_completed": false,
+    "saves_the_new_borrowing_information_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "enters_the_work_unit_and_id_name_completed": false,
+    "queries_the_member_work_unit_database_completed": false,
+    "displays_the_list_of_members_completed": false,
+    "selects_one_of_the_members_completed": false,
+    "displays_a_new_loan_form_completed": false,
+    "enters_new_loan_information_completed": false,
+    "save_member_status_completed": false
+  }
+}

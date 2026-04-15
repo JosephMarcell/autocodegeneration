@@ -1,0 +1,383 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Sale item",
+        "value": "saleitem",
+        "internal": "saleitem"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "saleitem": "/sale-item/asks-to-sale-item"
+    },
+    "stateSchema": {
+      "asks_to_sale_item_completed": false,
+      "queries_in_the_goods_database_completed": false,
+      "enters_an_item_code_completed": false,
+      "displays_form_of_sale_item_completed": false,
+      "displays_the_item_name_and_price_into_the_list_completed": false,
+      "enters_buyer_data_completed": false,
+      "calculates_installments_completed": false,
+      "queries_the_customer_database_completed": false,
+      "displays_the_customer_information_completed": false,
+      "saves_the_sales_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/sale-item/asks-to-sale-item",
+        "role": "saleitem",
+        "component": "AsksToSaleItemPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/queries-in-the-goods-database",
+        "role": "saleitem",
+        "component": "QueriesInTheGoodsDatabasePage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/enters-an-item-code",
+        "role": "saleitem",
+        "component": "EntersAnItemCodePage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/displays-form-of-sale-item",
+        "role": "saleitem",
+        "component": "DisplaysFormOfSaleItemPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/displays-the-item-name-and-price-into-the-list",
+        "role": "saleitem",
+        "component": "DisplaysTheItemNameAndPriceIntoTheListPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/enters-buyer-data",
+        "role": "saleitem",
+        "component": "EntersBuyerDataPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/calculates-installments",
+        "role": "saleitem",
+        "component": "CalculatesInstallmentsPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/queries-the-customer-database",
+        "role": "saleitem",
+        "component": "QueriesTheCustomerDatabasePage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/displays-the-customer-information",
+        "role": "saleitem",
+        "component": "DisplaysTheCustomerInformationPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      },
+      {
+        "route": "/sale-item/saves-the-sales-information",
+        "role": "saleitem",
+        "component": "SavesTheSalesInformationPage",
+        "allowedRoles": [
+          "saleitem"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "SaleItem",
+      "role": "saleitem",
+      "defaultRoute": "/sale-item/asks-to-sale-item",
+      "tasks": [
+        {
+          "taskId": "saleitem-asks-to-sale-item",
+          "name": "AsksToSaleItem",
+          "route": "/sale-item/asks-to-sale-item",
+          "component": "AsksToSaleItemPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Asks to sale item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_sale_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/displays-form-of-sale-item",
+          "ui": {
+            "title": "Asks to sale item",
+            "hint": "Page for BPMN task 'Asks to sale item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-displays-form-of-sale-item",
+          "name": "DisplaysFormOfSaleItem",
+          "route": "/sale-item/displays-form-of-sale-item",
+          "component": "DisplaysFormOfSaleItemPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Displays form of  sale item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_sale_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/enters-an-item-code",
+          "ui": {
+            "title": "Displays form of  sale item",
+            "hint": "Page for BPMN task 'Displays form of  sale item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-queries-in-the-goods-database",
+          "name": "QueriesInTheGoodsDatabase",
+          "route": "/sale-item/queries-in-the-goods-database",
+          "component": "QueriesInTheGoodsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Queries in the Goods database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_in_the_goods_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/displays-the-item-name-and-price-into-the-list",
+          "ui": {
+            "title": "Queries in the Goods database",
+            "hint": "Page for BPMN task 'Queries in the Goods database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-enters-an-item-code",
+          "name": "EntersAnItemCode",
+          "route": "/sale-item/enters-an-item-code",
+          "component": "EntersAnItemCodePage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Enters an item code.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_an_item_code_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/queries-in-the-goods-database",
+          "ui": {
+            "title": "Enters an item code",
+            "hint": "Page for BPMN task 'Enters an item code' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-displays-the-item-name-and-price-into-the-list",
+          "name": "DisplaysTheItemNameAndPriceIntoTheList",
+          "route": "/sale-item/displays-the-item-name-and-price-into-the-list",
+          "component": "DisplaysTheItemNameAndPriceIntoTheListPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Displays the item name and price into the list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_item_name_and_price_into_the_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/enters-an-item-code",
+          "ui": {
+            "title": "Displays the item name and price into the list",
+            "hint": "Page for BPMN task 'Displays the item name and price into the list' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/sale-item/enters-an-item-code",
+              "condition": "EntersAnItemCode"
+            },
+            {
+              "route": "/sale-item/enters-buyer-data",
+              "condition": "EntersBuyerData"
+            }
+          ]
+        },
+        {
+          "taskId": "saleitem-enters-buyer-data",
+          "name": "EntersBuyerData",
+          "route": "/sale-item/enters-buyer-data",
+          "component": "EntersBuyerDataPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Enters buyer data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_buyer_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/calculates-installments",
+          "ui": {
+            "title": "Enters buyer data",
+            "hint": "Page for BPMN task 'Enters buyer data' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/sale-item/calculates-installments",
+              "condition": "Payment is credit"
+            },
+            {
+              "route": "/sale-item/queries-the-customer-database",
+              "condition": "QueriesTheCustomerDatabase"
+            }
+          ]
+        },
+        {
+          "taskId": "saleitem-calculates-installments",
+          "name": "CalculatesInstallments",
+          "route": "/sale-item/calculates-installments",
+          "component": "CalculatesInstallmentsPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Calculates installments.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "calculates_installments_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/queries-the-customer-database",
+          "ui": {
+            "title": "Calculates installments",
+            "hint": "Page for BPMN task 'Calculates installments' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-queries-the-customer-database",
+          "name": "QueriesTheCustomerDatabase",
+          "route": "/sale-item/queries-the-customer-database",
+          "component": "QueriesTheCustomerDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Queries the Customer database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_customer_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/displays-the-customer-information",
+          "ui": {
+            "title": "Queries the Customer database",
+            "hint": "Page for BPMN task 'Queries the Customer database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "saleitem-displays-the-customer-information",
+          "name": "DisplaysTheCustomerInformation",
+          "route": "/sale-item/displays-the-customer-information",
+          "component": "DisplaysTheCustomerInformationPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Displays the customer information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_customer_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/saves-the-sales-information",
+          "ui": {
+            "title": "Displays the customer information",
+            "hint": "Page for BPMN task 'Displays the customer information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/sale-item/saves-the-sales-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "saleitem-saves-the-sales-information",
+          "name": "SavesTheSalesInformation",
+          "route": "/sale-item/saves-the-sales-information",
+          "component": "SavesTheSalesInformationPage",
+          "pageType": "write-navigate",
+          "description": "Sale item: Saves the sales information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_sales_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/sale-item/complete",
+          "ui": {
+            "title": "Saves the sales information",
+            "hint": "Page for BPMN task 'Saves the sales information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "General inpatient registration",
+        "value": "generalinpatientregistration",
+        "internal": "generalinpatientregistration"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "generalinpatientregistration": "/general-inpatient-registration/wants-to-register-inpatient-for-general-patients"
+    },
+    "stateSchema": {
+      "wants_to_register_inpatient_for_general_patients_completed": false,
+      "displays_an_inpatient_registration_form_completed": false,
+      "enters_the_medical_record_id_completed": false,
+      "includes_registration_information_completed": false,
+      "displays_the_query_results_completed": false,
+      "reads_the_patient_database_completed": false,
+      "reads_the_referral_database_completed": false,
+      "includes_information_about_the_patient_s_handler_completed": false,
+      "displays_a_list_of_referrals_completed": false,
+      "selects_the_referral_completed": false,
+      "selects_an_emergency_button_completed": false,
+      "runs_the_emergency_form_completed": false,
+      "selects_a_register_button_completed": false,
+      "generates_the_hospitalization_number_completed": false,
+      "saves_the_registration_information_completed": false,
+      "displays_the_registration_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/general-inpatient-registration/wants-to-register-inpatient-for-general-patients",
+        "role": "generalinpatientregistration",
+        "component": "WantsToRegisterInpatientForGeneralPatientsPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/displays-an-inpatient-registration-form",
+        "role": "generalinpatientregistration",
+        "component": "DisplaysAnInpatientRegistrationFormPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/enters-the-medical-record-id",
+        "role": "generalinpatientregistration",
+        "component": "EntersTheMedicalRecordIdPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/includes-registration-information",
+        "role": "generalinpatientregistration",
+        "component": "IncludesRegistrationInformationPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/displays-the-query-results",
+        "role": "generalinpatientregistration",
+        "component": "DisplaysTheQueryResultsPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/reads-the-patient-database",
+        "role": "generalinpatientregistration",
+        "component": "ReadsThePatientDatabasePage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/reads-the-referral-database",
+        "role": "generalinpatientregistration",
+        "component": "ReadsTheReferralDatabasePage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/includes-information-about-the-patients-handler",
+        "role": "generalinpatientregistration",
+        "component": "IncludesInformationAboutThePatient'sHandlerPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/displays-a-list-of-referrals",
+        "role": "generalinpatientregistration",
+        "component": "DisplaysAListOfReferralsPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/selects-the-referral",
+        "role": "generalinpatientregistration",
+        "component": "SelectsTheReferralPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/selects-an-emergency-button",
+        "role": "generalinpatientregistration",
+        "component": "SelectsAnEmergencyButtonPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/runs-the-emergency-form",
+        "role": "generalinpatientregistration",
+        "component": "RunsTheEmergencyFormPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/selects-a-register-button",
+        "role": "generalinpatientregistration",
+        "component": "SelectsARegisterButtonPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/generates-the-hospitalization-number",
+        "role": "generalinpatientregistration",
+        "component": "GeneratesTheHospitalizationNumberPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/saves-the-registration-information",
+        "role": "generalinpatientregistration",
+        "component": "SavesTheRegistrationInformationPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-inpatient-registration/displays-the-registration-information",
+        "role": "generalinpatientregistration",
+        "component": "DisplaysTheRegistrationInformationPage",
+        "allowedRoles": [
+          "generalinpatientregistration"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "GeneralInpatientRegistration",
+      "role": "generalinpatientregistration",
+      "defaultRoute": "/general-inpatient-registration/wants-to-register-inpatient-for-general-patients",
+      "tasks": [
+        {
+          "taskId": "generalinpatientregistration-wants-to-register-inpatient-for-general-patients",
+          "name": "WantsToRegisterInpatientForGeneralPatients",
+          "route": "/general-inpatient-registration/wants-to-register-inpatient-for-general-patients",
+          "component": "WantsToRegisterInpatientForGeneralPatientsPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Wants to register Inpatient for general patients.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_register_inpatient_for_general_patients_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/displays-an-inpatient-registration-form",
+          "ui": {
+            "title": "Wants to register Inpatient for general patients",
+            "hint": "Page for BPMN task 'Wants to register Inpatient for general patients' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-displays-an-inpatient-registration-form",
+          "name": "DisplaysAnInpatientRegistrationForm",
+          "route": "/general-inpatient-registration/displays-an-inpatient-registration-form",
+          "component": "DisplaysAnInpatientRegistrationFormPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Displays an inpatient registration form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_an_inpatient_registration_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/enters-the-medical-record-id",
+          "ui": {
+            "title": "Displays an inpatient registration form",
+            "hint": "Page for BPMN task 'Displays an inpatient registration form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-enters-the-medical-record-id",
+          "name": "EntersTheMedicalRecordId",
+          "route": "/general-inpatient-registration/enters-the-medical-record-id",
+          "component": "EntersTheMedicalRecordIdPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Enters the medical record ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_medical_record_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/reads-the-patient-database",
+          "ui": {
+            "title": "Enters the medical record ID",
+            "hint": "Page for BPMN task 'Enters the medical record ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-reads-the-patient-database",
+          "name": "ReadsThePatientDatabase",
+          "route": "/general-inpatient-registration/reads-the-patient-database",
+          "component": "ReadsThePatientDatabasePage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Reads the Patient database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_patient_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/displays-the-query-results",
+          "ui": {
+            "title": "Reads the Patient database",
+            "hint": "Page for BPMN task 'Reads the Patient database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-displays-the-query-results",
+          "name": "DisplaysTheQueryResults",
+          "route": "/general-inpatient-registration/displays-the-query-results",
+          "component": "DisplaysTheQueryResultsPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Displays  the query results.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/includes-information-about-the-patients-handler",
+          "ui": {
+            "title": "Displays  the query results",
+            "hint": "Page for BPMN task 'Displays  the query results' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-includes-information-about-the-patients-handler",
+          "name": "IncludesInformationAboutThePatient'sHandler",
+          "route": "/general-inpatient-registration/includes-information-about-the-patients-handler",
+          "component": "IncludesInformationAboutThePatient'sHandlerPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Includes information about the patient's handler.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "includes_information_about_the_patients_handler_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/includes-registration-information",
+          "ui": {
+            "title": "Includes information about the patient's handler",
+            "hint": "Page for BPMN task 'Includes information about the patient's handler' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-includes-registration-information",
+          "name": "IncludesRegistrationInformation",
+          "route": "/general-inpatient-registration/includes-registration-information",
+          "component": "IncludesRegistrationInformationPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Includes registration information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "includes_registration_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/reads-the-referral-database",
+          "ui": {
+            "title": "Includes registration information",
+            "hint": "Page for BPMN task 'Includes registration information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-inpatient-registration/reads-the-referral-database",
+              "condition": "Referrals"
+            },
+            {
+              "route": "/general-inpatient-registration/selects-an-emergency-button",
+              "condition": "SelectsAnEmergencyButton"
+            }
+          ]
+        },
+        {
+          "taskId": "generalinpatientregistration-reads-the-referral-database",
+          "name": "ReadsTheReferralDatabase",
+          "route": "/general-inpatient-registration/reads-the-referral-database",
+          "component": "ReadsTheReferralDatabasePage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Reads the Referral database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_referral_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/displays-a-list-of-referrals",
+          "ui": {
+            "title": "Reads the Referral database",
+            "hint": "Page for BPMN task 'Reads the Referral database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-displays-a-list-of-referrals",
+          "name": "DisplaysAListOfReferrals",
+          "route": "/general-inpatient-registration/displays-a-list-of-referrals",
+          "component": "DisplaysAListOfReferralsPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Displays a list of referrals.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_list_of_referrals_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/selects-the-referral",
+          "ui": {
+            "title": "Displays a list of referrals",
+            "hint": "Page for BPMN task 'Displays a list of referrals' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-selects-the-referral",
+          "name": "SelectsTheReferral",
+          "route": "/general-inpatient-registration/selects-the-referral",
+          "component": "SelectsTheReferralPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Selects the referral.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_referral_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/selects-an-emergency-button",
+          "ui": {
+            "title": "Selects the referral",
+            "hint": "Page for BPMN task 'Selects the referral' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-selects-an-emergency-button",
+          "name": "SelectsAnEmergencyButton",
+          "route": "/general-inpatient-registration/selects-an-emergency-button",
+          "component": "SelectsAnEmergencyButtonPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Selects an emergency button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_an_emergency_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/runs-the-emergency-form",
+          "ui": {
+            "title": "Selects an emergency button",
+            "hint": "Page for BPMN task 'Selects an emergency button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-inpatient-registration/runs-the-emergency-form",
+              "condition": "Emergency"
+            },
+            {
+              "route": "/general-inpatient-registration/selects-a-register-button",
+              "condition": "SelectsARegisterButton"
+            }
+          ]
+        },
+        {
+          "taskId": "generalinpatientregistration-runs-the-emergency-form",
+          "name": "RunsTheEmergencyForm",
+          "route": "/general-inpatient-registration/runs-the-emergency-form",
+          "component": "RunsTheEmergencyFormPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Runs the emergency form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_emergency_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/selects-a-register-button",
+          "ui": {
+            "title": "Runs the emergency form",
+            "hint": "Page for BPMN task 'Runs the emergency form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-selects-a-register-button",
+          "name": "SelectsARegisterButton",
+          "route": "/general-inpatient-registration/selects-a-register-button",
+          "component": "SelectsARegisterButtonPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Selects a register button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_a_register_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/generates-the-hospitalization-number",
+          "ui": {
+            "title": "Selects a register button",
+            "hint": "Page for BPMN task 'Selects a register button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-inpatient-registration/generates-the-hospitalization-number",
+              "condition": "register"
+            }
+          ]
+        },
+        {
+          "taskId": "generalinpatientregistration-generates-the-hospitalization-number",
+          "name": "GeneratesTheHospitalizationNumber",
+          "route": "/general-inpatient-registration/generates-the-hospitalization-number",
+          "component": "GeneratesTheHospitalizationNumberPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Generates the hospitalization number.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "generates_the_hospitalization_number_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/saves-the-registration-information",
+          "ui": {
+            "title": "Generates the hospitalization number",
+            "hint": "Page for BPMN task 'Generates the hospitalization number' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-saves-the-registration-information",
+          "name": "SavesTheRegistrationInformation",
+          "route": "/general-inpatient-registration/saves-the-registration-information",
+          "component": "SavesTheRegistrationInformationPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Saves the registration information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_registration_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/displays-the-registration-information",
+          "ui": {
+            "title": "Saves the registration information",
+            "hint": "Page for BPMN task 'Saves the registration information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalinpatientregistration-displays-the-registration-information",
+          "name": "DisplaysTheRegistrationInformation",
+          "route": "/general-inpatient-registration/displays-the-registration-information",
+          "component": "DisplaysTheRegistrationInformationPage",
+          "pageType": "write-navigate",
+          "description": "General inpatient registration: Displays the registration information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_registration_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-inpatient-registration/complete",
+          "ui": {
+            "title": "Displays the registration information",
+            "hint": "Page for BPMN task 'Displays the registration information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

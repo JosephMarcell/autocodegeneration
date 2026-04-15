@@ -1,0 +1,435 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a member loan payment (SIPA unit)",
+        "value": "makeamemberloanpayment(sipaunit)",
+        "internal": "makeamemberloanpayment(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeamemberloanpayment(sipaunit)": "/make-a-member-loan-payment-sipa-unit/asks-to-make-a-member-loan-payment"
+    },
+    "stateSchema": {
+      "asks_to_make_a_member_loan_payment_completed": false,
+      "displays_the_form_a_member_loan_payment_completed": false,
+      "displays_the_list_of_members_to_a_table_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "enters_information_about_the_member_s_loan_completed": false,
+      "reads_the_loan_database_completed": false,
+      "reads_the_loan_and_member_databases_completed": false,
+      "displays_the_remaining_payment_form_completed": false,
+      "saves_the_installment_information_completed": false,
+      "selects_one_of_the_members_to_display_completed": false,
+      "displays_the_payment_information_completed": false,
+      "enters_the_realization_of_the_payment_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/asks-to-make-a-member-loan-payment",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "AsksToMakeAMemberLoanPaymentPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/displays-the-form-a-member-loan-payment",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "DisplaysTheFormAMemberLoanPaymentPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/displays-the-list-of-members-to-a-table",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "DisplaysTheListOfMembersToATablePage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/reads-the-work-unit-database",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/enters-information-about-the-members-loan",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "EntersInformationAboutTheMember'sLoanPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-database",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "ReadsTheLoanDatabasePage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-and-member-databases",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "ReadsTheLoanAndMemberDatabasesPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/displays-the-remaining-payment-form",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "DisplaysTheRemainingPaymentFormPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/saves-the-installment-information",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "SavesTheInstallmentInformationPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/selects-one-of-the-members-to-display",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "SelectsOneOfTheMembersToDisplayPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/displays-the-payment-information",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "DisplaysThePaymentInformationPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-member-loan-payment-sipa-unit/enters-the-realization-of-the-payment",
+        "role": "makeamemberloanpayment(sipaunit)",
+        "component": "EntersTheRealizationOfThePaymentPage",
+        "allowedRoles": [
+          "makeamemberloanpayment(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeAMemberLoanPayment(sipaUnit)",
+      "role": "makeamemberloanpayment(sipaunit)",
+      "defaultRoute": "/make-a-member-loan-payment-sipa-unit/asks-to-make-a-member-loan-payment",
+      "tasks": [
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-asks-to-make-a-member-loan-payment",
+          "name": "AsksToMakeAMemberLoanPayment",
+          "route": "/make-a-member-loan-payment-sipa-unit/asks-to-make-a-member-loan-payment",
+          "component": "AsksToMakeAMemberLoanPaymentPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Asks to make a member loan payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_member_loan_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a member loan payment",
+            "hint": "Page for BPMN task 'Asks to make a member loan payment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-member-loan-payment-sipa-unit/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/displays-the-form-a-member-loan-payment",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-displays-the-form-a-member-loan-payment",
+          "name": "DisplaysTheFormAMemberLoanPayment",
+          "route": "/make-a-member-loan-payment-sipa-unit/displays-the-form-a-member-loan-payment",
+          "component": "DisplaysTheFormAMemberLoanPaymentPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Displays the form a member loan payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_a_member_loan_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/enters-information-about-the-members-loan",
+          "ui": {
+            "title": "Displays the form a member loan payment",
+            "hint": "Page for BPMN task 'Displays the form a member loan payment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-enters-information-about-the-members-loan",
+          "name": "EntersInformationAboutTheMember'sLoan",
+          "route": "/make-a-member-loan-payment-sipa-unit/enters-information-about-the-members-loan",
+          "component": "EntersInformationAboutTheMember'sLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Enters information about the member's loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_information_about_the_members_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-and-member-databases",
+          "ui": {
+            "title": "Enters information about the member's loan",
+            "hint": "Page for BPMN task 'Enters information about the member's loan' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-and-member-databases",
+              "condition": "Show"
+            },
+            {
+              "route": "/make-a-member-loan-payment-sipa-unit/selects-one-of-the-members-to-display",
+              "condition": "SelectsOneOfTheMembersToDisplay"
+            }
+          ]
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-reads-the-loan-and-member-databases",
+          "name": "ReadsTheLoanAndMemberDatabases",
+          "route": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-and-member-databases",
+          "component": "ReadsTheLoanAndMemberDatabasesPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Reads the Loan and Member databases.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_loan_and_member_databases_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/displays-the-list-of-members-to-a-table",
+          "ui": {
+            "title": "Reads the Loan and Member databases",
+            "hint": "Page for BPMN task 'Reads the Loan and Member databases' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-displays-the-list-of-members-to-a-table",
+          "name": "DisplaysTheListOfMembersToATable",
+          "route": "/make-a-member-loan-payment-sipa-unit/displays-the-list-of-members-to-a-table",
+          "component": "DisplaysTheListOfMembersToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Displays the list of members to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_list_of_members_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/selects-one-of-the-members-to-display",
+          "ui": {
+            "title": "Displays the list of members to a table",
+            "hint": "Page for BPMN task 'Displays the list of members to a table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-selects-one-of-the-members-to-display",
+          "name": "SelectsOneOfTheMembersToDisplay",
+          "route": "/make-a-member-loan-payment-sipa-unit/selects-one-of-the-members-to-display",
+          "component": "SelectsOneOfTheMembersToDisplayPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Selects one of the members to display.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_to_display_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-database",
+          "ui": {
+            "title": "Selects one of the members to display",
+            "hint": "Page for BPMN task 'Selects one of the members to display' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-reads-the-loan-database",
+          "name": "ReadsTheLoanDatabase",
+          "route": "/make-a-member-loan-payment-sipa-unit/reads-the-loan-database",
+          "component": "ReadsTheLoanDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Reads the Loan database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_loan_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/displays-the-payment-information",
+          "ui": {
+            "title": "Reads the Loan database",
+            "hint": "Page for BPMN task 'Reads the Loan database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-displays-the-payment-information",
+          "name": "DisplaysThePaymentInformation",
+          "route": "/make-a-member-loan-payment-sipa-unit/displays-the-payment-information",
+          "component": "DisplaysThePaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Displays the payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/displays-the-remaining-payment-form",
+          "ui": {
+            "title": "Displays the payment information",
+            "hint": "Page for BPMN task 'Displays the payment information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-displays-the-remaining-payment-form",
+          "name": "DisplaysTheRemainingPaymentForm",
+          "route": "/make-a-member-loan-payment-sipa-unit/displays-the-remaining-payment-form",
+          "component": "DisplaysTheRemainingPaymentFormPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Displays the remaining payment form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_remaining_payment_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/enters-the-realization-of-the-payment",
+          "ui": {
+            "title": "Displays the remaining payment form",
+            "hint": "Page for BPMN task 'Displays the remaining payment form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-enters-the-realization-of-the-payment",
+          "name": "EntersTheRealizationOfThePayment",
+          "route": "/make-a-member-loan-payment-sipa-unit/enters-the-realization-of-the-payment",
+          "component": "EntersTheRealizationOfThePaymentPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Enters the realization of the payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_realization_of_the_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/saves-the-installment-information",
+          "ui": {
+            "title": "Enters the realization of the payment",
+            "hint": "Page for BPMN task 'Enters the realization of the payment' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-member-loan-payment-sipa-unit/saves-the-installment-information",
+              "condition": "repayment"
+            }
+          ]
+        },
+        {
+          "taskId": "makeamemberloanpayment(sipaunit)-saves-the-installment-information",
+          "name": "SavesTheInstallmentInformation",
+          "route": "/make-a-member-loan-payment-sipa-unit/saves-the-installment-information",
+          "component": "SavesTheInstallmentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a member loan payment (SIPA unit): Saves the installment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_installment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-member-loan-payment-sipa-unit/complete",
+          "ui": {
+            "title": "Saves the installment information",
+            "hint": "Page for BPMN task 'Saves the installment information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

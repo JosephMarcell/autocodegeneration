@@ -1,0 +1,305 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Makes goods return",
+        "value": "makesgoodsreturn",
+        "internal": "makesgoodsreturn"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makesgoodsreturn": "/makes-goods-return/asks-to-make-goods-return"
+    },
+    "stateSchema": {
+      "asks_to_make_goods_return_completed": false,
+      "queries_for_the_sales_note_completed": false,
+      "enters_the_sales_note_completed": false,
+      "displays_form_of_the_making_goods_return_completed": false,
+      "displays_sales_note_information_completed": false,
+      "chooses_item_to_return_completed": false,
+      "saves_the_return_information_completed": false,
+      "displays_the_information_of_the_returned_item_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/makes-goods-return/asks-to-make-goods-return",
+        "role": "makesgoodsreturn",
+        "component": "AsksToMakeGoodsReturnPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/queries-for-the-sales-note",
+        "role": "makesgoodsreturn",
+        "component": "QueriesForTheSalesNotePage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/enters-the-sales-note",
+        "role": "makesgoodsreturn",
+        "component": "EntersTheSalesNotePage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/displays-form-of-the-making-goods-return",
+        "role": "makesgoodsreturn",
+        "component": "DisplaysFormOfTheMakingGoodsReturnPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/displays-sales-note-information",
+        "role": "makesgoodsreturn",
+        "component": "DisplaysSalesNoteInformationPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/chooses-item-to-return",
+        "role": "makesgoodsreturn",
+        "component": "ChoosesItemToReturnPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/saves-the-return-information",
+        "role": "makesgoodsreturn",
+        "component": "SavesTheReturnInformationPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      },
+      {
+        "route": "/makes-goods-return/displays-the-information-of-the-returned-item",
+        "role": "makesgoodsreturn",
+        "component": "DisplaysTheInformationOfTheReturnedItemPage",
+        "allowedRoles": [
+          "makesgoodsreturn"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakesGoodsReturn",
+      "role": "makesgoodsreturn",
+      "defaultRoute": "/makes-goods-return/asks-to-make-goods-return",
+      "tasks": [
+        {
+          "taskId": "makesgoodsreturn-asks-to-make-goods-return",
+          "name": "AsksToMakeGoodsReturn",
+          "route": "/makes-goods-return/asks-to-make-goods-return",
+          "component": "AsksToMakeGoodsReturnPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Asks to make goods return.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_goods_return_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/displays-form-of-the-making-goods-return",
+          "ui": {
+            "title": "Asks to make goods return",
+            "hint": "Page for BPMN task 'Asks to make goods return' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-displays-form-of-the-making-goods-return",
+          "name": "DisplaysFormOfTheMakingGoodsReturn",
+          "route": "/makes-goods-return/displays-form-of-the-making-goods-return",
+          "component": "DisplaysFormOfTheMakingGoodsReturnPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Displays form of the making goods return.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_the_making_goods_return_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/enters-the-sales-note",
+          "ui": {
+            "title": "Displays form of the making goods return",
+            "hint": "Page for BPMN task 'Displays form of the making goods return' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-enters-the-sales-note",
+          "name": "EntersTheSalesNote",
+          "route": "/makes-goods-return/enters-the-sales-note",
+          "component": "EntersTheSalesNotePage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Enters the sales note.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_sales_note_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/queries-for-the-sales-note",
+          "ui": {
+            "title": "Enters the sales note",
+            "hint": "Page for BPMN task 'Enters the sales note' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-queries-for-the-sales-note",
+          "name": "QueriesForTheSalesNote",
+          "route": "/makes-goods-return/queries-for-the-sales-note",
+          "component": "QueriesForTheSalesNotePage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Queries for the sales note.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_the_sales_note_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/displays-sales-note-information",
+          "ui": {
+            "title": "Queries for the sales note",
+            "hint": "Page for BPMN task 'Queries for the sales note' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-displays-sales-note-information",
+          "name": "DisplaysSalesNoteInformation",
+          "route": "/makes-goods-return/displays-sales-note-information",
+          "component": "DisplaysSalesNoteInformationPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Displays sales note information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_sales_note_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/chooses-item-to-return",
+          "ui": {
+            "title": "Displays sales note information",
+            "hint": "Page for BPMN task 'Displays sales note information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-chooses-item-to-return",
+          "name": "ChoosesItemToReturn",
+          "route": "/makes-goods-return/chooses-item-to-return",
+          "component": "ChoosesItemToReturnPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Chooses item to return.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_item_to_return_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/displays-the-information-of-the-returned-item",
+          "ui": {
+            "title": "Chooses item to return",
+            "hint": "Page for BPMN task 'Chooses item to return' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-saves-the-return-information",
+          "name": "SavesTheReturnInformation",
+          "route": "/makes-goods-return/saves-the-return-information",
+          "component": "SavesTheReturnInformationPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Saves the return information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_return_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/complete",
+          "ui": {
+            "title": "Saves the return information",
+            "hint": "Page for BPMN task 'Saves the return information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makesgoodsreturn-displays-the-information-of-the-returned-item",
+          "name": "DisplaysTheInformationOfTheReturnedItem",
+          "route": "/makes-goods-return/displays-the-information-of-the-returned-item",
+          "component": "DisplaysTheInformationOfTheReturnedItemPage",
+          "pageType": "write-navigate",
+          "description": "Makes goods return: Displays the information of the returned item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_information_of_the_returned_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/makes-goods-return/chooses-item-to-return",
+          "ui": {
+            "title": "Displays the information of the returned item",
+            "hint": "Page for BPMN task 'Displays the information of the returned item' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/makes-goods-return/chooses-item-to-return",
+              "condition": "ChoosesItemToReturn"
+            },
+            {
+              "route": "/makes-goods-return/saves-the-return-information",
+              "condition": "SavesTheReturnInformation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

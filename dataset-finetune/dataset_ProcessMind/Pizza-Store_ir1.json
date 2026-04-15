@@ -1,0 +1,519 @@
+{
+  "project_name": "Pizza customer",
+  "participants": [
+    {
+      "id": "id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "name": "Pizza customer",
+      "processRef": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "name": "Pizza vendor",
+      "processRef": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824": "Pizza customer",
+    "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055": "Pizza vendor"
+  },
+  "lanes": [
+    {
+      "id": "id-9874db61-4bcb-4c85-b5dc-3a5a55e184ea",
+      "name": "clerk",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "flowNodeRefs": [
+        "id-82f345c2-dc3a-4956-93fd-9d663bbb9341",
+        "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7",
+        "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+        "id-d97f268d-d744-43ae-a03b-aaafab9c699e"
+      ]
+    },
+    {
+      "id": "id-1e3c32ca-a639-472a-8347-2ea10a2a6f5e",
+      "name": "pizza chef",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "flowNodeRefs": [
+        "id-b2bb4769-2584-4639-8373-f6cb839b5317"
+      ]
+    },
+    {
+      "id": "id-bc8cc27e-5c90-4c18-8afd-dc13df9581c0",
+      "name": "Delivery boy",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "flowNodeRefs": [
+        "id-cdca9070-9378-4907-8151-9d97b49b155f",
+        "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+        "id-eb2d3d69-ee58-4e0e-97f0-c1a193b49cf0"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "id-82f345c2-dc3a-4956-93fd-9d663bbb9341": "clerk",
+    "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7": "clerk",
+    "id-1766613b-52d0-4d37-9a9b-2df94cd341c7": "clerk",
+    "id-d97f268d-d744-43ae-a03b-aaafab9c699e": "clerk",
+    "id-b2bb4769-2584-4639-8373-f6cb839b5317": "pizza chef",
+    "id-cdca9070-9378-4907-8151-9d97b49b155f": "Delivery boy",
+    "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf": "Delivery boy",
+    "id-eb2d3d69-ee58-4e0e-97f0-c1a193b49cf0": "Delivery boy"
+  },
+  "tasks": [
+    {
+      "id": "id-303e96ab-970e-4454-ab71-9e6f053197b0",
+      "name": "Select a pizza",
+      "type": "task",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "asyncFlag": false,
+      "incoming": [
+        "id-ef82c6af-a239-45bb-9e4b-fc2c8fa8299f"
+      ],
+      "outgoing": [
+        "id-70fcb38f-03bf-49d3-90a1-e09b1fd79133"
+      ]
+    },
+    {
+      "id": "id-9beace69-e74d-4696-8aff-3072e4447ca8",
+      "name": "Order a pizza",
+      "type": "task",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "asyncFlag": false,
+      "incoming": [
+        "id-70fcb38f-03bf-49d3-90a1-e09b1fd79133"
+      ],
+      "outgoing": [
+        "id-324c2202-75b8-4bc6-8859-37dc8573d57b"
+      ]
+    },
+    {
+      "id": "id-4d1bc201-9ac8-486b-8b12-5a5d442b1afc",
+      "name": "Ask for the pizza",
+      "type": "task",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "asyncFlag": false,
+      "incoming": [
+        "id-6d3f0265-2690-4fb3-aa8a-b05c0651cf79"
+      ],
+      "outgoing": [
+        "id-8815c7a7-4933-4831-b2d8-528e25192231"
+      ]
+    },
+    {
+      "id": "id-0197ac77-5fef-42cc-a4a4-5947d2df8d09",
+      "name": "Pay the pizza",
+      "type": "task",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "asyncFlag": false,
+      "incoming": [
+        "id-47a92446-7ab4-4ea9-a78e-324f8a65c02f"
+      ],
+      "outgoing": [
+        "id-0239523d-15a5-45e7-8bb2-edca3673ad22"
+      ]
+    },
+    {
+      "id": "id-342b63f5-53be-48de-b703-73e7db85ef35",
+      "name": "Eat the pizza",
+      "type": "task",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "asyncFlag": false,
+      "incoming": [
+        "id-0239523d-15a5-45e7-8bb2-edca3673ad22"
+      ],
+      "outgoing": [
+        "id-42917593-9bce-48c2-87c4-f2dacc54f8e4"
+      ]
+    },
+    {
+      "id": "id-d97f268d-d744-43ae-a03b-aaafab9c699e",
+      "name": "Calm customer",
+      "type": "task",
+      "participantName": "Pizza vendor",
+      "laneName": "clerk",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "asyncFlag": false,
+      "incoming": [
+        "id-05267917-a788-4936-80ba-5eec7978d225"
+      ],
+      "outgoing": [
+        "id-97c0645f-e728-4b38-8906-6943cb74b481"
+      ]
+    },
+    {
+      "id": "id-b2bb4769-2584-4639-8373-f6cb839b5317",
+      "name": "Bake the pizza",
+      "type": "task",
+      "participantName": "Pizza vendor",
+      "laneName": "pizza chef",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "asyncFlag": false,
+      "incoming": [
+        "id-6689cf21-72d5-4722-9865-386bbb3ae274"
+      ],
+      "outgoing": [
+        "id-67c90744-05d5-4eed-abd3-e506ace97b84"
+      ]
+    },
+    {
+      "id": "id-cdca9070-9378-4907-8151-9d97b49b155f",
+      "name": "Deliver the pizza",
+      "type": "task",
+      "participantName": "Pizza vendor",
+      "laneName": "Delivery boy",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "asyncFlag": false,
+      "incoming": [
+        "id-67c90744-05d5-4eed-abd3-e506ace97b84"
+      ],
+      "outgoing": [
+        "id-30803168-6d75-46c4-878b-fce11e7e2e57"
+      ]
+    },
+    {
+      "id": "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+      "name": "Receive payment",
+      "type": "task",
+      "participantName": "Pizza vendor",
+      "laneName": "Delivery boy",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "asyncFlag": false,
+      "incoming": [
+        "id-30803168-6d75-46c4-878b-fce11e7e2e57"
+      ],
+      "outgoing": [
+        "id-31f84cea-b315-4bff-ba9b-7e2d9bf1d483"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "id-47ca6bc5-0ab5-4403-afd4-ccd31976defe",
+      "name": "",
+      "gatewayType": "eventBased",
+      "gatewayDirection": "Diverging",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "incoming": [
+        "id-324c2202-75b8-4bc6-8859-37dc8573d57b",
+        "id-8815c7a7-4933-4831-b2d8-528e25192231"
+      ],
+      "outgoing": [
+        "id-d6905eed-2870-422a-af05-456c0bb91908",
+        "id-853169ff-dcc2-45d7-bdcb-6604f54b8d12"
+      ]
+    },
+    {
+      "id": "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7",
+      "name": "",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Diverging",
+      "participantName": "Pizza vendor",
+      "laneName": "clerk",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "incoming": [
+        "id-fbfd797f-daf0-47bf-9abb-295e01dd8a1f"
+      ],
+      "outgoing": [
+        "id-5358e3f9-87e5-45f3-9f41-afdc44ca7727",
+        "id-6689cf21-72d5-4722-9865-386bbb3ae274"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "id-b851067f-7b6d-44a4-974b-24e2aa8ef1c0",
+      "name": "Hungry for pizza",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "incoming": [],
+      "outgoing": [
+        "id-ef82c6af-a239-45bb-9e4b-fc2c8fa8299f"
+      ]
+    },
+    {
+      "id": "id-b6eb8e6c-d230-44b0-8020-a1c2a7e82c66",
+      "name": "Hunger satisfied",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "incoming": [
+        "id-42917593-9bce-48c2-87c4-f2dacc54f8e4"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-ae419819-4312-445c-b377-c908ad7c5a49",
+      "name": "60 minutes",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "timerEventDefinition"
+      ],
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "incoming": [
+        "id-d6905eed-2870-422a-af05-456c0bb91908"
+      ],
+      "outgoing": [
+        "id-6d3f0265-2690-4fb3-aa8a-b05c0651cf79"
+      ]
+    },
+    {
+      "id": "id-b3e8f1ed-3869-4176-bde1-05bc1db10e5d",
+      "name": "pizza received",
+      "eventType": "intermediateThrowEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Pizza customer",
+      "laneName": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824",
+      "incoming": [
+        "id-853169ff-dcc2-45d7-bdcb-6604f54b8d12"
+      ],
+      "outgoing": [
+        "id-47a92446-7ab4-4ea9-a78e-324f8a65c02f"
+      ]
+    },
+    {
+      "id": "id-82f345c2-dc3a-4956-93fd-9d663bbb9341",
+      "name": "Order received",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Pizza vendor",
+      "laneName": "clerk",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "incoming": [],
+      "outgoing": [
+        "id-fbfd797f-daf0-47bf-9abb-295e01dd8a1f"
+      ]
+    },
+    {
+      "id": "id-eb2d3d69-ee58-4e0e-97f0-c1a193b49cf0",
+      "name": "End",
+      "eventType": "endEvent",
+      "eventDefinitionType": [
+        "terminateEventDefinition"
+      ],
+      "participantName": "Pizza vendor",
+      "laneName": "Delivery boy",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "incoming": [
+        "id-31f84cea-b315-4bff-ba9b-7e2d9bf1d483"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+      "name": "Where is my pizza?",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Pizza vendor",
+      "laneName": "clerk",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055",
+      "incoming": [
+        "id-5358e3f9-87e5-45f3-9f41-afdc44ca7727",
+        "id-97c0645f-e728-4b38-8906-6943cb74b481"
+      ],
+      "outgoing": [
+        "id-05267917-a788-4936-80ba-5eec7978d225"
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "id-ef82c6af-a239-45bb-9e4b-fc2c8fa8299f",
+      "source": "id-b851067f-7b6d-44a4-974b-24e2aa8ef1c0",
+      "target": "id-303e96ab-970e-4454-ab71-9e6f053197b0",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-70fcb38f-03bf-49d3-90a1-e09b1fd79133",
+      "source": "id-303e96ab-970e-4454-ab71-9e6f053197b0",
+      "target": "id-9beace69-e74d-4696-8aff-3072e4447ca8",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-324c2202-75b8-4bc6-8859-37dc8573d57b",
+      "source": "id-9beace69-e74d-4696-8aff-3072e4447ca8",
+      "target": "id-47ca6bc5-0ab5-4403-afd4-ccd31976defe",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-d6905eed-2870-422a-af05-456c0bb91908",
+      "source": "id-47ca6bc5-0ab5-4403-afd4-ccd31976defe",
+      "target": "id-ae419819-4312-445c-b377-c908ad7c5a49",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-6d3f0265-2690-4fb3-aa8a-b05c0651cf79",
+      "source": "id-ae419819-4312-445c-b377-c908ad7c5a49",
+      "target": "id-4d1bc201-9ac8-486b-8b12-5a5d442b1afc",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-8815c7a7-4933-4831-b2d8-528e25192231",
+      "source": "id-4d1bc201-9ac8-486b-8b12-5a5d442b1afc",
+      "target": "id-47ca6bc5-0ab5-4403-afd4-ccd31976defe",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-853169ff-dcc2-45d7-bdcb-6604f54b8d12",
+      "source": "id-47ca6bc5-0ab5-4403-afd4-ccd31976defe",
+      "target": "id-b3e8f1ed-3869-4176-bde1-05bc1db10e5d",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-47a92446-7ab4-4ea9-a78e-324f8a65c02f",
+      "source": "id-b3e8f1ed-3869-4176-bde1-05bc1db10e5d",
+      "target": "id-0197ac77-5fef-42cc-a4a4-5947d2df8d09",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-0239523d-15a5-45e7-8bb2-edca3673ad22",
+      "source": "id-0197ac77-5fef-42cc-a4a4-5947d2df8d09",
+      "target": "id-342b63f5-53be-48de-b703-73e7db85ef35",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-42917593-9bce-48c2-87c4-f2dacc54f8e4",
+      "source": "id-342b63f5-53be-48de-b703-73e7db85ef35",
+      "target": "id-b6eb8e6c-d230-44b0-8020-a1c2a7e82c66",
+      "condition": "",
+      "processId": "Process_id-b4f2b221-f282-4363-88c6-9d058e0b1824"
+    },
+    {
+      "id": "id-fbfd797f-daf0-47bf-9abb-295e01dd8a1f",
+      "source": "id-82f345c2-dc3a-4956-93fd-9d663bbb9341",
+      "target": "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-5358e3f9-87e5-45f3-9f41-afdc44ca7727",
+      "source": "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7",
+      "target": "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-05267917-a788-4936-80ba-5eec7978d225",
+      "source": "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+      "target": "id-d97f268d-d744-43ae-a03b-aaafab9c699e",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-97c0645f-e728-4b38-8906-6943cb74b481",
+      "source": "id-d97f268d-d744-43ae-a03b-aaafab9c699e",
+      "target": "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-6689cf21-72d5-4722-9865-386bbb3ae274",
+      "source": "id-6ad309ef-7f6c-412d-9e94-c14e6c278dd7",
+      "target": "id-b2bb4769-2584-4639-8373-f6cb839b5317",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-67c90744-05d5-4eed-abd3-e506ace97b84",
+      "source": "id-b2bb4769-2584-4639-8373-f6cb839b5317",
+      "target": "id-cdca9070-9378-4907-8151-9d97b49b155f",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-30803168-6d75-46c4-878b-fce11e7e2e57",
+      "source": "id-cdca9070-9378-4907-8151-9d97b49b155f",
+      "target": "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    },
+    {
+      "id": "id-31f84cea-b315-4bff-ba9b-7e2d9bf1d483",
+      "source": "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+      "target": "id-eb2d3d69-ee58-4e0e-97f0-c1a193b49cf0",
+      "condition": "",
+      "processId": "Process_id-faefcc69-77a6-4248-9872-f9c33fce5055"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "id-c2fa4a37-2b8b-4e24-8d04-5b557aa7e96d",
+      "sourceRef": "id-9beace69-e74d-4696-8aff-3072e4447ca8",
+      "targetRef": "id-82f345c2-dc3a-4956-93fd-9d663bbb9341",
+      "name": "pizza order"
+    },
+    {
+      "id": "id-bfb3f44f-cbb8-4b76-b337-249156559d8e",
+      "sourceRef": "id-4d1bc201-9ac8-486b-8b12-5a5d442b1afc",
+      "targetRef": "id-1766613b-52d0-4d37-9a9b-2df94cd341c7",
+      "name": ""
+    },
+    {
+      "id": "id-e129b166-c042-479a-ba0c-3770a12c301a",
+      "sourceRef": "id-d97f268d-d744-43ae-a03b-aaafab9c699e",
+      "targetRef": "id-4d1bc201-9ac8-486b-8b12-5a5d442b1afc",
+      "name": ""
+    },
+    {
+      "id": "id-498da7c4-05cd-42b0-80ff-f4930650cb22",
+      "sourceRef": "id-cdca9070-9378-4907-8151-9d97b49b155f",
+      "targetRef": "id-b3e8f1ed-3869-4176-bde1-05bc1db10e5d",
+      "name": ""
+    },
+    {
+      "id": "id-0848149b-66d7-4d98-a7ce-43be9bad1dac",
+      "sourceRef": "id-0197ac77-5fef-42cc-a4a4-5947d2df8d09",
+      "targetRef": "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+      "name": "money"
+    },
+    {
+      "id": "id-87407cbe-d9af-42d2-96a7-cbbf5070010b",
+      "sourceRef": "id-d12aa91b-aeaa-4122-834b-a8b7f4333cbf",
+      "targetRef": "id-0197ac77-5fef-42cc-a4a4-5947d2df8d09",
+      "name": "receipt"
+    }
+  ],
+  "stateSchema": {
+    "select_a_pizza_completed": false,
+    "order_a_pizza_completed": false,
+    "ask_for_the_pizza_completed": false,
+    "pay_the_pizza_completed": false,
+    "eat_the_pizza_completed": false,
+    "calm_customer_completed": false,
+    "bake_the_pizza_completed": false,
+    "deliver_the_pizza_completed": false,
+    "receive_payment_completed": false
+  }
+}

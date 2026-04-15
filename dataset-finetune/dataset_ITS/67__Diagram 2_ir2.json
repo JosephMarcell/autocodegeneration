@@ -1,0 +1,342 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Register referral patients",
+        "value": "registerreferralpatients",
+        "internal": "registerreferralpatients"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "registerreferralpatients": "/register-referral-patients/wants-to-make-a-referral-for-a-patient"
+    },
+    "stateSchema": {
+      "wants_to_make_a_referral_for_a_patient_completed": false,
+      "displays_the_query_results_to_a_table_in_the_form_completed": false,
+      "displays_the_patient_referral_register_form_completed": false,
+      "enters_the_medical_record_id_completed": false,
+      "searches_for_patient_data_in_the_registration_and_patient_database_completed": false,
+      "includes_the_purpose_of_referral_medical_information_completed": false,
+      "selects_the_save_button_completed": false,
+      "saves_the_referral_information_completed": false,
+      "sets_all_information_to_blank_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/register-referral-patients/wants-to-make-a-referral-for-a-patient",
+        "role": "registerreferralpatients",
+        "component": "WantsToMakeAReferralForAPatientPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/displays-the-query-results-to-a-table-in-the-form",
+        "role": "registerreferralpatients",
+        "component": "DisplaysTheQueryResultsToATableInTheFormPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/displays-the-patient-referral-register-form",
+        "role": "registerreferralpatients",
+        "component": "DisplaysThePatientReferralRegisterFormPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/enters-the-medical-record-id",
+        "role": "registerreferralpatients",
+        "component": "EntersTheMedicalRecordIdPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/searches-for-patient-data-in-the-registration-and-patient-database",
+        "role": "registerreferralpatients",
+        "component": "SearchesForPatientDataInTheRegistrationAndPatientDatabasePage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/includes-the-purpose-of-referral-medical-information",
+        "role": "registerreferralpatients",
+        "component": "IncludesThePurposeOfReferral,MedicalInformationPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/selects-the-save-button",
+        "role": "registerreferralpatients",
+        "component": "SelectsTheSaveButtonPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/saves-the-referral-information",
+        "role": "registerreferralpatients",
+        "component": "SavesTheReferralInformationPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      },
+      {
+        "route": "/register-referral-patients/sets-all-information-to-blank",
+        "role": "registerreferralpatients",
+        "component": "SetsAllInformationToBlankPage",
+        "allowedRoles": [
+          "registerreferralpatients"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "RegisterReferralPatients",
+      "role": "registerreferralpatients",
+      "defaultRoute": "/register-referral-patients/wants-to-make-a-referral-for-a-patient",
+      "tasks": [
+        {
+          "taskId": "registerreferralpatients-wants-to-make-a-referral-for-a-patient",
+          "name": "WantsToMakeAReferralForAPatient",
+          "route": "/register-referral-patients/wants-to-make-a-referral-for-a-patient",
+          "component": "WantsToMakeAReferralForAPatientPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Wants to make a referral for a patient.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_make_a_referral_for_a_patient_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/displays-the-patient-referral-register-form",
+          "ui": {
+            "title": "Wants to make a referral for a patient",
+            "hint": "Page for BPMN task 'Wants to make a referral for a patient' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-displays-the-patient-referral-register-form",
+          "name": "DisplaysThePatientReferralRegisterForm",
+          "route": "/register-referral-patients/displays-the-patient-referral-register-form",
+          "component": "DisplaysThePatientReferralRegisterFormPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Displays the patient referral register form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_patient_referral_register_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/enters-the-medical-record-id",
+          "ui": {
+            "title": "Displays the patient referral register form",
+            "hint": "Page for BPMN task 'Displays the patient referral register form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-displays-the-query-results-to-a-table-in-the-form",
+          "name": "DisplaysTheQueryResultsToATableInTheForm",
+          "route": "/register-referral-patients/displays-the-query-results-to-a-table-in-the-form",
+          "component": "DisplaysTheQueryResultsToATableInTheFormPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Displays the query results to a table in the form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_in_the_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/complete",
+          "ui": {
+            "title": "Displays the query results to a table in the form",
+            "hint": "Page for BPMN task 'Displays the query results to a table in the form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-enters-the-medical-record-id",
+          "name": "EntersTheMedicalRecordId",
+          "route": "/register-referral-patients/enters-the-medical-record-id",
+          "component": "EntersTheMedicalRecordIdPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Enters the medical record ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_medical_record_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/searches-for-patient-data-in-the-registration-and-patient-database",
+          "ui": {
+            "title": "Enters the medical record ID",
+            "hint": "Page for BPMN task 'Enters the medical record ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-searches-for-patient-data-in-the-registration-and-patient-database",
+          "name": "SearchesForPatientDataInTheRegistrationAndPatientDatabase",
+          "route": "/register-referral-patients/searches-for-patient-data-in-the-registration-and-patient-database",
+          "component": "SearchesForPatientDataInTheRegistrationAndPatientDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Searches for patient data in the Registration and Patient database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_for_patient_data_in_the_registration_and_patient_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/displays-the-query-results-to-a-table-in-the-form",
+          "ui": {
+            "title": "Searches for patient data in the Registration and Patient database",
+            "hint": "Page for BPMN task 'Searches for patient data in the Registration and Patient database' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/register-referral-patients/displays-the-query-results-to-a-table-in-the-form",
+              "condition": "found"
+            }
+          ]
+        },
+        {
+          "taskId": "registerreferralpatients-includes-the-purpose-of-referral-medical-information",
+          "name": "IncludesThePurposeOfReferral,MedicalInformation",
+          "route": "/register-referral-patients/includes-the-purpose-of-referral-medical-information",
+          "component": "IncludesThePurposeOfReferral,MedicalInformationPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Includes the purpose of referral, medical information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "includes_the_purpose_of_referral_medical_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/selects-the-save-button",
+          "ui": {
+            "title": "Includes the purpose of referral, medical information",
+            "hint": "Page for BPMN task 'Includes the purpose of referral, medical information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-selects-the-save-button",
+          "name": "SelectsTheSaveButton",
+          "route": "/register-referral-patients/selects-the-save-button",
+          "component": "SelectsTheSaveButtonPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Selects the save button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_save_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/saves-the-referral-information",
+          "ui": {
+            "title": "Selects the save button",
+            "hint": "Page for BPMN task 'Selects the save button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/register-referral-patients/saves-the-referral-information",
+              "condition": "SavesTheReferralInformation"
+            },
+            {
+              "route": "/register-referral-patients/sets-all-information-to-blank",
+              "condition": "SetsAllInformationToBlank"
+            }
+          ]
+        },
+        {
+          "taskId": "registerreferralpatients-saves-the-referral-information",
+          "name": "SavesTheReferralInformation",
+          "route": "/register-referral-patients/saves-the-referral-information",
+          "component": "SavesTheReferralInformationPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Saves the referral information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_referral_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/complete",
+          "ui": {
+            "title": "Saves the referral information",
+            "hint": "Page for BPMN task 'Saves the referral information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registerreferralpatients-sets-all-information-to-blank",
+          "name": "SetsAllInformationToBlank",
+          "route": "/register-referral-patients/sets-all-information-to-blank",
+          "component": "SetsAllInformationToBlankPage",
+          "pageType": "write-navigate",
+          "description": "Register referral patients: Sets all information to blank.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "sets_all_information_to_blank_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/register-referral-patients/complete",
+          "ui": {
+            "title": "Sets all information to blank",
+            "hint": "Page for BPMN task 'Sets all information to blank' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

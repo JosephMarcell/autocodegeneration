@@ -1,0 +1,438 @@
+{
+  "project": "Customer",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Customer",
+        "value": "customer",
+        "internal": "customer"
+      },
+      {
+        "display": "Car Wash Machine",
+        "value": "carwashmachine",
+        "internal": "carwashmachine"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "customer": "/customer/pulls-car-up-to-car-wash",
+      "carwashmachine": "/car-wash-machine/soft-cloth-wash"
+    },
+    "stateSchema": {
+      "drives_away_completed": false,
+      "pulls_car_up_to_car_wash_completed": false,
+      "chooses_wash_completed": false,
+      "pay_8_completed": false,
+      "pays_15_completed": false,
+      "double_polish_completed": false,
+      "dry_completed": false,
+      "wheel_luster_wheel_clean_completed": false,
+      "soft_cloth_wash_completed": false,
+      "wheel_clean_completed": false,
+      "clear_coat_protection_completed": false,
+      "which_wash_program_result": "",
+      "soft_cloth_wash_triggered": false
+    },
+    "allRoutes": [
+      {
+        "route": "/customer/drives-away",
+        "role": "customer",
+        "component": "DrivesAwayPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/pulls-car-up-to-car-wash",
+        "role": "customer",
+        "component": "PullsCarUpToCarWashPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/chooses-wash",
+        "role": "customer",
+        "component": "ChoosesWashPage",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/pay-8",
+        "role": "customer",
+        "component": "Pay8Page",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/customer/pays-15",
+        "role": "customer",
+        "component": "Pays15Page",
+        "allowedRoles": [
+          "customer"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/double-polish",
+        "role": "carwashmachine",
+        "component": "DoublePolishPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/dry",
+        "role": "carwashmachine",
+        "component": "DryPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/wheel-luster-wheel-clean",
+        "role": "carwashmachine",
+        "component": "WheelLusterWheelCleanPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/soft-cloth-wash",
+        "role": "carwashmachine",
+        "component": "SoftClothWashPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/wheel-clean",
+        "role": "carwashmachine",
+        "component": "WheelCleanPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      },
+      {
+        "route": "/car-wash-machine/clear-coat-protection",
+        "role": "carwashmachine",
+        "component": "ClearCoatProtectionPage",
+        "allowedRoles": [
+          "carwashmachine"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "Customer",
+      "role": "customer",
+      "defaultRoute": "/customer/pulls-car-up-to-car-wash",
+      "tasks": [
+        {
+          "taskId": "customer-pulls-car-up-to-car-wash",
+          "name": "PullsCarUpToCarWash",
+          "route": "/customer/pulls-car-up-to-car-wash",
+          "component": "PullsCarUpToCarWashPage",
+          "pageType": "write-navigate",
+          "description": "Customer: Pulls car up to car wash.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pulls_car_up_to_car_wash_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/customer/chooses-wash",
+          "ui": {
+            "title": "Pulls car up to car wash",
+            "hint": "Page for BPMN task 'Pulls car up to car wash' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "customer-chooses-wash",
+          "name": "ChoosesWash",
+          "route": "/customer/chooses-wash",
+          "component": "ChoosesWashPage",
+          "pageType": "write-navigate",
+          "description": "Customer: Chooses wash.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_wash_completed",
+              "value": true
+            },
+            {
+              "field": "which_wash_program_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/customer/pays-15",
+          "ui": {
+            "title": "Chooses wash",
+            "hint": "Page for BPMN task 'Chooses wash' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/customer/pays-15",
+              "condition": "Polish Plus"
+            },
+            {
+              "route": "/customer/pay-8",
+              "condition": "ECO"
+            }
+          ]
+        },
+        {
+          "taskId": "customer-pays-15",
+          "name": "Pays15",
+          "route": "/customer/pays-15",
+          "component": "Pays15Page",
+          "pageType": "write-navigate",
+          "description": "Customer: Pays 15.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pays_15_completed",
+              "value": true
+            },
+            {
+              "field": "soft_cloth_wash_triggered",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/customer/drives-away",
+          "ui": {
+            "title": "Pays 15",
+            "hint": "Page for BPMN task 'Pays 15' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "customer-pay-8",
+          "name": "Pay8",
+          "route": "/customer/pay-8",
+          "component": "Pay8Page",
+          "pageType": "write-navigate",
+          "description": "Customer: Pay 8.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pay_8_completed",
+              "value": true
+            },
+            {
+              "field": "soft_cloth_wash_triggered",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/customer/drives-away",
+          "ui": {
+            "title": "Pay 8",
+            "hint": "Page for BPMN task 'Pay 8' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "customer-drives-away",
+          "name": "DrivesAway",
+          "route": "/customer/drives-away",
+          "component": "DrivesAwayPage",
+          "pageType": "wait-then-write",
+          "description": "Customer: Drives away.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "drives_away_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "dry_completed",
+            "readableLabel": "Waiting for dry..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/customer/complete",
+          "ui": {
+            "title": "Drives away",
+            "hint": "Page for BPMN task 'Drives away' (wait-then-write)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "CarWashMachine",
+      "role": "carwashmachine",
+      "defaultRoute": "/car-wash-machine/soft-cloth-wash",
+      "tasks": [
+        {
+          "taskId": "carwashmachine-soft-cloth-wash",
+          "name": "SoftClothWash",
+          "route": "/car-wash-machine/soft-cloth-wash",
+          "component": "SoftClothWashPage",
+          "pageType": "wait-then-write",
+          "description": "Car Wash Machine: Soft Cloth Wash.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "soft_cloth_wash_completed",
+              "value": true
+            },
+            {
+              "field": "which_wash_program_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": {
+            "field": "soft_cloth_wash_triggered",
+            "readableLabel": "Waiting for soft cloth wash trigger..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/wheel-clean",
+          "ui": {
+            "title": "Soft Cloth Wash",
+            "hint": "Page for BPMN task 'Soft Cloth Wash' (wait-then-write)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/car-wash-machine/wheel-clean",
+              "condition": "ECO"
+            },
+            {
+              "route": "/car-wash-machine/double-polish",
+              "condition": "Polish Plus"
+            }
+          ]
+        },
+        {
+          "taskId": "carwashmachine-wheel-clean",
+          "name": "WheelClean",
+          "route": "/car-wash-machine/wheel-clean",
+          "component": "WheelCleanPage",
+          "pageType": "write-navigate",
+          "description": "Car Wash Machine: Wheel Clean.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wheel_clean_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/dry",
+          "ui": {
+            "title": "Wheel Clean",
+            "hint": "Page for BPMN task 'Wheel Clean' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "carwashmachine-double-polish",
+          "name": "DoublePolish",
+          "route": "/car-wash-machine/double-polish",
+          "component": "DoublePolishPage",
+          "pageType": "write-navigate",
+          "description": "Car Wash Machine: Double Polish.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "double_polish_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/clear-coat-protection",
+          "ui": {
+            "title": "Double Polish",
+            "hint": "Page for BPMN task 'Double Polish' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "carwashmachine-clear-coat-protection",
+          "name": "ClearCoatProtection",
+          "route": "/car-wash-machine/clear-coat-protection",
+          "component": "ClearCoatProtectionPage",
+          "pageType": "write-navigate",
+          "description": "Car Wash Machine: Clear Coat Protection.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "clear_coat_protection_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/wheel-luster-wheel-clean",
+          "ui": {
+            "title": "Clear Coat Protection",
+            "hint": "Page for BPMN task 'Clear Coat Protection' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "carwashmachine-wheel-luster-wheel-clean",
+          "name": "WheelLusterWheelClean",
+          "route": "/car-wash-machine/wheel-luster-wheel-clean",
+          "component": "WheelLusterWheelCleanPage",
+          "pageType": "write-navigate",
+          "description": "Car Wash Machine: Wheel Luster Wheel Clean.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wheel_luster_wheel_clean_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/dry",
+          "ui": {
+            "title": "Wheel Luster Wheel Clean",
+            "hint": "Page for BPMN task 'Wheel Luster Wheel Clean' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "carwashmachine-dry",
+          "name": "Dry",
+          "route": "/car-wash-machine/dry",
+          "component": "DryPage",
+          "pageType": "write-navigate",
+          "description": "Car Wash Machine: Dry.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "dry_completed",
+              "value": true
+            },
+            {
+              "field": "dry_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/car-wash-machine/soft-cloth-wash",
+          "ui": {
+            "title": "Dry",
+            "hint": "Page for BPMN task 'Dry' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

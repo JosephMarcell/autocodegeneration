@@ -1,0 +1,301 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "General new patient registration",
+        "value": "generalnewpatientregistration",
+        "internal": "generalnewpatientregistration"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "generalnewpatientregistration": "/general-new-patient-registration/wants-to-register-a-new-general-patient"
+    },
+    "stateSchema": {
+      "wants_to_register_a_new_general_patient_completed": false,
+      "displays_a_registration_form_completed": false,
+      "enters_the_patient_s_identity_completed": false,
+      "saves_the_registration_information_completed": false,
+      "selects_the_register_button_completed": false,
+      "queries_district_subdistric_village_and_referral_completed": false,
+      "enter_the_patient_s_address_completed": false,
+      "displays_the_registration_information_to_a_table_in_the_form_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/general-new-patient-registration/wants-to-register-a-new-general-patient",
+        "role": "generalnewpatientregistration",
+        "component": "WantsToRegisterANewGeneralPatientPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/displays-a-registration-form",
+        "role": "generalnewpatientregistration",
+        "component": "DisplaysARegistrationFormPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/enters-the-patients-identity",
+        "role": "generalnewpatientregistration",
+        "component": "EntersThePatient'sIdentityPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/saves-the-registration-information",
+        "role": "generalnewpatientregistration",
+        "component": "SavesTheRegistrationInformationPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/selects-the-register-button",
+        "role": "generalnewpatientregistration",
+        "component": "SelectsTheRegisterButtonPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/queries-district-subdistric-village-and-referral",
+        "role": "generalnewpatientregistration",
+        "component": "QueriesDistrict,Subdistric,Village,AndReferralPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/enter-the-patients-address",
+        "role": "generalnewpatientregistration",
+        "component": "EnterThePatient'sAddressPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      },
+      {
+        "route": "/general-new-patient-registration/displays-the-registration-information-to-a-table-in-the-form",
+        "role": "generalnewpatientregistration",
+        "component": "DisplaysTheRegistrationInformationToATableInTheFormPage",
+        "allowedRoles": [
+          "generalnewpatientregistration"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "GeneralNewPatientRegistration",
+      "role": "generalnewpatientregistration",
+      "defaultRoute": "/general-new-patient-registration/wants-to-register-a-new-general-patient",
+      "tasks": [
+        {
+          "taskId": "generalnewpatientregistration-wants-to-register-a-new-general-patient",
+          "name": "WantsToRegisterANewGeneralPatient",
+          "route": "/general-new-patient-registration/wants-to-register-a-new-general-patient",
+          "component": "WantsToRegisterANewGeneralPatientPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Wants to register a new general patient.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_register_a_new_general_patient_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/queries-district-subdistric-village-and-referral",
+          "ui": {
+            "title": "Wants to register a new general patient",
+            "hint": "Page for BPMN task 'Wants to register a new general patient' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-queries-district-subdistric-village-and-referral",
+          "name": "QueriesDistrict,Subdistric,Village,AndReferral",
+          "route": "/general-new-patient-registration/queries-district-subdistric-village-and-referral",
+          "component": "QueriesDistrict,Subdistric,Village,AndReferralPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Queries District, Subdistric, Village, and Referral.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_district_subdistric_village_and_referral_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/displays-a-registration-form",
+          "ui": {
+            "title": "Queries District, Subdistric, Village, and Referral",
+            "hint": "Page for BPMN task 'Queries District, Subdistric, Village, and Referral' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-displays-a-registration-form",
+          "name": "DisplaysARegistrationForm",
+          "route": "/general-new-patient-registration/displays-a-registration-form",
+          "component": "DisplaysARegistrationFormPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Displays a registration form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_registration_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/enters-the-patients-identity",
+          "ui": {
+            "title": "Displays a registration form",
+            "hint": "Page for BPMN task 'Displays a registration form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-enters-the-patients-identity",
+          "name": "EntersThePatient'sIdentity",
+          "route": "/general-new-patient-registration/enters-the-patients-identity",
+          "component": "EntersThePatient'sIdentityPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Enters the patient's identity.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_patients_identity_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/enter-the-patients-address",
+          "ui": {
+            "title": "Enters the patient's identity",
+            "hint": "Page for BPMN task 'Enters the patient's identity' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-enter-the-patients-address",
+          "name": "EnterThePatient'sAddress",
+          "route": "/general-new-patient-registration/enter-the-patients-address",
+          "component": "EnterThePatient'sAddressPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Enter the patient's address.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enter_the_patients_address_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/selects-the-register-button",
+          "ui": {
+            "title": "Enter the patient's address",
+            "hint": "Page for BPMN task 'Enter the patient's address' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-selects-the-register-button",
+          "name": "SelectsTheRegisterButton",
+          "route": "/general-new-patient-registration/selects-the-register-button",
+          "component": "SelectsTheRegisterButtonPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Selects the register button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_register_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/saves-the-registration-information",
+          "ui": {
+            "title": "Selects the register button",
+            "hint": "Page for BPMN task 'Selects the register button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-new-patient-registration/saves-the-registration-information",
+              "condition": "SavesTheRegistrationInformation"
+            }
+          ]
+        },
+        {
+          "taskId": "generalnewpatientregistration-saves-the-registration-information",
+          "name": "SavesTheRegistrationInformation",
+          "route": "/general-new-patient-registration/saves-the-registration-information",
+          "component": "SavesTheRegistrationInformationPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: Saves the registration information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_registration_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/displays-the-registration-information-to-a-table-in-the-form",
+          "ui": {
+            "title": "Saves the registration information",
+            "hint": "Page for BPMN task 'Saves the registration information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalnewpatientregistration-displays-the-registration-information-to-a-table-in-the-form",
+          "name": "DisplaysTheRegistrationInformationToATableInTheForm",
+          "route": "/general-new-patient-registration/displays-the-registration-information-to-a-table-in-the-form",
+          "component": "DisplaysTheRegistrationInformationToATableInTheFormPage",
+          "pageType": "write-navigate",
+          "description": "General new patient registration: displays the registration information to a table in the form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_registration_information_to_a_table_in_the_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-new-patient-registration/complete",
+          "ui": {
+            "title": "displays the registration information to a table in the form",
+            "hint": "Page for BPMN task 'displays the registration information to a table in the form' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

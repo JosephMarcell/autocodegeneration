@@ -1,0 +1,140 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View Today Triage results",
+        "value": "viewtodaytriageresults",
+        "internal": "viewtodaytriageresults"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewtodaytriageresults": "/view-today-triage-results/wants-to-view-today-triage-results"
+    },
+    "stateSchema": {
+      "wants_to_view_today_triage_results_completed": false,
+      "displays_the_query_results_to_a_table_in_the_form_completed": false,
+      "queries_the_triage_and_registration_database_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-today-triage-results/wants-to-view-today-triage-results",
+        "role": "viewtodaytriageresults",
+        "component": "WantsToViewTodayTriageResultsPage",
+        "allowedRoles": [
+          "viewtodaytriageresults"
+        ]
+      },
+      {
+        "route": "/view-today-triage-results/displays-the-query-results-to-a-table-in-the-form",
+        "role": "viewtodaytriageresults",
+        "component": "DisplaysTheQueryResultsToATableInTheFormPage",
+        "allowedRoles": [
+          "viewtodaytriageresults"
+        ]
+      },
+      {
+        "route": "/view-today-triage-results/queries-the-triage-and-registration-database",
+        "role": "viewtodaytriageresults",
+        "component": "QueriesTheTriageAndRegistrationDatabasePage",
+        "allowedRoles": [
+          "viewtodaytriageresults"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewTodayTriageResults",
+      "role": "viewtodaytriageresults",
+      "defaultRoute": "/view-today-triage-results/wants-to-view-today-triage-results",
+      "tasks": [
+        {
+          "taskId": "viewtodaytriageresults-wants-to-view-today-triage-results",
+          "name": "WantsToViewTodayTriageResults",
+          "route": "/view-today-triage-results/wants-to-view-today-triage-results",
+          "component": "WantsToViewTodayTriageResultsPage",
+          "pageType": "write-navigate",
+          "description": "View Today Triage results: Wants to View Today Triage results.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_view_today_triage_results_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-today-triage-results/queries-the-triage-and-registration-database",
+          "ui": {
+            "title": "Wants to View Today Triage results",
+            "hint": "Page for BPMN task 'Wants to View Today Triage results' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewtodaytriageresults-queries-the-triage-and-registration-database",
+          "name": "QueriesTheTriageAndRegistrationDatabase",
+          "route": "/view-today-triage-results/queries-the-triage-and-registration-database",
+          "component": "QueriesTheTriageAndRegistrationDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View Today Triage results: Queries the Triage and Registration database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_triage_and_registration_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-today-triage-results/displays-the-query-results-to-a-table-in-the-form",
+          "ui": {
+            "title": "Queries the Triage and Registration database",
+            "hint": "Page for BPMN task 'Queries the Triage and Registration database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewtodaytriageresults-displays-the-query-results-to-a-table-in-the-form",
+          "name": "DisplaysTheQueryResultsToATableInTheForm",
+          "route": "/view-today-triage-results/displays-the-query-results-to-a-table-in-the-form",
+          "component": "DisplaysTheQueryResultsToATableInTheFormPage",
+          "pageType": "write-navigate",
+          "description": "View Today Triage results: Displays the query results to a table in the form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_in_the_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-today-triage-results/complete",
+          "ui": {
+            "title": "Displays the query results to a table in the form",
+            "hint": "Page for BPMN task 'Displays the query results to a table in the form' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

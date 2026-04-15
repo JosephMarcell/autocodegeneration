@@ -1,0 +1,311 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a cash transaction",
+        "value": "makeacashtransaction",
+        "internal": "makeacashtransaction"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeacashtransaction": "/make-a-cash-transaction/asks-to-make-a-cash-transaction"
+    },
+    "stateSchema": {
+      "asks_to_make_a_cash_transaction_completed": false,
+      "fills_in_other_information_completed": false,
+      "chooses_the_cash_in_or_cash_out_option_completed": false,
+      "displays_a_form_of_making_a_cash_transaction_completed": false,
+      "selects_the_save_option_completed": false,
+      "saves_the_data_to_the_cash_database_completed": false,
+      "displays_a_confirmation_completed": false,
+      "verify_to_the_cash_database_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-cash-transaction/asks-to-make-a-cash-transaction",
+        "role": "makeacashtransaction",
+        "component": "AsksToMakeACashTransactionPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/fills-in-other-information",
+        "role": "makeacashtransaction",
+        "component": "FillsInOtherInformationPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/chooses-the-cash-in-or-cash-out-option",
+        "role": "makeacashtransaction",
+        "component": "ChoosesTheCashInOrCashOutOptionPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/displays-a-form-of-making-a-cash-transaction",
+        "role": "makeacashtransaction",
+        "component": "DisplaysAFormOfMakingACashTransactionPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/selects-the-save-option",
+        "role": "makeacashtransaction",
+        "component": "SelectsTheSaveOptionPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/saves-the-data-to-the-cash-database",
+        "role": "makeacashtransaction",
+        "component": "SavesTheDataToTheCashDatabasePage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/displays-a-confirmation",
+        "role": "makeacashtransaction",
+        "component": "DisplaysAConfirmationPage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      },
+      {
+        "route": "/make-a-cash-transaction/verify-to-the-cash-database",
+        "role": "makeacashtransaction",
+        "component": "VerifyToTheCashDatabasePage",
+        "allowedRoles": [
+          "makeacashtransaction"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeACashTransaction",
+      "role": "makeacashtransaction",
+      "defaultRoute": "/make-a-cash-transaction/asks-to-make-a-cash-transaction",
+      "tasks": [
+        {
+          "taskId": "makeacashtransaction-asks-to-make-a-cash-transaction",
+          "name": "AsksToMakeACashTransaction",
+          "route": "/make-a-cash-transaction/asks-to-make-a-cash-transaction",
+          "component": "AsksToMakeACashTransactionPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Asks to make a cash transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_cash_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/displays-a-form-of-making-a-cash-transaction",
+          "ui": {
+            "title": "Asks to make a cash transaction",
+            "hint": "Page for BPMN task 'Asks to make a cash transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeacashtransaction-displays-a-form-of-making-a-cash-transaction",
+          "name": "DisplaysAFormOfMakingACashTransaction",
+          "route": "/make-a-cash-transaction/displays-a-form-of-making-a-cash-transaction",
+          "component": "DisplaysAFormOfMakingACashTransactionPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Displays a form of making a cash transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_of_making_a_cash_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/chooses-the-cash-in-or-cash-out-option",
+          "ui": {
+            "title": "Displays a form of making a cash transaction",
+            "hint": "Page for BPMN task 'Displays a form of making a cash transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeacashtransaction-chooses-the-cash-in-or-cash-out-option",
+          "name": "ChoosesTheCashInOrCashOutOption",
+          "route": "/make-a-cash-transaction/chooses-the-cash-in-or-cash-out-option",
+          "component": "ChoosesTheCashInOrCashOutOptionPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Chooses the cash in or cash out option.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_the_cash_in_or_cash_out_option_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/fills-in-other-information",
+          "ui": {
+            "title": "Chooses the cash in or cash out option",
+            "hint": "Page for BPMN task 'Chooses the cash in or cash out option' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeacashtransaction-fills-in-other-information",
+          "name": "FillsInOtherInformation",
+          "route": "/make-a-cash-transaction/fills-in-other-information",
+          "component": "FillsInOtherInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Fills in other information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "fills_in_other_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/selects-the-save-option",
+          "ui": {
+            "title": "Fills in other information",
+            "hint": "Page for BPMN task 'Fills in other information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-cash-transaction/selects-the-save-option",
+              "condition": "SelectsTheSaveOption"
+            }
+          ]
+        },
+        {
+          "taskId": "makeacashtransaction-selects-the-save-option",
+          "name": "SelectsTheSaveOption",
+          "route": "/make-a-cash-transaction/selects-the-save-option",
+          "component": "SelectsTheSaveOptionPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Selects the save option.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_save_option_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/verify-to-the-cash-database",
+          "ui": {
+            "title": "Selects the save option",
+            "hint": "Page for BPMN task 'Selects the save option' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeacashtransaction-verify-to-the-cash-database",
+          "name": "VerifyToTheCashDatabase",
+          "route": "/make-a-cash-transaction/verify-to-the-cash-database",
+          "component": "VerifyToTheCashDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Verify to the cash database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "verify_to_the_cash_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/saves-the-data-to-the-cash-database",
+          "ui": {
+            "title": "Verify to the cash database",
+            "hint": "Page for BPMN task 'Verify to the cash database' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-cash-transaction/saves-the-data-to-the-cash-database",
+              "condition": "SavesTheDataToTheCashDatabase"
+            },
+            {
+              "route": "/make-a-cash-transaction/displays-a-confirmation",
+              "condition": "DisplaysAConfirmation"
+            }
+          ]
+        },
+        {
+          "taskId": "makeacashtransaction-saves-the-data-to-the-cash-database",
+          "name": "SavesTheDataToTheCashDatabase",
+          "route": "/make-a-cash-transaction/saves-the-data-to-the-cash-database",
+          "component": "SavesTheDataToTheCashDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: Saves the data to the Cash database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_data_to_the_cash_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/complete",
+          "ui": {
+            "title": "Saves the data to the Cash database",
+            "hint": "Page for BPMN task 'Saves the data to the Cash database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeacashtransaction-displays-a-confirmation",
+          "name": "DisplaysAConfirmation",
+          "route": "/make-a-cash-transaction/displays-a-confirmation",
+          "component": "DisplaysAConfirmationPage",
+          "pageType": "write-navigate",
+          "description": "Make a cash transaction: displays a confirmation.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_confirmation_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-cash-transaction/complete",
+          "ui": {
+            "title": "displays a confirmation",
+            "hint": "Page for BPMN task 'displays a confirmation' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

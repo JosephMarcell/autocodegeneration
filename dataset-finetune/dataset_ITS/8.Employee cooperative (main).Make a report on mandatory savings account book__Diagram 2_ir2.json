@@ -1,0 +1,363 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a report on mandatory savings account book",
+        "value": "makeareportonmandatorysavingsaccountbook",
+        "internal": "makeareportonmandatorysavingsaccountbook"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeareportonmandatorysavingsaccountbook": "/make-a-report-on-mandatory-savings-account-book/asks-to-make-a-report-on-validation-of-mandatory-savings"
+    },
+    "stateSchema": {
+      "asks_to_make_a_report_on_validation_of_mandatory_savings_completed": false,
+      "queries_for_the_member_s_information_completed": false,
+      "enters_the_work_unit_and_the_member_s_id_or_name_completed": false,
+      "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed": false,
+      "displays_member_list_completed": false,
+      "selects_one_of_the_members_completed": false,
+      "queries_the_mandatory_savings_completed": false,
+      "displays_the_list_of_mandatory_savings_to_a_table_completed": false,
+      "prints_the_mandatory_savings_account_book_completed": false,
+      "displays_the_selected_member_to_a_form_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/asks-to-make-a-report-on-validation-of-mandatory-savings",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "AsksToMakeAReportOnValidationOfMandatorySavingsPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/queries-for-the-members-information",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "QueriesForTheMember'sInformationPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/enters-the-work-unit-and-the-members-id-or-name",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "EntersTheWorkUnitAndTheMember'sIdOrNamePage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavingsPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/displays-member-list",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "DisplaysMemberListPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/selects-one-of-the-members",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/queries-the-mandatory-savings",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "QueriesTheMandatorySavingsPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-list-of-mandatory-savings-to-a-table",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "DisplaysTheListOfMandatorySavingsToATablePage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/prints-the-mandatory-savings-account-book",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "PrintsTheMandatorySavingsAccountBookPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      },
+      {
+        "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-selected-member-to-a-form",
+        "role": "makeareportonmandatorysavingsaccountbook",
+        "component": "DisplaysTheSelectedMemberToAFormPage",
+        "allowedRoles": [
+          "makeareportonmandatorysavingsaccountbook"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeAReportOnMandatorySavingsAccountBook",
+      "role": "makeareportonmandatorysavingsaccountbook",
+      "defaultRoute": "/make-a-report-on-mandatory-savings-account-book/asks-to-make-a-report-on-validation-of-mandatory-savings",
+      "tasks": [
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-asks-to-make-a-report-on-validation-of-mandatory-savings",
+          "name": "AsksToMakeAReportOnValidationOfMandatorySavings",
+          "route": "/make-a-report-on-mandatory-savings-account-book/asks-to-make-a-report-on-validation-of-mandatory-savings",
+          "component": "AsksToMakeAReportOnValidationOfMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Asks to make a report on validation of mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_report_on_validation_of_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "ui": {
+            "title": "Asks to make a report on validation of mandatory savings",
+            "hint": "Page for BPMN task 'Asks to make a report on validation of mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "name": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavings",
+          "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-form-of-making-a-report-on-validation-of-mandatory-savings",
+          "component": "DisplaysTheFormOfMakingAReportOnValidationOfMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Displays the form of making a report on validation of mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/enters-the-work-unit-and-the-members-id-or-name",
+          "ui": {
+            "title": "Displays the form of making a report on validation of mandatory savings",
+            "hint": "Page for BPMN task 'Displays the form of making a report on validation of mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-enters-the-work-unit-and-the-members-id-or-name",
+          "name": "EntersTheWorkUnitAndTheMember'sIdOrName",
+          "route": "/make-a-report-on-mandatory-savings-account-book/enters-the-work-unit-and-the-members-id-or-name",
+          "component": "EntersTheWorkUnitAndTheMember'sIdOrNamePage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Enters the work unit and the member's ID or name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_work_unit_and_the_members_id_or_name_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/queries-for-the-members-information",
+          "ui": {
+            "title": "Enters the work unit and the member's ID or name",
+            "hint": "Page for BPMN task 'Enters the work unit and the member's ID or name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-queries-for-the-members-information",
+          "name": "QueriesForTheMember'sInformation",
+          "route": "/make-a-report-on-mandatory-savings-account-book/queries-for-the-members-information",
+          "component": "QueriesForTheMember'sInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Queries for the member's information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_the_members_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/displays-member-list",
+          "ui": {
+            "title": "Queries for the member's information",
+            "hint": "Page for BPMN task 'Queries for the member's information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-displays-member-list",
+          "name": "DisplaysMemberList",
+          "route": "/make-a-report-on-mandatory-savings-account-book/displays-member-list",
+          "component": "DisplaysMemberListPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Displays member list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_member_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/selects-one-of-the-members",
+          "ui": {
+            "title": "Displays member list",
+            "hint": "Page for BPMN task 'Displays member list' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/make-a-report-on-mandatory-savings-account-book/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/queries-the-mandatory-savings",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-queries-the-mandatory-savings",
+          "name": "QueriesTheMandatorySavings",
+          "route": "/make-a-report-on-mandatory-savings-account-book/queries-the-mandatory-savings",
+          "component": "QueriesTheMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Queries the Mandatory Savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/displays-the-selected-member-to-a-form",
+          "ui": {
+            "title": "Queries the Mandatory Savings",
+            "hint": "Page for BPMN task 'Queries the Mandatory Savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-displays-the-selected-member-to-a-form",
+          "name": "DisplaysTheSelectedMemberToAForm",
+          "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-selected-member-to-a-form",
+          "component": "DisplaysTheSelectedMemberToAFormPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Displays the selected member to a form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_selected_member_to_a_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/displays-the-list-of-mandatory-savings-to-a-table",
+          "ui": {
+            "title": "Displays the selected member to a form",
+            "hint": "Page for BPMN task 'Displays the selected member to a form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-displays-the-list-of-mandatory-savings-to-a-table",
+          "name": "DisplaysTheListOfMandatorySavingsToATable",
+          "route": "/make-a-report-on-mandatory-savings-account-book/displays-the-list-of-mandatory-savings-to-a-table",
+          "component": "DisplaysTheListOfMandatorySavingsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Displays the list of mandatory savings to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_list_of_mandatory_savings_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/prints-the-mandatory-savings-account-book",
+          "ui": {
+            "title": "Displays the list of mandatory savings to a table",
+            "hint": "Page for BPMN task 'Displays the list of mandatory savings to a table' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-report-on-mandatory-savings-account-book/prints-the-mandatory-savings-account-book",
+              "condition": "PrintsTheMandatorySavingsAccountBook"
+            }
+          ]
+        },
+        {
+          "taskId": "makeareportonmandatorysavingsaccountbook-prints-the-mandatory-savings-account-book",
+          "name": "PrintsTheMandatorySavingsAccountBook",
+          "route": "/make-a-report-on-mandatory-savings-account-book/prints-the-mandatory-savings-account-book",
+          "component": "PrintsTheMandatorySavingsAccountBookPage",
+          "pageType": "write-navigate",
+          "description": "Make a report on mandatory savings account book: Prints the mandatory savings account book.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_mandatory_savings_account_book_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-report-on-mandatory-savings-account-book/complete",
+          "ui": {
+            "title": "Prints the mandatory savings account book",
+            "hint": "Page for BPMN task 'Prints the mandatory savings account book' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

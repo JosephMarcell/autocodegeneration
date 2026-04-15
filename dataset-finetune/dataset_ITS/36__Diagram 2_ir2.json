@@ -1,0 +1,202 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View items in the store",
+        "value": "viewitemsinthestore",
+        "internal": "viewitemsinthestore"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewitemsinthestore": "/view-items-in-the-store/asks-to-view-items-in-the-store"
+    },
+    "stateSchema": {
+      "asks_to_view_items_in_the_store_completed": false,
+      "queries_for_goods_in_the_item_database_completed": false,
+      "enters_the_id_or_name_of_the_item_completed": false,
+      "displays_form_of_view_items_in_the_store_completed": false,
+      "displays_the_query_results_to_a_table_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-items-in-the-store/asks-to-view-items-in-the-store",
+        "role": "viewitemsinthestore",
+        "component": "AsksToViewItemsInTheStorePage",
+        "allowedRoles": [
+          "viewitemsinthestore"
+        ]
+      },
+      {
+        "route": "/view-items-in-the-store/queries-for-goods-in-the-item-database",
+        "role": "viewitemsinthestore",
+        "component": "QueriesForGoodsInTheItemDatabasePage",
+        "allowedRoles": [
+          "viewitemsinthestore"
+        ]
+      },
+      {
+        "route": "/view-items-in-the-store/enters-the-id-or-name-of-the-item",
+        "role": "viewitemsinthestore",
+        "component": "EntersTheIdOrNameOfTheItemPage",
+        "allowedRoles": [
+          "viewitemsinthestore"
+        ]
+      },
+      {
+        "route": "/view-items-in-the-store/displays-form-of-view-items-in-the-store",
+        "role": "viewitemsinthestore",
+        "component": "DisplaysFormOfViewItemsInTheStorePage",
+        "allowedRoles": [
+          "viewitemsinthestore"
+        ]
+      },
+      {
+        "route": "/view-items-in-the-store/displays-the-query-results-to-a-table",
+        "role": "viewitemsinthestore",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "viewitemsinthestore"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewItemsInTheStore",
+      "role": "viewitemsinthestore",
+      "defaultRoute": "/view-items-in-the-store/asks-to-view-items-in-the-store",
+      "tasks": [
+        {
+          "taskId": "viewitemsinthestore-asks-to-view-items-in-the-store",
+          "name": "AsksToViewItemsInTheStore",
+          "route": "/view-items-in-the-store/asks-to-view-items-in-the-store",
+          "component": "AsksToViewItemsInTheStorePage",
+          "pageType": "write-navigate",
+          "description": "View items in the store: Asks to view items in the store.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_view_items_in_the_store_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-in-the-store/displays-form-of-view-items-in-the-store",
+          "ui": {
+            "title": "Asks to view items in the store",
+            "hint": "Page for BPMN task 'Asks to view items in the store' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemsinthestore-displays-form-of-view-items-in-the-store",
+          "name": "DisplaysFormOfViewItemsInTheStore",
+          "route": "/view-items-in-the-store/displays-form-of-view-items-in-the-store",
+          "component": "DisplaysFormOfViewItemsInTheStorePage",
+          "pageType": "write-navigate",
+          "description": "View items in the store: Displays form of  view items in the store.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_view_items_in_the_store_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-in-the-store/enters-the-id-or-name-of-the-item",
+          "ui": {
+            "title": "Displays form of  view items in the store",
+            "hint": "Page for BPMN task 'Displays form of  view items in the store' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemsinthestore-enters-the-id-or-name-of-the-item",
+          "name": "EntersTheIdOrNameOfTheItem",
+          "route": "/view-items-in-the-store/enters-the-id-or-name-of-the-item",
+          "component": "EntersTheIdOrNameOfTheItemPage",
+          "pageType": "write-navigate",
+          "description": "View items in the store: Enters the ID or name of the item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_id_or_name_of_the_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-in-the-store/queries-for-goods-in-the-item-database",
+          "ui": {
+            "title": "Enters the ID or name of the item",
+            "hint": "Page for BPMN task 'Enters the ID or name of the item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemsinthestore-queries-for-goods-in-the-item-database",
+          "name": "QueriesForGoodsInTheItemDatabase",
+          "route": "/view-items-in-the-store/queries-for-goods-in-the-item-database",
+          "component": "QueriesForGoodsInTheItemDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View items in the store: Queries for goods in the Item database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_goods_in_the_item_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-in-the-store/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries for goods in the Item database",
+            "hint": "Page for BPMN task 'Queries for goods in the Item database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitemsinthestore-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/view-items-in-the-store/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "View items in the store: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items-in-the-store/complete",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

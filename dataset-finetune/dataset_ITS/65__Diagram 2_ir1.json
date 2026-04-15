@@ -1,0 +1,593 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_ea62cdac-435c-402a-9929-507509b7ca7a"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Emergency room Triage",
+      "processRef": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_ea62cdac-435c-402a-9929-507509b7ca7a": "Main Process",
+    "Id_b4e58403-4797-46ec-be62-60530471788a": "Emergency room Triage"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+        "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_082521f7-2373-493e-b116-ed46f8443646",
+        "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+        "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+        "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+        "Id_d877f453-58b4-46a1-aa8c-b53c44b2a526",
+        "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+        "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+        "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd",
+        "Id_be8fff2e-b098-45e2-b716-8f162b0c4ced",
+        "Id_69abd614-343f-4d22-a7e2-5d546051dc02",
+        "Id_39e26069-902c-4ec6-84c8-f2431c97c4d8",
+        "Id_febfcfab-7199-445f-ac65-16405d5968d7"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "ED",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "ED",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "ED",
+    "Id_082521f7-2373-493e-b116-ed46f8443646": "System",
+    "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f": "System",
+    "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486": "System",
+    "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1": "ED",
+    "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea": "ED",
+    "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01": "System",
+    "Id_d877f453-58b4-46a1-aa8c-b53c44b2a526": "System",
+    "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a": "System",
+    "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28": "System",
+    "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd": "System",
+    "Id_be8fff2e-b098-45e2-b716-8f162b0c4ced": "System",
+    "Id_69abd614-343f-4d22-a7e2-5d546051dc02": "System",
+    "Id_39e26069-902c-4ec6-84c8-f2431c97c4d8": "System",
+    "Id_febfcfab-7199-445f-ac65-16405d5968d7": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to create an Emergency room Triage",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays patient information",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_cf94061a-acb9-4491-8854-252a25a8d0b4"
+      ],
+      "outgoing": [
+        "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays the Emergency room Triage form",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enters register number of a patient",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ]
+    },
+    {
+      "id": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "name": "Sreads the Registration database",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ],
+      "outgoing": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ]
+    },
+    {
+      "id": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "name": "Selects the condition button",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ],
+      "outgoing": [
+        "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4"
+      ]
+    },
+    {
+      "id": "Id_d877f453-58b4-46a1-aa8c-b53c44b2a526",
+      "name": "Displays the message \"data not found\".",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_08bfb140-c392-4734-b2eb-3f9c113bdead"
+      ],
+      "outgoing": [
+        "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f"
+      ]
+    },
+    {
+      "id": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "name": "Selects the save button",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_81eecd7b-168f-419e-8652-1531c752eb4e"
+      ],
+      "outgoing": [
+        "Id_2d078315-4fb9-468d-8a9a-60317c381b1a"
+      ]
+    },
+    {
+      "id": "Id_be8fff2e-b098-45e2-b716-8f162b0c4ced",
+      "name": "Saves the triages",
+      "type": "task",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_44e0881c-7433-42d4-a2ee-3cef9c66ceae"
+      ],
+      "outgoing": [
+        "Id_7f6f38ad-f7ac-404b-bbb7-4169fa68efbf"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ],
+      "outgoing": [
+        "Id_cf94061a-acb9-4491-8854-252a25a8d0b4",
+        "Id_08bfb140-c392-4734-b2eb-3f9c113bdead"
+      ]
+    },
+    {
+      "id": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2",
+        "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f"
+      ],
+      "outgoing": [
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ]
+    },
+    {
+      "id": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Emergency room Triage",
+      "laneName": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4"
+      ],
+      "outgoing": [
+        "Id_c1999808-cb50-461b-9c8a-2856978469d5",
+        "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2",
+        "Id_b6a42b89-d037-4ae7-9ec2-3962164ada0e",
+        "Id_5517e957-a53c-4014-bf64-2f4256060355"
+      ]
+    },
+    {
+      "id": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_6f917a80-aec7-46ad-acd1-351a3d748804",
+        "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2",
+        "Id_48af0f44-886c-428a-a0f6-32559ca1e684",
+        "Id_5f6122ca-a4d0-46d0-9aa0-c8494eceab7a"
+      ],
+      "outgoing": [
+        "Id_81eecd7b-168f-419e-8652-1531c752eb4e"
+      ]
+    },
+    {
+      "id": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_2d078315-4fb9-468d-8a9a-60317c381b1a"
+      ],
+      "outgoing": [
+        "Id_44e0881c-7433-42d4-a2ee-3cef9c66ceae",
+        "Id_151be735-4abc-4460-9662-670fbba1b42a"
+      ]
+    },
+    {
+      "id": "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_7f6f38ad-f7ac-404b-bbb7-4169fa68efbf",
+        "Id_151be735-4abc-4460-9662-670fbba1b42a"
+      ],
+      "outgoing": [
+        "Id_280d7ea9-5ce6-4044-bd31-ef9802aaeb38"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "ED",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_280d7ea9-5ce6-4044-bd31-ef9802aaeb38"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "Id_69abd614-343f-4d22-a7e2-5d546051dc02",
+      "name": "Bad",
+      "eventType": "intermediateThrowEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_c1999808-cb50-461b-9c8a-2856978469d5"
+      ],
+      "outgoing": [
+        "Id_6f917a80-aec7-46ad-acd1-351a3d748804"
+      ]
+    },
+    {
+      "id": "Id_39e26069-902c-4ec6-84c8-f2431c97c4d8",
+      "name": "Bad not emerfency",
+      "eventType": "intermediateThrowEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2"
+      ],
+      "outgoing": [
+        "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2"
+      ]
+    },
+    {
+      "id": "Id_febfcfab-7199-445f-ac65-16405d5968d7",
+      "name": "Emerfency",
+      "eventType": "intermediateThrowEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "System",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_b6a42b89-d037-4ae7-9ec2-3962164ada0e"
+      ],
+      "outgoing": [
+        "Id_48af0f44-886c-428a-a0f6-32559ca1e684"
+      ]
+    },
+    {
+      "id": "Id_00c1c0de-a945-4c67-8347-f9569d10f77f",
+      "name": "Deceased",
+      "eventType": "intermediateThrowEvent",
+      "eventDefinitionType": "",
+      "participantName": "Emergency room Triage",
+      "laneName": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a",
+      "incoming": [
+        "Id_5517e957-a53c-4014-bf64-2f4256060355"
+      ],
+      "outgoing": [
+        "Id_5f6122ca-a4d0-46d0-9aa0-c8494eceab7a"
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_f0187d65-c0d3-452f-be14-b5bea4169e32",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82",
+      "source": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "target": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_cf94061a-acb9-4491-8854-252a25a8d0b4",
+      "source": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "found",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_08bfb140-c392-4734-b2eb-3f9c113bdead",
+      "source": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "target": "Id_d877f453-58b4-46a1-aa8c-b53c44b2a526",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_c08e6672-319b-4134-82eb-2326975e5fe8",
+      "source": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "target": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4",
+      "source": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "target": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_c1999808-cb50-461b-9c8a-2856978469d5",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_69abd614-343f-4d22-a7e2-5d546051dc02",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_6f917a80-aec7-46ad-acd1-351a3d748804",
+      "source": "Id_69abd614-343f-4d22-a7e2-5d546051dc02",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_39e26069-902c-4ec6-84c8-f2431c97c4d8",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2",
+      "source": "Id_39e26069-902c-4ec6-84c8-f2431c97c4d8",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f",
+      "source": "Id_d877f453-58b4-46a1-aa8c-b53c44b2a526",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_b6a42b89-d037-4ae7-9ec2-3962164ada0e",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_febfcfab-7199-445f-ac65-16405d5968d7",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_5517e957-a53c-4014-bf64-2f4256060355",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_00c1c0de-a945-4c67-8347-f9569d10f77f",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_48af0f44-886c-428a-a0f6-32559ca1e684",
+      "source": "Id_febfcfab-7199-445f-ac65-16405d5968d7",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_5f6122ca-a4d0-46d0-9aa0-c8494eceab7a",
+      "source": "Id_00c1c0de-a945-4c67-8347-f9569d10f77f",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_81eecd7b-168f-419e-8652-1531c752eb4e",
+      "source": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "target": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_2d078315-4fb9-468d-8a9a-60317c381b1a",
+      "source": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "target": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_44e0881c-7433-42d4-a2ee-3cef9c66ceae",
+      "source": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "target": "Id_be8fff2e-b098-45e2-b716-8f162b0c4ced",
+      "condition": "Save",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_7f6f38ad-f7ac-404b-bbb7-4169fa68efbf",
+      "source": "Id_be8fff2e-b098-45e2-b716-8f162b0c4ced",
+      "target": "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_280d7ea9-5ce6-4044-bd31-ef9802aaeb38",
+      "source": "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    },
+    {
+      "id": "Id_151be735-4abc-4460-9662-670fbba1b42a",
+      "source": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "target": "Id_30480a4a-9208-4c99-a015-5b6c33e47dfd",
+      "condition": "",
+      "processId": "Id_b4e58403-4797-46ec-be62-60530471788a"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_create_an_emergency_room_triage_completed": false,
+    "displays_patient_information_completed": false,
+    "displays_the_emergency_room_triage_form_completed": false,
+    "enters_register_number_of_a_patient_completed": false,
+    "sreads_the_registration_database_completed": false,
+    "selects_the_condition_button_completed": false,
+    "displays_the_message_data_not_found_completed": false,
+    "selects_the_save_button_completed": false,
+    "saves_the_triages_completed": false
+  }
+}

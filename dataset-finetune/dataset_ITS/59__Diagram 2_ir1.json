@@ -1,0 +1,431 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_cce4512c-8d70-496b-a5ec-1f80a593aa54"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Down payment",
+      "processRef": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_cce4512c-8d70-496b-a5ec-1f80a593aa54": "Main Process",
+    "Id_2eb93fef-a370-4936-8fc6-75d0453848f8": "Down payment"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_e024b86e-10e6-46f3-891a-4cf17601323b"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "flowNodeRefs": [
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+        "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+        "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192",
+        "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+        "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181",
+        "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+        "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5",
+        "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+        "Id_05603d03-8106-47d8-a069-8e37915278b5"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "Cashier",
+    "Id_e024b86e-10e6-46f3-891a-4cf17601323b": "Cashier",
+    "Id_259b95ad-426d-4d16-8f7b-6371212aaf57": "System",
+    "Id_7a3f28d2-8c48-4551-9672-ee6753bda510": "System",
+    "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192": "System",
+    "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33": "System",
+    "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181": "System",
+    "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1": "System",
+    "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5": "System",
+    "Id_2235724b-6ca2-46d2-95a0-ab88837d316f": "System",
+    "Id_05603d03-8106-47d8-a069-8e37915278b5": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to make a Down Payment transaction",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "Cashier",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays Down Payment transaction form",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enters Down Payment information",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "Cashier",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_795b43a3-8510-4cae-b799-3616f54c6dc7"
+      ],
+      "outgoing": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ]
+    },
+    {
+      "id": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "name": "Selects a save button",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "Cashier",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_bb353771-20e9-45eb-8106-8cc484586638"
+      ],
+      "outgoing": [
+        "Id_7a983c9f-3661-4895-94b8-6f0f7c7d5ce8"
+      ]
+    },
+    {
+      "id": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "name": "Displays patient information",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_bb2874f5-ce14-456d-b286-0e974114a073"
+      ],
+      "outgoing": [
+        "Id_d5ad93f3-2000-4985-8ad7-e4b188a638b5"
+      ]
+    },
+    {
+      "id": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "name": "Searches for patients by register number",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ],
+      "outgoing": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ]
+    },
+    {
+      "id": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "name": "Saves the Down Payment information",
+      "type": "task",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_1b23da0d-7fb4-40b0-84d9-17d96be03345"
+      ],
+      "outgoing": [
+        "Id_f5a51f4d-323b-4ad6-b3f3-18c14a138997"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ],
+      "outgoing": [
+        "Id_bb2874f5-ce14-456d-b286-0e974114a073",
+        "Id_ff2bfd39-7cba-4a7d-9615-74370297d024"
+      ]
+    },
+    {
+      "id": "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+        "Id_becbfd58-eacd-48af-8df2-82048332ab93"
+      ],
+      "outgoing": [
+        "Id_795b43a3-8510-4cae-b799-3616f54c6dc7"
+      ]
+    },
+    {
+      "id": "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_ff2bfd39-7cba-4a7d-9615-74370297d024",
+        "Id_d5ad93f3-2000-4985-8ad7-e4b188a638b5"
+      ],
+      "outgoing": [
+        "Id_c75d7593-014a-4a6a-a54d-a63ed9259052"
+      ]
+    },
+    {
+      "id": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_c75d7593-014a-4a6a-a54d-a63ed9259052"
+      ],
+      "outgoing": [
+        "Id_becbfd58-eacd-48af-8df2-82048332ab93",
+        "Id_bb353771-20e9-45eb-8106-8cc484586638"
+      ]
+    },
+    {
+      "id": "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_7a983c9f-3661-4895-94b8-6f0f7c7d5ce8"
+      ],
+      "outgoing": [
+        "Id_1b23da0d-7fb4-40b0-84d9-17d96be03345",
+        "Id_6e19cd10-aa55-4542-a236-bf51176850e8"
+      ]
+    },
+    {
+      "id": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_f5a51f4d-323b-4ad6-b3f3-18c14a138997",
+        "Id_6e19cd10-aa55-4542-a236-bf51176850e8"
+      ],
+      "outgoing": [
+        "Id_22ea45f4-916e-451a-96cb-20e6df3c0556"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Down payment",
+      "laneName": "Cashier",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Down payment",
+      "laneName": "System",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8",
+      "incoming": [
+        "Id_22ea45f4-916e-451a-96cb-20e6df3c0556"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_3d1beec5-cff3-4443-bdcf-5426c230101a",
+      "source": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_795b43a3-8510-4cae-b799-3616f54c6dc7",
+      "source": "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_bb2874f5-ce14-456d-b286-0e974114a073",
+      "source": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "target": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "condition": "found",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_ff2bfd39-7cba-4a7d-9615-74370297d024",
+      "source": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "target": "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_d5ad93f3-2000-4985-8ad7-e4b188a638b5",
+      "source": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "target": "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_c75d7593-014a-4a6a-a54d-a63ed9259052",
+      "source": "Id_5d54bd1c-b17e-4a4d-8364-237334e4b181",
+      "target": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_becbfd58-eacd-48af-8df2-82048332ab93",
+      "source": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "target": "Id_bbcb1d0b-dfd5-4096-9ba9-da46d77fd192",
+      "condition": "not found",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_bb353771-20e9-45eb-8106-8cc484586638",
+      "source": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "target": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_7a983c9f-3661-4895-94b8-6f0f7c7d5ce8",
+      "source": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "target": "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_1b23da0d-7fb4-40b0-84d9-17d96be03345",
+      "source": "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5",
+      "target": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "condition": "save",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_f5a51f4d-323b-4ad6-b3f3-18c14a138997",
+      "source": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "target": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_6e19cd10-aa55-4542-a236-bf51176850e8",
+      "source": "Id_d92e9b2e-6bb6-4a70-b633-1a4bc7e585f5",
+      "target": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    },
+    {
+      "id": "Id_22ea45f4-916e-451a-96cb-20e6df3c0556",
+      "source": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_2eb93fef-a370-4936-8fc6-75d0453848f8"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_make_a_down_payment_transaction_completed": false,
+    "displays_down_payment_transaction_form_completed": false,
+    "enters_down_payment_information_completed": false,
+    "selects_a_save_button_completed": false,
+    "displays_patient_information_completed": false,
+    "searches_for_patients_by_register_number_completed": false,
+    "saves_the_down_payment_information_completed": false
+  }
+}

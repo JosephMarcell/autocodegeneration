@@ -1,0 +1,311 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a bill report",
+        "value": "makeabillreport",
+        "internal": "makeabillreport"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeabillreport": "/make-a-bill-report/asks-to-make-a-bill-report"
+    },
+    "stateSchema": {
+      "asks_to_make_a_bill_report_completed": false,
+      "displays_the_form_of_making_a_bill_report_completed": false,
+      "prints_the_loan_information_to_the_printer_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "selects_the_work_unit_completed": false,
+      "queries_the_loan_database_with_the_work_unit_key_completed": false,
+      "calculates_the_total_bill_completed": false,
+      "displays_a_list_of_loan_members_in_a_table_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-bill-report/asks-to-make-a-bill-report",
+        "role": "makeabillreport",
+        "component": "AsksToMakeABillReportPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/displays-the-form-of-making-a-bill-report",
+        "role": "makeabillreport",
+        "component": "DisplaysTheFormOfMakingABillReportPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/prints-the-loan-information-to-the-printer",
+        "role": "makeabillreport",
+        "component": "PrintsTheLoanInformationToThePrinterPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/reads-the-work-unit-database",
+        "role": "makeabillreport",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/selects-the-work-unit",
+        "role": "makeabillreport",
+        "component": "SelectsTheWorkUnitPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/queries-the-loan-database-with-the-work-unit-key",
+        "role": "makeabillreport",
+        "component": "QueriesTheLoanDatabaseWithTheWorkUnitKeyPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/calculates-the-total-bill",
+        "role": "makeabillreport",
+        "component": "CalculatesTheTotalBillPage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      },
+      {
+        "route": "/make-a-bill-report/displays-a-list-of-loan-members-in-a-table",
+        "role": "makeabillreport",
+        "component": "DisplaysAListOfLoanMembersInATablePage",
+        "allowedRoles": [
+          "makeabillreport"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeABillReport",
+      "role": "makeabillreport",
+      "defaultRoute": "/make-a-bill-report/asks-to-make-a-bill-report",
+      "tasks": [
+        {
+          "taskId": "makeabillreport-asks-to-make-a-bill-report",
+          "name": "AsksToMakeABillReport",
+          "route": "/make-a-bill-report/asks-to-make-a-bill-report",
+          "component": "AsksToMakeABillReportPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Asks to make a bill report.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_bill_report_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a bill report",
+            "hint": "Page for BPMN task 'Asks to make a bill report' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeabillreport-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-bill-report/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/displays-the-form-of-making-a-bill-report",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeabillreport-displays-the-form-of-making-a-bill-report",
+          "name": "DisplaysTheFormOfMakingABillReport",
+          "route": "/make-a-bill-report/displays-the-form-of-making-a-bill-report",
+          "component": "DisplaysTheFormOfMakingABillReportPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Displays the form of making a bill report.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_of_making_a_bill_report_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/selects-the-work-unit",
+          "ui": {
+            "title": "Displays the form of making a bill report",
+            "hint": "Page for BPMN task 'Displays the form of making a bill report' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeabillreport-selects-the-work-unit",
+          "name": "SelectsTheWorkUnit",
+          "route": "/make-a-bill-report/selects-the-work-unit",
+          "component": "SelectsTheWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Selects the work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/queries-the-loan-database-with-the-work-unit-key",
+          "ui": {
+            "title": "Selects the work unit",
+            "hint": "Page for BPMN task 'Selects the work unit' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-bill-report/queries-the-loan-database-with-the-work-unit-key",
+              "condition": "QueriesTheLoanDatabaseWithTheWorkUnitKey"
+            },
+            {
+              "route": "/make-a-bill-report/calculates-the-total-bill",
+              "condition": "CalculatesTheTotalBill"
+            }
+          ]
+        },
+        {
+          "taskId": "makeabillreport-queries-the-loan-database-with-the-work-unit-key",
+          "name": "QueriesTheLoanDatabaseWithTheWorkUnitKey",
+          "route": "/make-a-bill-report/queries-the-loan-database-with-the-work-unit-key",
+          "component": "QueriesTheLoanDatabaseWithTheWorkUnitKeyPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Queries the Loan database with the work unit key.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_loan_database_with_the_work_unit_key_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/calculates-the-total-bill",
+          "ui": {
+            "title": "Queries the Loan database with the work unit key",
+            "hint": "Page for BPMN task 'Queries the Loan database with the work unit key' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeabillreport-calculates-the-total-bill",
+          "name": "CalculatesTheTotalBill",
+          "route": "/make-a-bill-report/calculates-the-total-bill",
+          "component": "CalculatesTheTotalBillPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Calculates the total bill.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "calculates_the_total_bill_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/displays-a-list-of-loan-members-in-a-table",
+          "ui": {
+            "title": "Calculates the total bill",
+            "hint": "Page for BPMN task 'Calculates the total bill' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeabillreport-displays-a-list-of-loan-members-in-a-table",
+          "name": "DisplaysAListOfLoanMembersInATable",
+          "route": "/make-a-bill-report/displays-a-list-of-loan-members-in-a-table",
+          "component": "DisplaysAListOfLoanMembersInATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Displays a list of loan members in a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_list_of_loan_members_in_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/prints-the-loan-information-to-the-printer",
+          "ui": {
+            "title": "Displays a list of loan members in a table",
+            "hint": "Page for BPMN task 'Displays a list of loan members in a table' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-bill-report/prints-the-loan-information-to-the-printer",
+              "condition": "Print"
+            }
+          ]
+        },
+        {
+          "taskId": "makeabillreport-prints-the-loan-information-to-the-printer",
+          "name": "PrintsTheLoanInformationToThePrinter",
+          "route": "/make-a-bill-report/prints-the-loan-information-to-the-printer",
+          "component": "PrintsTheLoanInformationToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Make a bill report: Prints the loan information to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_loan_information_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-bill-report/complete",
+          "ui": {
+            "title": "Prints the loan information to the printer",
+            "hint": "Page for BPMN task 'Prints the loan information to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

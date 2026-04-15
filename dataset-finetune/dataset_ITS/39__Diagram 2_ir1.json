@@ -1,0 +1,315 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_7d4f813e-df90-4d9b-aa5a-c69493e2b9c5"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Update item",
+      "processRef": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_7d4f813e-df90-4d9b-aa5a-c69493e2b9c5": "Main Process",
+    "Id_279548d1-3672-4b00-9306-4c11ba4d2354": "Update item"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+        "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+        "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727": "Officer",
+    "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d": "System",
+    "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba": "System",
+    "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to update new item",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "Officer",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries for goods in the Goods database",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters a barcode",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "Officer",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of update item",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the query results",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ]
+    },
+    {
+      "id": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "name": "Updates the item information",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "Officer",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ],
+      "outgoing": [
+        "Id_2b9a61e2-216d-4e63-844e-4276103b5c36"
+      ]
+    },
+    {
+      "id": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "name": "Save the new item information",
+      "type": "task",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2"
+      ],
+      "outgoing": [
+        "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "incoming": [
+        "Id_2b9a61e2-216d-4e63-844e-4276103b5c36"
+      ],
+      "outgoing": [
+        "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2",
+        "Id_8c920055-4216-4f82-97b6-96c2c8551aae"
+      ]
+    },
+    {
+      "id": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Update item",
+      "laneName": "System",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "incoming": [
+        "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e",
+        "Id_8c920055-4216-4f82-97b6-96c2c8551aae"
+      ],
+      "outgoing": [
+        "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Update item",
+      "laneName": "Officer",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Update item",
+      "laneName": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354",
+      "incoming": [
+        "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_2b9a61e2-216d-4e63-844e-4276103b5c36",
+      "source": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "target": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2",
+      "source": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "target": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "condition": "Save",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e",
+      "source": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "target": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_8c920055-4216-4f82-97b6-96c2c8551aae",
+      "source": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "target": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    },
+    {
+      "id": "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e",
+      "source": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_279548d1-3672-4b00-9306-4c11ba4d2354"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_update_new_item_completed": false,
+    "queries_for_goods_in_the_goods_database_completed": false,
+    "enters_a_barcode_completed": false,
+    "displays_form_of_update_item_completed": false,
+    "displays_the_query_results_completed": false,
+    "updates_the_item_information_completed": false,
+    "save_the_new_item_information_completed": false
+  }
+}

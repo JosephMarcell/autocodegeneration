@@ -1,0 +1,363 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make new member loan (SIPA unit)",
+        "value": "makenewmemberloan(sipaunit)",
+        "internal": "makenewmemberloan(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makenewmemberloan(sipaunit)": "/make-new-member-loan-sipa-unit/asks-to-make-a-new-member-loan"
+    },
+    "stateSchema": {
+      "asks_to_make_a_new_member_loan_completed": false,
+      "displays_a_member_search_form_completed": false,
+      "displays_the_list_of_members_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "enters_the_work_unit_and_id_name_completed": false,
+      "displays_a_new_loan_form_completed": false,
+      "reads_member_list_completed": false,
+      "enters_new_loan_information_completed": false,
+      "saves_the_new_borrowing_information_completed": false,
+      "selects_one_of_the_members_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-new-member-loan-sipa-unit/asks-to-make-a-new-member-loan",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "AsksToMakeANewMemberLoanPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/displays-a-member-search-form",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "DisplaysAMemberSearchFormPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/displays-the-list-of-members",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "DisplaysTheListOfMembersPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/reads-the-work-unit-database",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/enters-the-work-unit-and-idname",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "EntersTheWorkUnitAndId/namePage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/displays-a-new-loan-form",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "DisplaysANewLoanFormPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/reads-member-list",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "ReadsMemberListPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/enters-new-loan-information",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "EntersNewLoanInformationPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/saves-the-new-borrowing-information",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "SavesTheNewBorrowingInformationPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-new-member-loan-sipa-unit/selects-one-of-the-members",
+        "role": "makenewmemberloan(sipaunit)",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "makenewmemberloan(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeNewMemberLoan(sipaUnit)",
+      "role": "makenewmemberloan(sipaunit)",
+      "defaultRoute": "/make-new-member-loan-sipa-unit/asks-to-make-a-new-member-loan",
+      "tasks": [
+        {
+          "taskId": "makenewmemberloan(sipaunit)-asks-to-make-a-new-member-loan",
+          "name": "AsksToMakeANewMemberLoan",
+          "route": "/make-new-member-loan-sipa-unit/asks-to-make-a-new-member-loan",
+          "component": "AsksToMakeANewMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Asks to make a new member loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_new_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a new member loan",
+            "hint": "Page for BPMN task 'Asks to make a new member loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-new-member-loan-sipa-unit/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/displays-a-member-search-form",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-displays-a-member-search-form",
+          "name": "DisplaysAMemberSearchForm",
+          "route": "/make-new-member-loan-sipa-unit/displays-a-member-search-form",
+          "component": "DisplaysAMemberSearchFormPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Displays a member search form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_member_search_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/enters-the-work-unit-and-idname",
+          "ui": {
+            "title": "Displays a member search form",
+            "hint": "Page for BPMN task 'Displays a member search form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-enters-the-work-unit-and-idname",
+          "name": "EntersTheWorkUnitAndId/name",
+          "route": "/make-new-member-loan-sipa-unit/enters-the-work-unit-and-idname",
+          "component": "EntersTheWorkUnitAndId/namePage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Enters the work unit and ID/Name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_work_unit_and_idname_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/reads-member-list",
+          "ui": {
+            "title": "Enters the work unit and ID/Name",
+            "hint": "Page for BPMN task 'Enters the work unit and ID/Name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-reads-member-list",
+          "name": "ReadsMemberList",
+          "route": "/make-new-member-loan-sipa-unit/reads-member-list",
+          "component": "ReadsMemberListPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Reads member list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_member_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/displays-the-list-of-members",
+          "ui": {
+            "title": "Reads member list",
+            "hint": "Page for BPMN task 'Reads member list' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-displays-the-list-of-members",
+          "name": "DisplaysTheListOfMembers",
+          "route": "/make-new-member-loan-sipa-unit/displays-the-list-of-members",
+          "component": "DisplaysTheListOfMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Displays the list of members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_list_of_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/selects-one-of-the-members",
+          "ui": {
+            "title": "Displays the list of members",
+            "hint": "Page for BPMN task 'Displays the list of members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/make-new-member-loan-sipa-unit/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/displays-a-new-loan-form",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-displays-a-new-loan-form",
+          "name": "DisplaysANewLoanForm",
+          "route": "/make-new-member-loan-sipa-unit/displays-a-new-loan-form",
+          "component": "DisplaysANewLoanFormPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Displays a new loan form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_new_loan_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/enters-new-loan-information",
+          "ui": {
+            "title": "Displays a new loan form",
+            "hint": "Page for BPMN task 'Displays a new loan form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-enters-new-loan-information",
+          "name": "EntersNewLoanInformation",
+          "route": "/make-new-member-loan-sipa-unit/enters-new-loan-information",
+          "component": "EntersNewLoanInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Enters new loan information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_new_loan_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/saves-the-new-borrowing-information",
+          "ui": {
+            "title": "Enters new loan information",
+            "hint": "Page for BPMN task 'Enters new loan information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-new-member-loan-sipa-unit/saves-the-new-borrowing-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "makenewmemberloan(sipaunit)-saves-the-new-borrowing-information",
+          "name": "SavesTheNewBorrowingInformation",
+          "route": "/make-new-member-loan-sipa-unit/saves-the-new-borrowing-information",
+          "component": "SavesTheNewBorrowingInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make new member loan (SIPA unit): Saves the new borrowing information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_new_borrowing_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-member-loan-sipa-unit/complete",
+          "ui": {
+            "title": "Saves the new borrowing information",
+            "hint": "Page for BPMN task 'Saves the new borrowing information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

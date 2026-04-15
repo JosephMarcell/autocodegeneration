@@ -1,0 +1,399 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_87178682-8357-4fe3-8f42-caebde50945e"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a bill report",
+      "processRef": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_87178682-8357-4fe3-8f42-caebde50945e": "Main Process",
+    "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083": "Make a bill report"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+        "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+        "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+        "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+        "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633",
+        "Id_f3991b65-992c-4598-a363-88a57acd6369"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Officer",
+    "Id_69e84749-141a-4442-83d7-4f8f834246a1": "System",
+    "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50": "System",
+    "Id_98591417-09e8-4e86-9de6-a3a11b4326d5": "System",
+    "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e": "System",
+    "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633": "System",
+    "Id_f3991b65-992c-4598-a363-88a57acd6369": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a bill report",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "Officer",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the form of making a bill report",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Prints the loan information to the printer",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4759401b-438b-459f-a83f-b516b60e5383"
+      ],
+      "outgoing": [
+        "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Selects the work unit",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "Officer",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ]
+    },
+    {
+      "id": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "name": "Queries the Loan database with the work unit key",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_59bfda1b-53d5-4f8d-888d-6193b86bb68b"
+      ],
+      "outgoing": [
+        "Id_65ae8a37-bbaf-490e-b6ac-e9924bb5fb81"
+      ]
+    },
+    {
+      "id": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "name": "Calculates the total bill",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_609a3ca1-9061-42bc-867b-aa866142e15f"
+      ],
+      "outgoing": [
+        "Id_23691415-c8a4-4b05-8b40-4121c26b07e8"
+      ]
+    },
+    {
+      "id": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "name": "Displays a list of loan members in a table",
+      "type": "task",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_23691415-c8a4-4b05-8b40-4121c26b07e8"
+      ],
+      "outgoing": [
+        "Id_1866f829-173e-4815-8ead-defe386d9e4f"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [
+        "Id_1866f829-173e-4815-8ead-defe386d9e4f"
+      ],
+      "outgoing": [
+        "Id_4759401b-438b-459f-a83f-b516b60e5383",
+        "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76"
+      ]
+    },
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [
+        "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1",
+        "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76"
+      ],
+      "outgoing": [
+        "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3"
+      ]
+    },
+    {
+      "id": "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ],
+      "outgoing": [
+        "Id_59bfda1b-53d5-4f8d-888d-6193b86bb68b",
+        "Id_65adf77e-e68e-4af3-9f0d-dc2661b42ec5"
+      ]
+    },
+    {
+      "id": "Id_f3991b65-992c-4598-a363-88a57acd6369",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [
+        "Id_65ae8a37-bbaf-490e-b6ac-e9924bb5fb81",
+        "Id_65adf77e-e68e-4af3-9f0d-dc2661b42ec5"
+      ],
+      "outgoing": [
+        "Id_609a3ca1-9061-42bc-867b-aa866142e15f"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a bill report",
+      "laneName": "Officer",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a bill report",
+      "laneName": "System",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083",
+      "incoming": [
+        "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_4759401b-438b-459f-a83f-b516b60e5383",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "Print",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_609a3ca1-9061-42bc-867b-aa866142e15f",
+      "source": "Id_f3991b65-992c-4598-a363-88a57acd6369",
+      "target": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_23691415-c8a4-4b05-8b40-4121c26b07e8",
+      "source": "Id_7c355588-2883-43c3-a2d4-32ec2ca07f50",
+      "target": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_1866f829-173e-4815-8ead-defe386d9e4f",
+      "source": "Id_98591417-09e8-4e86-9de6-a3a11b4326d5",
+      "target": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_f5df98a5-610c-4f62-8d60-5d8865eac7b3",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_8ffee2cb-f5ce-47d1-b441-c4638684743e",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_ac8aff00-e054-4285-b6cf-3aa04b7847b1",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_bd3614cd-6709-4cd6-94fc-36f4add6da76",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_59bfda1b-53d5-4f8d-888d-6193b86bb68b",
+      "source": "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633",
+      "target": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_65ae8a37-bbaf-490e-b6ac-e9924bb5fb81",
+      "source": "Id_69e84749-141a-4442-83d7-4f8f834246a1",
+      "target": "Id_f3991b65-992c-4598-a363-88a57acd6369",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    },
+    {
+      "id": "Id_65adf77e-e68e-4af3-9f0d-dc2661b42ec5",
+      "source": "Id_05f78575-146e-4f35-8c7d-8c6c82a5c633",
+      "target": "Id_f3991b65-992c-4598-a363-88a57acd6369",
+      "condition": "",
+      "processId": "Id_aca55f75-7110-4950-9a1a-1c11ee9aa083"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_bill_report_completed": false,
+    "displays_the_form_of_making_a_bill_report_completed": false,
+    "prints_the_loan_information_to_the_printer_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "selects_the_work_unit_completed": false,
+    "queries_the_loan_database_with_the_work_unit_key_completed": false,
+    "calculates_the_total_bill_completed": false,
+    "displays_a_list_of_loan_members_in_a_table_completed": false
+  }
+}

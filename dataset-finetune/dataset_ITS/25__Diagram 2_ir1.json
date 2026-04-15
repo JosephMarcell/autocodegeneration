@@ -1,0 +1,499 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_77d86fc2-1771-484c-915d-0ef1bf3f88bd"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a member loan payment (SIPA unit)",
+      "processRef": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_77d86fc2-1771-484c-915d-0ef1bf3f88bd": "Main Process",
+    "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c": "Make a member loan payment (SIPA unit)"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+        "Id_70e63b5c-eec9-4795-b826-9af5408606b6",
+        "Id_3dfb4bd7-afd2-40b0-8a9a-a52f80f2164d"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+        "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+        "Id_772ba644-9a62-422e-90f8-3b1599349136",
+        "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+        "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+        "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+        "Id_ae2d397e-4d72-41b3-a201-1066b350c001",
+        "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a",
+        "Id_5e2064b7-e363-4e91-afa3-3585d2033c4b"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Officer",
+    "Id_604a8497-d2c1-437f-83a2-5252921a1cf8": "System",
+    "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742": "System",
+    "Id_772ba644-9a62-422e-90f8-3b1599349136": "System",
+    "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516": "System",
+    "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42": "System",
+    "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1": "System",
+    "Id_70e63b5c-eec9-4795-b826-9af5408606b6": "Officer",
+    "Id_ae2d397e-4d72-41b3-a201-1066b350c001": "System",
+    "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a": "System",
+    "Id_5e2064b7-e363-4e91-afa3-3585d2033c4b": "System",
+    "Id_3dfb4bd7-afd2-40b0-8a9a-a52f80f2164d": "Officer"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a member loan payment",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the form a member loan payment",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Displays the list of members to a table",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6"
+      ],
+      "outgoing": [
+        "Id_80129bb6-ff12-4ebf-8ebb-f76cde57816b"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Enters information about the member's loan",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_777d6236-8ef9-4e56-ab66-55eae2e1b331"
+      ]
+    },
+    {
+      "id": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "name": "Reads the Loan database",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_68e7e071-feb8-4aa1-9545-bd74fd641792"
+      ],
+      "outgoing": [
+        "Id_ff055f8f-bacf-48e1-83bb-6d39ebe2440c"
+      ]
+    },
+    {
+      "id": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "name": "Reads the Loan and Member databases",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c3efb3b6-fe27-4a25-8230-2f091df402c6"
+      ],
+      "outgoing": [
+        "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6"
+      ]
+    },
+    {
+      "id": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "name": "Displays the remaining payment form",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0291733d-8916-4a1a-b567-10eb42de01c9"
+      ],
+      "outgoing": [
+        "Id_5c485d0f-ce78-4f82-a65c-2488d787da6b"
+      ]
+    },
+    {
+      "id": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "name": "Saves the installment information",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_2023bb26-5d2e-438d-9180-cea265cf99dd"
+      ],
+      "outgoing": [
+        "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe"
+      ]
+    },
+    {
+      "id": "Id_70e63b5c-eec9-4795-b826-9af5408606b6",
+      "name": "Selects one of the members to display",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ],
+      "outgoing": [
+        "Id_68e7e071-feb8-4aa1-9545-bd74fd641792"
+      ]
+    },
+    {
+      "id": "Id_5e2064b7-e363-4e91-afa3-3585d2033c4b",
+      "name": "Displays the payment information",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_ff055f8f-bacf-48e1-83bb-6d39ebe2440c"
+      ],
+      "outgoing": [
+        "Id_0291733d-8916-4a1a-b567-10eb42de01c9"
+      ]
+    },
+    {
+      "id": "Id_3dfb4bd7-afd2-40b0-8a9a-a52f80f2164d",
+      "name": "Enters the realization of the payment",
+      "type": "task",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5c485d0f-ce78-4f82-a65c-2488d787da6b"
+      ],
+      "outgoing": [
+        "Id_958c2405-b910-47d4-9237-f3ea4f2ad719"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [
+        "Id_958c2405-b910-47d4-9237-f3ea4f2ad719"
+      ],
+      "outgoing": [
+        "Id_2023bb26-5d2e-438d-9180-cea265cf99dd",
+        "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae"
+      ]
+    },
+    {
+      "id": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [
+        "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae",
+        "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe"
+      ],
+      "outgoing": [
+        "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f"
+      ]
+    },
+    {
+      "id": "Id_ae2d397e-4d72-41b3-a201-1066b350c001",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [
+        "Id_777d6236-8ef9-4e56-ab66-55eae2e1b331"
+      ],
+      "outgoing": [
+        "Id_c3efb3b6-fe27-4a25-8230-2f091df402c6",
+        "Id_e8780bb3-2c8e-459d-956a-2451372feba5"
+      ]
+    },
+    {
+      "id": "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [
+        "Id_80129bb6-ff12-4ebf-8ebb-f76cde57816b",
+        "Id_e8780bb3-2c8e-459d-956a-2451372feba5"
+      ],
+      "outgoing": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a member loan payment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c",
+      "incoming": [
+        "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14",
+      "source": "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a",
+      "target": "Id_70e63b5c-eec9-4795-b826-9af5408606b6",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6",
+      "source": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_2023bb26-5d2e-438d-9180-cea265cf99dd",
+      "source": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "target": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "condition": "repayment",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae",
+      "source": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "target": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe",
+      "source": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "target": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f",
+      "source": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_68e7e071-feb8-4aa1-9545-bd74fd641792",
+      "source": "Id_70e63b5c-eec9-4795-b826-9af5408606b6",
+      "target": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_777d6236-8ef9-4e56-ab66-55eae2e1b331",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_ae2d397e-4d72-41b3-a201-1066b350c001",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_c3efb3b6-fe27-4a25-8230-2f091df402c6",
+      "source": "Id_ae2d397e-4d72-41b3-a201-1066b350c001",
+      "target": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "condition": "Show",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_80129bb6-ff12-4ebf-8ebb-f76cde57816b",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_e8780bb3-2c8e-459d-956a-2451372feba5",
+      "source": "Id_ae2d397e-4d72-41b3-a201-1066b350c001",
+      "target": "Id_7bc6bb3c-50d5-4fbe-9598-04c51e5b430a",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_ff055f8f-bacf-48e1-83bb-6d39ebe2440c",
+      "source": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "target": "Id_5e2064b7-e363-4e91-afa3-3585d2033c4b",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_0291733d-8916-4a1a-b567-10eb42de01c9",
+      "source": "Id_5e2064b7-e363-4e91-afa3-3585d2033c4b",
+      "target": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_5c485d0f-ce78-4f82-a65c-2488d787da6b",
+      "source": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "target": "Id_3dfb4bd7-afd2-40b0-8a9a-a52f80f2164d",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    },
+    {
+      "id": "Id_958c2405-b910-47d4-9237-f3ea4f2ad719",
+      "source": "Id_3dfb4bd7-afd2-40b0-8a9a-a52f80f2164d",
+      "target": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "condition": "",
+      "processId": "Id_eb879789-c53b-4f61-a9f3-1fb6727ef32c"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_member_loan_payment_completed": false,
+    "displays_the_form_a_member_loan_payment_completed": false,
+    "displays_the_list_of_members_to_a_table_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "enters_information_about_the_member_s_loan_completed": false,
+    "reads_the_loan_database_completed": false,
+    "reads_the_loan_and_member_databases_completed": false,
+    "displays_the_remaining_payment_form_completed": false,
+    "saves_the_installment_information_completed": false,
+    "selects_one_of_the_members_to_display_completed": false,
+    "displays_the_payment_information_completed": false,
+    "enters_the_realization_of_the_payment_completed": false
+  }
+}

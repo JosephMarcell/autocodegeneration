@@ -1,0 +1,374 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_0c984985-c40e-4da4-96ce-d07b760ba4a6"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "View items sold",
+      "processRef": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_0c984985-c40e-4da4-96ce-d07b760ba4a6": "Main Process",
+    "Id_23428651-5e31-4d3a-b182-a362f9a8787c": "View items sold"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Warehouse keeper",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_47cb1276-7726-4108-a16f-aeb91480ec58",
+        "Id_95e9a599-731f-4eab-870e-908152668358",
+        "Id_2f754b08-9a95-43cd-9848-fa7e279ad013",
+        "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1",
+        "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8",
+        "Id_5b259d0a-7a7f-4d5c-942f-5f9d11b8e75e",
+        "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20",
+        "Id_6dbbdc95-4d46-47eb-b108-4e6b34b4abae",
+        "Id_e186f9bc-cc79-4329-8185-1eba2df9441b"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Warehouse keeper",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Warehouse keeper",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Warehouse keeper",
+    "Id_47cb1276-7726-4108-a16f-aeb91480ec58": "System",
+    "Id_95e9a599-731f-4eab-870e-908152668358": "System",
+    "Id_2f754b08-9a95-43cd-9848-fa7e279ad013": "System",
+    "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1": "System",
+    "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8": "System",
+    "Id_5b259d0a-7a7f-4d5c-942f-5f9d11b8e75e": "System",
+    "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20": "System",
+    "Id_6dbbdc95-4d46-47eb-b108-4e6b34b4abae": "System",
+    "Id_e186f9bc-cc79-4329-8185-1eba2df9441b": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to view items sold",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of view items sold",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_ba4958ce-95a5-4b45-8e74-249578213522"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Chooses the year, month, and category",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_144baafc-9f2a-442c-8066-b00563bae29c"
+      ]
+    },
+    {
+      "id": "Id_95e9a599-731f-4eab-870e-908152668358",
+      "name": "Queries the Stock database",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_fb9e2b0a-e202-45f2-9d50-849b73b38e8c"
+      ],
+      "outgoing": [
+        "Id_874e85e3-9ee6-4ff5-b9b5-3b6c6d15298a"
+      ]
+    },
+    {
+      "id": "Id_5b259d0a-7a7f-4d5c-942f-5f9d11b8e75e",
+      "name": "Prints the table",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_57365718-bf78-438e-ab41-5e18be17aece"
+      ],
+      "outgoing": [
+        "Id_d87591a6-1d3d-4087-9aed-0f17fd927d9f"
+      ]
+    },
+    {
+      "id": "Id_6dbbdc95-4d46-47eb-b108-4e6b34b4abae",
+      "name": "Queries goods on Category database",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_ba4958ce-95a5-4b45-8e74-249578213522"
+      ]
+    },
+    {
+      "id": "Id_e186f9bc-cc79-4329-8185-1eba2df9441b",
+      "name": "Displays the query results to the table",
+      "type": "task",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_874e85e3-9ee6-4ff5-b9b5-3b6c6d15298a"
+      ],
+      "outgoing": [
+        "Id_73e8305f-0d92-425b-a59a-3bbd3babba8b"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_2f754b08-9a95-43cd-9848-fa7e279ad013",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [
+        "Id_73e8305f-0d92-425b-a59a-3bbd3babba8b",
+        "Id_fd9d7c7c-f350-480b-a34a-14e7d845eaf2"
+      ],
+      "outgoing": [
+        "Id_dc2f89c3-5a8c-482b-a015-663cbe2716de"
+      ]
+    },
+    {
+      "id": "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [
+        "Id_144baafc-9f2a-442c-8066-b00563bae29c"
+      ],
+      "outgoing": [
+        "Id_fb9e2b0a-e202-45f2-9d50-849b73b38e8c",
+        "Id_fd9d7c7c-f350-480b-a34a-14e7d845eaf2"
+      ]
+    },
+    {
+      "id": "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [
+        "Id_dc2f89c3-5a8c-482b-a015-663cbe2716de"
+      ],
+      "outgoing": [
+        "Id_57365718-bf78-438e-ab41-5e18be17aece",
+        "Id_b2dbe26d-84db-4c85-89d7-f10c00fa44ad"
+      ]
+    },
+    {
+      "id": "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [
+        "Id_b2dbe26d-84db-4c85-89d7-f10c00fa44ad",
+        "Id_d87591a6-1d3d-4087-9aed-0f17fd927d9f"
+      ],
+      "outgoing": [
+        "Id_6085091e-e2b1-42e2-9ea3-a75cf43ca38f"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "View items sold",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_47cb1276-7726-4108-a16f-aeb91480ec58",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "View items sold",
+      "laneName": "System",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c",
+      "incoming": [
+        "Id_6085091e-e2b1-42e2-9ea3-a75cf43ca38f"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_6dbbdc95-4d46-47eb-b108-4e6b34b4abae",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_57365718-bf78-438e-ab41-5e18be17aece",
+      "source": "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8",
+      "target": "Id_5b259d0a-7a7f-4d5c-942f-5f9d11b8e75e",
+      "condition": "Print",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_b2dbe26d-84db-4c85-89d7-f10c00fa44ad",
+      "source": "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8",
+      "target": "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_d87591a6-1d3d-4087-9aed-0f17fd927d9f",
+      "source": "Id_5b259d0a-7a7f-4d5c-942f-5f9d11b8e75e",
+      "target": "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_6085091e-e2b1-42e2-9ea3-a75cf43ca38f",
+      "source": "Id_fa01c3a0-65a0-4f7a-a6da-01eb0fe85f20",
+      "target": "Id_47cb1276-7726-4108-a16f-aeb91480ec58",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_ba4958ce-95a5-4b45-8e74-249578213522",
+      "source": "Id_6dbbdc95-4d46-47eb-b108-4e6b34b4abae",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_144baafc-9f2a-442c-8066-b00563bae29c",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_fb9e2b0a-e202-45f2-9d50-849b73b38e8c",
+      "source": "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1",
+      "target": "Id_95e9a599-731f-4eab-870e-908152668358",
+      "condition": "Process",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_874e85e3-9ee6-4ff5-b9b5-3b6c6d15298a",
+      "source": "Id_95e9a599-731f-4eab-870e-908152668358",
+      "target": "Id_e186f9bc-cc79-4329-8185-1eba2df9441b",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_73e8305f-0d92-425b-a59a-3bbd3babba8b",
+      "source": "Id_e186f9bc-cc79-4329-8185-1eba2df9441b",
+      "target": "Id_2f754b08-9a95-43cd-9848-fa7e279ad013",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_fd9d7c7c-f350-480b-a34a-14e7d845eaf2",
+      "source": "Id_4ed1996d-ecb5-4004-8591-becdb0e726e1",
+      "target": "Id_2f754b08-9a95-43cd-9848-fa7e279ad013",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    },
+    {
+      "id": "Id_dc2f89c3-5a8c-482b-a015-663cbe2716de",
+      "source": "Id_2f754b08-9a95-43cd-9848-fa7e279ad013",
+      "target": "Id_0e9a5fc3-5fd7-47b9-965a-d02b258051e8",
+      "condition": "",
+      "processId": "Id_23428651-5e31-4d3a-b182-a362f9a8787c"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_view_items_sold_completed": false,
+    "displays_form_of_view_items_sold_completed": false,
+    "chooses_the_year_month_and_category_completed": false,
+    "queries_the_stock_database_completed": false,
+    "prints_the_table_completed": false,
+    "queries_goods_on_category_database_completed": false,
+    "displays_the_query_results_to_the_table_completed": false
+  }
+}

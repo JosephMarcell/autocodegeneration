@@ -1,0 +1,274 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Outpatient claims",
+        "value": "outpatientclaims",
+        "internal": "outpatientclaims"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "outpatientclaims": "/outpatient-claims/wants-to-make-outpatient-claims"
+    },
+    "stateSchema": {
+      "wants_to_make_outpatient_claims_completed": false,
+      "queries_a_doctor_database_completed": false,
+      "enters_information_about_the_patient_completed": false,
+      "selects_the_save_button_completed": false,
+      "saves_the_claim_information_completed": false,
+      "resets_all_information_to_blank_completed": false,
+      "displays_the_outpatient_claims_form_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/outpatient-claims/wants-to-make-outpatient-claims",
+        "role": "outpatientclaims",
+        "component": "WantsToMakeOutpatientClaimsPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/queries-a-doctor-database",
+        "role": "outpatientclaims",
+        "component": "QueriesADoctorDatabasePage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/enters-information-about-the-patient",
+        "role": "outpatientclaims",
+        "component": "EntersInformationAboutThePatientPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/selects-the-save-button",
+        "role": "outpatientclaims",
+        "component": "SelectsTheSaveButtonPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/saves-the-claim-information",
+        "role": "outpatientclaims",
+        "component": "SavesTheClaimInformationPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/resets-all-information-to-blank",
+        "role": "outpatientclaims",
+        "component": "ResetsAllInformationToBlankPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      },
+      {
+        "route": "/outpatient-claims/displays-the-outpatient-claims-form",
+        "role": "outpatientclaims",
+        "component": "DisplaysTheOutpatientClaimsFormPage",
+        "allowedRoles": [
+          "outpatientclaims"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "OutpatientClaims",
+      "role": "outpatientclaims",
+      "defaultRoute": "/outpatient-claims/wants-to-make-outpatient-claims",
+      "tasks": [
+        {
+          "taskId": "outpatientclaims-wants-to-make-outpatient-claims",
+          "name": "WantsToMakeOutpatientClaims",
+          "route": "/outpatient-claims/wants-to-make-outpatient-claims",
+          "component": "WantsToMakeOutpatientClaimsPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Wants to make Outpatient claims.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_make_outpatient_claims_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/queries-a-doctor-database",
+          "ui": {
+            "title": "Wants to make Outpatient claims",
+            "hint": "Page for BPMN task 'Wants to make Outpatient claims' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "outpatientclaims-queries-a-doctor-database",
+          "name": "QueriesADoctorDatabase",
+          "route": "/outpatient-claims/queries-a-doctor-database",
+          "component": "QueriesADoctorDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Queries a Doctor Database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_a_doctor_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/displays-the-outpatient-claims-form",
+          "ui": {
+            "title": "Queries a Doctor Database",
+            "hint": "Page for BPMN task 'Queries a Doctor Database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "outpatientclaims-displays-the-outpatient-claims-form",
+          "name": "DisplaysTheOutpatientClaimsForm",
+          "route": "/outpatient-claims/displays-the-outpatient-claims-form",
+          "component": "DisplaysTheOutpatientClaimsFormPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Displays the Outpatient claims form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_outpatient_claims_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/enters-information-about-the-patient",
+          "ui": {
+            "title": "Displays the Outpatient claims form",
+            "hint": "Page for BPMN task 'Displays the Outpatient claims form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "outpatientclaims-enters-information-about-the-patient",
+          "name": "EntersInformationAboutThePatient",
+          "route": "/outpatient-claims/enters-information-about-the-patient",
+          "component": "EntersInformationAboutThePatientPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Enters information about the patient.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_information_about_the_patient_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/selects-the-save-button",
+          "ui": {
+            "title": "Enters information about the patient",
+            "hint": "Page for BPMN task 'Enters information about the patient' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "outpatientclaims-selects-the-save-button",
+          "name": "SelectsTheSaveButton",
+          "route": "/outpatient-claims/selects-the-save-button",
+          "component": "SelectsTheSaveButtonPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Selects the save button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_save_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/saves-the-claim-information",
+          "ui": {
+            "title": "Selects the save button",
+            "hint": "Page for BPMN task 'Selects the save button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/outpatient-claims/saves-the-claim-information",
+              "condition": "Save"
+            },
+            {
+              "route": "/outpatient-claims/resets-all-information-to-blank",
+              "condition": "Cancel"
+            }
+          ]
+        },
+        {
+          "taskId": "outpatientclaims-saves-the-claim-information",
+          "name": "SavesTheClaimInformation",
+          "route": "/outpatient-claims/saves-the-claim-information",
+          "component": "SavesTheClaimInformationPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Saves the Claim information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_claim_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/complete",
+          "ui": {
+            "title": "Saves the Claim information",
+            "hint": "Page for BPMN task 'Saves the Claim information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "outpatientclaims-resets-all-information-to-blank",
+          "name": "ResetsAllInformationToBlank",
+          "route": "/outpatient-claims/resets-all-information-to-blank",
+          "component": "ResetsAllInformationToBlankPage",
+          "pageType": "write-navigate",
+          "description": "Outpatient claims: Resets all information to blank.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "resets_all_information_to_blank_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/outpatient-claims/complete",
+          "ui": {
+            "title": "Resets all information to blank",
+            "hint": "Page for BPMN task 'Resets all information to blank' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

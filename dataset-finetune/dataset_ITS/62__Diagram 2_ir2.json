@@ -1,0 +1,346 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Daily revenue report",
+        "value": "dailyrevenuereport",
+        "internal": "dailyrevenuereport"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "dailyrevenuereport": "/daily-revenue-report/wants-to-create-a-daily-revenue-report"
+    },
+    "stateSchema": {
+      "wants_to_create_a_daily_revenue_report_completed": false,
+      "displays_the_query_result_completed": false,
+      "displays_the_daily_revenue_report_form_completed": false,
+      "enters_the_start_date_end_date_and_category_completed": false,
+      "queries_the_revenue_database_completed": false,
+      "selects_the_search_button_completed": false,
+      "select_a_print_button_completed": false,
+      "prints_to_printer_completed": false,
+      "print_to_xcell_file_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/daily-revenue-report/wants-to-create-a-daily-revenue-report",
+        "role": "dailyrevenuereport",
+        "component": "WantsToCreateADailyRevenueReportPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/displays-the-query-result",
+        "role": "dailyrevenuereport",
+        "component": "DisplaysTheQueryResultPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/displays-the-daily-revenue-report-form",
+        "role": "dailyrevenuereport",
+        "component": "DisplaysTheDailyRevenueReportFormPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/enters-the-start-date-end-date-and-category",
+        "role": "dailyrevenuereport",
+        "component": "EntersTheStartDate,EndDate,AndCategoryPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/queries-the-revenue-database",
+        "role": "dailyrevenuereport",
+        "component": "QueriesTheRevenueDatabasePage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/selects-the-search-button",
+        "role": "dailyrevenuereport",
+        "component": "SelectsTheSearchButtonPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/select-a-print-button",
+        "role": "dailyrevenuereport",
+        "component": "SelectAPrintButtonPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/prints-to-printer",
+        "role": "dailyrevenuereport",
+        "component": "PrintsToPrinterPage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      },
+      {
+        "route": "/daily-revenue-report/print-to-xcell-file",
+        "role": "dailyrevenuereport",
+        "component": "PrintToXcellFilePage",
+        "allowedRoles": [
+          "dailyrevenuereport"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DailyRevenueReport",
+      "role": "dailyrevenuereport",
+      "defaultRoute": "/daily-revenue-report/wants-to-create-a-daily-revenue-report",
+      "tasks": [
+        {
+          "taskId": "dailyrevenuereport-wants-to-create-a-daily-revenue-report",
+          "name": "WantsToCreateADailyRevenueReport",
+          "route": "/daily-revenue-report/wants-to-create-a-daily-revenue-report",
+          "component": "WantsToCreateADailyRevenueReportPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Wants to create a Daily revenue report.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_create_a_daily_revenue_report_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/displays-the-daily-revenue-report-form",
+          "ui": {
+            "title": "Wants to create a Daily revenue report",
+            "hint": "Page for BPMN task 'Wants to create a Daily revenue report' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-displays-the-daily-revenue-report-form",
+          "name": "DisplaysTheDailyRevenueReportForm",
+          "route": "/daily-revenue-report/displays-the-daily-revenue-report-form",
+          "component": "DisplaysTheDailyRevenueReportFormPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Displays the Daily revenue report form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_daily_revenue_report_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/enters-the-start-date-end-date-and-category",
+          "ui": {
+            "title": "Displays the Daily revenue report form",
+            "hint": "Page for BPMN task 'Displays the Daily revenue report form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-enters-the-start-date-end-date-and-category",
+          "name": "EntersTheStartDate,EndDate,AndCategory",
+          "route": "/daily-revenue-report/enters-the-start-date-end-date-and-category",
+          "component": "EntersTheStartDate,EndDate,AndCategoryPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Enters the start date, end date, and category.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_start_date_end_date_and_category_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/selects-the-search-button",
+          "ui": {
+            "title": "Enters the start date, end date, and category",
+            "hint": "Page for BPMN task 'Enters the start date, end date, and category' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-selects-the-search-button",
+          "name": "SelectsTheSearchButton",
+          "route": "/daily-revenue-report/selects-the-search-button",
+          "component": "SelectsTheSearchButtonPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Selects the search button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_search_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/queries-the-revenue-database",
+          "ui": {
+            "title": "Selects the search button",
+            "hint": "Page for BPMN task 'Selects the search button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/daily-revenue-report/queries-the-revenue-database",
+              "condition": "Search"
+            },
+            {
+              "route": "/daily-revenue-report/select-a-print-button",
+              "condition": "SelectAPrintButton"
+            }
+          ]
+        },
+        {
+          "taskId": "dailyrevenuereport-queries-the-revenue-database",
+          "name": "QueriesTheRevenueDatabase",
+          "route": "/daily-revenue-report/queries-the-revenue-database",
+          "component": "QueriesTheRevenueDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Queries the Revenue database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_revenue_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/displays-the-query-result",
+          "ui": {
+            "title": "Queries the Revenue database",
+            "hint": "Page for BPMN task 'Queries the Revenue database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-displays-the-query-result",
+          "name": "DisplaysTheQueryResult",
+          "route": "/daily-revenue-report/displays-the-query-result",
+          "component": "DisplaysTheQueryResultPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Displays the query result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_result_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/select-a-print-button",
+          "ui": {
+            "title": "Displays the query result",
+            "hint": "Page for BPMN task 'Displays the query result' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-select-a-print-button",
+          "name": "SelectAPrintButton",
+          "route": "/daily-revenue-report/select-a-print-button",
+          "component": "SelectAPrintButtonPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Select  a print  button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_a_print_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/prints-to-printer",
+          "ui": {
+            "title": "Select  a print  button",
+            "hint": "Page for BPMN task 'Select  a print  button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/daily-revenue-report/prints-to-printer",
+              "condition": "Print"
+            },
+            {
+              "route": "/daily-revenue-report/print-to-xcell-file",
+              "condition": "Excell"
+            }
+          ]
+        },
+        {
+          "taskId": "dailyrevenuereport-prints-to-printer",
+          "name": "PrintsToPrinter",
+          "route": "/daily-revenue-report/prints-to-printer",
+          "component": "PrintsToPrinterPage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Prints to printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_to_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/complete",
+          "ui": {
+            "title": "Prints to printer",
+            "hint": "Page for BPMN task 'Prints to printer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "dailyrevenuereport-print-to-xcell-file",
+          "name": "PrintToXcellFile",
+          "route": "/daily-revenue-report/print-to-xcell-file",
+          "component": "PrintToXcellFilePage",
+          "pageType": "write-navigate",
+          "description": "Daily revenue report: Print to xcell file.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "print_to_xcell_file_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/daily-revenue-report/complete",
+          "ui": {
+            "title": "Print to xcell file",
+            "hint": "Page for BPMN task 'Print to xcell file' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_5113b6f2-4e57-4ee8-a67f-b7b831827d98"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Validate member mandatory deposit",
+      "processRef": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_5113b6f2-4e57-4ee8-a67f-b7b831827d98": "Main Process",
+    "Id_749e4f3f-2c27-4179-a455-10077aa575fe": "Validate member mandatory deposit"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+        "Id_ba04d249-46d5-488e-ab6b-240d16c9bb94"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001",
+        "Id_cde227f9-7a9e-4eb1-a021-2a5e179326bd",
+        "Id_75667d88-3610-4e0a-84c2-64a76e3f3390",
+        "Id_2a91ffcb-d9d4-4317-96b4-35e0485a4a48",
+        "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7",
+        "Id_3235ba64-8756-40a5-b967-51bed7e30341",
+        "Id_ccc23121-2731-4bfe-9225-7493f3cf5088",
+        "Id_d3d6a39f-6353-435b-ac0e-d83e68405188",
+        "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4": "System",
+    "Id_971009e2-3946-424e-885f-e7e52a5335d5": "Officer",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001": "System",
+    "Id_cde227f9-7a9e-4eb1-a021-2a5e179326bd": "System",
+    "Id_75667d88-3610-4e0a-84c2-64a76e3f3390": "System",
+    "Id_2a91ffcb-d9d4-4317-96b4-35e0485a4a48": "System",
+    "Id_ba04d249-46d5-488e-ab6b-240d16c9bb94": "Officer",
+    "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7": "System",
+    "Id_3235ba64-8756-40a5-b967-51bed7e30341": "System",
+    "Id_ccc23121-2731-4bfe-9225-7493f3cf5088": "System",
+    "Id_d3d6a39f-6353-435b-ac0e-d83e68405188": "System",
+    "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks for validating member mandatory deposit",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads the database Bill",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the work unit, year, and month data",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_a40adca7-ce2d-47fb-9933-acac7cb47e9e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the validating member mandatory deposit form",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Reads the Bill database",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_000467ee-7da7-472b-bb7e-da895d0b38e3"
+      ],
+      "outgoing": [
+        "Id_29491ab3-a5f3-4f75-8df1-b3e45b3c0ca5"
+      ]
+    },
+    {
+      "id": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "name": "Displays the member's billing information",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ],
+      "outgoing": [
+        "Id_3db086f1-3661-4cc2-8f2e-7eaf98eb9a8b"
+      ]
+    },
+    {
+      "id": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "name": "Selects show",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a40adca7-ce2d-47fb-9933-acac7cb47e9e"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_cde227f9-7a9e-4eb1-a021-2a5e179326bd",
+      "name": "Updates status with \u2018paid\u2019 for all member",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_06c70f1b-7a51-4b71-934c-8eae265420b7"
+      ],
+      "outgoing": [
+        "Id_2934ede7-f566-47ca-9c8d-e0ca83e5ae4b"
+      ]
+    },
+    {
+      "id": "Id_2a91ffcb-d9d4-4317-96b4-35e0485a4a48",
+      "name": "Displays the information to the screen",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_29491ab3-a5f3-4f75-8df1-b3e45b3c0ca5"
+      ],
+      "outgoing": [
+        "Id_8f279e64-1310-4dc8-a3b5-d4cf877051e9"
+      ]
+    },
+    {
+      "id": "Id_ba04d249-46d5-488e-ab6b-240d16c9bb94",
+      "name": "Fills in the member ID",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_71d837d3-62c3-4936-8d08-62bd5f40b03c"
+      ],
+      "outgoing": [
+        "Id_000467ee-7da7-472b-bb7e-da895d0b38e3"
+      ]
+    },
+    {
+      "id": "Id_3235ba64-8756-40a5-b967-51bed7e30341",
+      "name": "Updates the payment information",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_11e6fa2b-d3d1-4d0e-a5de-6d06e8e75c43"
+      ],
+      "outgoing": [
+        "Id_fe523c51-128c-4d02-8c19-29de1dece2c8"
+      ]
+    },
+    {
+      "id": "Id_ccc23121-2731-4bfe-9225-7493f3cf5088",
+      "name": "Updates the member's status with \u2018disable\u2019",
+      "type": "task",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_48643b83-4174-4577-b118-047b15aba2c4"
+      ],
+      "outgoing": [
+        "Id_508c3e77-d729-4648-9dbe-37bf6fcf0d04"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_2934ede7-f566-47ca-9c8d-e0ca83e5ae4b",
+        "Id_b8062863-5219-4e27-8a75-3e417024167b"
+      ],
+      "outgoing": [
+        "Id_219ac02e-9047-4647-bca8-9f4d95fe23e9"
+      ]
+    },
+    {
+      "id": "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_3db086f1-3661-4cc2-8f2e-7eaf98eb9a8b"
+      ],
+      "outgoing": [
+        "Id_06c70f1b-7a51-4b71-934c-8eae265420b7",
+        "Id_b8062863-5219-4e27-8a75-3e417024167b"
+      ]
+    },
+    {
+      "id": "Id_75667d88-3610-4e0a-84c2-64a76e3f3390",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_219ac02e-9047-4647-bca8-9f4d95fe23e9"
+      ],
+      "outgoing": [
+        "Id_71d837d3-62c3-4936-8d08-62bd5f40b03c",
+        "Id_6ca15727-35e5-43c6-801d-a0e5e2e46645"
+      ]
+    },
+    {
+      "id": "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_8f279e64-1310-4dc8-a3b5-d4cf877051e9",
+        "Id_6ca15727-35e5-43c6-801d-a0e5e2e46645"
+      ],
+      "outgoing": [
+        "Id_3a4e0ad4-b8c2-443a-beb0-b5c86dcf3329"
+      ]
+    },
+    {
+      "id": "Id_d3d6a39f-6353-435b-ac0e-d83e68405188",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_3a4e0ad4-b8c2-443a-beb0-b5c86dcf3329"
+      ],
+      "outgoing": [
+        "Id_48643b83-4174-4577-b118-047b15aba2c4",
+        "Id_11e6fa2b-d3d1-4d0e-a5de-6d06e8e75c43"
+      ]
+    },
+    {
+      "id": "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_fe523c51-128c-4d02-8c19-29de1dece2c8",
+        "Id_508c3e77-d729-4648-9dbe-37bf6fcf0d04"
+      ],
+      "outgoing": [
+        "Id_7e2c6a1a-0bde-47cd-852b-562e34dd9a8d"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "Officer",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Validate member mandatory deposit",
+      "laneName": "System",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe",
+      "incoming": [
+        "Id_7e2c6a1a-0bde-47cd-852b-562e34dd9a8d"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_a40adca7-ce2d-47fb-9933-acac7cb47e9e",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_3db086f1-3661-4cc2-8f2e-7eaf98eb9a8b",
+      "source": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "target": "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_06c70f1b-7a51-4b71-934c-8eae265420b7",
+      "source": "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001",
+      "target": "Id_cde227f9-7a9e-4eb1-a021-2a5e179326bd",
+      "condition": "pay all",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_2934ede7-f566-47ca-9c8d-e0ca83e5ae4b",
+      "source": "Id_cde227f9-7a9e-4eb1-a021-2a5e179326bd",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_71d837d3-62c3-4936-8d08-62bd5f40b03c",
+      "source": "Id_75667d88-3610-4e0a-84c2-64a76e3f3390",
+      "target": "Id_ba04d249-46d5-488e-ab6b-240d16c9bb94",
+      "condition": "Fill",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_000467ee-7da7-472b-bb7e-da895d0b38e3",
+      "source": "Id_ba04d249-46d5-488e-ab6b-240d16c9bb94",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_29491ab3-a5f3-4f75-8df1-b3e45b3c0ca5",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_2a91ffcb-d9d4-4317-96b4-35e0485a4a48",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_8f279e64-1310-4dc8-a3b5-d4cf877051e9",
+      "source": "Id_2a91ffcb-d9d4-4317-96b4-35e0485a4a48",
+      "target": "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_219ac02e-9047-4647-bca8-9f4d95fe23e9",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_75667d88-3610-4e0a-84c2-64a76e3f3390",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_6ca15727-35e5-43c6-801d-a0e5e2e46645",
+      "source": "Id_75667d88-3610-4e0a-84c2-64a76e3f3390",
+      "target": "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_b8062863-5219-4e27-8a75-3e417024167b",
+      "source": "Id_f4f252f7-f0a9-41fe-b963-64cf349e3001",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_3a4e0ad4-b8c2-443a-beb0-b5c86dcf3329",
+      "source": "Id_a2cb266b-101e-463c-8b13-7a2317b47dd7",
+      "target": "Id_d3d6a39f-6353-435b-ac0e-d83e68405188",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_48643b83-4174-4577-b118-047b15aba2c4",
+      "source": "Id_d3d6a39f-6353-435b-ac0e-d83e68405188",
+      "target": "Id_ccc23121-2731-4bfe-9225-7493f3cf5088",
+      "condition": "Disable",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_11e6fa2b-d3d1-4d0e-a5de-6d06e8e75c43",
+      "source": "Id_d3d6a39f-6353-435b-ac0e-d83e68405188",
+      "target": "Id_3235ba64-8756-40a5-b967-51bed7e30341",
+      "condition": "Pay",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_fe523c51-128c-4d02-8c19-29de1dece2c8",
+      "source": "Id_3235ba64-8756-40a5-b967-51bed7e30341",
+      "target": "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_508c3e77-d729-4648-9dbe-37bf6fcf0d04",
+      "source": "Id_ccc23121-2731-4bfe-9225-7493f3cf5088",
+      "target": "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_7e2c6a1a-0bde-47cd-852b-562e34dd9a8d",
+      "source": "Id_1f1ab6b1-5394-42ba-bf97-c1ef9d4e2bb6",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_749e4f3f-2c27-4179-a455-10077aa575fe"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_for_validating_member_mandatory_deposit_completed": false,
+    "reads_the_database_bill_completed": false,
+    "enters_the_work_unit_year_and_month_data_completed": false,
+    "displays_the_validating_member_mandatory_deposit_form_completed": false,
+    "reads_the_bill_database_completed": false,
+    "displays_the_member_s_billing_information_completed": false,
+    "selects_show_completed": false,
+    "updates_status_with_paid_for_all_member_completed": false,
+    "displays_the_information_to_the_screen_completed": false,
+    "fills_in_the_member_id_completed": false,
+    "updates_the_payment_information_completed": false,
+    "updates_the_member_s_status_with_disable_completed": false
+  }
+}

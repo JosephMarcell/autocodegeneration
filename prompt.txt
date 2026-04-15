@@ -1,3 +1,20 @@
-Pada folder generated app, buat folder baru dan buat website React.js sederhana 
-(bisa digenerate  Qwen2.5-Coder:7b)
-tanpa backend dan database berdasarkan ir2.json 
+Contoh prompt untuk mencoba
+@dataset-finetune-agent Proses semua file ITS dan generate IR1/IR2
+@dataset-finetune-agent Buat batch JSONL training samples dari IR2 yang sudah ada
+@dataset-finetune-agent Laporkan status pipeline dan distribusi pageType
+@dataset-finetune-agent Patch parser untuk support lane parsing lalu test pada 3 sample ITS
+
+
+
+Saran customization lanjutan
+Prompt file (.prompt.md) untuk satu perintah spesifik, misal "generate JSONL dari satu BPMN file" dengan parameter input
+Instruction file (.instructions.md) dengan applyTo: "dataset/**" untuk aturan tetap saat mengedit file di folder dataset
+
+
+
+
+Aspek Projek 
+- pipeline pengerjaan = alur pengerjaan sistem 
+- struktur sistem = parser + LLM ( finetuning ) + builder 
+- dataset = pembuatan ir1/ir2, JSONL
+

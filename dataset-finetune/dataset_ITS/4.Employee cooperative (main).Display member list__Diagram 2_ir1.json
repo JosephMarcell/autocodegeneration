@@ -1,0 +1,428 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_61a66226-b9e5-4db4-9d86-00b0738c03a5"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Display member list",
+      "processRef": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_61a66226-b9e5-4db4-9d86-00b0738c03a5": "Main Process",
+    "Id_26adfc64-cd04-4530-8903-d5ba742772a5": "Display member list"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "flowNodeRefs": [
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_191f2d3a-7740-4656-b589-f1f866b36334",
+        "Id_32435c7f-5487-4a5d-960c-3fbb8d115d45",
+        "Id_b4a0f1ec-4c64-4f95-aa86-af1a31b9a7ed",
+        "Id_911e67af-b378-4c1f-9a6c-978e95ac4590",
+        "Id_473d748a-e8f4-44d7-998e-546f45620567",
+        "Id_9232021e-38ce-44dc-8921-050492980ae3",
+        "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "Officer",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "System",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_191f2d3a-7740-4656-b589-f1f866b36334": "System",
+    "Id_32435c7f-5487-4a5d-960c-3fbb8d115d45": "System",
+    "Id_b4a0f1ec-4c64-4f95-aa86-af1a31b9a7ed": "System",
+    "Id_911e67af-b378-4c1f-9a6c-978e95ac4590": "System",
+    "Id_473d748a-e8f4-44d7-998e-546f45620567": "System",
+    "Id_9232021e-38ce-44dc-8921-050492980ae3": "System",
+    "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks for a member display",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "Officer",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Enters  wotk unit and name or ID member",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "Officer",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "queries to the member",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a member list form",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "name": "Display the main menu",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_2a0351f3-91de-4bf4-820b-27d2c27abcb1"
+      ]
+    },
+    {
+      "id": "Id_191f2d3a-7740-4656-b589-f1f866b36334",
+      "name": "Runs the update member form",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7a49e49d-830a-4c33-9636-88ebcce07faa"
+      ],
+      "outgoing": [
+        "Id_ec4c7324-ef77-4560-b00c-d77ab13844d8"
+      ]
+    },
+    {
+      "id": "Id_32435c7f-5487-4a5d-960c-3fbb8d115d45",
+      "name": "Runs the form of the new member",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8e1d2b1d-867a-4a4e-8798-d48161189189"
+      ],
+      "outgoing": [
+        "Id_4c0afcfb-276d-4a73-a48f-506502ed3c05"
+      ]
+    },
+    {
+      "id": "Id_b4a0f1ec-4c64-4f95-aa86-af1a31b9a7ed",
+      "name": "Runs the switch work unit form",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_26b4acda-370f-4b8b-b3ff-503544bfe47c"
+      ],
+      "outgoing": [
+        "Id_97bb144c-b165-405e-a9a1-691c490ff64c"
+      ]
+    },
+    {
+      "id": "Id_911e67af-b378-4c1f-9a6c-978e95ac4590",
+      "name": "Runs the form of the work unit history",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8269727d-e3d3-4670-8193-01c3663a4087"
+      ],
+      "outgoing": [
+        "Id_ee2409cc-ab2b-467c-9d3e-4ad55e248ac2"
+      ]
+    },
+    {
+      "id": "Id_473d748a-e8f4-44d7-998e-546f45620567",
+      "name": "Runs the form of change status",
+      "type": "task",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4cf495d5-4c13-4207-8d2e-30c14be74bd5"
+      ],
+      "outgoing": [
+        "Id_a0583510-3324-495f-ae06-ec828d5f9ab8"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "incoming": [
+        "Id_2a0351f3-91de-4bf4-820b-27d2c27abcb1"
+      ],
+      "outgoing": [
+        "Id_7a49e49d-830a-4c33-9636-88ebcce07faa",
+        "Id_26b4acda-370f-4b8b-b3ff-503544bfe47c",
+        "Id_8269727d-e3d3-4670-8193-01c3663a4087",
+        "Id_4cf495d5-4c13-4207-8d2e-30c14be74bd5",
+        "Id_8e1d2b1d-867a-4a4e-8798-d48161189189",
+        "Id_0af87bad-6a05-4351-92b7-fcd020d97ec0"
+      ]
+    },
+    {
+      "id": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "incoming": [
+        "Id_ec4c7324-ef77-4560-b00c-d77ab13844d8",
+        "Id_4c0afcfb-276d-4a73-a48f-506502ed3c05",
+        "Id_97bb144c-b165-405e-a9a1-691c490ff64c",
+        "Id_ee2409cc-ab2b-467c-9d3e-4ad55e248ac2",
+        "Id_a0583510-3324-495f-ae06-ec828d5f9ab8",
+        "Id_0af87bad-6a05-4351-92b7-fcd020d97ec0"
+      ],
+      "outgoing": [
+        "Id_89167721-13c2-4875-a7cf-95e41a73981c"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Display member list",
+      "laneName": "Officer",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Display member list",
+      "laneName": "System",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5",
+      "incoming": [
+        "Id_89167721-13c2-4875-a7cf-95e41a73981c"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_2a0351f3-91de-4bf4-820b-27d2c27abcb1",
+      "source": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "target": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_7a49e49d-830a-4c33-9636-88ebcce07faa",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_191f2d3a-7740-4656-b589-f1f866b36334",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_ec4c7324-ef77-4560-b00c-d77ab13844d8",
+      "source": "Id_191f2d3a-7740-4656-b589-f1f866b36334",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_26b4acda-370f-4b8b-b3ff-503544bfe47c",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_b4a0f1ec-4c64-4f95-aa86-af1a31b9a7ed",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_8269727d-e3d3-4670-8193-01c3663a4087",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_911e67af-b378-4c1f-9a6c-978e95ac4590",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_4cf495d5-4c13-4207-8d2e-30c14be74bd5",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_473d748a-e8f4-44d7-998e-546f45620567",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_4c0afcfb-276d-4a73-a48f-506502ed3c05",
+      "source": "Id_32435c7f-5487-4a5d-960c-3fbb8d115d45",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_97bb144c-b165-405e-a9a1-691c490ff64c",
+      "source": "Id_b4a0f1ec-4c64-4f95-aa86-af1a31b9a7ed",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_ee2409cc-ab2b-467c-9d3e-4ad55e248ac2",
+      "source": "Id_911e67af-b378-4c1f-9a6c-978e95ac4590",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_a0583510-3324-495f-ae06-ec828d5f9ab8",
+      "source": "Id_473d748a-e8f4-44d7-998e-546f45620567",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_89167721-13c2-4875-a7cf-95e41a73981c",
+      "source": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_8e1d2b1d-867a-4a4e-8798-d48161189189",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_32435c7f-5487-4a5d-960c-3fbb8d115d45",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    },
+    {
+      "id": "Id_0af87bad-6a05-4351-92b7-fcd020d97ec0",
+      "source": "Id_9232021e-38ce-44dc-8921-050492980ae3",
+      "target": "Id_a63de61f-f1d5-47e9-a8f3-3c253cb77265",
+      "condition": "",
+      "processId": "Id_26adfc64-cd04-4530-8903-d5ba742772a5"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_for_a_member_display_completed": false,
+    "enters_wotk_unit_and_name_or_id_member_completed": false,
+    "queries_to_the_member_completed": false,
+    "displays_a_member_list_form_completed": false,
+    "display_the_main_menu_completed": false,
+    "runs_the_update_member_form_completed": false,
+    "runs_the_form_of_the_new_member_completed": false,
+    "runs_the_switch_work_unit_form_completed": false,
+    "runs_the_form_of_the_work_unit_history_completed": false,
+    "runs_the_form_of_change_status_completed": false
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Display mandatory savings",
+        "value": "displaymandatorysavings",
+        "internal": "displaymandatorysavings"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "displaymandatorysavings": "/display-mandatory-savings/asks-to-display-mandatory-savings"
+    },
+    "stateSchema": {
+      "asks_to_display_mandatory_savings_completed": false,
+      "reads_the_mandatory_saving_and_member_databases_completed": false,
+      "displays_the_form_of_displaying_mandatory_savings_completed": false,
+      "selects_one_of_the_members_completed": false,
+      "displays_a_recap_of_mandatory_saving_completed": false,
+      "prints_the_recap_to_the_printer_completed": false,
+      "selects_the_unit_work_show_completed": false,
+      "displays_member_data_of_setting_the_initial_balance_completed": false,
+      "fills_in_the_initial_balance_setting_completed": false,
+      "saves_new_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/display-mandatory-savings/asks-to-display-mandatory-savings",
+        "role": "displaymandatorysavings",
+        "component": "AsksToDisplayMandatorySavingsPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/reads-the-mandatory-saving-and-member-databases",
+        "role": "displaymandatorysavings",
+        "component": "ReadsTheMandatorySavingAndMemberDatabasesPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/displays-the-form-of-displaying-mandatory-savings",
+        "role": "displaymandatorysavings",
+        "component": "DisplaysTheFormOfDisplayingMandatorySavingsPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/selects-one-of-the-members",
+        "role": "displaymandatorysavings",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/displays-a-recap-of-mandatory-saving",
+        "role": "displaymandatorysavings",
+        "component": "DisplaysARecapOfMandatorySavingPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/prints-the-recap-to-the-printer",
+        "role": "displaymandatorysavings",
+        "component": "PrintsTheRecapToThePrinterPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/selects-the-unit-work-show",
+        "role": "displaymandatorysavings",
+        "component": "SelectsTheUnitWork&'show'Page",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/displays-member-data-of-setting-the-initial-balance",
+        "role": "displaymandatorysavings",
+        "component": "DisplaysMemberDataOfSettingTheInitialBalancePage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/fills-in-the-initial-balance-setting",
+        "role": "displaymandatorysavings",
+        "component": "FillsInTheInitialBalanceSettingPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      },
+      {
+        "route": "/display-mandatory-savings/saves-new-information",
+        "role": "displaymandatorysavings",
+        "component": "SavesNewInformationPage",
+        "allowedRoles": [
+          "displaymandatorysavings"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DisplayMandatorySavings",
+      "role": "displaymandatorysavings",
+      "defaultRoute": "/display-mandatory-savings/asks-to-display-mandatory-savings",
+      "tasks": [
+        {
+          "taskId": "displaymandatorysavings-asks-to-display-mandatory-savings",
+          "name": "AsksToDisplayMandatorySavings",
+          "route": "/display-mandatory-savings/asks-to-display-mandatory-savings",
+          "component": "AsksToDisplayMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Asks to display mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_display_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/displays-the-form-of-displaying-mandatory-savings",
+          "ui": {
+            "title": "Asks to display mandatory savings",
+            "hint": "Page for BPMN task 'Asks to display mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-displays-the-form-of-displaying-mandatory-savings",
+          "name": "DisplaysTheFormOfDisplayingMandatorySavings",
+          "route": "/display-mandatory-savings/displays-the-form-of-displaying-mandatory-savings",
+          "component": "DisplaysTheFormOfDisplayingMandatorySavingsPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Displays the form of displaying mandatory savings.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_form_of_displaying_mandatory_savings_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/selects-the-unit-work-show",
+          "ui": {
+            "title": "Displays the form of displaying mandatory savings",
+            "hint": "Page for BPMN task 'Displays the form of displaying mandatory savings' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-selects-the-unit-work-show",
+          "name": "SelectsTheUnitWork&'show'",
+          "route": "/display-mandatory-savings/selects-the-unit-work-show",
+          "component": "SelectsTheUnitWork&'show'Page",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Selects the unit work & 'show'.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_unit_work_show_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/reads-the-mandatory-saving-and-member-databases",
+          "ui": {
+            "title": "Selects the unit work & 'show'",
+            "hint": "Page for BPMN task 'Selects the unit work & 'show'' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-reads-the-mandatory-saving-and-member-databases",
+          "name": "ReadsTheMandatorySavingAndMemberDatabases",
+          "route": "/display-mandatory-savings/reads-the-mandatory-saving-and-member-databases",
+          "component": "ReadsTheMandatorySavingAndMemberDatabasesPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Reads the Mandatory Saving and Member databases.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_mandatory_saving_and_member_databases_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/displays-a-recap-of-mandatory-saving",
+          "ui": {
+            "title": "Reads the Mandatory Saving and Member databases",
+            "hint": "Page for BPMN task 'Reads the Mandatory Saving and Member databases' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-displays-a-recap-of-mandatory-saving",
+          "name": "DisplaysARecapOfMandatorySaving",
+          "route": "/display-mandatory-savings/displays-a-recap-of-mandatory-saving",
+          "component": "DisplaysARecapOfMandatorySavingPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Displays a recap of mandatory saving.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_recap_of_mandatory_saving_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/prints-the-recap-to-the-printer",
+          "ui": {
+            "title": "Displays a recap of mandatory saving",
+            "hint": "Page for BPMN task 'Displays a recap of mandatory saving' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/display-mandatory-savings/prints-the-recap-to-the-printer",
+              "condition": "Print"
+            },
+            {
+              "route": "/display-mandatory-savings/selects-one-of-the-members",
+              "condition": "SelectsOneOfTheMembers"
+            }
+          ]
+        },
+        {
+          "taskId": "displaymandatorysavings-prints-the-recap-to-the-printer",
+          "name": "PrintsTheRecapToThePrinter",
+          "route": "/display-mandatory-savings/prints-the-recap-to-the-printer",
+          "component": "PrintsTheRecapToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Prints the recap to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_recap_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/selects-one-of-the-members",
+          "ui": {
+            "title": "Prints the recap to the printer",
+            "hint": "Page for BPMN task 'Prints the recap to the printer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/display-mandatory-savings/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/displays-member-data-of-setting-the-initial-balance",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-displays-member-data-of-setting-the-initial-balance",
+          "name": "DisplaysMemberDataOfSettingTheInitialBalance",
+          "route": "/display-mandatory-savings/displays-member-data-of-setting-the-initial-balance",
+          "component": "DisplaysMemberDataOfSettingTheInitialBalancePage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Displays member data of setting the initial balance.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_member_data_of_setting_the_initial_balance_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/fills-in-the-initial-balance-setting",
+          "ui": {
+            "title": "Displays member data of setting the initial balance",
+            "hint": "Page for BPMN task 'Displays member data of setting the initial balance' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaymandatorysavings-fills-in-the-initial-balance-setting",
+          "name": "FillsInTheInitialBalanceSetting",
+          "route": "/display-mandatory-savings/fills-in-the-initial-balance-setting",
+          "component": "FillsInTheInitialBalanceSettingPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Fills in the initial balance setting.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "fills_in_the_initial_balance_setting_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/saves-new-information",
+          "ui": {
+            "title": "Fills in the initial balance setting",
+            "hint": "Page for BPMN task 'Fills in the initial balance setting' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/display-mandatory-savings/saves-new-information",
+              "condition": "Save or Update"
+            }
+          ]
+        },
+        {
+          "taskId": "displaymandatorysavings-saves-new-information",
+          "name": "SavesNewInformation",
+          "route": "/display-mandatory-savings/saves-new-information",
+          "component": "SavesNewInformationPage",
+          "pageType": "write-navigate",
+          "description": "Display mandatory savings: Saves new information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_new_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/display-mandatory-savings/complete",
+          "ui": {
+            "title": "Saves new information",
+            "hint": "Page for BPMN task 'Saves new information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

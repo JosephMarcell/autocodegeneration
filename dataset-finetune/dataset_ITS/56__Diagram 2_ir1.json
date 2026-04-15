@@ -1,0 +1,292 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_a219e0c2-914e-44db-9821-39e0f48d1470"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Search for patient data information",
+      "processRef": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_a219e0c2-914e-44db-9821-39e0f48d1470": "Main Process",
+    "Id_46030e16-9f86-4d57-8b83-be6768cc40d8": "Search for patient data information"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "FO",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_ac3f7a9c-28e9-4a90-8928-edfd64206da8"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+        "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad",
+        "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "FO",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "FO",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "FO",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49": "System",
+    "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_ac3f7a9c-28e9-4a90-8928-edfd64206da8": "FO",
+    "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad": "System",
+    "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants Search for patient data information",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "FO",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the patient's name",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "FO",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_f2b6ef41-dee2-4f62-8f67-12bc4ae753b1"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the Search for patient data information form",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "name": "Queries the Patient database,",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_43631099-d328-4191-a7fc-e2095771f82c"
+      ],
+      "outgoing": [
+        "Id_5a02fc70-9fc5-4951-b7bd-4ace9dbe67b3"
+      ]
+    },
+    {
+      "id": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "name": "Displays the query results to a table",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5a02fc70-9fc5-4951-b7bd-4ace9dbe67b3"
+      ],
+      "outgoing": [
+        "Id_14c3b15b-e9f9-4d54-bfe1-2d60a5969384"
+      ]
+    },
+    {
+      "id": "Id_ac3f7a9c-28e9-4a90-8928-edfd64206da8",
+      "name": "Selects a search button",
+      "type": "task",
+      "participantName": "Search for patient data information",
+      "laneName": "FO",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f2b6ef41-dee2-4f62-8f67-12bc4ae753b1"
+      ],
+      "outgoing": [
+        "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "incoming": [
+        "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660"
+      ],
+      "outgoing": [
+        "Id_43631099-d328-4191-a7fc-e2095771f82c",
+        "Id_75dde031-2687-4f40-ac95-5bdf97189c0f"
+      ]
+    },
+    {
+      "id": "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "incoming": [
+        "Id_14c3b15b-e9f9-4d54-bfe1-2d60a5969384",
+        "Id_75dde031-2687-4f40-ac95-5bdf97189c0f"
+      ],
+      "outgoing": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Search for patient data information",
+      "laneName": "FO",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Search for patient data information",
+      "laneName": "System",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8",
+      "incoming": [
+        "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_65d7c546-88aa-456a-99c7-8cdacfbb1660",
+      "source": "Id_ac3f7a9c-28e9-4a90-8928-edfd64206da8",
+      "target": "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_60ebaaa6-1368-414b-8f74-3d7806d2de39",
+      "source": "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_f2b6ef41-dee2-4f62-8f67-12bc4ae753b1",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_ac3f7a9c-28e9-4a90-8928-edfd64206da8",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_43631099-d328-4191-a7fc-e2095771f82c",
+      "source": "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad",
+      "target": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_5a02fc70-9fc5-4951-b7bd-4ace9dbe67b3",
+      "source": "Id_61ffd82b-3da4-4f55-b5ea-a01fc381ca49",
+      "target": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_14c3b15b-e9f9-4d54-bfe1-2d60a5969384",
+      "source": "Id_7fe42d3b-450f-4fbf-bbc1-02243994a598",
+      "target": "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    },
+    {
+      "id": "Id_75dde031-2687-4f40-ac95-5bdf97189c0f",
+      "source": "Id_a7308178-06d5-4269-8dc8-3ff4655e05ad",
+      "target": "Id_ffd9beac-13dd-4c0f-9c58-f3f304cf90f3",
+      "condition": "",
+      "processId": "Id_46030e16-9f86-4d57-8b83-be6768cc40d8"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_search_for_patient_data_information_completed": false,
+    "enters_the_patient_s_name_completed": false,
+    "displays_the_search_for_patient_data_information_form_completed": false,
+    "queries_the_patient_database_completed": false,
+    "displays_the_query_results_to_a_table_completed": false,
+    "selects_a_search_button_completed": false
+  }
+}

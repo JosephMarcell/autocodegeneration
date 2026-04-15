@@ -1,0 +1,598 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_69dea129-2d11-4a01-81ab-daa925792f86"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "General patient cashier",
+      "processRef": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_69dea129-2d11-4a01-81ab-daa925792f86": "Main Process",
+    "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d": "General patient cashier"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+        "Id_467aec19-4802-4dfb-959a-96d262adf979",
+        "Id_65aaccf1-8026-4183-bb2c-7a5746f87b67",
+        "Id_5a51b47a-2646-4727-bfe8-11cb6cf8135a"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "flowNodeRefs": [
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+        "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+        "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+        "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+        "Id_05603d03-8106-47d8-a069-8e37915278b5",
+        "Id_883fd3b8-cdea-4fa5-bf5a-c8924b712021",
+        "Id_b8597b55-b0fd-4a78-8049-693d8d2203c7",
+        "Id_eb1c9f06-7a54-4aff-91bb-e0594c6b655a",
+        "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f",
+        "Id_5347b8df-2a52-44ed-9503-4f9b9d6a5243",
+        "Id_89298069-ad05-4a3d-983b-b4c085ac8852",
+        "Id_e06571e0-a23d-405d-9bde-427856a91d60",
+        "Id_691d30ec-9bd8-420f-afc5-26b933f76c01"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "Cashier",
+    "Id_e024b86e-10e6-46f3-891a-4cf17601323b": "Cashier",
+    "Id_259b95ad-426d-4d16-8f7b-6371212aaf57": "System",
+    "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33": "System",
+    "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1": "System",
+    "Id_2235724b-6ca2-46d2-95a0-ab88837d316f": "System",
+    "Id_05603d03-8106-47d8-a069-8e37915278b5": "System",
+    "Id_467aec19-4802-4dfb-959a-96d262adf979": "Cashier",
+    "Id_883fd3b8-cdea-4fa5-bf5a-c8924b712021": "System",
+    "Id_b8597b55-b0fd-4a78-8049-693d8d2203c7": "System",
+    "Id_eb1c9f06-7a54-4aff-91bb-e0594c6b655a": "System",
+    "Id_65aaccf1-8026-4183-bb2c-7a5746f87b67": "Cashier",
+    "Id_5a51b47a-2646-4727-bfe8-11cb6cf8135a": "Cashier",
+    "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f": "System",
+    "Id_5347b8df-2a52-44ed-9503-4f9b9d6a5243": "System",
+    "Id_89298069-ad05-4a3d-983b-b4c085ac8852": "System",
+    "Id_e06571e0-a23d-405d-9bde-427856a91d60": "System",
+    "Id_691d30ec-9bd8-420f-afc5-26b933f76c01": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to make a general patient payment",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays a general patient payment  form",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enter the medical record ID",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ]
+    },
+    {
+      "id": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "name": "Enters the transaction code, transaction type, quantity",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_bb353771-20e9-45eb-8106-8cc484586638"
+      ],
+      "outgoing": [
+        "Id_2d49e868-3cde-46fe-953e-b18ec2320394"
+      ]
+    },
+    {
+      "id": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "name": "Displays the query results",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ],
+      "outgoing": [
+        "Id_aa24093a-8120-4193-bbd4-d0888e822f80"
+      ]
+    },
+    {
+      "id": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "name": "Reads the Patient and Registration Database",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ],
+      "outgoing": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ]
+    },
+    {
+      "id": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "name": "Displays it to the table",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a4b0e7f0-3fc2-4ba3-8544-5b4a2e3049ed"
+      ],
+      "outgoing": [
+        "Id_3455752b-3998-418c-8e56-9f3bbf5367f9"
+      ]
+    },
+    {
+      "id": "Id_467aec19-4802-4dfb-959a-96d262adf979",
+      "name": "Chooses the type of payment",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_aa24093a-8120-4193-bbd4-d0888e822f80"
+      ],
+      "outgoing": [
+        "Id_1c45cd38-c8cc-4cbf-b513-9ca4972fe3f7"
+      ]
+    },
+    {
+      "id": "Id_883fd3b8-cdea-4fa5-bf5a-c8924b712021",
+      "name": "Reads the Transaction Master database",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_1c45cd38-c8cc-4cbf-b513-9ca4972fe3f7"
+      ],
+      "outgoing": [
+        "Id_99a46774-c599-411a-822a-dcec3880abdf"
+      ]
+    },
+    {
+      "id": "Id_b8597b55-b0fd-4a78-8049-693d8d2203c7",
+      "name": "Adds it to the list",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_2342cbee-fc0c-4277-b567-90dd0ec037b9"
+      ],
+      "outgoing": [
+        "Id_a4b0e7f0-3fc2-4ba3-8544-5b4a2e3049ed"
+      ]
+    },
+    {
+      "id": "Id_eb1c9f06-7a54-4aff-91bb-e0594c6b655a",
+      "name": "Displays the price",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_2d49e868-3cde-46fe-953e-b18ec2320394"
+      ],
+      "outgoing": [
+        "Id_2342cbee-fc0c-4277-b567-90dd0ec037b9"
+      ]
+    },
+    {
+      "id": "Id_65aaccf1-8026-4183-bb2c-7a5746f87b67",
+      "name": "Selects an add button",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3455752b-3998-418c-8e56-9f3bbf5367f9"
+      ],
+      "outgoing": [
+        "Id_6f01d6bf-90f6-427d-bc31-881f173e3f14"
+      ]
+    },
+    {
+      "id": "Id_5a51b47a-2646-4727-bfe8-11cb6cf8135a",
+      "name": "Selects a save button",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4a127f2a-4899-48ce-a93d-a82a6bbea7f8"
+      ],
+      "outgoing": [
+        "Id_1ecf6a5a-61c0-4e0d-b4d3-dd96ee177284"
+      ]
+    },
+    {
+      "id": "Id_5347b8df-2a52-44ed-9503-4f9b9d6a5243",
+      "name": "Saves the Transaction",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_9cdbfdca-bb04-45ef-b1e9-2d50d9e5acb9"
+      ],
+      "outgoing": [
+        "Id_a5120483-dc07-4ad2-a5c4-a68b76d97c5a"
+      ]
+    },
+    {
+      "id": "Id_89298069-ad05-4a3d-983b-b4c085ac8852",
+      "name": "Saves the Transaction",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_455a0b5b-9385-4948-b0af-806815603a5e"
+      ],
+      "outgoing": [
+        "Id_fcdd4ee9-3b75-499a-9ddd-1f9cff150920"
+      ]
+    },
+    {
+      "id": "Id_691d30ec-9bd8-420f-afc5-26b933f76c01",
+      "name": "Prints the transaction to the printer",
+      "type": "task",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_fcdd4ee9-3b75-499a-9ddd-1f9cff150920"
+      ],
+      "outgoing": [
+        "Id_e659f9b1-5131-4bc3-9543-b31c0fe88809"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [
+        "Id_99a46774-c599-411a-822a-dcec3880abdf",
+        "Id_6e3e8f08-9a42-47c5-b88e-e67f989fac11"
+      ],
+      "outgoing": [
+        "Id_bb353771-20e9-45eb-8106-8cc484586638"
+      ]
+    },
+    {
+      "id": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [
+        "Id_6f01d6bf-90f6-427d-bc31-881f173e3f14"
+      ],
+      "outgoing": [
+        "Id_4a127f2a-4899-48ce-a93d-a82a6bbea7f8",
+        "Id_6e3e8f08-9a42-47c5-b88e-e67f989fac11"
+      ]
+    },
+    {
+      "id": "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [
+        "Id_1ecf6a5a-61c0-4e0d-b4d3-dd96ee177284"
+      ],
+      "outgoing": [
+        "Id_455a0b5b-9385-4948-b0af-806815603a5e",
+        "Id_9cdbfdca-bb04-45ef-b1e9-2d50d9e5acb9"
+      ]
+    },
+    {
+      "id": "Id_e06571e0-a23d-405d-9bde-427856a91d60",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [
+        "Id_e659f9b1-5131-4bc3-9543-b31c0fe88809",
+        "Id_a5120483-dc07-4ad2-a5c4-a68b76d97c5a"
+      ],
+      "outgoing": [
+        "Id_5250a94b-61f0-4b6b-baca-1c11ad759f98"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "General patient cashier",
+      "laneName": "Cashier",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "General patient cashier",
+      "laneName": "System",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d",
+      "incoming": [
+        "Id_5250a94b-61f0-4b6b-baca-1c11ad759f98"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_3d1beec5-cff3-4443-bdcf-5426c230101a",
+      "source": "Id_c9ee3cd8-78da-417a-9cf9-0edac7cbbf33",
+      "target": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_bb353771-20e9-45eb-8106-8cc484586638",
+      "source": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "target": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_aa24093a-8120-4193-bbd4-d0888e822f80",
+      "source": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "target": "Id_467aec19-4802-4dfb-959a-96d262adf979",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_1c45cd38-c8cc-4cbf-b513-9ca4972fe3f7",
+      "source": "Id_467aec19-4802-4dfb-959a-96d262adf979",
+      "target": "Id_883fd3b8-cdea-4fa5-bf5a-c8924b712021",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_99a46774-c599-411a-822a-dcec3880abdf",
+      "source": "Id_883fd3b8-cdea-4fa5-bf5a-c8924b712021",
+      "target": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_2d49e868-3cde-46fe-953e-b18ec2320394",
+      "source": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "target": "Id_eb1c9f06-7a54-4aff-91bb-e0594c6b655a",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_3455752b-3998-418c-8e56-9f3bbf5367f9",
+      "source": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "target": "Id_65aaccf1-8026-4183-bb2c-7a5746f87b67",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_6f01d6bf-90f6-427d-bc31-881f173e3f14",
+      "source": "Id_65aaccf1-8026-4183-bb2c-7a5746f87b67",
+      "target": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_4a127f2a-4899-48ce-a93d-a82a6bbea7f8",
+      "source": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "target": "Id_5a51b47a-2646-4727-bfe8-11cb6cf8135a",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_2342cbee-fc0c-4277-b567-90dd0ec037b9",
+      "source": "Id_eb1c9f06-7a54-4aff-91bb-e0594c6b655a",
+      "target": "Id_b8597b55-b0fd-4a78-8049-693d8d2203c7",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_a4b0e7f0-3fc2-4ba3-8544-5b4a2e3049ed",
+      "source": "Id_b8597b55-b0fd-4a78-8049-693d8d2203c7",
+      "target": "Id_2235724b-6ca2-46d2-95a0-ab88837d316f",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_6e3e8f08-9a42-47c5-b88e-e67f989fac11",
+      "source": "Id_05603d03-8106-47d8-a069-8e37915278b5",
+      "target": "Id_6bc7314b-ee04-4f16-af27-1f79dcebf3d1",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_1ecf6a5a-61c0-4e0d-b4d3-dd96ee177284",
+      "source": "Id_5a51b47a-2646-4727-bfe8-11cb6cf8135a",
+      "target": "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_455a0b5b-9385-4948-b0af-806815603a5e",
+      "source": "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f",
+      "target": "Id_89298069-ad05-4a3d-983b-b4c085ac8852",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_fcdd4ee9-3b75-499a-9ddd-1f9cff150920",
+      "source": "Id_89298069-ad05-4a3d-983b-b4c085ac8852",
+      "target": "Id_691d30ec-9bd8-420f-afc5-26b933f76c01",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_e659f9b1-5131-4bc3-9543-b31c0fe88809",
+      "source": "Id_691d30ec-9bd8-420f-afc5-26b933f76c01",
+      "target": "Id_e06571e0-a23d-405d-9bde-427856a91d60",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_9cdbfdca-bb04-45ef-b1e9-2d50d9e5acb9",
+      "source": "Id_9cecd4c0-b94d-457c-99d3-52cc97ee020f",
+      "target": "Id_5347b8df-2a52-44ed-9503-4f9b9d6a5243",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_a5120483-dc07-4ad2-a5c4-a68b76d97c5a",
+      "source": "Id_5347b8df-2a52-44ed-9503-4f9b9d6a5243",
+      "target": "Id_e06571e0-a23d-405d-9bde-427856a91d60",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    },
+    {
+      "id": "Id_5250a94b-61f0-4b6b-baca-1c11ad759f98",
+      "source": "Id_e06571e0-a23d-405d-9bde-427856a91d60",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_edc8bb88-2786-4f0e-ac0f-ab0cc2ee434d"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_make_a_general_patient_payment_completed": false,
+    "displays_a_general_patient_payment_form_completed": false,
+    "enter_the_medical_record_id_completed": false,
+    "enters_the_transaction_code_transaction_type_quantity_completed": false,
+    "displays_the_query_results_completed": false,
+    "reads_the_patient_and_registration_database_completed": false,
+    "displays_it_to_the_table_completed": false,
+    "chooses_the_type_of_payment_completed": false,
+    "reads_the_transaction_master_database_completed": false,
+    "adds_it_to_the_list_completed": false,
+    "displays_the_price_completed": false,
+    "selects_an_add_button_completed": false,
+    "selects_a_save_button_completed": false,
+    "saves_the_transaction_completed": false,
+    "prints_the_transaction_to_the_printer_completed": false
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Add new item",
+        "value": "addnewitem",
+        "internal": "addnewitem"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "addnewitem": "/add-new-item/asks-to-add-new-item"
+    },
+    "stateSchema": {
+      "asks_to_add_new_item_completed": false,
+      "queries_for_goods_in_the_goods_database_completed": false,
+      "enters_a_barcode_completed": false,
+      "displays_form_of_add_new_item_completed": false,
+      "displays_the_query_results_in_the_form_completed": false,
+      "enters_the_selling_price_purchase_price_and_initial_stock_completed": false,
+      "save_the_new_item_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/add-new-item/asks-to-add-new-item",
+        "role": "addnewitem",
+        "component": "AsksToAddNewItemPage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/queries-for-goods-in-the-goods-database",
+        "role": "addnewitem",
+        "component": "QueriesForGoodsInTheGoodsDatabasePage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/enters-a-barcode",
+        "role": "addnewitem",
+        "component": "EntersABarcodePage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/displays-form-of-add-new-item",
+        "role": "addnewitem",
+        "component": "DisplaysFormOfAddNewItemPage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/displays-the-query-results-in-the-form",
+        "role": "addnewitem",
+        "component": "DisplaysTheQueryResultsInTheFormPage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/enters-the-selling-price-purchase-price-and-initial-stock",
+        "role": "addnewitem",
+        "component": "EntersTheSellingPrice,PurchasePrice,AndInitialStockPage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      },
+      {
+        "route": "/add-new-item/save-the-new-item-information",
+        "role": "addnewitem",
+        "component": "SaveTheNewItemInformationPage",
+        "allowedRoles": [
+          "addnewitem"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "AddNewItem",
+      "role": "addnewitem",
+      "defaultRoute": "/add-new-item/asks-to-add-new-item",
+      "tasks": [
+        {
+          "taskId": "addnewitem-asks-to-add-new-item",
+          "name": "AsksToAddNewItem",
+          "route": "/add-new-item/asks-to-add-new-item",
+          "component": "AsksToAddNewItemPage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Asks to add new item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_add_new_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/displays-form-of-add-new-item",
+          "ui": {
+            "title": "Asks to add new item",
+            "hint": "Page for BPMN task 'Asks to add new item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewitem-displays-form-of-add-new-item",
+          "name": "DisplaysFormOfAddNewItem",
+          "route": "/add-new-item/displays-form-of-add-new-item",
+          "component": "DisplaysFormOfAddNewItemPage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Displays form of  add new item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_add_new_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/enters-a-barcode",
+          "ui": {
+            "title": "Displays form of  add new item",
+            "hint": "Page for BPMN task 'Displays form of  add new item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewitem-enters-a-barcode",
+          "name": "EntersABarcode",
+          "route": "/add-new-item/enters-a-barcode",
+          "component": "EntersABarcodePage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Enters a barcode.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_a_barcode_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/queries-for-goods-in-the-goods-database",
+          "ui": {
+            "title": "Enters a barcode",
+            "hint": "Page for BPMN task 'Enters a barcode' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewitem-queries-for-goods-in-the-goods-database",
+          "name": "QueriesForGoodsInTheGoodsDatabase",
+          "route": "/add-new-item/queries-for-goods-in-the-goods-database",
+          "component": "QueriesForGoodsInTheGoodsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Queries for goods in the Goods database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_goods_in_the_goods_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/displays-the-query-results-in-the-form",
+          "ui": {
+            "title": "Queries for goods in the Goods database",
+            "hint": "Page for BPMN task 'Queries for goods in the Goods database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewitem-displays-the-query-results-in-the-form",
+          "name": "DisplaysTheQueryResultsInTheForm",
+          "route": "/add-new-item/displays-the-query-results-in-the-form",
+          "component": "DisplaysTheQueryResultsInTheFormPage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Displays the query results in the form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_in_the_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/enters-the-selling-price-purchase-price-and-initial-stock",
+          "ui": {
+            "title": "Displays the query results in the form",
+            "hint": "Page for BPMN task 'Displays the query results in the form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewitem-enters-the-selling-price-purchase-price-and-initial-stock",
+          "name": "EntersTheSellingPrice,PurchasePrice,AndInitialStock",
+          "route": "/add-new-item/enters-the-selling-price-purchase-price-and-initial-stock",
+          "component": "EntersTheSellingPrice,PurchasePrice,AndInitialStockPage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Enters the selling price, purchase price, and initial stock.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_selling_price_purchase_price_and_initial_stock_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/save-the-new-item-information",
+          "ui": {
+            "title": "Enters the selling price, purchase price, and initial stock",
+            "hint": "Page for BPMN task 'Enters the selling price, purchase price, and initial stock' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/add-new-item/save-the-new-item-information",
+              "condition": "SaveTheNewItemInformation"
+            }
+          ]
+        },
+        {
+          "taskId": "addnewitem-save-the-new-item-information",
+          "name": "SaveTheNewItemInformation",
+          "route": "/add-new-item/save-the-new-item-information",
+          "component": "SaveTheNewItemInformationPage",
+          "pageType": "write-navigate",
+          "description": "Add new item: Save the new item information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "save_the_new_item_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-item/complete",
+          "ui": {
+            "title": "Save the new item information",
+            "hint": "Page for BPMN task 'Save the new item information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

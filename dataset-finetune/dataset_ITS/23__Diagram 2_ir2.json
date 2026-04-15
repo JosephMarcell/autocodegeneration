@@ -1,0 +1,342 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a loan repayment (SIPA unit)",
+        "value": "makealoanrepayment(sipaunit)",
+        "internal": "makealoanrepayment(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makealoanrepayment(sipaunit)": "/make-a-loan-repayment-sipa-unit/asks-to-make-a-loan-repayment"
+    },
+    "stateSchema": {
+      "asks_to_make_a_loan_repayment_completed": false,
+      "displays_a_loan_repayment_form_completed": false,
+      "searches_for_the_remaining_loan_in_the_loan_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "enters_the_member_id_completed": false,
+      "displays_member_information_completed": false,
+      "looks_for_the_member_id_in_the_member_database_completed": false,
+      "enters_the_pay_rate_completed": false,
+      "stores_the_repayment_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/asks-to-make-a-loan-repayment",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "AsksToMakeALoanRepaymentPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/displays-a-loan-repayment-form",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "DisplaysALoanRepaymentFormPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/searches-for-the-remaining-loan-in-the-loan",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "SearchesForTheRemainingLoanInTheLoanPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/reads-the-work-unit-database",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/enters-the-member-id",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "EntersTheMemberIdPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/displays-member-information",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "DisplaysMemberInformationPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/looks-for-the-member-id-in-the-member-database",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "LooksForTheMemberIdInTheMemberDatabasePage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/enters-the-pay-rate",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "EntersThePayRatePage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-loan-repayment-sipa-unit/stores-the-repayment-information",
+        "role": "makealoanrepayment(sipaunit)",
+        "component": "StoresTheRepaymentInformationPage",
+        "allowedRoles": [
+          "makealoanrepayment(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeALoanRepayment(sipaUnit)",
+      "role": "makealoanrepayment(sipaunit)",
+      "defaultRoute": "/make-a-loan-repayment-sipa-unit/asks-to-make-a-loan-repayment",
+      "tasks": [
+        {
+          "taskId": "makealoanrepayment(sipaunit)-asks-to-make-a-loan-repayment",
+          "name": "AsksToMakeALoanRepayment",
+          "route": "/make-a-loan-repayment-sipa-unit/asks-to-make-a-loan-repayment",
+          "component": "AsksToMakeALoanRepaymentPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Asks to make a loan repayment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_loan_repayment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a loan repayment",
+            "hint": "Page for BPMN task 'Asks to make a loan repayment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-loan-repayment-sipa-unit/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/displays-a-loan-repayment-form",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-displays-a-loan-repayment-form",
+          "name": "DisplaysALoanRepaymentForm",
+          "route": "/make-a-loan-repayment-sipa-unit/displays-a-loan-repayment-form",
+          "component": "DisplaysALoanRepaymentFormPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Displays a loan repayment form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_loan_repayment_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/enters-the-member-id",
+          "ui": {
+            "title": "Displays a loan repayment form",
+            "hint": "Page for BPMN task 'Displays a loan repayment form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-enters-the-member-id",
+          "name": "EntersTheMemberId",
+          "route": "/make-a-loan-repayment-sipa-unit/enters-the-member-id",
+          "component": "EntersTheMemberIdPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Enters the member ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_member_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/looks-for-the-member-id-in-the-member-database",
+          "ui": {
+            "title": "Enters the member ID",
+            "hint": "Page for BPMN task 'Enters the member ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-looks-for-the-member-id-in-the-member-database",
+          "name": "LooksForTheMemberIdInTheMemberDatabase",
+          "route": "/make-a-loan-repayment-sipa-unit/looks-for-the-member-id-in-the-member-database",
+          "component": "LooksForTheMemberIdInTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Looks for the member ID in the Member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "looks_for_the_member_id_in_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/enters-the-pay-rate",
+          "ui": {
+            "title": "Looks for the member ID in the Member database",
+            "hint": "Page for BPMN task 'Looks for the member ID in the Member database' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-loan-repayment-sipa-unit/enters-the-pay-rate",
+              "condition": "EntersThePayRate"
+            },
+            {
+              "route": "/make-a-loan-repayment-sipa-unit/searches-for-the-remaining-loan-in-the-loan",
+              "condition": "Found"
+            }
+          ]
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-searches-for-the-remaining-loan-in-the-loan",
+          "name": "SearchesForTheRemainingLoanInTheLoan",
+          "route": "/make-a-loan-repayment-sipa-unit/searches-for-the-remaining-loan-in-the-loan",
+          "component": "SearchesForTheRemainingLoanInTheLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Searches for the remaining loan in the Loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_for_the_remaining_loan_in_the_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/displays-member-information",
+          "ui": {
+            "title": "Searches for the remaining loan in the Loan",
+            "hint": "Page for BPMN task 'Searches for the remaining loan in the Loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-displays-member-information",
+          "name": "DisplaysMemberInformation",
+          "route": "/make-a-loan-repayment-sipa-unit/displays-member-information",
+          "component": "DisplaysMemberInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Displays member information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_member_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/enters-the-pay-rate",
+          "ui": {
+            "title": "Displays member information",
+            "hint": "Page for BPMN task 'Displays member information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-enters-the-pay-rate",
+          "name": "EntersThePayRate",
+          "route": "/make-a-loan-repayment-sipa-unit/enters-the-pay-rate",
+          "component": "EntersThePayRatePage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Enters the pay rate.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_pay_rate_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/stores-the-repayment-information",
+          "ui": {
+            "title": "Enters the pay rate",
+            "hint": "Page for BPMN task 'Enters the pay rate' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-loan-repayment-sipa-unit/stores-the-repayment-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "makealoanrepayment(sipaunit)-stores-the-repayment-information",
+          "name": "StoresTheRepaymentInformation",
+          "route": "/make-a-loan-repayment-sipa-unit/stores-the-repayment-information",
+          "component": "StoresTheRepaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a loan repayment (SIPA unit): Stores the repayment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_the_repayment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-loan-repayment-sipa-unit/complete",
+          "ui": {
+            "title": "Stores the repayment information",
+            "hint": "Page for BPMN task 'Stores the repayment information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

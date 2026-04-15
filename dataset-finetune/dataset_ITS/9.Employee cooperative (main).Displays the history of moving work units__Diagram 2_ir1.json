@@ -1,0 +1,309 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_2e6e18ea-8113-462b-887f-3d8519b38232"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Displays the history of moving work units",
+      "processRef": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_2e6e18ea-8113-462b-887f-3d8519b38232": "Main Process",
+    "Id_3af0ceab-8411-44c0-bb1b-62980deeed03": "Displays the history of moving work units"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_942f1a7a-6eac-489a-8d2e-d4177d2e3284",
+        "Id_6f670881-396c-4387-9ab5-647583e30530",
+        "Id_7391e7b0-93a4-46a1-9ea3-e42b6b519189"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_942f1a7a-6eac-489a-8d2e-d4177d2e3284": "System",
+    "Id_6f670881-396c-4387-9ab5-647583e30530": "System",
+    "Id_7391e7b0-93a4-46a1-9ea3-e42b6b519189": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to display the history of moving work units",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "Officer",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads the member database",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_b1c02845-b284-4d09-b0be-821abf02f33c"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the member ID",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "Officer",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays to display the history of moving work units",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_02907fcd-b6e3-4553-abeb-d8191acb0576"
+      ],
+      "outgoing": [
+        "Id_7b88114d-0cdc-4935-974f-375d584ec26f"
+      ]
+    },
+    {
+      "id": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "name": "Reads mutation database",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94523ff5-1565-4d00-9357-5fcbce12b19d"
+      ],
+      "outgoing": [
+        "Id_f5a292fb-a555-4c27-923f-d3fff113f77f"
+      ]
+    },
+    {
+      "id": "Id_942f1a7a-6eac-489a-8d2e-d4177d2e3284",
+      "name": "Displays the member's mutation information",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f5a292fb-a555-4c27-923f-d3fff113f77f"
+      ],
+      "outgoing": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ]
+    },
+    {
+      "id": "Id_6f670881-396c-4387-9ab5-647583e30530",
+      "name": "Display member information",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b1c02845-b284-4d09-b0be-821abf02f33c"
+      ],
+      "outgoing": [
+        "Id_02907fcd-b6e3-4553-abeb-d8191acb0576"
+      ]
+    },
+    {
+      "id": "Id_7391e7b0-93a4-46a1-9ea3-e42b6b519189",
+      "name": "Display work unit  information",
+      "type": "task",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7b88114d-0cdc-4935-974f-375d584ec26f"
+      ],
+      "outgoing": [
+        "Id_94523ff5-1565-4d00-9357-5fcbce12b19d"
+      ]
+    }
+  ],
+  "gateways": [],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "Officer",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Displays the history of moving work units",
+      "laneName": "System",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03",
+      "incoming": [
+        "Id_3585c84b-af74-4919-a4ce-e3c1f5027607"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_7b88114d-0cdc-4935-974f-375d584ec26f",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_7391e7b0-93a4-46a1-9ea3-e42b6b519189",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_3585c84b-af74-4919-a4ce-e3c1f5027607",
+      "source": "Id_942f1a7a-6eac-489a-8d2e-d4177d2e3284",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_f5a292fb-a555-4c27-923f-d3fff113f77f",
+      "source": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "target": "Id_942f1a7a-6eac-489a-8d2e-d4177d2e3284",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_b1c02845-b284-4d09-b0be-821abf02f33c",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_6f670881-396c-4387-9ab5-647583e30530",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_02907fcd-b6e3-4553-abeb-d8191acb0576",
+      "source": "Id_6f670881-396c-4387-9ab5-647583e30530",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    },
+    {
+      "id": "Id_94523ff5-1565-4d00-9357-5fcbce12b19d",
+      "source": "Id_7391e7b0-93a4-46a1-9ea3-e42b6b519189",
+      "target": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "condition": "",
+      "processId": "Id_3af0ceab-8411-44c0-bb1b-62980deeed03"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_display_the_history_of_moving_work_units_completed": false,
+    "reads_the_member_database_completed": false,
+    "enters_the_member_id_completed": false,
+    "displays_to_display_the_history_of_moving_work_units_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "reads_mutation_database_completed": false,
+    "displays_the_member_s_mutation_information_completed": false,
+    "display_member_information_completed": false,
+    "display_work_unit_information_completed": false
+  }
+}

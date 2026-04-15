@@ -1,0 +1,233 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Looking for room data",
+        "value": "lookingforroomdata",
+        "internal": "lookingforroomdata"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "lookingforroomdata": "/looking-for-room-data/wants-looking-for-room-data"
+    },
+    "stateSchema": {
+      "wants_looking_for_room_data_completed": false,
+      "selects_the_room_category_completed": false,
+      "displays_the_looking_for_room_data_form_completed": false,
+      "reads_the_room_database_completed": false,
+      "queries_to_the_rooms_database_completed": false,
+      "displays_the_query_results_to_a_table_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/looking-for-room-data/wants-looking-for-room-data",
+        "role": "lookingforroomdata",
+        "component": "WantsLookingForRoomDataPage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      },
+      {
+        "route": "/looking-for-room-data/selects-the-room-category",
+        "role": "lookingforroomdata",
+        "component": "SelectsTheRoomCategoryPage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      },
+      {
+        "route": "/looking-for-room-data/displays-the-looking-for-room-data-form",
+        "role": "lookingforroomdata",
+        "component": "DisplaysTheLookingForRoomDataFormPage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      },
+      {
+        "route": "/looking-for-room-data/reads-the-room-database",
+        "role": "lookingforroomdata",
+        "component": "ReadsTheRoomDatabasePage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      },
+      {
+        "route": "/looking-for-room-data/queries-to-the-rooms-database",
+        "role": "lookingforroomdata",
+        "component": "QueriesToTheRoomsDatabasePage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      },
+      {
+        "route": "/looking-for-room-data/displays-the-query-results-to-a-table",
+        "role": "lookingforroomdata",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "lookingforroomdata"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "LookingForRoomData",
+      "role": "lookingforroomdata",
+      "defaultRoute": "/looking-for-room-data/wants-looking-for-room-data",
+      "tasks": [
+        {
+          "taskId": "lookingforroomdata-wants-looking-for-room-data",
+          "name": "WantsLookingForRoomData",
+          "route": "/looking-for-room-data/wants-looking-for-room-data",
+          "component": "WantsLookingForRoomDataPage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Wants Looking for room data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_looking_for_room_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/reads-the-room-database",
+          "ui": {
+            "title": "Wants Looking for room data",
+            "hint": "Page for BPMN task 'Wants Looking for room data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "lookingforroomdata-reads-the-room-database",
+          "name": "ReadsTheRoomDatabase",
+          "route": "/looking-for-room-data/reads-the-room-database",
+          "component": "ReadsTheRoomDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Reads the Room database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_room_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/displays-the-looking-for-room-data-form",
+          "ui": {
+            "title": "Reads the Room database",
+            "hint": "Page for BPMN task 'Reads the Room database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "lookingforroomdata-displays-the-looking-for-room-data-form",
+          "name": "DisplaysTheLookingForRoomDataForm",
+          "route": "/looking-for-room-data/displays-the-looking-for-room-data-form",
+          "component": "DisplaysTheLookingForRoomDataFormPage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Displays the Looking for room data form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_looking_for_room_data_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/selects-the-room-category",
+          "ui": {
+            "title": "Displays the Looking for room data form",
+            "hint": "Page for BPMN task 'Displays the Looking for room data form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "lookingforroomdata-selects-the-room-category",
+          "name": "SelectsTheRoomCategory",
+          "route": "/looking-for-room-data/selects-the-room-category",
+          "component": "SelectsTheRoomCategoryPage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Selects the room category.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_room_category_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/queries-to-the-rooms-database",
+          "ui": {
+            "title": "Selects the room category",
+            "hint": "Page for BPMN task 'Selects the room category' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "lookingforroomdata-queries-to-the-rooms-database",
+          "name": "QueriesToTheRoomsDatabase",
+          "route": "/looking-for-room-data/queries-to-the-rooms-database",
+          "component": "QueriesToTheRoomsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Queries to the Rooms database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_to_the_rooms_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries to the Rooms database",
+            "hint": "Page for BPMN task 'Queries to the Rooms database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "lookingforroomdata-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/looking-for-room-data/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Looking for room data: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/looking-for-room-data/complete",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

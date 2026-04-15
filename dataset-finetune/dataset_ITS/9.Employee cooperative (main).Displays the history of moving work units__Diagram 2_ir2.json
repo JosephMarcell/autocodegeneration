@@ -1,0 +1,326 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Displays the history of moving work units",
+        "value": "displaysthehistoryofmovingworkunits",
+        "internal": "displaysthehistoryofmovingworkunits"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "displaysthehistoryofmovingworkunits": "/displays-the-history-of-moving-work-units/asks-to-display-the-history-of-moving-work-units"
+    },
+    "stateSchema": {
+      "asks_to_display_the_history_of_moving_work_units_completed": false,
+      "reads_the_member_database_completed": false,
+      "enters_the_member_id_completed": false,
+      "displays_to_display_the_history_of_moving_work_units_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "reads_mutation_database_completed": false,
+      "displays_the_member_s_mutation_information_completed": false,
+      "display_member_information_completed": false,
+      "display_work_unit_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/displays-the-history-of-moving-work-units/asks-to-display-the-history-of-moving-work-units",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "AsksToDisplayTheHistoryOfMovingWorkUnitsPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/reads-the-member-database",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "ReadsTheMemberDatabasePage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/enters-the-member-id",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "EntersTheMemberIdPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/displays-to-display-the-history-of-moving-work-units",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "DisplaysToDisplayTheHistoryOfMovingWorkUnitsPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/reads-the-work-unit-database",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/reads-mutation-database",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "ReadsMutationDatabasePage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/displays-the-members-mutation-information",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "DisplaysTheMember'sMutationInformationPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/display-member-information",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "DisplayMemberInformationPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      },
+      {
+        "route": "/displays-the-history-of-moving-work-units/display-work-unit-information",
+        "role": "displaysthehistoryofmovingworkunits",
+        "component": "DisplayWorkUnitInformationPage",
+        "allowedRoles": [
+          "displaysthehistoryofmovingworkunits"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DisplaysTheHistoryOfMovingWorkUnits",
+      "role": "displaysthehistoryofmovingworkunits",
+      "defaultRoute": "/displays-the-history-of-moving-work-units/asks-to-display-the-history-of-moving-work-units",
+      "tasks": [
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-asks-to-display-the-history-of-moving-work-units",
+          "name": "AsksToDisplayTheHistoryOfMovingWorkUnits",
+          "route": "/displays-the-history-of-moving-work-units/asks-to-display-the-history-of-moving-work-units",
+          "component": "AsksToDisplayTheHistoryOfMovingWorkUnitsPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Asks to display the history of moving work units.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_display_the_history_of_moving_work_units_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/displays-to-display-the-history-of-moving-work-units",
+          "ui": {
+            "title": "Asks to display the history of moving work units",
+            "hint": "Page for BPMN task 'Asks to display the history of moving work units' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-displays-to-display-the-history-of-moving-work-units",
+          "name": "DisplaysToDisplayTheHistoryOfMovingWorkUnits",
+          "route": "/displays-the-history-of-moving-work-units/displays-to-display-the-history-of-moving-work-units",
+          "component": "DisplaysToDisplayTheHistoryOfMovingWorkUnitsPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Displays to display the history of moving work units.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_to_display_the_history_of_moving_work_units_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/enters-the-member-id",
+          "ui": {
+            "title": "Displays to display the history of moving work units",
+            "hint": "Page for BPMN task 'Displays to display the history of moving work units' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-enters-the-member-id",
+          "name": "EntersTheMemberId",
+          "route": "/displays-the-history-of-moving-work-units/enters-the-member-id",
+          "component": "EntersTheMemberIdPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Enters the member ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_member_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/reads-the-member-database",
+          "ui": {
+            "title": "Enters the member ID",
+            "hint": "Page for BPMN task 'Enters the member ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-reads-the-member-database",
+          "name": "ReadsTheMemberDatabase",
+          "route": "/displays-the-history-of-moving-work-units/reads-the-member-database",
+          "component": "ReadsTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Reads the member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/display-member-information",
+          "ui": {
+            "title": "Reads the member database",
+            "hint": "Page for BPMN task 'Reads the member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-display-member-information",
+          "name": "DisplayMemberInformation",
+          "route": "/displays-the-history-of-moving-work-units/display-member-information",
+          "component": "DisplayMemberInformationPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Display member information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_member_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/reads-the-work-unit-database",
+          "ui": {
+            "title": "Display member information",
+            "hint": "Page for BPMN task 'Display member information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/displays-the-history-of-moving-work-units/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/display-work-unit-information",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-display-work-unit-information",
+          "name": "DisplayWorkUnitInformation",
+          "route": "/displays-the-history-of-moving-work-units/display-work-unit-information",
+          "component": "DisplayWorkUnitInformationPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Display work unit  information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_work_unit_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/reads-mutation-database",
+          "ui": {
+            "title": "Display work unit  information",
+            "hint": "Page for BPMN task 'Display work unit  information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-reads-mutation-database",
+          "name": "ReadsMutationDatabase",
+          "route": "/displays-the-history-of-moving-work-units/reads-mutation-database",
+          "component": "ReadsMutationDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Reads mutation database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_mutation_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/displays-the-members-mutation-information",
+          "ui": {
+            "title": "Reads mutation database",
+            "hint": "Page for BPMN task 'Reads mutation database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "displaysthehistoryofmovingworkunits-displays-the-members-mutation-information",
+          "name": "DisplaysTheMember'sMutationInformation",
+          "route": "/displays-the-history-of-moving-work-units/displays-the-members-mutation-information",
+          "component": "DisplaysTheMember'sMutationInformationPage",
+          "pageType": "write-navigate",
+          "description": "Displays the history of moving work units: Displays the member's mutation information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_members_mutation_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/displays-the-history-of-moving-work-units/complete",
+          "ui": {
+            "title": "Displays the member's mutation information",
+            "hint": "Page for BPMN task 'Displays the member's mutation information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

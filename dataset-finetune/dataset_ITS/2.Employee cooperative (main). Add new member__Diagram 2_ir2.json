@@ -1,0 +1,398 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Add new member",
+        "value": "addnewmember",
+        "internal": "addnewmember"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "addnewmember": "/add-new-member/asks-for-a-member-display"
+    },
+    "stateSchema": {
+      "asks_for_a_member_display_completed": false,
+      "enters_wotk_unit_and_name_or_id_member_completed": false,
+      "queries_to_the_member_completed": false,
+      "displays_a_member_list_form_completed": false,
+      "display_the_main_menu_completed": false,
+      "adds_a_new_member_completed": false,
+      "displays_the_add_member_form_completed": false,
+      "enters_new_member_data_completed": false,
+      "checks_the_validity_of_members_completed": false,
+      "stores_new_member_data_completed": false,
+      "reads_the_work_unit_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/add-new-member/asks-for-a-member-display",
+        "role": "addnewmember",
+        "component": "AsksForAMemberDisplayPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/enters-wotk-unit-and-name-or-id-member",
+        "role": "addnewmember",
+        "component": "EntersWotkUnitAndNameOrIdMemberPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/queries-to-the-member",
+        "role": "addnewmember",
+        "component": "QueriesToTheMemberPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/displays-a-member-list-form",
+        "role": "addnewmember",
+        "component": "DisplaysAMemberListFormPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/display-the-main-menu",
+        "role": "addnewmember",
+        "component": "DisplayTheMainMenuPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/adds-a-new-member",
+        "role": "addnewmember",
+        "component": "AddsANewMemberPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/displays-the-add-member-form",
+        "role": "addnewmember",
+        "component": "DisplaysTheAddMemberFormPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/enters-new-member-data",
+        "role": "addnewmember",
+        "component": "EntersNewMemberDataPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/checks-the-validity-of-members",
+        "role": "addnewmember",
+        "component": "ChecksTheValidityOfMembersPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/stores-new-member-data",
+        "role": "addnewmember",
+        "component": "StoresNewMemberDataPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      },
+      {
+        "route": "/add-new-member/reads-the-work-unit",
+        "role": "addnewmember",
+        "component": "ReadsTheWorkUnitPage",
+        "allowedRoles": [
+          "addnewmember"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "AddNewMember",
+      "role": "addnewmember",
+      "defaultRoute": "/add-new-member/asks-for-a-member-display",
+      "tasks": [
+        {
+          "taskId": "addnewmember-asks-for-a-member-display",
+          "name": "AsksForAMemberDisplay",
+          "route": "/add-new-member/asks-for-a-member-display",
+          "component": "AsksForAMemberDisplayPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Asks for a member display.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_for_a_member_display_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/reads-the-work-unit",
+          "ui": {
+            "title": "Asks for a member display",
+            "hint": "Page for BPMN task 'Asks for a member display' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-reads-the-work-unit",
+          "name": "ReadsTheWorkUnit",
+          "route": "/add-new-member/reads-the-work-unit",
+          "component": "ReadsTheWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Reads the work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/displays-a-member-list-form",
+          "ui": {
+            "title": "Reads the work unit",
+            "hint": "Page for BPMN task 'Reads the work unit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-displays-a-member-list-form",
+          "name": "DisplaysAMemberListForm",
+          "route": "/add-new-member/displays-a-member-list-form",
+          "component": "DisplaysAMemberListFormPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Displays a member list form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_member_list_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/enters-wotk-unit-and-name-or-id-member",
+          "ui": {
+            "title": "Displays a member list form",
+            "hint": "Page for BPMN task 'Displays a member list form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-enters-wotk-unit-and-name-or-id-member",
+          "name": "EntersWotkUnitAndNameOrIdMember",
+          "route": "/add-new-member/enters-wotk-unit-and-name-or-id-member",
+          "component": "EntersWotkUnitAndNameOrIdMemberPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Enters  wotk unit and name or ID member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_wotk_unit_and_name_or_id_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/queries-to-the-member",
+          "ui": {
+            "title": "Enters  wotk unit and name or ID member",
+            "hint": "Page for BPMN task 'Enters  wotk unit and name or ID member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-queries-to-the-member",
+          "name": "QueriesToTheMember",
+          "route": "/add-new-member/queries-to-the-member",
+          "component": "QueriesToTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: queries to the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_to_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/display-the-main-menu",
+          "ui": {
+            "title": "queries to the member",
+            "hint": "Page for BPMN task 'queries to the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-display-the-main-menu",
+          "name": "DisplayTheMainMenu",
+          "route": "/add-new-member/display-the-main-menu",
+          "component": "DisplayTheMainMenuPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Display the main menu.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_the_main_menu_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/adds-a-new-member",
+          "ui": {
+            "title": "Display the main menu",
+            "hint": "Page for BPMN task 'Display the main menu' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-adds-a-new-member",
+          "name": "AddsANewMember",
+          "route": "/add-new-member/adds-a-new-member",
+          "component": "AddsANewMemberPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Adds a new member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "adds_a_new_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/displays-the-add-member-form",
+          "ui": {
+            "title": "Adds a new member",
+            "hint": "Page for BPMN task 'Adds a new member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-displays-the-add-member-form",
+          "name": "DisplaysTheAddMemberForm",
+          "route": "/add-new-member/displays-the-add-member-form",
+          "component": "DisplaysTheAddMemberFormPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Displays the add member form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_add_member_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/enters-new-member-data",
+          "ui": {
+            "title": "Displays the add member form",
+            "hint": "Page for BPMN task 'Displays the add member form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-enters-new-member-data",
+          "name": "EntersNewMemberData",
+          "route": "/add-new-member/enters-new-member-data",
+          "component": "EntersNewMemberDataPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Enters new member data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_new_member_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/checks-the-validity-of-members",
+          "ui": {
+            "title": "Enters new member data",
+            "hint": "Page for BPMN task 'Enters new member data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "addnewmember-checks-the-validity-of-members",
+          "name": "ChecksTheValidityOfMembers",
+          "route": "/add-new-member/checks-the-validity-of-members",
+          "component": "ChecksTheValidityOfMembersPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Checks the validity of members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "checks_the_validity_of_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/adds-a-new-member",
+          "ui": {
+            "title": "Checks the validity of members",
+            "hint": "Page for BPMN task 'Checks the validity of members' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/add-new-member/adds-a-new-member",
+              "condition": "AddsANewMember"
+            },
+            {
+              "route": "/add-new-member/stores-new-member-data",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "addnewmember-stores-new-member-data",
+          "name": "StoresNewMemberData",
+          "route": "/add-new-member/stores-new-member-data",
+          "component": "StoresNewMemberDataPage",
+          "pageType": "write-navigate",
+          "description": "Add new member: Stores new member data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_new_member_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/add-new-member/complete",
+          "ui": {
+            "title": "Stores new member data",
+            "hint": "Page for BPMN task 'Stores new member data' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

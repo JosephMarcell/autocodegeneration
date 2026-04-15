@@ -1,0 +1,424 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_0a8f2fe3-63eb-4484-bad0-98ccdb373e1a"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a new sales transaction",
+      "processRef": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_0a8f2fe3-63eb-4484-bad0-98ccdb373e1a": "Main Process",
+    "Id_cace1294-fe4c-4317-b108-549ddc64532f": "Make a new sales transaction"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+        "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0",
+        "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a",
+        "Id_f4e928ea-8330-4a21-bf6c-cc9e5e1b44e8",
+        "Id_a761d929-b4ee-45ed-99b1-10325dcf01e3"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb": "Officer",
+    "Id_bf8db104-94fe-43d9-b858-43e2e47663dd": "System",
+    "Id_6e01f2e6-ef04-43e4-8794-2410499d25be": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0": "System",
+    "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a": "System",
+    "Id_f4e928ea-8330-4a21-bf6c-cc9e5e1b44e8": "System",
+    "Id_a761d929-b4ee-45ed-99b1-10325dcf01e3": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a new sales transaction",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "Officer",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries  Member & Work Unit",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the member ID",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "Officer",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a form of making a new sales transaction",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays information about the member",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_9b8f2c40-775a-42d4-8426-e1a3ab24305c"
+      ],
+      "outgoing": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ]
+    },
+    {
+      "id": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "name": "Enters information on the goods sold",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "Officer",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_61022f3d-9df8-47b6-9449-9afa9b6f8604"
+      ],
+      "outgoing": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ]
+    },
+    {
+      "id": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "name": "Saves the information on the Sales and Loan database",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336"
+      ],
+      "outgoing": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081"
+      ]
+    },
+    {
+      "id": "Id_f4e928ea-8330-4a21-bf6c-cc9e5e1b44e8",
+      "name": "Queries Member Loan",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_23fe04e4-bbdf-4168-8487-8d69bc344556"
+      ],
+      "outgoing": [
+        "Id_c9861f68-9f70-4dca-a9de-044ab86884de"
+      ]
+    },
+    {
+      "id": "Id_a761d929-b4ee-45ed-99b1-10325dcf01e3",
+      "name": "Display Member Loan",
+      "type": "task",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c9861f68-9f70-4dca-a9de-044ab86884de"
+      ],
+      "outgoing": [
+        "Id_61022f3d-9df8-47b6-9449-9afa9b6f8604"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ],
+      "outgoing": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ]
+    },
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ],
+      "outgoing": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ]
+    },
+    {
+      "id": "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_9b8f2c40-775a-42d4-8426-e1a3ab24305c",
+        "Id_7e561e31-7a42-49fb-8e52-ac78f53f9297"
+      ]
+    },
+    {
+      "id": "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [
+        "Id_7e561e31-7a42-49fb-8e52-ac78f53f9297",
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ],
+      "outgoing": [
+        "Id_23fe04e4-bbdf-4168-8487-8d69bc344556"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a new sales transaction",
+      "laneName": "Officer",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a new sales transaction",
+      "laneName": "System",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f",
+      "incoming": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+      "source": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_f5cefc12-deef-47e1-aadf-36e12d213469",
+      "source": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "target": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "condition": "Save",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_9b8f2c40-775a-42d4-8426-e1a3ab24305c",
+      "source": "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_7e561e31-7a42-49fb-8e52-ac78f53f9297",
+      "source": "Id_7dcf137e-15c2-4dfe-bbe5-a2e7714eefb0",
+      "target": "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_23fe04e4-bbdf-4168-8487-8d69bc344556",
+      "source": "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a",
+      "target": "Id_f4e928ea-8330-4a21-bf6c-cc9e5e1b44e8",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_8079de12-f9c5-424d-b001-6c147c2c793b",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_26da0d1b-e429-4d9d-98fb-77175a53ff8a",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_c9861f68-9f70-4dca-a9de-044ab86884de",
+      "source": "Id_f4e928ea-8330-4a21-bf6c-cc9e5e1b44e8",
+      "target": "Id_a761d929-b4ee-45ed-99b1-10325dcf01e3",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    },
+    {
+      "id": "Id_61022f3d-9df8-47b6-9449-9afa9b6f8604",
+      "source": "Id_a761d929-b4ee-45ed-99b1-10325dcf01e3",
+      "target": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "condition": "",
+      "processId": "Id_cace1294-fe4c-4317-b108-549ddc64532f"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_new_sales_transaction_completed": false,
+    "queries_member_work_unit_completed": false,
+    "enters_the_member_id_completed": false,
+    "displays_a_form_of_making_a_new_sales_transaction_completed": false,
+    "displays_information_about_the_member_completed": false,
+    "enters_information_on_the_goods_sold_completed": false,
+    "saves_the_information_on_the_sales_and_loan_database_completed": false,
+    "queries_member_loan_completed": false,
+    "display_member_loan_completed": false
+  }
+}

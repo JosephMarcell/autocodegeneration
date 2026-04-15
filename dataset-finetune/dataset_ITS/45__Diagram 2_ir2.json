@@ -1,0 +1,177 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make new supplier",
+        "value": "makenewsupplier",
+        "internal": "makenewsupplier"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makenewsupplier": "/make-new-supplier/asks-to-make-new-supplier"
+    },
+    "stateSchema": {
+      "asks_to_make_new_supplier_completed": false,
+      "saves_the_new_supplier_completed": false,
+      "enters_a_new_supplier_information_completed": false,
+      "displays_form_of_make_new_supplier_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-new-supplier/asks-to-make-new-supplier",
+        "role": "makenewsupplier",
+        "component": "AsksToMakeNewSupplierPage",
+        "allowedRoles": [
+          "makenewsupplier"
+        ]
+      },
+      {
+        "route": "/make-new-supplier/saves-the-new-supplier",
+        "role": "makenewsupplier",
+        "component": "SavesTheNewSupplierPage",
+        "allowedRoles": [
+          "makenewsupplier"
+        ]
+      },
+      {
+        "route": "/make-new-supplier/enters-a-new-supplier-information",
+        "role": "makenewsupplier",
+        "component": "EntersANewSupplierInformationPage",
+        "allowedRoles": [
+          "makenewsupplier"
+        ]
+      },
+      {
+        "route": "/make-new-supplier/displays-form-of-make-new-supplier",
+        "role": "makenewsupplier",
+        "component": "DisplaysFormOfMakeNewSupplierPage",
+        "allowedRoles": [
+          "makenewsupplier"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeNewSupplier",
+      "role": "makenewsupplier",
+      "defaultRoute": "/make-new-supplier/asks-to-make-new-supplier",
+      "tasks": [
+        {
+          "taskId": "makenewsupplier-asks-to-make-new-supplier",
+          "name": "AsksToMakeNewSupplier",
+          "route": "/make-new-supplier/asks-to-make-new-supplier",
+          "component": "AsksToMakeNewSupplierPage",
+          "pageType": "write-navigate",
+          "description": "Make new supplier: Asks to make new supplier.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_new_supplier_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-supplier/displays-form-of-make-new-supplier",
+          "ui": {
+            "title": "Asks to make new supplier",
+            "hint": "Page for BPMN task 'Asks to make new supplier' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewsupplier-displays-form-of-make-new-supplier",
+          "name": "DisplaysFormOfMakeNewSupplier",
+          "route": "/make-new-supplier/displays-form-of-make-new-supplier",
+          "component": "DisplaysFormOfMakeNewSupplierPage",
+          "pageType": "write-navigate",
+          "description": "Make new supplier: Displays form of  make new supplier.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_make_new_supplier_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-supplier/enters-a-new-supplier-information",
+          "ui": {
+            "title": "Displays form of  make new supplier",
+            "hint": "Page for BPMN task 'Displays form of  make new supplier' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewsupplier-enters-a-new-supplier-information",
+          "name": "EntersANewSupplierInformation",
+          "route": "/make-new-supplier/enters-a-new-supplier-information",
+          "component": "EntersANewSupplierInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make new supplier: Enters a new supplier information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_a_new_supplier_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-supplier/saves-the-new-supplier",
+          "ui": {
+            "title": "Enters a new supplier information",
+            "hint": "Page for BPMN task 'Enters a new supplier information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-new-supplier/saves-the-new-supplier",
+              "condition": "Add"
+            }
+          ]
+        },
+        {
+          "taskId": "makenewsupplier-saves-the-new-supplier",
+          "name": "SavesTheNewSupplier",
+          "route": "/make-new-supplier/saves-the-new-supplier",
+          "component": "SavesTheNewSupplierPage",
+          "pageType": "write-navigate",
+          "description": "Make new supplier: Saves the new supplier.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_new_supplier_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-supplier/complete",
+          "ui": {
+            "title": "Saves the new supplier",
+            "hint": "Page for BPMN task 'Saves the new supplier' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

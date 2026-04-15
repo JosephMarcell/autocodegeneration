@@ -1,0 +1,425 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Validate member mandatory deposit",
+        "value": "validatemembermandatorydeposit",
+        "internal": "validatemembermandatorydeposit"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "validatemembermandatorydeposit": "/validate-member-mandatory-deposit/asks-for-validating-member-mandatory-deposit"
+    },
+    "stateSchema": {
+      "asks_for_validating_member_mandatory_deposit_completed": false,
+      "reads_the_database_bill_completed": false,
+      "enters_the_work_unit_year_and_month_data_completed": false,
+      "displays_the_validating_member_mandatory_deposit_form_completed": false,
+      "reads_the_bill_database_completed": false,
+      "displays_the_member_s_billing_information_completed": false,
+      "selects_show_completed": false,
+      "updates_status_with_paid_for_all_member_completed": false,
+      "displays_the_information_to_the_screen_completed": false,
+      "fills_in_the_member_id_completed": false,
+      "updates_the_payment_information_completed": false,
+      "updates_the_member_s_status_with_disable_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/validate-member-mandatory-deposit/asks-for-validating-member-mandatory-deposit",
+        "role": "validatemembermandatorydeposit",
+        "component": "AsksForValidatingMemberMandatoryDepositPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/reads-the-database-bill",
+        "role": "validatemembermandatorydeposit",
+        "component": "ReadsTheDatabaseBillPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/enters-the-work-unit-year-and-month-data",
+        "role": "validatemembermandatorydeposit",
+        "component": "EntersTheWorkUnit,Year,AndMonthDataPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/displays-the-validating-member-mandatory-deposit-form",
+        "role": "validatemembermandatorydeposit",
+        "component": "DisplaysTheValidatingMemberMandatoryDepositFormPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/reads-the-bill-database",
+        "role": "validatemembermandatorydeposit",
+        "component": "ReadsTheBillDatabasePage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/displays-the-members-billing-information",
+        "role": "validatemembermandatorydeposit",
+        "component": "DisplaysTheMember'sBillingInformationPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/selects-show",
+        "role": "validatemembermandatorydeposit",
+        "component": "SelectsShowPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/updates-status-with-paid-for-all-member",
+        "role": "validatemembermandatorydeposit",
+        "component": "UpdatesStatusWith\u2018paid\u2019ForAllMemberPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/displays-the-information-to-the-screen",
+        "role": "validatemembermandatorydeposit",
+        "component": "DisplaysTheInformationToTheScreenPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/fills-in-the-member-id",
+        "role": "validatemembermandatorydeposit",
+        "component": "FillsInTheMemberIdPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/updates-the-payment-information",
+        "role": "validatemembermandatorydeposit",
+        "component": "UpdatesThePaymentInformationPage",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      },
+      {
+        "route": "/validate-member-mandatory-deposit/updates-the-members-status-with-disable",
+        "role": "validatemembermandatorydeposit",
+        "component": "UpdatesTheMember'sStatusWith\u2018disable\u2019Page",
+        "allowedRoles": [
+          "validatemembermandatorydeposit"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ValidateMemberMandatoryDeposit",
+      "role": "validatemembermandatorydeposit",
+      "defaultRoute": "/validate-member-mandatory-deposit/asks-for-validating-member-mandatory-deposit",
+      "tasks": [
+        {
+          "taskId": "validatemembermandatorydeposit-asks-for-validating-member-mandatory-deposit",
+          "name": "AsksForValidatingMemberMandatoryDeposit",
+          "route": "/validate-member-mandatory-deposit/asks-for-validating-member-mandatory-deposit",
+          "component": "AsksForValidatingMemberMandatoryDepositPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Asks for validating member mandatory deposit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_for_validating_member_mandatory_deposit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/displays-the-validating-member-mandatory-deposit-form",
+          "ui": {
+            "title": "Asks for validating member mandatory deposit",
+            "hint": "Page for BPMN task 'Asks for validating member mandatory deposit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-displays-the-validating-member-mandatory-deposit-form",
+          "name": "DisplaysTheValidatingMemberMandatoryDepositForm",
+          "route": "/validate-member-mandatory-deposit/displays-the-validating-member-mandatory-deposit-form",
+          "component": "DisplaysTheValidatingMemberMandatoryDepositFormPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Displays the validating member mandatory deposit form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_validating_member_mandatory_deposit_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/enters-the-work-unit-year-and-month-data",
+          "ui": {
+            "title": "Displays the validating member mandatory deposit form",
+            "hint": "Page for BPMN task 'Displays the validating member mandatory deposit form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-enters-the-work-unit-year-and-month-data",
+          "name": "EntersTheWorkUnit,Year,AndMonthData",
+          "route": "/validate-member-mandatory-deposit/enters-the-work-unit-year-and-month-data",
+          "component": "EntersTheWorkUnit,Year,AndMonthDataPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Enters the work unit, year, and month data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_work_unit_year_and_month_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/selects-show",
+          "ui": {
+            "title": "Enters the work unit, year, and month data",
+            "hint": "Page for BPMN task 'Enters the work unit, year, and month data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-selects-show",
+          "name": "SelectsShow",
+          "route": "/validate-member-mandatory-deposit/selects-show",
+          "component": "SelectsShowPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Selects show.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_show_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/reads-the-database-bill",
+          "ui": {
+            "title": "Selects show",
+            "hint": "Page for BPMN task 'Selects show' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-reads-the-database-bill",
+          "name": "ReadsTheDatabaseBill",
+          "route": "/validate-member-mandatory-deposit/reads-the-database-bill",
+          "component": "ReadsTheDatabaseBillPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Reads the database Bill.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_database_bill_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/displays-the-members-billing-information",
+          "ui": {
+            "title": "Reads the database Bill",
+            "hint": "Page for BPMN task 'Reads the database Bill' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-displays-the-members-billing-information",
+          "name": "DisplaysTheMember'sBillingInformation",
+          "route": "/validate-member-mandatory-deposit/displays-the-members-billing-information",
+          "component": "DisplaysTheMember'sBillingInformationPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Displays the member's billing information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_members_billing_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/updates-status-with-paid-for-all-member",
+          "ui": {
+            "title": "Displays the member's billing information",
+            "hint": "Page for BPMN task 'Displays the member's billing information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/validate-member-mandatory-deposit/updates-status-with-paid-for-all-member",
+              "condition": "pay all"
+            }
+          ]
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-updates-status-with-paid-for-all-member",
+          "name": "UpdatesStatusWith\u2018paid\u2019ForAllMember",
+          "route": "/validate-member-mandatory-deposit/updates-status-with-paid-for-all-member",
+          "component": "UpdatesStatusWith\u2018paid\u2019ForAllMemberPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Updates status with \u2018paid\u2019 for all member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "updates_status_with_paid_for_all_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/complete",
+          "ui": {
+            "title": "Updates status with \u2018paid\u2019 for all member",
+            "hint": "Page for BPMN task 'Updates status with \u2018paid\u2019 for all member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-fills-in-the-member-id",
+          "name": "FillsInTheMemberId",
+          "route": "/validate-member-mandatory-deposit/fills-in-the-member-id",
+          "component": "FillsInTheMemberIdPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Fills in the member ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "fills_in_the_member_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/reads-the-bill-database",
+          "ui": {
+            "title": "Fills in the member ID",
+            "hint": "Page for BPMN task 'Fills in the member ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-reads-the-bill-database",
+          "name": "ReadsTheBillDatabase",
+          "route": "/validate-member-mandatory-deposit/reads-the-bill-database",
+          "component": "ReadsTheBillDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Reads the Bill database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_bill_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/displays-the-information-to-the-screen",
+          "ui": {
+            "title": "Reads the Bill database",
+            "hint": "Page for BPMN task 'Reads the Bill database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-displays-the-information-to-the-screen",
+          "name": "DisplaysTheInformationToTheScreen",
+          "route": "/validate-member-mandatory-deposit/displays-the-information-to-the-screen",
+          "component": "DisplaysTheInformationToTheScreenPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Displays the information to the screen.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_information_to_the_screen_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/complete",
+          "ui": {
+            "title": "Displays the information to the screen",
+            "hint": "Page for BPMN task 'Displays the information to the screen' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-updates-the-members-status-with-disable",
+          "name": "UpdatesTheMember'sStatusWith\u2018disable\u2019",
+          "route": "/validate-member-mandatory-deposit/updates-the-members-status-with-disable",
+          "component": "UpdatesTheMember'sStatusWith\u2018disable\u2019Page",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Updates the member's status with \u2018disable\u2019.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "updates_the_members_status_with_disable_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/complete",
+          "ui": {
+            "title": "Updates the member's status with \u2018disable\u2019",
+            "hint": "Page for BPMN task 'Updates the member's status with \u2018disable\u2019' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "validatemembermandatorydeposit-updates-the-payment-information",
+          "name": "UpdatesThePaymentInformation",
+          "route": "/validate-member-mandatory-deposit/updates-the-payment-information",
+          "component": "UpdatesThePaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Validate member mandatory deposit: Updates the payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "updates_the_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/validate-member-mandatory-deposit/complete",
+          "ui": {
+            "title": "Updates the payment information",
+            "hint": "Page for BPMN task 'Updates the payment information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

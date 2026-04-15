@@ -1,0 +1,460 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_1e68fab0-ea67-4a28-8536-764d092cf73f"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a report on validation of mandatory savings",
+      "processRef": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_1e68fab0-ea67-4a28-8536-764d092cf73f": "Main Process",
+    "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd": "Make a report on validation of mandatory savings"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+        "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+        "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+        "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+        "Id_20a6dcbc-d907-493c-b2d7-178b501701af",
+        "Id_290ad90a-dddd-4695-8c1f-09748f1a300d"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_28177b60-9fdb-4316-ab00-0e0c0b955153": "System",
+    "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7": "System",
+    "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4": "Officer",
+    "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8": "Officer",
+    "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4": "System",
+    "Id_20a6dcbc-d907-493c-b2d7-178b501701af": "System",
+    "Id_290ad90a-dddd-4695-8c1f-09748f1a300d": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a report on validation of mandatory savings",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads Member",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Selects  validation data",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the form of making a report on validation of mandatory savings",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Prints the receipt",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_17666198-c558-41a4-90da-ac42cd2240fe"
+      ],
+      "outgoing": [
+        "Id_d8811078-a582-449c-9e37-2b50294c7b7b"
+      ]
+    },
+    {
+      "id": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "name": "Prints validation information",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f8a2349b-183b-4a9c-bbcd-ccf62072e832"
+      ],
+      "outgoing": [
+        "Id_452ea6f5-4e4e-48a1-81c5-4213de436961"
+      ]
+    },
+    {
+      "id": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "name": "Select show menu",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays member list",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ],
+      "outgoing": [
+        "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d"
+      ]
+    },
+    {
+      "id": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "name": "Selects one of the members",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d"
+      ],
+      "outgoing": [
+        "Id_72680729-c144-48b1-9409-ae906d7b5e4e"
+      ]
+    },
+    {
+      "id": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "name": "Reads the Mandatory Savings database",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_72680729-c144-48b1-9409-ae906d7b5e4e"
+      ],
+      "outgoing": [
+        "Id_e0af573d-efdd-4086-adbf-464f1984ecdb"
+      ]
+    },
+    {
+      "id": "Id_20a6dcbc-d907-493c-b2d7-178b501701af",
+      "name": "Displays member-mandatory savings information",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e0af573d-efdd-4086-adbf-464f1984ecdb"
+      ],
+      "outgoing": [
+        "Id_66007485-8b38-4532-b3f5-0f657585d1fc"
+      ]
+    },
+    {
+      "id": "Id_290ad90a-dddd-4695-8c1f-09748f1a300d",
+      "name": "deletes the mandatory savings information",
+      "type": "task",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_1784b05c-39e5-4ee5-b1e5-51cc4e018ffd"
+      ],
+      "outgoing": [
+        "Id_0695b1c1-38f4-4670-8c71-883d370f373c"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "incoming": [
+        "Id_452ea6f5-4e4e-48a1-81c5-4213de436961",
+        "Id_a5dbd8a8-a189-46a3-9b10-843efaf8ed1a",
+        "Id_d8811078-a582-449c-9e37-2b50294c7b7b",
+        "Id_0695b1c1-38f4-4670-8c71-883d370f373c"
+      ],
+      "outgoing": [
+        "Id_4f4153b3-0a19-4db9-8153-dd259b14df9c"
+      ]
+    },
+    {
+      "id": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "incoming": [
+        "Id_66007485-8b38-4532-b3f5-0f657585d1fc"
+      ],
+      "outgoing": [
+        "Id_f8a2349b-183b-4a9c-bbcd-ccf62072e832",
+        "Id_a5dbd8a8-a189-46a3-9b10-843efaf8ed1a",
+        "Id_17666198-c558-41a4-90da-ac42cd2240fe",
+        "Id_1784b05c-39e5-4ee5-b1e5-51cc4e018ffd"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "Officer",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report on validation of mandatory savings",
+      "laneName": "System",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd",
+      "incoming": [
+        "Id_4f4153b3-0a19-4db9-8153-dd259b14df9c"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_452ea6f5-4e4e-48a1-81c5-4213de436961",
+      "source": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "target": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_4f4153b3-0a19-4db9-8153-dd259b14df9c",
+      "source": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_f8a2349b-183b-4a9c-bbcd-ccf62072e832",
+      "source": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "target": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "condition": "Print",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_a5dbd8a8-a189-46a3-9b10-843efaf8ed1a",
+      "source": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "target": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_72680729-c144-48b1-9409-ae906d7b5e4e",
+      "source": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "target": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_e0af573d-efdd-4086-adbf-464f1984ecdb",
+      "source": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "target": "Id_20a6dcbc-d907-493c-b2d7-178b501701af",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_66007485-8b38-4532-b3f5-0f657585d1fc",
+      "source": "Id_20a6dcbc-d907-493c-b2d7-178b501701af",
+      "target": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_17666198-c558-41a4-90da-ac42cd2240fe",
+      "source": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_1784b05c-39e5-4ee5-b1e5-51cc4e018ffd",
+      "source": "Id_f30b1896-0fb2-4428-b53d-0a3784caa6e5",
+      "target": "Id_290ad90a-dddd-4695-8c1f-09748f1a300d",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_d8811078-a582-449c-9e37-2b50294c7b7b",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    },
+    {
+      "id": "Id_0695b1c1-38f4-4670-8c71-883d370f373c",
+      "source": "Id_290ad90a-dddd-4695-8c1f-09748f1a300d",
+      "target": "Id_0b129a82-edc8-4bbe-a4db-5843d21983c7",
+      "condition": "",
+      "processId": "Id_c10e03f5-8e9b-44f5-b890-1d184e795cfd"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_report_on_validation_of_mandatory_savings_completed": false,
+    "reads_member_completed": false,
+    "selects_validation_data_completed": false,
+    "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed": false,
+    "prints_the_receipt_completed": false,
+    "prints_validation_information_completed": false,
+    "select_show_menu_completed": false,
+    "displays_member_list_completed": false,
+    "selects_one_of_the_members_completed": false,
+    "reads_the_mandatory_savings_database_completed": false,
+    "displays_member_mandatory_savings_information_completed": false,
+    "deletes_the_mandatory_savings_information_completed": false
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Registration of old patients",
+        "value": "registrationofoldpatients",
+        "internal": "registrationofoldpatients"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "registrationofoldpatients": "/registration-of-old-patients/wants-to-register-old-patients"
+    },
+    "stateSchema": {
+      "wants_to_register_old_patients_completed": false,
+      "displays_the_query_result_completed": false,
+      "displays_a_registration_form_completed": false,
+      "enters_the_medical_record_id_completed": false,
+      "reads_the_patient_and_insurance_database_completed": false,
+      "saves_the_registration_information_completed": false,
+      "selects_the_register_button_completed": false,
+      "queries_district_subdistric_village_and_referral_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/registration-of-old-patients/wants-to-register-old-patients",
+        "role": "registrationofoldpatients",
+        "component": "WantsToRegisterOldPatientsPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/displays-the-query-result",
+        "role": "registrationofoldpatients",
+        "component": "DisplaysTheQueryResultPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/displays-a-registration-form",
+        "role": "registrationofoldpatients",
+        "component": "DisplaysARegistrationFormPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/enters-the-medical-record-id",
+        "role": "registrationofoldpatients",
+        "component": "EntersTheMedicalRecordIdPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/reads-the-patient-and-insurance-database",
+        "role": "registrationofoldpatients",
+        "component": "ReadsThePatientAndInsuranceDatabasePage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/saves-the-registration-information",
+        "role": "registrationofoldpatients",
+        "component": "SavesTheRegistrationInformationPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/selects-the-register-button",
+        "role": "registrationofoldpatients",
+        "component": "SelectsTheRegisterButtonPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      },
+      {
+        "route": "/registration-of-old-patients/queries-district-subdistric-village-and-referral",
+        "role": "registrationofoldpatients",
+        "component": "QueriesDistrict,Subdistric,Village,AndReferralPage",
+        "allowedRoles": [
+          "registrationofoldpatients"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "RegistrationOfOldPatients",
+      "role": "registrationofoldpatients",
+      "defaultRoute": "/registration-of-old-patients/wants-to-register-old-patients",
+      "tasks": [
+        {
+          "taskId": "registrationofoldpatients-wants-to-register-old-patients",
+          "name": "WantsToRegisterOldPatients",
+          "route": "/registration-of-old-patients/wants-to-register-old-patients",
+          "component": "WantsToRegisterOldPatientsPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Wants to register old patients.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_register_old_patients_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/queries-district-subdistric-village-and-referral",
+          "ui": {
+            "title": "Wants to register old patients",
+            "hint": "Page for BPMN task 'Wants to register old patients' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-queries-district-subdistric-village-and-referral",
+          "name": "QueriesDistrict,Subdistric,Village,AndReferral",
+          "route": "/registration-of-old-patients/queries-district-subdistric-village-and-referral",
+          "component": "QueriesDistrict,Subdistric,Village,AndReferralPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Queries District, Subdistric, Village, and Referral.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_district_subdistric_village_and_referral_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/displays-a-registration-form",
+          "ui": {
+            "title": "Queries District, Subdistric, Village, and Referral",
+            "hint": "Page for BPMN task 'Queries District, Subdistric, Village, and Referral' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-displays-a-registration-form",
+          "name": "DisplaysARegistrationForm",
+          "route": "/registration-of-old-patients/displays-a-registration-form",
+          "component": "DisplaysARegistrationFormPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Displays a registration form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_registration_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/enters-the-medical-record-id",
+          "ui": {
+            "title": "Displays a registration form",
+            "hint": "Page for BPMN task 'Displays a registration form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-enters-the-medical-record-id",
+          "name": "EntersTheMedicalRecordId",
+          "route": "/registration-of-old-patients/enters-the-medical-record-id",
+          "component": "EntersTheMedicalRecordIdPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Enters the medical record ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_medical_record_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/reads-the-patient-and-insurance-database",
+          "ui": {
+            "title": "Enters the medical record ID",
+            "hint": "Page for BPMN task 'Enters the medical record ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-reads-the-patient-and-insurance-database",
+          "name": "ReadsThePatientAndInsuranceDatabase",
+          "route": "/registration-of-old-patients/reads-the-patient-and-insurance-database",
+          "component": "ReadsThePatientAndInsuranceDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Reads the Patient and Insurance database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_patient_and_insurance_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/displays-the-query-result",
+          "ui": {
+            "title": "Reads the Patient and Insurance database",
+            "hint": "Page for BPMN task 'Reads the Patient and Insurance database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-displays-the-query-result",
+          "name": "DisplaysTheQueryResult",
+          "route": "/registration-of-old-patients/displays-the-query-result",
+          "component": "DisplaysTheQueryResultPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Displays the query result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_result_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/selects-the-register-button",
+          "ui": {
+            "title": "Displays the query result",
+            "hint": "Page for BPMN task 'Displays the query result' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "registrationofoldpatients-selects-the-register-button",
+          "name": "SelectsTheRegisterButton",
+          "route": "/registration-of-old-patients/selects-the-register-button",
+          "component": "SelectsTheRegisterButtonPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Selects the register button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_register_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/saves-the-registration-information",
+          "ui": {
+            "title": "Selects the register button",
+            "hint": "Page for BPMN task 'Selects the register button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/registration-of-old-patients/saves-the-registration-information",
+              "condition": "SavesTheRegistrationInformation"
+            }
+          ]
+        },
+        {
+          "taskId": "registrationofoldpatients-saves-the-registration-information",
+          "name": "SavesTheRegistrationInformation",
+          "route": "/registration-of-old-patients/saves-the-registration-information",
+          "component": "SavesTheRegistrationInformationPage",
+          "pageType": "write-navigate",
+          "description": "Registration of old patients: Saves the registration information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_registration_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/registration-of-old-patients/complete",
+          "ui": {
+            "title": "Saves the registration information",
+            "hint": "Page for BPMN task 'Saves the registration information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

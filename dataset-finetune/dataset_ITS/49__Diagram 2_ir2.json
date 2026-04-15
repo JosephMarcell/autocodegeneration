@@ -1,0 +1,208 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View currently stock",
+        "value": "viewcurrentlystock",
+        "internal": "viewcurrentlystock"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewcurrentlystock": "/view-currently-stock/asks-to-view-currently-stock"
+    },
+    "stateSchema": {
+      "asks_to_view_currently_stock_completed": false,
+      "displays_the_result_of_query_in_a_form_completed": false,
+      "chooses_option_completed": false,
+      "prints_information_about_the_current_stock_completed": false,
+      "queries_stock_database_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-currently-stock/asks-to-view-currently-stock",
+        "role": "viewcurrentlystock",
+        "component": "AsksToViewCurrentlyStockPage",
+        "allowedRoles": [
+          "viewcurrentlystock"
+        ]
+      },
+      {
+        "route": "/view-currently-stock/displays-the-result-of-query-in-a-form",
+        "role": "viewcurrentlystock",
+        "component": "DisplaysTheResultOfQueryInAFormPage",
+        "allowedRoles": [
+          "viewcurrentlystock"
+        ]
+      },
+      {
+        "route": "/view-currently-stock/chooses-option",
+        "role": "viewcurrentlystock",
+        "component": "ChoosesOptionPage",
+        "allowedRoles": [
+          "viewcurrentlystock"
+        ]
+      },
+      {
+        "route": "/view-currently-stock/prints-information-about-the-current-stock",
+        "role": "viewcurrentlystock",
+        "component": "PrintsInformationAboutTheCurrentStockPage",
+        "allowedRoles": [
+          "viewcurrentlystock"
+        ]
+      },
+      {
+        "route": "/view-currently-stock/queries-stock-database",
+        "role": "viewcurrentlystock",
+        "component": "QueriesStockDatabasePage",
+        "allowedRoles": [
+          "viewcurrentlystock"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewCurrentlyStock",
+      "role": "viewcurrentlystock",
+      "defaultRoute": "/view-currently-stock/asks-to-view-currently-stock",
+      "tasks": [
+        {
+          "taskId": "viewcurrentlystock-asks-to-view-currently-stock",
+          "name": "AsksToViewCurrentlyStock",
+          "route": "/view-currently-stock/asks-to-view-currently-stock",
+          "component": "AsksToViewCurrentlyStockPage",
+          "pageType": "write-navigate",
+          "description": "View currently stock: Asks to view currently stock.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_view_currently_stock_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-currently-stock/queries-stock-database",
+          "ui": {
+            "title": "Asks to view currently stock",
+            "hint": "Page for BPMN task 'Asks to view currently stock' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewcurrentlystock-queries-stock-database",
+          "name": "QueriesStockDatabase",
+          "route": "/view-currently-stock/queries-stock-database",
+          "component": "QueriesStockDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View currently stock: Queries Stock database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_stock_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-currently-stock/displays-the-result-of-query-in-a-form",
+          "ui": {
+            "title": "Queries Stock database",
+            "hint": "Page for BPMN task 'Queries Stock database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewcurrentlystock-displays-the-result-of-query-in-a-form",
+          "name": "DisplaysTheResultOfQueryInAForm",
+          "route": "/view-currently-stock/displays-the-result-of-query-in-a-form",
+          "component": "DisplaysTheResultOfQueryInAFormPage",
+          "pageType": "write-navigate",
+          "description": "View currently stock: Displays the result of query in a form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_result_of_query_in_a_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-currently-stock/chooses-option",
+          "ui": {
+            "title": "Displays the result of query in a form",
+            "hint": "Page for BPMN task 'Displays the result of query in a form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewcurrentlystock-chooses-option",
+          "name": "ChoosesOption",
+          "route": "/view-currently-stock/chooses-option",
+          "component": "ChoosesOptionPage",
+          "pageType": "write-navigate",
+          "description": "View currently stock: Chooses option.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_option_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-currently-stock/prints-information-about-the-current-stock",
+          "ui": {
+            "title": "Chooses option",
+            "hint": "Page for BPMN task 'Chooses option' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/view-currently-stock/prints-information-about-the-current-stock",
+              "condition": "Print"
+            }
+          ]
+        },
+        {
+          "taskId": "viewcurrentlystock-prints-information-about-the-current-stock",
+          "name": "PrintsInformationAboutTheCurrentStock",
+          "route": "/view-currently-stock/prints-information-about-the-current-stock",
+          "component": "PrintsInformationAboutTheCurrentStockPage",
+          "pageType": "write-navigate",
+          "description": "View currently stock: Prints information about the current stock.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_information_about_the_current_stock_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-currently-stock/complete",
+          "ui": {
+            "title": "Prints information about the current stock",
+            "hint": "Page for BPMN task 'Prints information about the current stock' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

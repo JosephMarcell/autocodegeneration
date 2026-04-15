@@ -1,0 +1,865 @@
+{
+  "project_name": "Employee selection and recruitment",
+  "participants": [
+    {
+      "id": "id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "name": "Employee selection and recruitment",
+      "processRef": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "name": "Candidate interviews",
+      "processRef": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-d48c21e3-9430-4dd7-9583-6973335ff37f",
+      "name": "Reject candidate",
+      "processRef": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520": "Employee selection and recruitment",
+    "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec": "Candidate interviews",
+    "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f": "Reject candidate"
+  },
+  "lanes": [
+    {
+      "id": "id-c232accf-5d4b-45ff-a91b-0ad113d08837",
+      "name": "Manager",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "flowNodeRefs": [
+        "id-864433e7-17e8-4669-a044-79b7cf6b5e4d",
+        "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e",
+        "id-1ad1bf4a-0dba-4a1d-919a-bfcf409d91f5"
+      ]
+    },
+    {
+      "id": "id-1e710dc7-9d43-4985-904d-741d2b63fa2e",
+      "name": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "flowNodeRefs": [
+        "id-e4e68370-43bb-457a-a54f-ddb17e5f0b1d",
+        "id-697c2d3c-a514-4a53-bbcd-53081b47e4b4",
+        "id-8deb1743-3e44-4f62-919e-fff0a92733a4",
+        "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+        "id-a227bc8f-414e-4f1f-8bfd-5ae014bcf70b"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "id-864433e7-17e8-4669-a044-79b7cf6b5e4d": "Manager",
+    "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e": "Manager",
+    "id-1ad1bf4a-0dba-4a1d-919a-bfcf409d91f5": "Manager",
+    "id-e4e68370-43bb-457a-a54f-ddb17e5f0b1d": "HR",
+    "id-697c2d3c-a514-4a53-bbcd-53081b47e4b4": "HR",
+    "id-8deb1743-3e44-4f62-919e-fff0a92733a4": "HR",
+    "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175": "HR",
+    "id-a227bc8f-414e-4f1f-8bfd-5ae014bcf70b": "HR"
+  },
+  "tasks": [
+    {
+      "id": "id-4d16e620-4f14-4ec5-b081-6dc81d6e3dfb",
+      "name": "Open position",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-4a54500f-e485-4c86-8c29-cba517cfc8c2"
+      ],
+      "outgoing": [
+        "id-cb7ce75f-85aa-4995-8176-96f24f090707"
+      ]
+    },
+    {
+      "id": "id-d6f84f70-5591-4e82-92a9-9711ed0c5a60",
+      "name": "Retrieve applications",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-f8a2a7d7-f49a-401e-8ce1-9da701330acd",
+        "id-6324d8c6-d69a-4a96-bcbf-431b8ed8b98c",
+        "id-5350cff1-f007-4cbf-8e00-2d6a9c432c90"
+      ],
+      "outgoing": [
+        "id-ff4e9914-f8e7-43df-b970-ccfcc82c0a93"
+      ]
+    },
+    {
+      "id": "id-37f29b9b-66e2-4370-bc04-44db6161b9d3",
+      "name": "Pre-select candidates for interview",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-ff4e9914-f8e7-43df-b970-ccfcc82c0a93",
+        "id-3b361775-e493-4e7b-8ea5-4249d30bcd59"
+      ],
+      "outgoing": [
+        "id-18a1f83f-54b1-4fc6-bf6d-974c3fe30f0f"
+      ]
+    },
+    {
+      "id": "id-b856f1b2-65a4-4e8f-9972-d8ed37cd39ca",
+      "name": "Select candidate for offer",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-bfebe3d5-9cc6-4deb-a3bc-975b8843336e",
+        "id-4deab5a6-0bc6-4484-a664-2eb3bdd484e3"
+      ],
+      "outgoing": [
+        "id-db075595-80ce-47aa-a5d1-3018886aeb1f"
+      ]
+    },
+    {
+      "id": "id-0a0069d9-d0da-49aa-a171-5fede30a754a",
+      "name": "Prepare offer",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-db075595-80ce-47aa-a5d1-3018886aeb1f"
+      ],
+      "outgoing": [
+        "id-89f7a9e3-2e79-4ae9-b861-67e8b7da6c23"
+      ]
+    },
+    {
+      "id": "id-95d09649-5a7f-49a5-8220-f914051e4a52",
+      "name": "Get candidate reply",
+      "type": "userTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-597a6d67-d86f-4396-8b54-67e686aeb930"
+      ],
+      "outgoing": [
+        "id-72e538b2-63f2-430c-b51a-8049c283cc79"
+      ]
+    },
+    {
+      "id": "id-a9ca0391-024c-4dca-acb5-d02bdda1f05f",
+      "name": "Publish",
+      "type": "serviceTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-c68b950a-1b66-4660-a3cb-d773006b397b"
+      ],
+      "outgoing": [
+        "id-741bd80f-588c-4f61-96a2-7046986110dc"
+      ]
+    },
+    {
+      "id": "id-af37ee81-cb65-47a0-85b5-a0f3d865f084",
+      "name": "Distribute on job boards",
+      "type": "serviceTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-7116b549-de91-49dd-a645-dc99ff78f65a"
+      ],
+      "outgoing": [
+        "id-07ff4e65-7f26-45f0-922c-f87c2755f471"
+      ]
+    },
+    {
+      "id": "id-f22603db-dfa4-41f7-b3da-ff67c9c09c4d",
+      "name": "Advertise on social media",
+      "type": "serviceTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-c0eed1b3-eee0-4448-aa9d-587456145c25"
+      ],
+      "outgoing": [
+        "id-c4a3c3e9-c7f6-4ae4-a842-d9cd7f33fac7"
+      ]
+    },
+    {
+      "id": "id-b625211a-d45f-48e0-b444-d825179ccdae",
+      "name": "Send offer to candidate",
+      "type": "serviceTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-89f7a9e3-2e79-4ae9-b861-67e8b7da6c23"
+      ],
+      "outgoing": [
+        "id-597a6d67-d86f-4396-8b54-67e686aeb930"
+      ]
+    },
+    {
+      "id": "id-39decd7e-5c1c-4440-bcc2-c42a3136374f",
+      "name": "Congratulate new hre",
+      "type": "serviceTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-6394af08-7a67-4700-9632-ffe01f43f89a"
+      ],
+      "outgoing": [
+        "id-5ce71617-4a62-4c92-b0d9-651dc476f55d"
+      ]
+    },
+    {
+      "id": "id-379a29b2-d868-41a6-80b8-fca4cad50095",
+      "name": "Interview pre-selected candidates",
+      "type": "task",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": false,
+      "incoming": [
+        "id-18a1f83f-54b1-4fc6-bf6d-974c3fe30f0f"
+      ],
+      "outgoing": [
+        "id-ff2572a7-0357-4cee-806d-b149a3156fab"
+      ]
+    },
+    {
+      "id": "id-0d164b5e-7b1e-4f9c-896c-5e98af366e49",
+      "name": "Informe other candidates",
+      "type": "sendTask",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "asyncFlag": true,
+      "incoming": [
+        "id-c1cf237b-ad59-4407-b77e-5a9d5c9602ee"
+      ],
+      "outgoing": [
+        "id-8dd904c9-c1a2-4549-a442-0d307a0c0112"
+      ]
+    },
+    {
+      "id": "id-697c2d3c-a514-4a53-bbcd-53081b47e4b4",
+      "name": "Perform HR interview",
+      "type": "userTask",
+      "participantName": "Candidate interviews",
+      "laneName": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "asyncFlag": false,
+      "incoming": [
+        "id-aadaaf7c-9876-4fd6-9923-26bb8698851f"
+      ],
+      "outgoing": [
+        "id-81e75ade-5d49-4f77-92fa-0c731fcd5782"
+      ]
+    },
+    {
+      "id": "id-864433e7-17e8-4669-a044-79b7cf6b5e4d",
+      "name": "Perform Manager interview",
+      "type": "userTask",
+      "participantName": "Candidate interviews",
+      "laneName": "Manager",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "asyncFlag": false,
+      "incoming": [
+        "id-8018c93e-7b38-4e65-a825-ff2987fa09f7"
+      ],
+      "outgoing": [
+        "id-d0826582-bf9a-4590-b42d-75302171bb74"
+      ]
+    },
+    {
+      "id": "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+      "name": "Inform rejection",
+      "type": "sendTask",
+      "participantName": "Candidate interviews",
+      "laneName": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "asyncFlag": true,
+      "incoming": [
+        "id-ea7c7ac1-051d-47de-bf29-6ce154b1d8e9",
+        "id-2200f1cb-5bae-41a5-b9d9-c77a6f3cb1a5"
+      ],
+      "outgoing": [
+        "id-5216275a-8aad-4560-8c02-1ea63ce5ba09"
+      ]
+    },
+    {
+      "id": "id-72cd77ca-8cfb-4e2c-9c12-89acc414e60a",
+      "name": "Send rejection message",
+      "type": "serviceTask",
+      "participantName": "Reject candidate",
+      "laneName": "",
+      "processId": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f",
+      "asyncFlag": true,
+      "incoming": [
+        "id-907f834e-c1c1-4afe-abfb-764d11aacefe"
+      ],
+      "outgoing": [
+        "id-97040a5e-bf35-4245-ac59-5f6397e4fd10"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "id-b1968396-1739-4d70-9396-172d6a744231",
+      "name": "Candidates selected after interview process ?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-ff2572a7-0357-4cee-806d-b149a3156fab"
+      ],
+      "outgoing": [
+        "id-5350cff1-f007-4cbf-8e00-2d6a9c432c90",
+        "id-bfebe3d5-9cc6-4deb-a3bc-975b8843336e"
+      ]
+    },
+    {
+      "id": "id-2ddad46a-befc-4ddf-9054-57c4d5940886",
+      "name": "is offer validated",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-72e538b2-63f2-430c-b51a-8049c283cc79"
+      ],
+      "outgoing": [
+        "id-759f1e13-4f98-4820-9d06-7e1ad7d044d5",
+        "id-a884acd9-facc-4491-834a-881ab35db5cc"
+      ]
+    },
+    {
+      "id": "id-b3475dab-facb-4077-9124-9fde8751d2b0",
+      "name": "Other candidates selected?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-759f1e13-4f98-4820-9d06-7e1ad7d044d5"
+      ],
+      "outgoing": [
+        "id-4deab5a6-0bc6-4484-a664-2eb3bdd484e3",
+        "id-3b361775-e493-4e7b-8ea5-4249d30bcd59"
+      ]
+    },
+    {
+      "id": "id-21bca78f-3a82-46f9-9947-46a1c0a4a47c",
+      "name": "Offer dispatch",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-cb7ce75f-85aa-4995-8176-96f24f090707"
+      ],
+      "outgoing": [
+        "id-c68b950a-1b66-4660-a3cb-d773006b397b",
+        "id-7116b549-de91-49dd-a645-dc99ff78f65a",
+        "id-c0eed1b3-eee0-4448-aa9d-587456145c25"
+      ]
+    },
+    {
+      "id": "id-71ba616b-99b1-4f55-80c7-4e451bf53c11",
+      "name": "",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Converging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-07ff4e65-7f26-45f0-922c-f87c2755f471",
+        "id-c4a3c3e9-c7f6-4ae4-a842-d9cd7f33fac7",
+        "id-741bd80f-588c-4f61-96a2-7046986110dc"
+      ],
+      "outgoing": [
+        "id-6324d8c6-d69a-4a96-bcbf-431b8ed8b98c"
+      ]
+    },
+    {
+      "id": "id-ed7995a4-30d6-4a8d-aa48-0edb0b5b64cc",
+      "name": "",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-a884acd9-facc-4491-834a-881ab35db5cc"
+      ],
+      "outgoing": [
+        "id-6394af08-7a67-4700-9632-ffe01f43f89a",
+        "id-c1cf237b-ad59-4407-b77e-5a9d5c9602ee"
+      ]
+    },
+    {
+      "id": "id-dbd5b071-0e7d-4360-af30-e5fd04580f2a",
+      "name": "",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Converging",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-8dd904c9-c1a2-4549-a442-0d307a0c0112",
+        "id-5ce71617-4a62-4c92-b0d9-651dc476f55d"
+      ],
+      "outgoing": [
+        "id-85513a9c-b05c-49e4-83b1-75d11e7d6972"
+      ]
+    },
+    {
+      "id": "id-8deb1743-3e44-4f62-919e-fff0a92733a4",
+      "name": "HR interview passed",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Candidate interviews",
+      "laneName": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "incoming": [
+        "id-81e75ade-5d49-4f77-92fa-0c731fcd5782"
+      ],
+      "outgoing": [
+        "id-8018c93e-7b38-4e65-a825-ff2987fa09f7",
+        "id-ea7c7ac1-051d-47de-bf29-6ce154b1d8e9"
+      ]
+    },
+    {
+      "id": "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e",
+      "name": "Manager interview passed?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Candidate interviews",
+      "laneName": "Manager",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "incoming": [
+        "id-d0826582-bf9a-4590-b42d-75302171bb74"
+      ],
+      "outgoing": [
+        "id-551667ad-63c7-48ff-82f3-a34eab6e8602",
+        "id-2200f1cb-5bae-41a5-b9d9-c77a6f3cb1a5"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "id-69d8b306-5479-4a0c-a445-45250693b7a0",
+      "name": "Start",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [],
+      "outgoing": [
+        "id-4a54500f-e485-4c86-8c29-cba517cfc8c2"
+      ]
+    },
+    {
+      "id": "id-7248be03-6d61-4867-923f-fc22c3f6527e",
+      "name": "End",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Employee selection and recruitment",
+      "laneName": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520",
+      "incoming": [
+        "id-85513a9c-b05c-49e4-83b1-75d11e7d6972"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-e4e68370-43bb-457a-a54f-ddb17e5f0b1d",
+      "name": "Start",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Candidate interviews",
+      "laneName": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "incoming": [],
+      "outgoing": [
+        "id-aadaaf7c-9876-4fd6-9923-26bb8698851f"
+      ]
+    },
+    {
+      "id": "id-1ad1bf4a-0dba-4a1d-919a-bfcf409d91f5",
+      "name": "End passed",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Candidate interviews",
+      "laneName": "Manager",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "incoming": [
+        "id-551667ad-63c7-48ff-82f3-a34eab6e8602"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-a227bc8f-414e-4f1f-8bfd-5ae014bcf70b",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Candidate interviews",
+      "laneName": "HR",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec",
+      "incoming": [
+        "id-5216275a-8aad-4560-8c02-1ea63ce5ba09"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-c2f1e73d-b055-467a-94aa-57c01ceda591",
+      "name": "Start rejection",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Reject candidate",
+      "laneName": "",
+      "processId": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f",
+      "incoming": [],
+      "outgoing": [
+        "id-907f834e-c1c1-4afe-abfb-764d11aacefe"
+      ]
+    },
+    {
+      "id": "id-3541f4d0-09f6-42de-ae27-59613581ec6e",
+      "name": "End",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Reject candidate",
+      "laneName": "",
+      "processId": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f",
+      "incoming": [
+        "id-97040a5e-bf35-4245-ac59-5f6397e4fd10"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "id-4a54500f-e485-4c86-8c29-cba517cfc8c2",
+      "source": "id-69d8b306-5479-4a0c-a445-45250693b7a0",
+      "target": "id-4d16e620-4f14-4ec5-b081-6dc81d6e3dfb",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-cb7ce75f-85aa-4995-8176-96f24f090707",
+      "source": "id-4d16e620-4f14-4ec5-b081-6dc81d6e3dfb",
+      "target": "id-21bca78f-3a82-46f9-9947-46a1c0a4a47c",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-c68b950a-1b66-4660-a3cb-d773006b397b",
+      "source": "id-21bca78f-3a82-46f9-9947-46a1c0a4a47c",
+      "target": "id-a9ca0391-024c-4dca-acb5-d02bdda1f05f",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-7116b549-de91-49dd-a645-dc99ff78f65a",
+      "source": "id-21bca78f-3a82-46f9-9947-46a1c0a4a47c",
+      "target": "id-af37ee81-cb65-47a0-85b5-a0f3d865f084",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-c0eed1b3-eee0-4448-aa9d-587456145c25",
+      "source": "id-21bca78f-3a82-46f9-9947-46a1c0a4a47c",
+      "target": "id-f22603db-dfa4-41f7-b3da-ff67c9c09c4d",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-07ff4e65-7f26-45f0-922c-f87c2755f471",
+      "source": "id-af37ee81-cb65-47a0-85b5-a0f3d865f084",
+      "target": "id-71ba616b-99b1-4f55-80c7-4e451bf53c11",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-c4a3c3e9-c7f6-4ae4-a842-d9cd7f33fac7",
+      "source": "id-f22603db-dfa4-41f7-b3da-ff67c9c09c4d",
+      "target": "id-71ba616b-99b1-4f55-80c7-4e451bf53c11",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-741bd80f-588c-4f61-96a2-7046986110dc",
+      "source": "id-a9ca0391-024c-4dca-acb5-d02bdda1f05f",
+      "target": "id-71ba616b-99b1-4f55-80c7-4e451bf53c11",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-f8a2a7d7-f49a-401e-8ce1-9da701330acd",
+      "source": "id-9ae9abe0-329c-4e71-825d-9f994aa1dbaf",
+      "target": "id-d6f84f70-5591-4e82-92a9-9711ed0c5a60",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-6324d8c6-d69a-4a96-bcbf-431b8ed8b98c",
+      "source": "id-71ba616b-99b1-4f55-80c7-4e451bf53c11",
+      "target": "id-d6f84f70-5591-4e82-92a9-9711ed0c5a60",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-ff4e9914-f8e7-43df-b970-ccfcc82c0a93",
+      "source": "id-d6f84f70-5591-4e82-92a9-9711ed0c5a60",
+      "target": "id-37f29b9b-66e2-4370-bc04-44db6161b9d3",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-18a1f83f-54b1-4fc6-bf6d-974c3fe30f0f",
+      "source": "id-37f29b9b-66e2-4370-bc04-44db6161b9d3",
+      "target": "id-379a29b2-d868-41a6-80b8-fca4cad50095",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-ff2572a7-0357-4cee-806d-b149a3156fab",
+      "source": "id-379a29b2-d868-41a6-80b8-fca4cad50095",
+      "target": "id-b1968396-1739-4d70-9396-172d6a744231",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-5350cff1-f007-4cbf-8e00-2d6a9c432c90",
+      "source": "id-b1968396-1739-4d70-9396-172d6a744231",
+      "target": "id-d6f84f70-5591-4e82-92a9-9711ed0c5a60",
+      "condition": "no",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-bfebe3d5-9cc6-4deb-a3bc-975b8843336e",
+      "source": "id-b1968396-1739-4d70-9396-172d6a744231",
+      "target": "id-b856f1b2-65a4-4e8f-9972-d8ed37cd39ca",
+      "condition": "yes",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-db075595-80ce-47aa-a5d1-3018886aeb1f",
+      "source": "id-b856f1b2-65a4-4e8f-9972-d8ed37cd39ca",
+      "target": "id-0a0069d9-d0da-49aa-a171-5fede30a754a",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-89f7a9e3-2e79-4ae9-b861-67e8b7da6c23",
+      "source": "id-0a0069d9-d0da-49aa-a171-5fede30a754a",
+      "target": "id-b625211a-d45f-48e0-b444-d825179ccdae",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-597a6d67-d86f-4396-8b54-67e686aeb930",
+      "source": "id-b625211a-d45f-48e0-b444-d825179ccdae",
+      "target": "id-95d09649-5a7f-49a5-8220-f914051e4a52",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-72e538b2-63f2-430c-b51a-8049c283cc79",
+      "source": "id-95d09649-5a7f-49a5-8220-f914051e4a52",
+      "target": "id-2ddad46a-befc-4ddf-9054-57c4d5940886",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-759f1e13-4f98-4820-9d06-7e1ad7d044d5",
+      "source": "id-2ddad46a-befc-4ddf-9054-57c4d5940886",
+      "target": "id-b3475dab-facb-4077-9124-9fde8751d2b0",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-4deab5a6-0bc6-4484-a664-2eb3bdd484e3",
+      "source": "id-b3475dab-facb-4077-9124-9fde8751d2b0",
+      "target": "id-b856f1b2-65a4-4e8f-9972-d8ed37cd39ca",
+      "condition": "yes",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-3b361775-e493-4e7b-8ea5-4249d30bcd59",
+      "source": "id-b3475dab-facb-4077-9124-9fde8751d2b0",
+      "target": "id-37f29b9b-66e2-4370-bc04-44db6161b9d3",
+      "condition": "no",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-a884acd9-facc-4491-834a-881ab35db5cc",
+      "source": "id-2ddad46a-befc-4ddf-9054-57c4d5940886",
+      "target": "id-ed7995a4-30d6-4a8d-aa48-0edb0b5b64cc",
+      "condition": "yes",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-6394af08-7a67-4700-9632-ffe01f43f89a",
+      "source": "id-ed7995a4-30d6-4a8d-aa48-0edb0b5b64cc",
+      "target": "id-39decd7e-5c1c-4440-bcc2-c42a3136374f",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-c1cf237b-ad59-4407-b77e-5a9d5c9602ee",
+      "source": "id-ed7995a4-30d6-4a8d-aa48-0edb0b5b64cc",
+      "target": "id-0d164b5e-7b1e-4f9c-896c-5e98af366e49",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-8dd904c9-c1a2-4549-a442-0d307a0c0112",
+      "source": "id-0d164b5e-7b1e-4f9c-896c-5e98af366e49",
+      "target": "id-dbd5b071-0e7d-4360-af30-e5fd04580f2a",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-5ce71617-4a62-4c92-b0d9-651dc476f55d",
+      "source": "id-39decd7e-5c1c-4440-bcc2-c42a3136374f",
+      "target": "id-dbd5b071-0e7d-4360-af30-e5fd04580f2a",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-85513a9c-b05c-49e4-83b1-75d11e7d6972",
+      "source": "id-dbd5b071-0e7d-4360-af30-e5fd04580f2a",
+      "target": "id-7248be03-6d61-4867-923f-fc22c3f6527e",
+      "condition": "",
+      "processId": "Process_id-fb7cb09e-845e-48c8-8be2-eb55d4045520"
+    },
+    {
+      "id": "id-aadaaf7c-9876-4fd6-9923-26bb8698851f",
+      "source": "id-e4e68370-43bb-457a-a54f-ddb17e5f0b1d",
+      "target": "id-697c2d3c-a514-4a53-bbcd-53081b47e4b4",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-81e75ade-5d49-4f77-92fa-0c731fcd5782",
+      "source": "id-697c2d3c-a514-4a53-bbcd-53081b47e4b4",
+      "target": "id-8deb1743-3e44-4f62-919e-fff0a92733a4",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-8018c93e-7b38-4e65-a825-ff2987fa09f7",
+      "source": "id-8deb1743-3e44-4f62-919e-fff0a92733a4",
+      "target": "id-864433e7-17e8-4669-a044-79b7cf6b5e4d",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-d0826582-bf9a-4590-b42d-75302171bb74",
+      "source": "id-864433e7-17e8-4669-a044-79b7cf6b5e4d",
+      "target": "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-551667ad-63c7-48ff-82f3-a34eab6e8602",
+      "source": "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e",
+      "target": "id-1ad1bf4a-0dba-4a1d-919a-bfcf409d91f5",
+      "condition": "yes",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-ea7c7ac1-051d-47de-bf29-6ce154b1d8e9",
+      "source": "id-8deb1743-3e44-4f62-919e-fff0a92733a4",
+      "target": "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-2200f1cb-5bae-41a5-b9d9-c77a6f3cb1a5",
+      "source": "id-f6b299b1-ded6-4848-9e8f-348dc8824c8e",
+      "target": "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+      "condition": "no",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-5216275a-8aad-4560-8c02-1ea63ce5ba09",
+      "source": "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+      "target": "id-a227bc8f-414e-4f1f-8bfd-5ae014bcf70b",
+      "condition": "",
+      "processId": "Process_id-369bb9cf-d28a-4e54-9be1-d32dfa36c5ec"
+    },
+    {
+      "id": "id-907f834e-c1c1-4afe-abfb-764d11aacefe",
+      "source": "id-c2f1e73d-b055-467a-94aa-57c01ceda591",
+      "target": "id-72cd77ca-8cfb-4e2c-9c12-89acc414e60a",
+      "condition": "",
+      "processId": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f"
+    },
+    {
+      "id": "id-97040a5e-bf35-4245-ac59-5f6397e4fd10",
+      "source": "id-72cd77ca-8cfb-4e2c-9c12-89acc414e60a",
+      "target": "id-3541f4d0-09f6-42de-ae27-59613581ec6e",
+      "condition": "",
+      "processId": "Process_id-d48c21e3-9430-4dd7-9583-6973335ff37f"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "id-a150dc7a-2607-4f38-8dab-daae132eed65",
+      "sourceRef": "id-8644b3c7-b3dd-494c-abf4-4a64cfa2e175",
+      "targetRef": "id-c2f1e73d-b055-467a-94aa-57c01ceda591",
+      "name": ""
+    }
+  ],
+  "stateSchema": {
+    "open_position_completed": false,
+    "retrieve_applications_completed": false,
+    "pre_select_candidates_for_interview_completed": false,
+    "select_candidate_for_offer_completed": false,
+    "prepare_offer_completed": false,
+    "get_candidate_reply_completed": false,
+    "publish_completed": false,
+    "distribute_on_job_boards_completed": false,
+    "advertise_on_social_media_completed": false,
+    "send_offer_to_candidate_completed": false,
+    "congratulate_new_hre_completed": false,
+    "interview_pre_selected_candidates_completed": false,
+    "informe_other_candidates_completed": false,
+    "perform_hr_interview_completed": false,
+    "perform_manager_interview_completed": false,
+    "inform_rejection_completed": false,
+    "send_rejection_message_completed": false,
+    "candidates_selected_after_interview_process_result": "",
+    "is_offer_validated_result": "",
+    "other_candidates_selected_result": "",
+    "offer_dispatch_result": "",
+    "hr_interview_passed_result": "",
+    "manager_interview_passed_result": ""
+  }
+}

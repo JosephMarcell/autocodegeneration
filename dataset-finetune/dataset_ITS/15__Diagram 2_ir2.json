@@ -1,0 +1,273 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make member recap",
+        "value": "makememberrecap",
+        "internal": "makememberrecap"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makememberrecap": "/make-member-recap/asks-to-make-member-recap"
+    },
+    "stateSchema": {
+      "asks_to_make_member_recap_completed": false,
+      "reads_the_member_database_completed": false,
+      "select_option_completed": false,
+      "displays_form_to_make_member_recap_completed": false,
+      "displays_the_member_recap_completed": false,
+      "prints_the_recap_to_the_printer_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-member-recap/asks-to-make-member-recap",
+        "role": "makememberrecap",
+        "component": "AsksToMakeMemberRecapPage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/reads-the-member-database",
+        "role": "makememberrecap",
+        "component": "ReadsTheMemberDatabasePage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/select-option",
+        "role": "makememberrecap",
+        "component": "SelectOptionPage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/displays-form-to-make-member-recap",
+        "role": "makememberrecap",
+        "component": "DisplaysFormToMakeMemberRecapPage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/displays-the-member-recap",
+        "role": "makememberrecap",
+        "component": "DisplaysTheMemberRecapPage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/reads-the-member-database",
+        "role": "makememberrecap",
+        "component": "ReadsTheMemberDatabasePage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      },
+      {
+        "route": "/make-member-recap/prints-the-recap-to-the-printer",
+        "role": "makememberrecap",
+        "component": "PrintsTheRecapToThePrinterPage",
+        "allowedRoles": [
+          "makememberrecap"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeMemberRecap",
+      "role": "makememberrecap",
+      "defaultRoute": "/make-member-recap/asks-to-make-member-recap",
+      "tasks": [
+        {
+          "taskId": "makememberrecap-asks-to-make-member-recap",
+          "name": "AsksToMakeMemberRecap",
+          "route": "/make-member-recap/asks-to-make-member-recap",
+          "component": "AsksToMakeMemberRecapPage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Asks to make member recap.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_member_recap_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/displays-form-to-make-member-recap",
+          "ui": {
+            "title": "Asks to make member recap",
+            "hint": "Page for BPMN task 'Asks to make member recap' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makememberrecap-displays-form-to-make-member-recap",
+          "name": "DisplaysFormToMakeMemberRecap",
+          "route": "/make-member-recap/displays-form-to-make-member-recap",
+          "component": "DisplaysFormToMakeMemberRecapPage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Displays form to make member recap.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_to_make_member_recap_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/select-option",
+          "ui": {
+            "title": "Displays form to make member recap",
+            "hint": "Page for BPMN task 'Displays form to make member recap' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makememberrecap-select-option",
+          "name": "SelectOption",
+          "route": "/make-member-recap/select-option",
+          "component": "SelectOptionPage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Select option.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "select_option_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/reads-the-member-database",
+          "ui": {
+            "title": "Select option",
+            "hint": "Page for BPMN task 'Select option' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-member-recap/reads-the-member-database",
+              "condition": "ReadsTheMemberDatabase"
+            },
+            {
+              "route": "/make-member-recap/reads-the-member-database",
+              "condition": "ReadsTheMemberDatabase"
+            }
+          ]
+        },
+        {
+          "taskId": "makememberrecap-reads-the-member-database",
+          "name": "ReadsTheMemberDatabase",
+          "route": "/make-member-recap/reads-the-member-database",
+          "component": "ReadsTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Reads the member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/prints-the-recap-to-the-printer",
+          "ui": {
+            "title": "Reads the member database",
+            "hint": "Page for BPMN task 'Reads the member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makememberrecap-reads-the-member-database",
+          "name": "ReadsTheMemberDatabase",
+          "route": "/make-member-recap/reads-the-member-database",
+          "component": "ReadsTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Reads the member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/displays-the-member-recap",
+          "ui": {
+            "title": "Reads the member database",
+            "hint": "Page for BPMN task 'Reads the member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makememberrecap-prints-the-recap-to-the-printer",
+          "name": "PrintsTheRecapToThePrinter",
+          "route": "/make-member-recap/prints-the-recap-to-the-printer",
+          "component": "PrintsTheRecapToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Prints the recap to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_recap_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/complete",
+          "ui": {
+            "title": "Prints the recap to the printer",
+            "hint": "Page for BPMN task 'Prints the recap to the printer' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makememberrecap-displays-the-member-recap",
+          "name": "DisplaysTheMemberRecap",
+          "route": "/make-member-recap/displays-the-member-recap",
+          "component": "DisplaysTheMemberRecapPage",
+          "pageType": "write-navigate",
+          "description": "Make member recap: Displays the member recap.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_member_recap_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-member-recap/complete",
+          "ui": {
+            "title": "Displays the member recap",
+            "hint": "Page for BPMN task 'Displays the member recap' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

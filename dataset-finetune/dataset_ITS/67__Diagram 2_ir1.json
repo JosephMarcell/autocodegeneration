@@ -1,0 +1,490 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_b7d3b2bb-ee4b-42e7-a254-57ade079cd49"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Register referral patients",
+      "processRef": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_b7d3b2bb-ee4b-42e7-a254-57ade079cd49": "Main Process",
+    "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8": "Register referral patients"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+        "Id_c6815450-54fd-4592-9eeb-601519bfbf6e"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_082521f7-2373-493e-b116-ed46f8443646",
+        "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+        "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+        "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6",
+        "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+        "Id_9c963f34-35a8-4ab8-94a1-4defe8d8b156",
+        "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+        "Id_38ada1a8-1ff3-4a02-b155-89ffdf90d576"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "ED",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "ED",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035": "ED",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "ED",
+    "Id_082521f7-2373-493e-b116-ed46f8443646": "System",
+    "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f": "System",
+    "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486": "System",
+    "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6": "System",
+    "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1": "ED",
+    "Id_c6815450-54fd-4592-9eeb-601519bfbf6e": "ED",
+    "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea": "System",
+    "Id_9c963f34-35a8-4ab8-94a1-4defe8d8b156": "System",
+    "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01": "System",
+    "Id_38ada1a8-1ff3-4a02-b155-89ffdf90d576": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to make a referral for a patient",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the query results to a table in the form",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_cf94061a-acb9-4491-8854-252a25a8d0b4"
+      ],
+      "outgoing": [
+        "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays the patient referral register form",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enters the medical record ID",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f125d2bb-961c-4e73-adaa-4ad101c0f3f1"
+      ],
+      "outgoing": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ]
+    },
+    {
+      "id": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "name": "Searches for patient data in the Registration and Patient database",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ],
+      "outgoing": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ]
+    },
+    {
+      "id": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "name": "Includes the purpose of referral, medical information",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ],
+      "outgoing": [
+        "Id_3d426f4b-fd61-442e-9217-063f133bb38c"
+      ]
+    },
+    {
+      "id": "Id_c6815450-54fd-4592-9eeb-601519bfbf6e",
+      "name": "Selects the save button",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d426f4b-fd61-442e-9217-063f133bb38c"
+      ],
+      "outgoing": [
+        "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4"
+      ]
+    },
+    {
+      "id": "Id_9c963f34-35a8-4ab8-94a1-4defe8d8b156",
+      "name": "Saves the referral information",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c1999808-cb50-461b-9c8a-2856978469d5"
+      ],
+      "outgoing": [
+        "Id_6f917a80-aec7-46ad-acd1-351a3d748804"
+      ]
+    },
+    {
+      "id": "Id_38ada1a8-1ff3-4a02-b155-89ffdf90d576",
+      "name": "Sets all information to blank",
+      "type": "task",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2"
+      ],
+      "outgoing": [
+        "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+        "Id_fa112760-7e6b-4ea9-9662-cb1fb6418a9a"
+      ],
+      "outgoing": [
+        "Id_f125d2bb-961c-4e73-adaa-4ad101c0f3f1"
+      ]
+    },
+    {
+      "id": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ],
+      "outgoing": [
+        "Id_cf94061a-acb9-4491-8854-252a25a8d0b4",
+        "Id_08bfb140-c392-4734-b2eb-3f9c113bdead"
+      ]
+    },
+    {
+      "id": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_08bfb140-c392-4734-b2eb-3f9c113bdead",
+        "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2"
+      ],
+      "outgoing": [
+        "Id_7ee7ffca-2b55-474f-8045-185dea8dbd7f"
+      ]
+    },
+    {
+      "id": "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_7ee7ffca-2b55-474f-8045-185dea8dbd7f"
+      ],
+      "outgoing": [
+        "Id_fa112760-7e6b-4ea9-9662-cb1fb6418a9a",
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ]
+    },
+    {
+      "id": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4"
+      ],
+      "outgoing": [
+        "Id_c1999808-cb50-461b-9c8a-2856978469d5",
+        "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2",
+        "Id_8ca1d242-f1dd-434d-b41c-e8ac4d5b7f96"
+      ]
+    },
+    {
+      "id": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_6f917a80-aec7-46ad-acd1-351a3d748804",
+        "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2",
+        "Id_8ca1d242-f1dd-434d-b41c-e8ac4d5b7f96"
+      ],
+      "outgoing": [
+        "Id_ea8e3c5a-e0f0-4bb4-a66f-1383eb4bc0b1"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Register referral patients",
+      "laneName": "ED",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Register referral patients",
+      "laneName": "System",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8",
+      "incoming": [
+        "Id_ea8e3c5a-e0f0-4bb4-a66f-1383eb4bc0b1"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_f125d2bb-961c-4e73-adaa-4ad101c0f3f1",
+      "source": "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_f0187d65-c0d3-452f-be14-b5bea4169e32",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82",
+      "source": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "target": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_cf94061a-acb9-4491-8854-252a25a8d0b4",
+      "source": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "found",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_fa112760-7e6b-4ea9-9662-cb1fb6418a9a",
+      "source": "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6",
+      "target": "Id_2abd38cd-38a2-4b76-bac6-7cafb8659035",
+      "condition": "not found",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_08bfb140-c392-4734-b2eb-3f9c113bdead",
+      "source": "Id_8a71f31d-70b3-48c5-bc2c-eea96af4d56f",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_4f2d6778-d9c1-46ca-b954-d340e75bf9c2",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_7ee7ffca-2b55-474f-8045-185dea8dbd7f",
+      "source": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "target": "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_c08e6672-319b-4134-82eb-2326975e5fe8",
+      "source": "Id_3235ee2f-4189-4f3b-9d05-74b9f948cab6",
+      "target": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_3d426f4b-fd61-442e-9217-063f133bb38c",
+      "source": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "target": "Id_c6815450-54fd-4592-9eeb-601519bfbf6e",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_04bbe4a6-8b45-4d68-bb43-151921402ec4",
+      "source": "Id_c6815450-54fd-4592-9eeb-601519bfbf6e",
+      "target": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_c1999808-cb50-461b-9c8a-2856978469d5",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_9c963f34-35a8-4ab8-94a1-4defe8d8b156",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_6f917a80-aec7-46ad-acd1-351a3d748804",
+      "source": "Id_9c963f34-35a8-4ab8-94a1-4defe8d8b156",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_ea8e3c5a-e0f0-4bb4-a66f-1383eb4bc0b1",
+      "source": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_ae7255bf-a4c5-4702-8a45-2230842b8ad2",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_38ada1a8-1ff3-4a02-b155-89ffdf90d576",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_f8ccd76e-fc33-4153-8af4-1e85084a1be2",
+      "source": "Id_38ada1a8-1ff3-4a02-b155-89ffdf90d576",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    },
+    {
+      "id": "Id_8ca1d242-f1dd-434d-b41c-e8ac4d5b7f96",
+      "source": "Id_c4d65e81-c03c-4448-b16e-30e66f1889ea",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_c4957261-ee78-4f82-84ba-cf1f0061f3b8"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_make_a_referral_for_a_patient_completed": false,
+    "displays_the_query_results_to_a_table_in_the_form_completed": false,
+    "displays_the_patient_referral_register_form_completed": false,
+    "enters_the_medical_record_id_completed": false,
+    "searches_for_patient_data_in_the_registration_and_patient_database_completed": false,
+    "includes_the_purpose_of_referral_medical_information_completed": false,
+    "selects_the_save_button_completed": false,
+    "saves_the_referral_information_completed": false,
+    "sets_all_information_to_blank_completed": false
+  }
+}

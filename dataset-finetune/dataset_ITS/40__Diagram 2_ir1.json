@@ -1,0 +1,374 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_3d7b561e-218c-4eee-9b7b-4aeceabf4c0e"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Purchase order",
+      "processRef": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_3d7b561e-218c-4eee-9b7b-4aeceabf4c0e": "Main Process",
+    "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e": "Purchase order"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+        "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+        "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+        "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+        "Id_7d6817d1-c620-49a1-b257-4044ebc89969",
+        "Id_f73c1606-ff31-472f-80e3-51cb549bb542"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727": "Officer",
+    "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d": "System",
+    "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba": "System",
+    "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f": "System",
+    "Id_7d6817d1-c620-49a1-b257-4044ebc89969": "System",
+    "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71": "Officer",
+    "Id_f73c1606-ff31-472f-80e3-51cb549bb542": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to purchase order",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Displays the list of items purchased",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a34d010e-4307-4cfb-85fc-02c160eff3a9"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters purchase data",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_50024777-edbb-462f-891d-f452015620cd"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of purchase order",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_18247836-4750-43fe-a251-84046e43c3e7"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "name": "Enters the items purchased",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5cd5c032-603f-4bdf-899d-439861a82645"
+      ],
+      "outgoing": [
+        "Id_99cc928a-72ff-444d-a1f4-c76b41c58956"
+      ]
+    },
+    {
+      "id": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "name": "Save the purchase information",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2"
+      ],
+      "outgoing": [
+        "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e"
+      ]
+    },
+    {
+      "id": "Id_7d6817d1-c620-49a1-b257-4044ebc89969",
+      "name": "Queries supplier and Goods",
+      "type": "task",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_18247836-4750-43fe-a251-84046e43c3e7"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [
+        "Id_ffda571d-4812-4117-8ea4-980a7fd87fa8"
+      ],
+      "outgoing": [
+        "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2",
+        "Id_8c920055-4216-4f82-97b6-96c2c8551aae"
+      ]
+    },
+    {
+      "id": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [
+        "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e",
+        "Id_8c920055-4216-4f82-97b6-96c2c8551aae"
+      ],
+      "outgoing": [
+        "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e"
+      ]
+    },
+    {
+      "id": "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Purchase order",
+      "laneName": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+        "Id_50024777-edbb-462f-891d-f452015620cd"
+      ],
+      "outgoing": [
+        "Id_5cd5c032-603f-4bdf-899d-439861a82645"
+      ]
+    },
+    {
+      "id": "Id_f73c1606-ff31-472f-80e3-51cb549bb542",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [
+        "Id_99cc928a-72ff-444d-a1f4-c76b41c58956"
+      ],
+      "outgoing": [
+        "Id_a34d010e-4307-4cfb-85fc-02c160eff3a9",
+        "Id_ffda571d-4812-4117-8ea4-980a7fd87fa8"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Purchase order",
+      "laneName": "Officer",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Purchase order",
+      "laneName": "System",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e",
+      "incoming": [
+        "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_7d6817d1-c620-49a1-b257-4044ebc89969",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71",
+      "condition": "Go-to",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_b97d84a5-d8fb-4639-9424-1218992ba0f2",
+      "source": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "target": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "condition": "Save",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_a4cc7392-d36b-478a-b3ba-70482fd6553e",
+      "source": "Id_6899e32c-d311-45ed-a1dc-da3af1b20f6f",
+      "target": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_8c920055-4216-4f82-97b6-96c2c8551aae",
+      "source": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "target": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_a29ed3fd-331f-450d-87ea-7bee2abd2b5e",
+      "source": "Id_cea80f78-1011-4b45-b05d-4e3551dd89ba",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_18247836-4750-43fe-a251-84046e43c3e7",
+      "source": "Id_7d6817d1-c620-49a1-b257-4044ebc89969",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_50024777-edbb-462f-891d-f452015620cd",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_5cd5c032-603f-4bdf-899d-439861a82645",
+      "source": "Id_3e2dcd47-696f-42ee-b289-08431f3e4b71",
+      "target": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_a34d010e-4307-4cfb-85fc-02c160eff3a9",
+      "source": "Id_f73c1606-ff31-472f-80e3-51cb549bb542",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_99cc928a-72ff-444d-a1f4-c76b41c58956",
+      "source": "Id_8d84f1e0-cb9d-49a6-bfa8-36c3fc822727",
+      "target": "Id_f73c1606-ff31-472f-80e3-51cb549bb542",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    },
+    {
+      "id": "Id_ffda571d-4812-4117-8ea4-980a7fd87fa8",
+      "source": "Id_f73c1606-ff31-472f-80e3-51cb549bb542",
+      "target": "Id_b17bd260-3d32-48c6-a857-1bca80cfbe2d",
+      "condition": "",
+      "processId": "Id_ac8b1593-ac7c-49e6-a648-8dcb887a9b2e"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_purchase_order_completed": false,
+    "displays_the_list_of_items_purchased_completed": false,
+    "enters_purchase_data_completed": false,
+    "displays_form_of_purchase_order_completed": false,
+    "enters_the_items_purchased_completed": false,
+    "save_the_purchase_information_completed": false,
+    "queries_supplier_and_goods_completed": false
+  }
+}

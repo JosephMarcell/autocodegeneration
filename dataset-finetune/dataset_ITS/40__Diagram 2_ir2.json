@@ -1,0 +1,274 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Purchase order",
+        "value": "purchaseorder",
+        "internal": "purchaseorder"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "purchaseorder": "/purchase-order/asks-to-purchase-order"
+    },
+    "stateSchema": {
+      "asks_to_purchase_order_completed": false,
+      "displays_the_list_of_items_purchased_completed": false,
+      "enters_purchase_data_completed": false,
+      "displays_form_of_purchase_order_completed": false,
+      "enters_the_items_purchased_completed": false,
+      "save_the_purchase_information_completed": false,
+      "queries_supplier_and_goods_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/purchase-order/asks-to-purchase-order",
+        "role": "purchaseorder",
+        "component": "AsksToPurchaseOrderPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/displays-the-list-of-items-purchased",
+        "role": "purchaseorder",
+        "component": "DisplaysTheListOfItemsPurchasedPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/enters-purchase-data",
+        "role": "purchaseorder",
+        "component": "EntersPurchaseDataPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/displays-form-of-purchase-order",
+        "role": "purchaseorder",
+        "component": "DisplaysFormOfPurchaseOrderPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/enters-the-items-purchased",
+        "role": "purchaseorder",
+        "component": "EntersTheItemsPurchasedPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/save-the-purchase-information",
+        "role": "purchaseorder",
+        "component": "SaveThePurchaseInformationPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      },
+      {
+        "route": "/purchase-order/queries-supplier-and-goods",
+        "role": "purchaseorder",
+        "component": "QueriesSupplierAndGoodsPage",
+        "allowedRoles": [
+          "purchaseorder"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "PurchaseOrder",
+      "role": "purchaseorder",
+      "defaultRoute": "/purchase-order/asks-to-purchase-order",
+      "tasks": [
+        {
+          "taskId": "purchaseorder-asks-to-purchase-order",
+          "name": "AsksToPurchaseOrder",
+          "route": "/purchase-order/asks-to-purchase-order",
+          "component": "AsksToPurchaseOrderPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Asks to purchase order.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_purchase_order_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/queries-supplier-and-goods",
+          "ui": {
+            "title": "Asks to purchase order",
+            "hint": "Page for BPMN task 'Asks to purchase order' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "purchaseorder-queries-supplier-and-goods",
+          "name": "QueriesSupplierAndGoods",
+          "route": "/purchase-order/queries-supplier-and-goods",
+          "component": "QueriesSupplierAndGoodsPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Queries supplier and Goods.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_supplier_and_goods_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/displays-form-of-purchase-order",
+          "ui": {
+            "title": "Queries supplier and Goods",
+            "hint": "Page for BPMN task 'Queries supplier and Goods' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "purchaseorder-displays-form-of-purchase-order",
+          "name": "DisplaysFormOfPurchaseOrder",
+          "route": "/purchase-order/displays-form-of-purchase-order",
+          "component": "DisplaysFormOfPurchaseOrderPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Displays form of purchase order.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_purchase_order_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/enters-purchase-data",
+          "ui": {
+            "title": "Displays form of purchase order",
+            "hint": "Page for BPMN task 'Displays form of purchase order' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "purchaseorder-enters-purchase-data",
+          "name": "EntersPurchaseData",
+          "route": "/purchase-order/enters-purchase-data",
+          "component": "EntersPurchaseDataPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Enters purchase data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_purchase_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/enters-the-items-purchased",
+          "ui": {
+            "title": "Enters purchase data",
+            "hint": "Page for BPMN task 'Enters purchase data' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "purchaseorder-displays-the-list-of-items-purchased",
+          "name": "DisplaysTheListOfItemsPurchased",
+          "route": "/purchase-order/displays-the-list-of-items-purchased",
+          "component": "DisplaysTheListOfItemsPurchasedPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Displays the list of items purchased.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_list_of_items_purchased_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/enters-the-items-purchased",
+          "ui": {
+            "title": "Displays the list of items purchased",
+            "hint": "Page for BPMN task 'Displays the list of items purchased' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "purchaseorder-enters-the-items-purchased",
+          "name": "EntersTheItemsPurchased",
+          "route": "/purchase-order/enters-the-items-purchased",
+          "component": "EntersTheItemsPurchasedPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Enters the items purchased.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_items_purchased_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/displays-the-list-of-items-purchased",
+          "ui": {
+            "title": "Enters the items purchased",
+            "hint": "Page for BPMN task 'Enters the items purchased' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/purchase-order/displays-the-list-of-items-purchased",
+              "condition": "DisplaysTheListOfItemsPurchased"
+            },
+            {
+              "route": "/purchase-order/save-the-purchase-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "purchaseorder-save-the-purchase-information",
+          "name": "SaveThePurchaseInformation",
+          "route": "/purchase-order/save-the-purchase-information",
+          "component": "SaveThePurchaseInformationPage",
+          "pageType": "write-navigate",
+          "description": "Purchase order: Save the purchase information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "save_the_purchase_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/purchase-order/complete",
+          "ui": {
+            "title": "Save the purchase information",
+            "hint": "Page for BPMN task 'Save the purchase information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

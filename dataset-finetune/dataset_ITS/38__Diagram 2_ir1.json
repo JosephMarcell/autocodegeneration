@@ -1,0 +1,506 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_5509774e-7510-413b-8625-a8a3b54214ac"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Sale item",
+      "processRef": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_5509774e-7510-413b-8625-a8a3b54214ac": "Main Process",
+    "Id_a3a53f9f-702f-43fe-b328-aff52d97633b": "Sale item"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_b8d7a223-a56e-4473-a221-e86a87c903ad",
+        "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_a1d4bc75-a1cf-4978-a10a-c378e1524348",
+        "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a",
+        "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc",
+        "Id_86460445-a58d-49ba-9835-f095699484c5",
+        "Id_8a1c875f-0719-45ee-a3f3-a5d444089e16",
+        "Id_391cc57a-b38c-4cae-b7a0-a1683071bfb6",
+        "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e",
+        "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_05f84bdd-e045-4880-95fa-9d6679c00bcf"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_b8d7a223-a56e-4473-a221-e86a87c903ad": "Officer",
+    "Id_a1d4bc75-a1cf-4978-a10a-c378e1524348": "System",
+    "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a": "System",
+    "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc": "System",
+    "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16": "Officer",
+    "Id_86460445-a58d-49ba-9835-f095699484c5": "System",
+    "Id_8a1c875f-0719-45ee-a3f3-a5d444089e16": "System",
+    "Id_391cc57a-b38c-4cae-b7a0-a1683071bfb6": "System",
+    "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e": "System",
+    "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_05f84bdd-e045-4880-95fa-9d6679c00bcf": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to sale item",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries in the Goods database",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters an item code",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_78cde2ed-0ca2-437e-a975-2b20d2846681"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of  sale item",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the item name and price into the list",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_8f980f3e-4d79-4b50-9289-2f7fc90323a1"
+      ]
+    },
+    {
+      "id": "Id_b8d7a223-a56e-4473-a221-e86a87c903ad",
+      "name": "Enters buyer data",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_ae370c4d-49bb-406c-8a78-3cf84d46cb23"
+      ],
+      "outgoing": [
+        "Id_720e1033-ab16-47a2-b7d7-3f7fc64e6626"
+      ]
+    },
+    {
+      "id": "Id_a1d4bc75-a1cf-4978-a10a-c378e1524348",
+      "name": "Calculates installments",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_499f00f1-9bbf-4f5d-8661-65c5f455ef3d"
+      ],
+      "outgoing": [
+        "Id_d760809a-c31a-403a-a44d-39e7c3db039d"
+      ]
+    },
+    {
+      "id": "Id_8a1c875f-0719-45ee-a3f3-a5d444089e16",
+      "name": "Queries the Customer database",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_366d916b-dd79-4c55-b503-2ad868e116fd"
+      ],
+      "outgoing": [
+        "Id_c846734e-8684-49d2-811b-d9a2e79ae37b"
+      ]
+    },
+    {
+      "id": "Id_391cc57a-b38c-4cae-b7a0-a1683071bfb6",
+      "name": "Displays the customer information",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c846734e-8684-49d2-811b-d9a2e79ae37b"
+      ],
+      "outgoing": [
+        "Id_bd44a804-1106-4ee4-bd0a-048453075117"
+      ]
+    },
+    {
+      "id": "Id_05f84bdd-e045-4880-95fa-9d6679c00bcf",
+      "name": "Saves the sales information",
+      "type": "task",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_31d213ce-3575-4257-9b6d-f548e06c0710"
+      ],
+      "outgoing": [
+        "Id_1320a598-b42e-4b82-a290-34690cf2bf52"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_720e1033-ab16-47a2-b7d7-3f7fc64e6626"
+      ],
+      "outgoing": [
+        "Id_499f00f1-9bbf-4f5d-8661-65c5f455ef3d",
+        "Id_0b921c76-a6ad-4ac1-8bce-1bcd78c40468"
+      ]
+    },
+    {
+      "id": "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_d760809a-c31a-403a-a44d-39e7c3db039d",
+        "Id_0b921c76-a6ad-4ac1-8bce-1bcd78c40468"
+      ],
+      "outgoing": [
+        "Id_366d916b-dd79-4c55-b503-2ad868e116fd"
+      ]
+    },
+    {
+      "id": "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Sale item",
+      "laneName": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+        "Id_c6b3b113-085d-4547-97d9-761faa41c85c"
+      ],
+      "outgoing": [
+        "Id_78cde2ed-0ca2-437e-a975-2b20d2846681"
+      ]
+    },
+    {
+      "id": "Id_86460445-a58d-49ba-9835-f095699484c5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_8f980f3e-4d79-4b50-9289-2f7fc90323a1"
+      ],
+      "outgoing": [
+        "Id_c6b3b113-085d-4547-97d9-761faa41c85c",
+        "Id_ae370c4d-49bb-406c-8a78-3cf84d46cb23"
+      ]
+    },
+    {
+      "id": "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_bd44a804-1106-4ee4-bd0a-048453075117"
+      ],
+      "outgoing": [
+        "Id_31d213ce-3575-4257-9b6d-f548e06c0710",
+        "Id_ba29ad92-0c24-44c2-a49c-834ce1092ee2"
+      ]
+    },
+    {
+      "id": "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_1320a598-b42e-4b82-a290-34690cf2bf52",
+        "Id_ba29ad92-0c24-44c2-a49c-834ce1092ee2"
+      ],
+      "outgoing": [
+        "Id_231337c6-5c30-4f9d-b41a-63fa3498b250"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Sale item",
+      "laneName": "Officer",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Sale item",
+      "laneName": "System",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b",
+      "incoming": [
+        "Id_231337c6-5c30-4f9d-b41a-63fa3498b250"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_8f980f3e-4d79-4b50-9289-2f7fc90323a1",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_86460445-a58d-49ba-9835-f095699484c5",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_720e1033-ab16-47a2-b7d7-3f7fc64e6626",
+      "source": "Id_b8d7a223-a56e-4473-a221-e86a87c903ad",
+      "target": "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_499f00f1-9bbf-4f5d-8661-65c5f455ef3d",
+      "source": "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a",
+      "target": "Id_a1d4bc75-a1cf-4978-a10a-c378e1524348",
+      "condition": "Payment is credit",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_d760809a-c31a-403a-a44d-39e7c3db039d",
+      "source": "Id_a1d4bc75-a1cf-4978-a10a-c378e1524348",
+      "target": "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_0b921c76-a6ad-4ac1-8bce-1bcd78c40468",
+      "source": "Id_c80e4e06-bdd7-4031-8ef6-8635e2aa206a",
+      "target": "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_78cde2ed-0ca2-437e-a975-2b20d2846681",
+      "source": "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_c6b3b113-085d-4547-97d9-761faa41c85c",
+      "source": "Id_86460445-a58d-49ba-9835-f095699484c5",
+      "target": "Id_b9f0c218-02a3-4d53-98bb-cd561536cc16",
+      "condition": "Go-to",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_ae370c4d-49bb-406c-8a78-3cf84d46cb23",
+      "source": "Id_86460445-a58d-49ba-9835-f095699484c5",
+      "target": "Id_b8d7a223-a56e-4473-a221-e86a87c903ad",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_366d916b-dd79-4c55-b503-2ad868e116fd",
+      "source": "Id_1b208ece-9b31-4f1b-973e-77f6ecb2a5bc",
+      "target": "Id_8a1c875f-0719-45ee-a3f3-a5d444089e16",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_c846734e-8684-49d2-811b-d9a2e79ae37b",
+      "source": "Id_8a1c875f-0719-45ee-a3f3-a5d444089e16",
+      "target": "Id_391cc57a-b38c-4cae-b7a0-a1683071bfb6",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_bd44a804-1106-4ee4-bd0a-048453075117",
+      "source": "Id_391cc57a-b38c-4cae-b7a0-a1683071bfb6",
+      "target": "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_31d213ce-3575-4257-9b6d-f548e06c0710",
+      "source": "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e",
+      "target": "Id_05f84bdd-e045-4880-95fa-9d6679c00bcf",
+      "condition": "Save",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_1320a598-b42e-4b82-a290-34690cf2bf52",
+      "source": "Id_05f84bdd-e045-4880-95fa-9d6679c00bcf",
+      "target": "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_231337c6-5c30-4f9d-b41a-63fa3498b250",
+      "source": "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    },
+    {
+      "id": "Id_ba29ad92-0c24-44c2-a49c-834ce1092ee2",
+      "source": "Id_b68c2eed-ffe2-48b8-84d0-1376b909ba0e",
+      "target": "Id_f11efa69-a5b4-4712-a0a6-bdeab627bdca",
+      "condition": "",
+      "processId": "Id_a3a53f9f-702f-43fe-b328-aff52d97633b"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_sale_item_completed": false,
+    "queries_in_the_goods_database_completed": false,
+    "enters_an_item_code_completed": false,
+    "displays_form_of_sale_item_completed": false,
+    "displays_the_item_name_and_price_into_the_list_completed": false,
+    "enters_buyer_data_completed": false,
+    "calculates_installments_completed": false,
+    "queries_the_customer_database_completed": false,
+    "displays_the_customer_information_completed": false,
+    "saves_the_sales_information_completed": false
+  }
+}

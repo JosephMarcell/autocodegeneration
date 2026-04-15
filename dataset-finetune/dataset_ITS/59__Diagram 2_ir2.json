@@ -1,0 +1,276 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Down payment",
+        "value": "downpayment",
+        "internal": "downpayment"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "downpayment": "/down-payment/wants-to-make-a-down-payment-transaction"
+    },
+    "stateSchema": {
+      "wants_to_make_a_down_payment_transaction_completed": false,
+      "displays_down_payment_transaction_form_completed": false,
+      "enters_down_payment_information_completed": false,
+      "selects_a_save_button_completed": false,
+      "displays_patient_information_completed": false,
+      "searches_for_patients_by_register_number_completed": false,
+      "saves_the_down_payment_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/down-payment/wants-to-make-a-down-payment-transaction",
+        "role": "downpayment",
+        "component": "WantsToMakeADownPaymentTransactionPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/displays-down-payment-transaction-form",
+        "role": "downpayment",
+        "component": "DisplaysDownPaymentTransactionFormPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/enters-down-payment-information",
+        "role": "downpayment",
+        "component": "EntersDownPaymentInformationPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/selects-a-save-button",
+        "role": "downpayment",
+        "component": "SelectsASaveButtonPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/displays-patient-information",
+        "role": "downpayment",
+        "component": "DisplaysPatientInformationPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/searches-for-patients-by-register-number",
+        "role": "downpayment",
+        "component": "SearchesForPatientsByRegisterNumberPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      },
+      {
+        "route": "/down-payment/saves-the-down-payment-information",
+        "role": "downpayment",
+        "component": "SavesTheDownPaymentInformationPage",
+        "allowedRoles": [
+          "downpayment"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "DownPayment",
+      "role": "downpayment",
+      "defaultRoute": "/down-payment/wants-to-make-a-down-payment-transaction",
+      "tasks": [
+        {
+          "taskId": "downpayment-wants-to-make-a-down-payment-transaction",
+          "name": "WantsToMakeADownPaymentTransaction",
+          "route": "/down-payment/wants-to-make-a-down-payment-transaction",
+          "component": "WantsToMakeADownPaymentTransactionPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Wants to make a Down Payment transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_make_a_down_payment_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/displays-down-payment-transaction-form",
+          "ui": {
+            "title": "Wants to make a Down Payment transaction",
+            "hint": "Page for BPMN task 'Wants to make a Down Payment transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "downpayment-displays-down-payment-transaction-form",
+          "name": "DisplaysDownPaymentTransactionForm",
+          "route": "/down-payment/displays-down-payment-transaction-form",
+          "component": "DisplaysDownPaymentTransactionFormPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Displays Down Payment transaction form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_down_payment_transaction_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/enters-down-payment-information",
+          "ui": {
+            "title": "Displays Down Payment transaction form",
+            "hint": "Page for BPMN task 'Displays Down Payment transaction form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "downpayment-enters-down-payment-information",
+          "name": "EntersDownPaymentInformation",
+          "route": "/down-payment/enters-down-payment-information",
+          "component": "EntersDownPaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Enters Down Payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_down_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/searches-for-patients-by-register-number",
+          "ui": {
+            "title": "Enters Down Payment information",
+            "hint": "Page for BPMN task 'Enters Down Payment information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "downpayment-selects-a-save-button",
+          "name": "SelectsASaveButton",
+          "route": "/down-payment/selects-a-save-button",
+          "component": "SelectsASaveButtonPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Selects a save button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_a_save_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/saves-the-down-payment-information",
+          "ui": {
+            "title": "Selects a save button",
+            "hint": "Page for BPMN task 'Selects a save button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/down-payment/saves-the-down-payment-information",
+              "condition": "save"
+            }
+          ]
+        },
+        {
+          "taskId": "downpayment-displays-patient-information",
+          "name": "DisplaysPatientInformation",
+          "route": "/down-payment/displays-patient-information",
+          "component": "DisplaysPatientInformationPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Displays patient information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_patient_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/complete",
+          "ui": {
+            "title": "Displays patient information",
+            "hint": "Page for BPMN task 'Displays patient information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "downpayment-searches-for-patients-by-register-number",
+          "name": "SearchesForPatientsByRegisterNumber",
+          "route": "/down-payment/searches-for-patients-by-register-number",
+          "component": "SearchesForPatientsByRegisterNumberPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Searches for patients by register number.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_for_patients_by_register_number_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/displays-patient-information",
+          "ui": {
+            "title": "Searches for patients by register number",
+            "hint": "Page for BPMN task 'Searches for patients by register number' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/down-payment/displays-patient-information",
+              "condition": "found"
+            }
+          ]
+        },
+        {
+          "taskId": "downpayment-saves-the-down-payment-information",
+          "name": "SavesTheDownPaymentInformation",
+          "route": "/down-payment/saves-the-down-payment-information",
+          "component": "SavesTheDownPaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Down payment: Saves the Down Payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_down_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/down-payment/complete",
+          "ui": {
+            "title": "Saves the Down Payment information",
+            "hint": "Page for BPMN task 'Saves the Down Payment information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

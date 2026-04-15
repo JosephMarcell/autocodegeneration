@@ -1,0 +1,399 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_e757453f-a665-4049-90ac-56331da2c8be"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Makes goods return",
+      "processRef": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_e757453f-a665-4049-90ac-56331da2c8be": "Main Process",
+    "Id_cac3d008-c304-4b06-9a85-08f2e47cf067": "Makes goods return"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+        "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+        "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_8e089b88-2d0a-44ae-986f-c756247f4ac1",
+        "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Chasier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Chasier",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Chasier",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb": "Chasier",
+    "Id_bf8db104-94fe-43d9-b858-43e2e47663dd": "System",
+    "Id_6e01f2e6-ef04-43e4-8794-2410499d25be": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2": "Chasier",
+    "Id_8e089b88-2d0a-44ae-986f-c756247f4ac1": "System",
+    "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make goods return",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries for the sales note",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the sales note",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of the making goods return",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays sales note information",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ]
+    },
+    {
+      "id": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "name": "Chooses item to return",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_23fe04e4-bbdf-4168-8487-8d69bc344556"
+      ],
+      "outgoing": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ]
+    },
+    {
+      "id": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "name": "Saves the return information",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336"
+      ],
+      "outgoing": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081"
+      ]
+    },
+    {
+      "id": "Id_8e089b88-2d0a-44ae-986f-c756247f4ac1",
+      "name": "Displays the information of the returned item",
+      "type": "task",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ],
+      "outgoing": [
+        "Id_7a9fe079-ac35-4e21-81a2-8b2ee9be4a30"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [
+        "Id_04658506-3bc4-4428-867d-0229d51ee4b7"
+      ],
+      "outgoing": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ]
+    },
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ],
+      "outgoing": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ]
+    },
+    {
+      "id": "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Makes goods return",
+      "laneName": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+        "Id_a6771c80-55d5-4d99-84c2-3f3623f39a12"
+      ],
+      "outgoing": [
+        "Id_23fe04e4-bbdf-4168-8487-8d69bc344556"
+      ]
+    },
+    {
+      "id": "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [
+        "Id_7a9fe079-ac35-4e21-81a2-8b2ee9be4a30"
+      ],
+      "outgoing": [
+        "Id_a6771c80-55d5-4d99-84c2-3f3623f39a12",
+        "Id_04658506-3bc4-4428-867d-0229d51ee4b7"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Makes goods return",
+      "laneName": "Chasier",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Makes goods return",
+      "laneName": "System",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067",
+      "incoming": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+      "source": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_f5cefc12-deef-47e1-aadf-36e12d213469",
+      "source": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "target": "Id_8e089b88-2d0a-44ae-986f-c756247f4ac1",
+      "condition": "Save",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_23fe04e4-bbdf-4168-8487-8d69bc344556",
+      "source": "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2",
+      "target": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_8079de12-f9c5-424d-b001-6c147c2c793b",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_a6771c80-55d5-4d99-84c2-3f3623f39a12",
+      "source": "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af",
+      "target": "Id_97913cc5-cf8f-4fb8-9266-d11a2c4f7fa2",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_04658506-3bc4-4428-867d-0229d51ee4b7",
+      "source": "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af",
+      "target": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    },
+    {
+      "id": "Id_7a9fe079-ac35-4e21-81a2-8b2ee9be4a30",
+      "source": "Id_8e089b88-2d0a-44ae-986f-c756247f4ac1",
+      "target": "Id_13f5eb8c-0848-4c14-b9dc-2d5e6f6206af",
+      "condition": "",
+      "processId": "Id_cac3d008-c304-4b06-9a85-08f2e47cf067"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_goods_return_completed": false,
+    "queries_for_the_sales_note_completed": false,
+    "enters_the_sales_note_completed": false,
+    "displays_form_of_the_making_goods_return_completed": false,
+    "displays_sales_note_information_completed": false,
+    "chooses_item_to_return_completed": false,
+    "saves_the_return_information_completed": false,
+    "displays_the_information_of_the_returned_item_completed": false
+  }
+}

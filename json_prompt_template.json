@@ -1,0 +1,20 @@
+{
+
+  "task": "generate",
+  "description": "Generate content based on the given topic or context.",
+  "input": "<your topic, seed, or context here>",
+  "schema": {
+    "fields": [
+      {
+        "name": "string",
+        "type": "string | array | object",
+        "description": "Field name and type of generated content."
+      }
+    ]
+  },
+
+  "constraints": {
+    "output_format": "JSON",
+    "max_length": 1000
+  }
+}

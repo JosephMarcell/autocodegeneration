@@ -1,0 +1,336 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Manage User",
+        "value": "manageuser",
+        "internal": "manageuser"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "manageuser": "/manage-user/wants-to-manage-the-user"
+    },
+    "stateSchema": {
+      "wants_to_manage_the_user_completed": false,
+      "wants_to_add_a_new_user_completed": false,
+      "displays_the_user_management_form_completed": false,
+      "reads_user_information_completed": false,
+      "displays_information_about_the_user_completed": false,
+      "displays_the_add_user_form_completed": false,
+      "adds_a_new_user_completed": false,
+      "verifies_information_about_the_new_user_completed": false,
+      "stores_information_about_the_new_user_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/manage-user/wants-to-manage-the-user",
+        "role": "manageuser",
+        "component": "WantsToManageTheUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/wants-to-add-a-new-user",
+        "role": "manageuser",
+        "component": "WantsToAddANewUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/displays-the-user-management-form",
+        "role": "manageuser",
+        "component": "DisplaysTheUserManagementFormPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/reads-user-information",
+        "role": "manageuser",
+        "component": "ReadsUserInformationPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/displays-information-about-the-user",
+        "role": "manageuser",
+        "component": "DisplaysInformationAboutTheUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/displays-the-add-user-form",
+        "role": "manageuser",
+        "component": "DisplaysTheAddUserFormPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/adds-a-new-user",
+        "role": "manageuser",
+        "component": "AddsANewUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/verifies-information-about-the-new-user",
+        "role": "manageuser",
+        "component": "VerifiesInformationAboutTheNewUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      },
+      {
+        "route": "/manage-user/stores-information-about-the-new-user",
+        "role": "manageuser",
+        "component": "StoresInformationAboutTheNewUserPage",
+        "allowedRoles": [
+          "manageuser"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ManageUser",
+      "role": "manageuser",
+      "defaultRoute": "/manage-user/wants-to-manage-the-user",
+      "tasks": [
+        {
+          "taskId": "manageuser-wants-to-manage-the-user",
+          "name": "WantsToManageTheUser",
+          "route": "/manage-user/wants-to-manage-the-user",
+          "component": "WantsToManageTheUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Wants to manage the user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_manage_the_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/reads-user-information",
+          "ui": {
+            "title": "Wants to manage the user",
+            "hint": "Page for BPMN task 'Wants to manage the user' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-reads-user-information",
+          "name": "ReadsUserInformation",
+          "route": "/manage-user/reads-user-information",
+          "component": "ReadsUserInformationPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Reads user information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_user_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/displays-the-user-management-form",
+          "ui": {
+            "title": "Reads user information",
+            "hint": "Page for BPMN task 'Reads user information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-displays-the-user-management-form",
+          "name": "DisplaysTheUserManagementForm",
+          "route": "/manage-user/displays-the-user-management-form",
+          "component": "DisplaysTheUserManagementFormPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Displays the user management form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_user_management_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/displays-information-about-the-user",
+          "ui": {
+            "title": "Displays the user management form",
+            "hint": "Page for BPMN task 'Displays the user management form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-displays-information-about-the-user",
+          "name": "DisplaysInformationAboutTheUser",
+          "route": "/manage-user/displays-information-about-the-user",
+          "component": "DisplaysInformationAboutTheUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Displays information about the user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_about_the_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/wants-to-add-a-new-user",
+          "ui": {
+            "title": "Displays information about the user",
+            "hint": "Page for BPMN task 'Displays information about the user' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-wants-to-add-a-new-user",
+          "name": "WantsToAddANewUser",
+          "route": "/manage-user/wants-to-add-a-new-user",
+          "component": "WantsToAddANewUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Wants to add a new user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_add_a_new_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/displays-the-add-user-form",
+          "ui": {
+            "title": "Wants to add a new user",
+            "hint": "Page for BPMN task 'Wants to add a new user' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-displays-the-add-user-form",
+          "name": "DisplaysTheAddUserForm",
+          "route": "/manage-user/displays-the-add-user-form",
+          "component": "DisplaysTheAddUserFormPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Displays the add user form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_add_user_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/adds-a-new-user",
+          "ui": {
+            "title": "Displays the add user form",
+            "hint": "Page for BPMN task 'Displays the add user form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-adds-a-new-user",
+          "name": "AddsANewUser",
+          "route": "/manage-user/adds-a-new-user",
+          "component": "AddsANewUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Adds a new user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "adds_a_new_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/verifies-information-about-the-new-user",
+          "ui": {
+            "title": "Adds a new user",
+            "hint": "Page for BPMN task 'Adds a new user' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "manageuser-verifies-information-about-the-new-user",
+          "name": "VerifiesInformationAboutTheNewUser",
+          "route": "/manage-user/verifies-information-about-the-new-user",
+          "component": "VerifiesInformationAboutTheNewUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Verifies information about the new user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "verifies_information_about_the_new_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/stores-information-about-the-new-user",
+          "ui": {
+            "title": "Verifies information about the new user",
+            "hint": "Page for BPMN task 'Verifies information about the new user' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/manage-user/stores-information-about-the-new-user",
+              "condition": "save"
+            },
+            {
+              "route": "/manage-user/adds-a-new-user",
+              "condition": "AddsANewUser"
+            }
+          ]
+        },
+        {
+          "taskId": "manageuser-stores-information-about-the-new-user",
+          "name": "StoresInformationAboutTheNewUser",
+          "route": "/manage-user/stores-information-about-the-new-user",
+          "component": "StoresInformationAboutTheNewUserPage",
+          "pageType": "write-navigate",
+          "description": "Manage User: Stores information about the new user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_information_about_the_new_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/manage-user/complete",
+          "ui": {
+            "title": "Stores information about the new user",
+            "hint": "Page for BPMN task 'Stores information about the new user' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

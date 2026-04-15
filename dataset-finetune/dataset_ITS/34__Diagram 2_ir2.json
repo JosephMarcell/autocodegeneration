@@ -1,0 +1,460 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make customer payments",
+        "value": "makecustomerpayments",
+        "internal": "makecustomerpayments"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makecustomerpayments": "/make-customer-payments/asks-to-make-customer-payments"
+    },
+    "stateSchema": {
+      "asks_to_make_customer_payments_completed": false,
+      "queries_the_member_database_completed": false,
+      "enters_the_member_s_id_or_name_completed": false,
+      "displays_form_of_the_making_customer_payments_completed": false,
+      "displays_the_query_results_completed": false,
+      "chooses_payment_type_completed": false,
+      "displays_a_cash_payment_form_completed": false,
+      "enters_the_payment_value_completed": false,
+      "calculates_change_completed": false,
+      "displays_a_credit_payment_form_completed": false,
+      "enters_credit_information_completed": false,
+      "prints_and_saves_the_payment_information_completed": false,
+      "saves_the_payment_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-customer-payments/asks-to-make-customer-payments",
+        "role": "makecustomerpayments",
+        "component": "AsksToMakeCustomerPaymentsPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/queries-the-member-database",
+        "role": "makecustomerpayments",
+        "component": "QueriesTheMemberDatabasePage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/enters-the-members-id-or-name",
+        "role": "makecustomerpayments",
+        "component": "EntersTheMember'sIdOrNamePage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/displays-form-of-the-making-customer-payments",
+        "role": "makecustomerpayments",
+        "component": "DisplaysFormOfTheMakingCustomerPaymentsPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/displays-the-query-results",
+        "role": "makecustomerpayments",
+        "component": "DisplaysTheQueryResultsPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/chooses-payment-type",
+        "role": "makecustomerpayments",
+        "component": "ChoosesPaymentTypePage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/displays-a-cash-payment-form",
+        "role": "makecustomerpayments",
+        "component": "DisplaysACashPaymentFormPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/enters-the-payment-value",
+        "role": "makecustomerpayments",
+        "component": "EntersThePaymentValuePage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/calculates-change",
+        "role": "makecustomerpayments",
+        "component": "CalculatesChangePage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/displays-a-credit-payment-form",
+        "role": "makecustomerpayments",
+        "component": "DisplaysACreditPaymentFormPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/enters-credit-information",
+        "role": "makecustomerpayments",
+        "component": "EntersCreditInformationPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/prints-and-saves-the-payment-information",
+        "role": "makecustomerpayments",
+        "component": "PrintsAndSavesThePaymentInformationPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      },
+      {
+        "route": "/make-customer-payments/saves-the-payment-information",
+        "role": "makecustomerpayments",
+        "component": "SavesThePaymentInformationPage",
+        "allowedRoles": [
+          "makecustomerpayments"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeCustomerPayments",
+      "role": "makecustomerpayments",
+      "defaultRoute": "/make-customer-payments/asks-to-make-customer-payments",
+      "tasks": [
+        {
+          "taskId": "makecustomerpayments-asks-to-make-customer-payments",
+          "name": "AsksToMakeCustomerPayments",
+          "route": "/make-customer-payments/asks-to-make-customer-payments",
+          "component": "AsksToMakeCustomerPaymentsPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Asks to make customer payments.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_customer_payments_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/displays-form-of-the-making-customer-payments",
+          "ui": {
+            "title": "Asks to make customer payments",
+            "hint": "Page for BPMN task 'Asks to make customer payments' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-displays-form-of-the-making-customer-payments",
+          "name": "DisplaysFormOfTheMakingCustomerPayments",
+          "route": "/make-customer-payments/displays-form-of-the-making-customer-payments",
+          "component": "DisplaysFormOfTheMakingCustomerPaymentsPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Displays form of  the making customer payments.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_the_making_customer_payments_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/enters-the-members-id-or-name",
+          "ui": {
+            "title": "Displays form of  the making customer payments",
+            "hint": "Page for BPMN task 'Displays form of  the making customer payments' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-enters-the-members-id-or-name",
+          "name": "EntersTheMember'sIdOrName",
+          "route": "/make-customer-payments/enters-the-members-id-or-name",
+          "component": "EntersTheMember'sIdOrNamePage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Enters the member's ID or name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_members_id_or_name_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/queries-the-member-database",
+          "ui": {
+            "title": "Enters the member's ID or name",
+            "hint": "Page for BPMN task 'Enters the member's ID or name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-queries-the-member-database",
+          "name": "QueriesTheMemberDatabase",
+          "route": "/make-customer-payments/queries-the-member-database",
+          "component": "QueriesTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Queries the Member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/displays-the-query-results",
+          "ui": {
+            "title": "Queries the Member database",
+            "hint": "Page for BPMN task 'Queries the Member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-displays-the-query-results",
+          "name": "DisplaysTheQueryResults",
+          "route": "/make-customer-payments/displays-the-query-results",
+          "component": "DisplaysTheQueryResultsPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Displays the query results.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/chooses-payment-type",
+          "ui": {
+            "title": "Displays the query results",
+            "hint": "Page for BPMN task 'Displays the query results' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-chooses-payment-type",
+          "name": "ChoosesPaymentType",
+          "route": "/make-customer-payments/chooses-payment-type",
+          "component": "ChoosesPaymentTypePage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Chooses payment type.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_payment_type_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/displays-a-cash-payment-form",
+          "ui": {
+            "title": "Chooses payment type",
+            "hint": "Page for BPMN task 'Chooses payment type' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-customer-payments/displays-a-cash-payment-form",
+              "condition": "Cash"
+            },
+            {
+              "route": "/make-customer-payments/displays-a-credit-payment-form",
+              "condition": "Credit"
+            }
+          ]
+        },
+        {
+          "taskId": "makecustomerpayments-displays-a-cash-payment-form",
+          "name": "DisplaysACashPaymentForm",
+          "route": "/make-customer-payments/displays-a-cash-payment-form",
+          "component": "DisplaysACashPaymentFormPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Displays a cash payment form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_cash_payment_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/enters-the-payment-value",
+          "ui": {
+            "title": "Displays a cash payment form",
+            "hint": "Page for BPMN task 'Displays a cash payment form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-displays-a-credit-payment-form",
+          "name": "DisplaysACreditPaymentForm",
+          "route": "/make-customer-payments/displays-a-credit-payment-form",
+          "component": "DisplaysACreditPaymentFormPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Displays a credit payment form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_credit_payment_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/enters-credit-information",
+          "ui": {
+            "title": "Displays a credit payment form",
+            "hint": "Page for BPMN task 'Displays a credit payment form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-enters-the-payment-value",
+          "name": "EntersThePaymentValue",
+          "route": "/make-customer-payments/enters-the-payment-value",
+          "component": "EntersThePaymentValuePage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Enters the payment value.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_payment_value_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/calculates-change",
+          "ui": {
+            "title": "Enters the payment value",
+            "hint": "Page for BPMN task 'Enters the payment value' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-enters-credit-information",
+          "name": "EntersCreditInformation",
+          "route": "/make-customer-payments/enters-credit-information",
+          "component": "EntersCreditInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Enters credit information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_credit_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/complete",
+          "ui": {
+            "title": "Enters credit information",
+            "hint": "Page for BPMN task 'Enters credit information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-calculates-change",
+          "name": "CalculatesChange",
+          "route": "/make-customer-payments/calculates-change",
+          "component": "CalculatesChangePage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Calculates change.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "calculates_change_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/complete",
+          "ui": {
+            "title": "Calculates change",
+            "hint": "Page for BPMN task 'Calculates change' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-prints-and-saves-the-payment-information",
+          "name": "PrintsAndSavesThePaymentInformation",
+          "route": "/make-customer-payments/prints-and-saves-the-payment-information",
+          "component": "PrintsAndSavesThePaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Prints  and saves the payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_and_saves_the_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/complete",
+          "ui": {
+            "title": "Prints  and saves the payment information",
+            "hint": "Page for BPMN task 'Prints  and saves the payment information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makecustomerpayments-saves-the-payment-information",
+          "name": "SavesThePaymentInformation",
+          "route": "/make-customer-payments/saves-the-payment-information",
+          "component": "SavesThePaymentInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make customer payments: Saves the payment information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_payment_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-customer-payments/complete",
+          "ui": {
+            "title": "Saves the payment information",
+            "hint": "Page for BPMN task 'Saves the payment information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

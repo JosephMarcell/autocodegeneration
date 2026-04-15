@@ -1,0 +1,239 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Search for patient data information",
+        "value": "searchforpatientdatainformation",
+        "internal": "searchforpatientdatainformation"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "searchforpatientdatainformation": "/search-for-patient-data-information/wants-search-for-patient-data-information"
+    },
+    "stateSchema": {
+      "wants_search_for_patient_data_information_completed": false,
+      "enters_the_patient_s_name_completed": false,
+      "displays_the_search_for_patient_data_information_form_completed": false,
+      "queries_the_patient_database_completed": false,
+      "displays_the_query_results_to_a_table_completed": false,
+      "selects_a_search_button_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/search-for-patient-data-information/wants-search-for-patient-data-information",
+        "role": "searchforpatientdatainformation",
+        "component": "WantsSearchForPatientDataInformationPage",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      },
+      {
+        "route": "/search-for-patient-data-information/enters-the-patients-name",
+        "role": "searchforpatientdatainformation",
+        "component": "EntersThePatient'sNamePage",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      },
+      {
+        "route": "/search-for-patient-data-information/displays-the-search-for-patient-data-information-form",
+        "role": "searchforpatientdatainformation",
+        "component": "DisplaysTheSearchForPatientDataInformationFormPage",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      },
+      {
+        "route": "/search-for-patient-data-information/queries-the-patient-database",
+        "role": "searchforpatientdatainformation",
+        "component": "QueriesThePatientDatabase,Page",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      },
+      {
+        "route": "/search-for-patient-data-information/displays-the-query-results-to-a-table",
+        "role": "searchforpatientdatainformation",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      },
+      {
+        "route": "/search-for-patient-data-information/selects-a-search-button",
+        "role": "searchforpatientdatainformation",
+        "component": "SelectsASearchButtonPage",
+        "allowedRoles": [
+          "searchforpatientdatainformation"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "SearchForPatientDataInformation",
+      "role": "searchforpatientdatainformation",
+      "defaultRoute": "/search-for-patient-data-information/wants-search-for-patient-data-information",
+      "tasks": [
+        {
+          "taskId": "searchforpatientdatainformation-wants-search-for-patient-data-information",
+          "name": "WantsSearchForPatientDataInformation",
+          "route": "/search-for-patient-data-information/wants-search-for-patient-data-information",
+          "component": "WantsSearchForPatientDataInformationPage",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Wants Search for patient data information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_search_for_patient_data_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/displays-the-search-for-patient-data-information-form",
+          "ui": {
+            "title": "Wants Search for patient data information",
+            "hint": "Page for BPMN task 'Wants Search for patient data information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "searchforpatientdatainformation-displays-the-search-for-patient-data-information-form",
+          "name": "DisplaysTheSearchForPatientDataInformationForm",
+          "route": "/search-for-patient-data-information/displays-the-search-for-patient-data-information-form",
+          "component": "DisplaysTheSearchForPatientDataInformationFormPage",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Displays the Search for patient data information form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_search_for_patient_data_information_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/enters-the-patients-name",
+          "ui": {
+            "title": "Displays the Search for patient data information form",
+            "hint": "Page for BPMN task 'Displays the Search for patient data information form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "searchforpatientdatainformation-enters-the-patients-name",
+          "name": "EntersThePatient'sName",
+          "route": "/search-for-patient-data-information/enters-the-patients-name",
+          "component": "EntersThePatient'sNamePage",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Enters the patient's name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_patients_name_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/selects-a-search-button",
+          "ui": {
+            "title": "Enters the patient's name",
+            "hint": "Page for BPMN task 'Enters the patient's name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "searchforpatientdatainformation-selects-a-search-button",
+          "name": "SelectsASearchButton",
+          "route": "/search-for-patient-data-information/selects-a-search-button",
+          "component": "SelectsASearchButtonPage",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Selects a search button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_a_search_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/queries-the-patient-database",
+          "ui": {
+            "title": "Selects a search button",
+            "hint": "Page for BPMN task 'Selects a search button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/search-for-patient-data-information/queries-the-patient-database",
+              "condition": "QueriesThePatientDatabase,"
+            }
+          ]
+        },
+        {
+          "taskId": "searchforpatientdatainformation-queries-the-patient-database",
+          "name": "QueriesThePatientDatabase,",
+          "route": "/search-for-patient-data-information/queries-the-patient-database",
+          "component": "QueriesThePatientDatabase,Page",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Queries the Patient database,.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_patient_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the Patient database,",
+            "hint": "Page for BPMN task 'Queries the Patient database,' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "searchforpatientdatainformation-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/search-for-patient-data-information/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Search for patient data information: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/search-for-patient-data-information/complete",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

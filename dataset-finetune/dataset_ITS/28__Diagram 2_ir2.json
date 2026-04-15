@@ -1,0 +1,394 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a new member loan",
+        "value": "makeanewmemberloan",
+        "internal": "makeanewmemberloan"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makeanewmemberloan": "/make-a-new-member-loan/asks-to-make-a-new-member-loan"
+    },
+    "stateSchema": {
+      "asks_to_make_a_new_member_loan_completed": false,
+      "displays_a_form_of_member_search_completed": false,
+      "saves_the_new_borrowing_information_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "enters_the_work_unit_and_id_name_completed": false,
+      "queries_the_member_work_unit_database_completed": false,
+      "displays_the_list_of_members_completed": false,
+      "selects_one_of_the_members_completed": false,
+      "displays_a_new_loan_form_completed": false,
+      "enters_new_loan_information_completed": false,
+      "save_member_status_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-new-member-loan/asks-to-make-a-new-member-loan",
+        "role": "makeanewmemberloan",
+        "component": "AsksToMakeANewMemberLoanPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/displays-a-form-of-member-search",
+        "role": "makeanewmemberloan",
+        "component": "DisplaysAFormOfMemberSearchPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/saves-the-new-borrowing-information",
+        "role": "makeanewmemberloan",
+        "component": "SavesTheNewBorrowingInformationPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/reads-the-work-unit-database",
+        "role": "makeanewmemberloan",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/enters-the-work-unit-and-idname",
+        "role": "makeanewmemberloan",
+        "component": "EntersTheWorkUnitAndId/namePage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/queries-the-member-work-unit-database",
+        "role": "makeanewmemberloan",
+        "component": "QueriesTheMember&WorkUnitDatabasePage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/displays-the-list-of-members",
+        "role": "makeanewmemberloan",
+        "component": "DisplaysTheListOfMembersPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/selects-one-of-the-members",
+        "role": "makeanewmemberloan",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/displays-a-new-loan-form",
+        "role": "makeanewmemberloan",
+        "component": "DisplaysANewLoanFormPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/enters-new-loan-information",
+        "role": "makeanewmemberloan",
+        "component": "EntersNewLoanInformationPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      },
+      {
+        "route": "/make-a-new-member-loan/save-member-status",
+        "role": "makeanewmemberloan",
+        "component": "SaveMemberStatusPage",
+        "allowedRoles": [
+          "makeanewmemberloan"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeANewMemberLoan",
+      "role": "makeanewmemberloan",
+      "defaultRoute": "/make-a-new-member-loan/asks-to-make-a-new-member-loan",
+      "tasks": [
+        {
+          "taskId": "makeanewmemberloan-asks-to-make-a-new-member-loan",
+          "name": "AsksToMakeANewMemberLoan",
+          "route": "/make-a-new-member-loan/asks-to-make-a-new-member-loan",
+          "component": "AsksToMakeANewMemberLoanPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Asks to make a new member loan.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_new_member_loan_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a new member loan",
+            "hint": "Page for BPMN task 'Asks to make a new member loan' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-new-member-loan/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/displays-a-form-of-member-search",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-displays-a-form-of-member-search",
+          "name": "DisplaysAFormOfMemberSearch",
+          "route": "/make-a-new-member-loan/displays-a-form-of-member-search",
+          "component": "DisplaysAFormOfMemberSearchPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Displays a form of member search.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_of_member_search_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/enters-the-work-unit-and-idname",
+          "ui": {
+            "title": "Displays a form of member search",
+            "hint": "Page for BPMN task 'Displays a form of member search' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-enters-the-work-unit-and-idname",
+          "name": "EntersTheWorkUnitAndId/name",
+          "route": "/make-a-new-member-loan/enters-the-work-unit-and-idname",
+          "component": "EntersTheWorkUnitAndId/namePage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Enters the work unit and ID/Name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_work_unit_and_idname_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/queries-the-member-work-unit-database",
+          "ui": {
+            "title": "Enters the work unit and ID/Name",
+            "hint": "Page for BPMN task 'Enters the work unit and ID/Name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-queries-the-member-work-unit-database",
+          "name": "QueriesTheMember&WorkUnitDatabase",
+          "route": "/make-a-new-member-loan/queries-the-member-work-unit-database",
+          "component": "QueriesTheMember&WorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Queries the Member & Work Unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_member_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/displays-the-list-of-members",
+          "ui": {
+            "title": "Queries the Member & Work Unit database",
+            "hint": "Page for BPMN task 'Queries the Member & Work Unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-displays-the-list-of-members",
+          "name": "DisplaysTheListOfMembers",
+          "route": "/make-a-new-member-loan/displays-the-list-of-members",
+          "component": "DisplaysTheListOfMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Displays the list of members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_list_of_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/selects-one-of-the-members",
+          "ui": {
+            "title": "Displays the list of members",
+            "hint": "Page for BPMN task 'Displays the list of members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/make-a-new-member-loan/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/displays-a-new-loan-form",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-displays-a-new-loan-form",
+          "name": "DisplaysANewLoanForm",
+          "route": "/make-a-new-member-loan/displays-a-new-loan-form",
+          "component": "DisplaysANewLoanFormPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Displays a new loan form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_new_loan_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/enters-new-loan-information",
+          "ui": {
+            "title": "Displays a new loan form",
+            "hint": "Page for BPMN task 'Displays a new loan form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-enters-new-loan-information",
+          "name": "EntersNewLoanInformation",
+          "route": "/make-a-new-member-loan/enters-new-loan-information",
+          "component": "EntersNewLoanInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Enters new loan information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_new_loan_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/saves-the-new-borrowing-information",
+          "ui": {
+            "title": "Enters new loan information",
+            "hint": "Page for BPMN task 'Enters new loan information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-new-member-loan/saves-the-new-borrowing-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "makeanewmemberloan-saves-the-new-borrowing-information",
+          "name": "SavesTheNewBorrowingInformation",
+          "route": "/make-a-new-member-loan/saves-the-new-borrowing-information",
+          "component": "SavesTheNewBorrowingInformationPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Saves the new borrowing information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_new_borrowing_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/save-member-status",
+          "ui": {
+            "title": "Saves the new borrowing information",
+            "hint": "Page for BPMN task 'Saves the new borrowing information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makeanewmemberloan-save-member-status",
+          "name": "SaveMemberStatus",
+          "route": "/make-a-new-member-loan/save-member-status",
+          "component": "SaveMemberStatusPage",
+          "pageType": "write-navigate",
+          "description": "Make a new member loan: Save member status.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "save_member_status_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-new-member-loan/complete",
+          "ui": {
+            "title": "Save member status",
+            "hint": "Page for BPMN task 'Save member status' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

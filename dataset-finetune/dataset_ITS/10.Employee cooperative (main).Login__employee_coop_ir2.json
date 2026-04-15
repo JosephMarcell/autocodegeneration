@@ -1,0 +1,243 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Login",
+        "value": "login",
+        "internal": "login"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "login": "/login/request-to-login"
+    },
+    "stateSchema": {
+      "request_to_login_completed": false,
+      "enters_username_and_password_completed": false,
+      "verifies_the_username_and_password_completed": false,
+      "display_a_login_form_completed": false,
+      "display_the_main_menu_completed": false,
+      "confirm_to_the_user_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/login/request-to-login",
+        "role": "login",
+        "component": "RequestToLoginPage",
+        "allowedRoles": [
+          "login"
+        ]
+      },
+      {
+        "route": "/login/enters-username-and-password",
+        "role": "login",
+        "component": "EntersUsernameAndPasswordPage",
+        "allowedRoles": [
+          "login"
+        ]
+      },
+      {
+        "route": "/login/verifies-the-username-and-password",
+        "role": "login",
+        "component": "VerifiesTheUsernameAndPasswordPage",
+        "allowedRoles": [
+          "login"
+        ]
+      },
+      {
+        "route": "/login/display-a-login-form",
+        "role": "login",
+        "component": "DisplayALoginFormPage",
+        "allowedRoles": [
+          "login"
+        ]
+      },
+      {
+        "route": "/login/display-the-main-menu",
+        "role": "login",
+        "component": "DisplayTheMainMenuPage",
+        "allowedRoles": [
+          "login"
+        ]
+      },
+      {
+        "route": "/login/confirm-to-the-user",
+        "role": "login",
+        "component": "ConfirmToTheUserPage",
+        "allowedRoles": [
+          "login"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "Login",
+      "role": "login",
+      "defaultRoute": "/login/request-to-login",
+      "tasks": [
+        {
+          "taskId": "login-request-to-login",
+          "name": "RequestToLogin",
+          "route": "/login/request-to-login",
+          "component": "RequestToLoginPage",
+          "pageType": "write-navigate",
+          "description": "Login: Request to login.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "request_to_login_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/display-a-login-form",
+          "ui": {
+            "title": "Request to login",
+            "hint": "Page for BPMN task 'Request to login' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "login-display-a-login-form",
+          "name": "DisplayALoginForm",
+          "route": "/login/display-a-login-form",
+          "component": "DisplayALoginFormPage",
+          "pageType": "write-navigate",
+          "description": "Login: Display a login form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_a_login_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/enters-username-and-password",
+          "ui": {
+            "title": "Display a login form",
+            "hint": "Page for BPMN task 'Display a login form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "login-enters-username-and-password",
+          "name": "EntersUsernameAndPassword",
+          "route": "/login/enters-username-and-password",
+          "component": "EntersUsernameAndPasswordPage",
+          "pageType": "write-navigate",
+          "description": "Login: Enters username and password.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_username_and_password_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/verifies-the-username-and-password",
+          "ui": {
+            "title": "Enters username and password",
+            "hint": "Page for BPMN task 'Enters username and password' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "login-verifies-the-username-and-password",
+          "name": "VerifiesTheUsernameAndPassword",
+          "route": "/login/verifies-the-username-and-password",
+          "component": "VerifiesTheUsernameAndPasswordPage",
+          "pageType": "write-navigate",
+          "description": "Login: Verifies the username and password.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "verifies_the_username_and_password_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/display-the-main-menu",
+          "ui": {
+            "title": "Verifies the username and password",
+            "hint": "Page for BPMN task 'Verifies the username and password' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/login/display-the-main-menu",
+              "condition": "Valid"
+            },
+            {
+              "route": "/login/confirm-to-the-user",
+              "condition": "ConfirmToTheUser"
+            }
+          ]
+        },
+        {
+          "taskId": "login-display-the-main-menu",
+          "name": "DisplayTheMainMenu",
+          "route": "/login/display-the-main-menu",
+          "component": "DisplayTheMainMenuPage",
+          "pageType": "write-navigate",
+          "description": "Login: Display the main menu.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "display_the_main_menu_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/complete",
+          "ui": {
+            "title": "Display the main menu",
+            "hint": "Page for BPMN task 'Display the main menu' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "login-confirm-to-the-user",
+          "name": "ConfirmToTheUser",
+          "route": "/login/confirm-to-the-user",
+          "component": "ConfirmToTheUserPage",
+          "pageType": "write-navigate",
+          "description": "Login: Confirm to the user.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "confirm_to_the_user_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/login/complete",
+          "ui": {
+            "title": "Confirm to the user",
+            "hint": "Page for BPMN task 'Confirm to the user' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make new rack",
+        "value": "makenewrack",
+        "internal": "makenewrack"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makenewrack": "/make-new-rack/asks-to-make-new-rack"
+    },
+    "stateSchema": {
+      "asks_to_make_new_rack_completed": false,
+      "saves_the_new_rack_completed": false,
+      "enters_a_new_rack_completed": false,
+      "displays_form_of_make_new_rack_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-new-rack/asks-to-make-new-rack",
+        "role": "makenewrack",
+        "component": "AsksToMakeNewRackPage",
+        "allowedRoles": [
+          "makenewrack"
+        ]
+      },
+      {
+        "route": "/make-new-rack/saves-the-new-rack",
+        "role": "makenewrack",
+        "component": "SavesTheNewRackPage",
+        "allowedRoles": [
+          "makenewrack"
+        ]
+      },
+      {
+        "route": "/make-new-rack/enters-a-new-rack",
+        "role": "makenewrack",
+        "component": "EntersANewRackPage",
+        "allowedRoles": [
+          "makenewrack"
+        ]
+      },
+      {
+        "route": "/make-new-rack/displays-form-of-make-new-rack",
+        "role": "makenewrack",
+        "component": "DisplaysFormOfMakeNewRackPage",
+        "allowedRoles": [
+          "makenewrack"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeNewRack",
+      "role": "makenewrack",
+      "defaultRoute": "/make-new-rack/asks-to-make-new-rack",
+      "tasks": [
+        {
+          "taskId": "makenewrack-asks-to-make-new-rack",
+          "name": "AsksToMakeNewRack",
+          "route": "/make-new-rack/asks-to-make-new-rack",
+          "component": "AsksToMakeNewRackPage",
+          "pageType": "write-navigate",
+          "description": "Make new rack: Asks to make new rack.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_new_rack_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-rack/displays-form-of-make-new-rack",
+          "ui": {
+            "title": "Asks to make new rack",
+            "hint": "Page for BPMN task 'Asks to make new rack' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewrack-displays-form-of-make-new-rack",
+          "name": "DisplaysFormOfMakeNewRack",
+          "route": "/make-new-rack/displays-form-of-make-new-rack",
+          "component": "DisplaysFormOfMakeNewRackPage",
+          "pageType": "write-navigate",
+          "description": "Make new rack: Displays form of  make new rack.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_make_new_rack_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-rack/enters-a-new-rack",
+          "ui": {
+            "title": "Displays form of  make new rack",
+            "hint": "Page for BPMN task 'Displays form of  make new rack' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makenewrack-enters-a-new-rack",
+          "name": "EntersANewRack",
+          "route": "/make-new-rack/enters-a-new-rack",
+          "component": "EntersANewRackPage",
+          "pageType": "write-navigate",
+          "description": "Make new rack: Enters a new rack.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_a_new_rack_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-rack/saves-the-new-rack",
+          "ui": {
+            "title": "Enters a new rack",
+            "hint": "Page for BPMN task 'Enters a new rack' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-new-rack/saves-the-new-rack",
+              "condition": "Add"
+            }
+          ]
+        },
+        {
+          "taskId": "makenewrack-saves-the-new-rack",
+          "name": "SavesTheNewRack",
+          "route": "/make-new-rack/saves-the-new-rack",
+          "component": "SavesTheNewRackPage",
+          "pageType": "write-navigate",
+          "description": "Make new rack: Saves the new rack.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_new_rack_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-new-rack/complete",
+          "ui": {
+            "title": "Saves the new rack",
+            "hint": "Page for BPMN task 'Saves the new rack' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_baa9986b-6fa8-4ccd-b0ac-5c67561ba562"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a loan repayment (SIPA unit)",
+      "processRef": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_baa9986b-6fa8-4ccd-b0ac-5c67561ba562": "Main Process",
+    "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890": "Make a loan repayment (SIPA unit)"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+        "Id_772ba644-9a62-422e-90f8-3b1599349136"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+        "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+        "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1",
+        "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+        "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+        "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Officer",
+    "Id_604a8497-d2c1-437f-83a2-5252921a1cf8": "System",
+    "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742": "System",
+    "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1": "System",
+    "Id_772ba644-9a62-422e-90f8-3b1599349136": "Officer",
+    "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516": "System",
+    "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42": "System",
+    "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a loan repayment",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a loan repayment form",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Searches for the remaining loan in the Loan",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_83b489e9-f068-4b68-9199-3b6557461b25"
+      ],
+      "outgoing": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Enters the member ID",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ]
+    },
+    {
+      "id": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "name": "Displays member information",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14"
+      ],
+      "outgoing": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21"
+      ]
+    },
+    {
+      "id": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "name": "Looks for the member ID in the Member database",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f"
+      ],
+      "outgoing": [
+        "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6"
+      ]
+    },
+    {
+      "id": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "name": "Enters the pay rate",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_9b53100b-777d-4f50-9eeb-a85017707239"
+      ],
+      "outgoing": [
+        "Id_6cb8bf7c-1163-4d3a-a062-535b797d0bb2"
+      ]
+    },
+    {
+      "id": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "name": "Stores the repayment information",
+      "type": "task",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_2023bb26-5d2e-438d-9180-cea265cf99dd"
+      ],
+      "outgoing": [
+        "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7"
+      ],
+      "outgoing": [
+        "Id_9b53100b-777d-4f50-9eeb-a85017707239"
+      ]
+    },
+    {
+      "id": "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [
+        "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6"
+      ],
+      "outgoing": [
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+        "Id_83b489e9-f068-4b68-9199-3b6557461b25"
+      ]
+    },
+    {
+      "id": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [
+        "Id_6cb8bf7c-1163-4d3a-a062-535b797d0bb2"
+      ],
+      "outgoing": [
+        "Id_2023bb26-5d2e-438d-9180-cea265cf99dd",
+        "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae"
+      ]
+    },
+    {
+      "id": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [
+        "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae",
+        "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe"
+      ],
+      "outgoing": [
+        "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "Officer",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a loan repayment (SIPA unit)",
+      "laneName": "System",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890",
+      "incoming": [
+        "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+      "source": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+      "source": "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_f3cf8c2f-665a-40d0-8c68-06bafdb5de7f",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_0c1f4b3b-f4cc-4f95-9103-8fff966b9c14",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_604a8497-d2c1-437f-83a2-5252921a1cf8",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_b2668f90-5413-43a7-9beb-e42d63a8bba6",
+      "source": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "target": "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_83b489e9-f068-4b68-9199-3b6557461b25",
+      "source": "Id_16d18a58-887a-4118-8393-0ecf8de9f5e1",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "Found",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_9b53100b-777d-4f50-9eeb-a85017707239",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_6cb8bf7c-1163-4d3a-a062-535b797d0bb2",
+      "source": "Id_772ba644-9a62-422e-90f8-3b1599349136",
+      "target": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_2023bb26-5d2e-438d-9180-cea265cf99dd",
+      "source": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "target": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "condition": "Save",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_a2743c8a-9a4b-4d48-9cd4-a46b70379aae",
+      "source": "Id_69d3f939-d13d-4662-9b57-7e4db8b6f516",
+      "target": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_8bbc4652-b4ef-4c36-aa75-d7f7856a09fe",
+      "source": "Id_7ffc5242-f7ac-441a-9468-eb321cb07f42",
+      "target": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    },
+    {
+      "id": "Id_58512613-3b1b-4fb8-869b-8c497f3f6b2f",
+      "source": "Id_8e6ef7bb-6170-4546-a80a-6c269e8283e1",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_d67e5fc7-514a-4450-a797-ccedcc7ae890"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_loan_repayment_completed": false,
+    "displays_a_loan_repayment_form_completed": false,
+    "searches_for_the_remaining_loan_in_the_loan_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "enters_the_member_id_completed": false,
+    "displays_member_information_completed": false,
+    "looks_for_the_member_id_in_the_member_database_completed": false,
+    "enters_the_pay_rate_completed": false,
+    "stores_the_repayment_information_completed": false
+  }
+}

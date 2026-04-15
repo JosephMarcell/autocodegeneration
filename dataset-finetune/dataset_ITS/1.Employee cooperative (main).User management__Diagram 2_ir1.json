@@ -1,0 +1,424 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_eb8f4a7f-367a-452a-b1cd-6ef83b39807a"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Manage User",
+      "processRef": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_eb8f4a7f-367a-452a-b1cd-6ef83b39807a": "Main Process",
+    "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a": "Manage User"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_de36ca9c-1ff3-4662-b4d6-4a6affd2a861",
+        "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68",
+        "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "flowNodeRefs": [
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+        "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c",
+        "Id_4ed49f5d-2377-4252-b567-e8dfddffd765",
+        "Id_9b8a136f-cadd-4def-adad-377b80b517f5"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Adminstrator",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Adminstrator",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "Adminstrator",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "System",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_de36ca9c-1ff3-4662-b4d6-4a6affd2a861": "Adminstrator",
+    "Id_28177b60-9fdb-4316-ab00-0e0c0b955153": "System",
+    "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c": "System",
+    "Id_4ed49f5d-2377-4252-b567-e8dfddffd765": "System",
+    "Id_9b8a136f-cadd-4def-adad-377b80b517f5": "System",
+    "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68": "Adminstrator",
+    "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56": "Adminstrator"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to manage the user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Wants to add a new user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ],
+      "outgoing": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Displays the user management form",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Reads user information",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "name": "Displays information about the user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Displays the add user form",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ],
+      "outgoing": [
+        "Id_3d4d0543-4a81-43c9-accf-61e99f35b913"
+      ]
+    },
+    {
+      "id": "Id_de36ca9c-1ff3-4662-b4d6-4a6affd2a861",
+      "name": "Adds a new user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7e00976d-a696-4f7f-a56d-cbf5a0138ceb"
+      ],
+      "outgoing": [
+        "Id_96a58b32-c0ff-418b-87c0-3dda8544dda0"
+      ]
+    },
+    {
+      "id": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "name": "Verifies information about the new user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_96a58b32-c0ff-418b-87c0-3dda8544dda0"
+      ],
+      "outgoing": [
+        "Id_97681133-d18b-450e-b6db-06485c7098c3"
+      ]
+    },
+    {
+      "id": "Id_4ed49f5d-2377-4252-b567-e8dfddffd765",
+      "name": "Stores information about the new user",
+      "type": "task",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_57ceabdd-6537-4b33-9564-0258c3665ffe"
+      ],
+      "outgoing": [
+        "Id_1092605d-40c4-4592-a638-df183225b9e8"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [
+        "Id_806b72cc-05ab-4c14-a227-1ec912e6d02b"
+      ],
+      "outgoing": [
+        "Id_57ceabdd-6537-4b33-9564-0258c3665ffe",
+        "Id_e3e9f3eb-9e5c-441d-ae09-e2eb8c1c0bcc"
+      ]
+    },
+    {
+      "id": "Id_9b8a136f-cadd-4def-adad-377b80b517f5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [
+        "Id_e3e9f3eb-9e5c-441d-ae09-e2eb8c1c0bcc",
+        "Id_1092605d-40c4-4592-a638-df183225b9e8"
+      ],
+      "outgoing": [
+        "Id_6902f747-66ff-4a51-8a10-3096cd53ebeb"
+      ]
+    },
+    {
+      "id": "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [
+        "Id_3d4d0543-4a81-43c9-accf-61e99f35b913",
+        "Id_c336eef7-1243-4e40-bc77-c22acccc7d8a"
+      ],
+      "outgoing": [
+        "Id_7e00976d-a696-4f7f-a56d-cbf5a0138ceb"
+      ]
+    },
+    {
+      "id": "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [
+        "Id_97681133-d18b-450e-b6db-06485c7098c3"
+      ],
+      "outgoing": [
+        "Id_806b72cc-05ab-4c14-a227-1ec912e6d02b",
+        "Id_c336eef7-1243-4e40-bc77-c22acccc7d8a"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Manage User",
+      "laneName": "Adminstrator",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Manage User",
+      "laneName": "System",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a",
+      "incoming": [
+        "Id_6902f747-66ff-4a51-8a10-3096cd53ebeb"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb",
+      "source": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_3d4d0543-4a81-43c9-accf-61e99f35b913",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_96a58b32-c0ff-418b-87c0-3dda8544dda0",
+      "source": "Id_de36ca9c-1ff3-4662-b4d6-4a6affd2a861",
+      "target": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_97681133-d18b-450e-b6db-06485c7098c3",
+      "source": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "target": "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_57ceabdd-6537-4b33-9564-0258c3665ffe",
+      "source": "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c",
+      "target": "Id_4ed49f5d-2377-4252-b567-e8dfddffd765",
+      "condition": "save",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_e3e9f3eb-9e5c-441d-ae09-e2eb8c1c0bcc",
+      "source": "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c",
+      "target": "Id_9b8a136f-cadd-4def-adad-377b80b517f5",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_1092605d-40c4-4592-a638-df183225b9e8",
+      "source": "Id_4ed49f5d-2377-4252-b567-e8dfddffd765",
+      "target": "Id_9b8a136f-cadd-4def-adad-377b80b517f5",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_6902f747-66ff-4a51-8a10-3096cd53ebeb",
+      "source": "Id_9b8a136f-cadd-4def-adad-377b80b517f5",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_7e00976d-a696-4f7f-a56d-cbf5a0138ceb",
+      "source": "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68",
+      "target": "Id_de36ca9c-1ff3-4662-b4d6-4a6affd2a861",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_806b72cc-05ab-4c14-a227-1ec912e6d02b",
+      "source": "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56",
+      "target": "Id_e9326784-e1ec-40e0-bd85-4130d06b9a3c",
+      "condition": "",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    },
+    {
+      "id": "Id_c336eef7-1243-4e40-bc77-c22acccc7d8a",
+      "source": "Id_e49e59b6-d4ec-42dd-9f7a-97338d9d7f56",
+      "target": "Id_aeb95ab1-2147-4e43-a5ce-8007eaa77a68",
+      "condition": "not valid",
+      "processId": "Id_b314a15b-b6ff-4b20-b9a5-e79c706b696a"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_manage_the_user_completed": false,
+    "wants_to_add_a_new_user_completed": false,
+    "displays_the_user_management_form_completed": false,
+    "reads_user_information_completed": false,
+    "displays_information_about_the_user_completed": false,
+    "displays_the_add_user_form_completed": false,
+    "adds_a_new_user_completed": false,
+    "verifies_information_about_the_new_user_completed": false,
+    "stores_information_about_the_new_user_completed": false
+  }
+}

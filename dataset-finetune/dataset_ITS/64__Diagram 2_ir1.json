@@ -1,0 +1,433 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_7b12a72c-bf21-4fca-854e-1e774192d91d"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "View emergency room action reports",
+      "processRef": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_7b12a72c-bf21-4fca-854e-1e774192d91d": "Main Process",
+    "Id_ada785d0-6562-41c1-8e74-90784e18b36c": "View emergency room action reports"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+        "Id_6ca283da-c642-4d6d-950c-8c3afdc9982d"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_082521f7-2373-493e-b116-ed46f8443646",
+        "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+        "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+        "Id_182f3051-6a79-4bd7-9d43-5f909cabb42d",
+        "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+        "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+        "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "ED",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "ED",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "ED",
+    "Id_082521f7-2373-493e-b116-ed46f8443646": "System",
+    "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486": "System",
+    "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1": "ED",
+    "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01": "System",
+    "Id_182f3051-6a79-4bd7-9d43-5f909cabb42d": "System",
+    "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a": "System",
+    "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28": "System",
+    "Id_6ca283da-c642-4d6d-950c-8c3afdc9982d": "ED",
+    "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to create View emergency room action report",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the query result",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ],
+      "outgoing": [
+        "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays the View emergency room action reports form",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Includes the start date, end date, and category",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ]
+    },
+    {
+      "id": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "name": "Queries the IGD Actions database",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_1d39392b-14c7-460e-84d5-7d1827cb6d2b"
+      ],
+      "outgoing": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ]
+    },
+    {
+      "id": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "name": "Selects the print button",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ],
+      "outgoing": [
+        "Id_33bdaef2-8037-400f-94d4-f3442d72976b"
+      ]
+    },
+    {
+      "id": "Id_182f3051-6a79-4bd7-9d43-5f909cabb42d",
+      "name": "Prints the query result to the printer",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_cca96b80-d49c-4c48-82e0-f1efd3fd039b"
+      ],
+      "outgoing": [
+        "Id_61daccd3-523d-456a-b0d8-b6ac71f212b9"
+      ]
+    },
+    {
+      "id": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "name": "Prints the query result to an excel file",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_81eecd7b-168f-419e-8652-1531c752eb4e"
+      ],
+      "outgoing": [
+        "Id_2d078315-4fb9-468d-8a9a-60317c381b1a"
+      ]
+    },
+    {
+      "id": "Id_6ca283da-c642-4d6d-950c-8c3afdc9982d",
+      "name": "Selects the search button",
+      "type": "task",
+      "participantName": "View emergency room action reports",
+      "laneName": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_f0187d65-c0d3-452f-be14-b5bea4169e32"
+      ],
+      "outgoing": [
+        "Id_496ae28d-e74d-4116-9154-8e33c2844f8d"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [
+        "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f",
+        "Id_80b53e5f-ccec-47f0-9da7-75217ab34a80"
+      ],
+      "outgoing": [
+        "Id_c08e6672-319b-4134-82eb-2326975e5fe8"
+      ]
+    },
+    {
+      "id": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [
+        "Id_33bdaef2-8037-400f-94d4-f3442d72976b"
+      ],
+      "outgoing": [
+        "Id_81eecd7b-168f-419e-8652-1531c752eb4e",
+        "Id_cca96b80-d49c-4c48-82e0-f1efd3fd039b",
+        "Id_5f2c3676-20b8-4438-87fd-63bab2f9a197"
+      ]
+    },
+    {
+      "id": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [
+        "Id_2d078315-4fb9-468d-8a9a-60317c381b1a",
+        "Id_61daccd3-523d-456a-b0d8-b6ac71f212b9",
+        "Id_5f2c3676-20b8-4438-87fd-63bab2f9a197"
+      ],
+      "outgoing": [
+        "Id_95548a50-85c1-43f5-9ee0-9ecb51e5c9bd"
+      ]
+    },
+    {
+      "id": "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [
+        "Id_496ae28d-e74d-4116-9154-8e33c2844f8d"
+      ],
+      "outgoing": [
+        "Id_1d39392b-14c7-460e-84d5-7d1827cb6d2b",
+        "Id_80b53e5f-ccec-47f0-9da7-75217ab34a80"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "View emergency room action reports",
+      "laneName": "ED",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "View emergency room action reports",
+      "laneName": "System",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c",
+      "incoming": [
+        "Id_95548a50-85c1-43f5-9ee0-9ecb51e5c9bd"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_f0187d65-c0d3-452f-be14-b5bea4169e32",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_6ca283da-c642-4d6d-950c-8c3afdc9982d",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82",
+      "source": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_c08e6672-319b-4134-82eb-2326975e5fe8",
+      "source": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "target": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_6fae4968-7019-4f99-a5b1-44dc55cb3d4f",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_81eecd7b-168f-419e-8652-1531c752eb4e",
+      "source": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "target": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_2d078315-4fb9-468d-8a9a-60317c381b1a",
+      "source": "Id_b2834f10-e7c5-4c97-92b1-ed0e4758ef8a",
+      "target": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_496ae28d-e74d-4116-9154-8e33c2844f8d",
+      "source": "Id_6ca283da-c642-4d6d-950c-8c3afdc9982d",
+      "target": "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_1d39392b-14c7-460e-84d5-7d1827cb6d2b",
+      "source": "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570",
+      "target": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "condition": "Search",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_80b53e5f-ccec-47f0-9da7-75217ab34a80",
+      "source": "Id_8869ce96-203d-46c9-80f1-d6c7d5cfe570",
+      "target": "Id_7bcfb632-b79c-4c0f-b3d7-4da10fd0b486",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_33bdaef2-8037-400f-94d4-f3442d72976b",
+      "source": "Id_778fd50a-2f20-4db3-9a8b-ea705dc632c1",
+      "target": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_cca96b80-d49c-4c48-82e0-f1efd3fd039b",
+      "source": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "target": "Id_182f3051-6a79-4bd7-9d43-5f909cabb42d",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_61daccd3-523d-456a-b0d8-b6ac71f212b9",
+      "source": "Id_182f3051-6a79-4bd7-9d43-5f909cabb42d",
+      "target": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_5f2c3676-20b8-4438-87fd-63bab2f9a197",
+      "source": "Id_6fe753e9-ea2f-4694-a19f-d7585b540d01",
+      "target": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    },
+    {
+      "id": "Id_95548a50-85c1-43f5-9ee0-9ecb51e5c9bd",
+      "source": "Id_0b5b77be-75b0-45a9-bd17-b1997420ce28",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_ada785d0-6562-41c1-8e74-90784e18b36c"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_create_view_emergency_room_action_report_completed": false,
+    "displays_the_query_result_completed": false,
+    "displays_the_view_emergency_room_action_reports_form_completed": false,
+    "includes_the_start_date_end_date_and_category_completed": false,
+    "queries_the_igd_actions_database_completed": false,
+    "selects_the_print_button_completed": false,
+    "prints_the_query_result_to_the_printer_completed": false,
+    "prints_the_query_result_to_an_excel_file_completed": false,
+    "selects_the_search_button_completed": false
+  }
+}

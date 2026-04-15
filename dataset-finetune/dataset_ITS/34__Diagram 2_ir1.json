@@ -1,0 +1,542 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_4ecc4c47-d199-483b-906b-d29a90c54eb5"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make customer payments",
+      "processRef": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_4ecc4c47-d199-483b-906b-d29a90c54eb5": "Main Process",
+    "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815": "Make customer payments"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+        "Id_22969b9e-a84f-4b39-9a95-15e157a58d4e",
+        "Id_1c5d716a-6c7d-4aaf-b426-eb39d6eaa963"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_e3da4594-b31d-4b45-955a-add2770d4fc0",
+        "Id_afcc5899-7b81-4063-a779-4bff26ed51ae",
+        "Id_a6a23e77-75d6-447f-9bf7-38862c15ccb3",
+        "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+        "Id_0759c59e-f7ef-448d-882a-db1ea9aafe20",
+        "Id_85a99f97-4a5a-49fa-9bb0-70af0e3a1018",
+        "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Cashier",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb": "Cashier",
+    "Id_bf8db104-94fe-43d9-b858-43e2e47663dd": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_e3da4594-b31d-4b45-955a-add2770d4fc0": "System",
+    "Id_22969b9e-a84f-4b39-9a95-15e157a58d4e": "Cashier",
+    "Id_afcc5899-7b81-4063-a779-4bff26ed51ae": "System",
+    "Id_a6a23e77-75d6-447f-9bf7-38862c15ccb3": "System",
+    "Id_1c5d716a-6c7d-4aaf-b426-eb39d6eaa963": "Cashier",
+    "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f": "System",
+    "Id_0759c59e-f7ef-448d-882a-db1ea9aafe20": "System",
+    "Id_85a99f97-4a5a-49fa-9bb0-70af0e3a1018": "System",
+    "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make customer payments",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries the Member database",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the member's ID or name",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of  the making customer payments",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the query results",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ]
+    },
+    {
+      "id": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "name": "Chooses payment type",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_d5cac669-4b45-45f7-9157-887cb3103371"
+      ],
+      "outgoing": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ]
+    },
+    {
+      "id": "Id_e3da4594-b31d-4b45-955a-add2770d4fc0",
+      "name": "Displays a cash payment form",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a42bae54-b24a-4965-b828-5da99a834ee0"
+      ],
+      "outgoing": [
+        "Id_0f5e98e0-17e1-4e48-af95-b73de7a266c9"
+      ]
+    },
+    {
+      "id": "Id_22969b9e-a84f-4b39-9a95-15e157a58d4e",
+      "name": "Enters the payment value",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0f5e98e0-17e1-4e48-af95-b73de7a266c9"
+      ],
+      "outgoing": [
+        "Id_eaec6519-56c3-4dc6-b22c-ea2fba9f6d04"
+      ]
+    },
+    {
+      "id": "Id_afcc5899-7b81-4063-a779-4bff26ed51ae",
+      "name": "Calculates change",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_eaec6519-56c3-4dc6-b22c-ea2fba9f6d04"
+      ],
+      "outgoing": [
+        "Id_5f248875-c91e-42d8-8c0d-f3dc43c401d0"
+      ]
+    },
+    {
+      "id": "Id_a6a23e77-75d6-447f-9bf7-38862c15ccb3",
+      "name": "Displays a credit payment form",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_d0c2f921-3d65-42af-9c45-d7084fe28ccc"
+      ],
+      "outgoing": [
+        "Id_801f98f6-5bb5-42d7-a731-bdc0eed8101b"
+      ]
+    },
+    {
+      "id": "Id_1c5d716a-6c7d-4aaf-b426-eb39d6eaa963",
+      "name": "Enters credit information",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_801f98f6-5bb5-42d7-a731-bdc0eed8101b"
+      ],
+      "outgoing": [
+        "Id_8ab6a937-64f9-49d0-a006-5943c7d7bfa2"
+      ]
+    },
+    {
+      "id": "Id_0759c59e-f7ef-448d-882a-db1ea9aafe20",
+      "name": "Prints  and saves the payment information",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8e9d55a3-94c6-46b4-8f99-d57be3588964"
+      ],
+      "outgoing": [
+        "Id_d70c614d-339f-4ddc-84f6-68d740922461"
+      ]
+    },
+    {
+      "id": "Id_85a99f97-4a5a-49fa-9bb0-70af0e3a1018",
+      "name": "Saves the payment information",
+      "type": "task",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_db074e20-cd77-4ee7-a6c8-9509ada3ef71"
+      ],
+      "outgoing": [
+        "Id_ee3132f7-918a-4d5d-abff-935b99d5cbb1"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [
+        "Id_f5cefc12-deef-47e1-aadf-36e12d213469"
+      ],
+      "outgoing": [
+        "Id_a42bae54-b24a-4965-b828-5da99a834ee0",
+        "Id_d0c2f921-3d65-42af-9c45-d7084fe28ccc",
+        "Id_6c21f220-2727-4934-87a7-41a34afe05eb"
+      ]
+    },
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [
+        "Id_6c21f220-2727-4934-87a7-41a34afe05eb",
+        "Id_8ab6a937-64f9-49d0-a006-5943c7d7bfa2",
+        "Id_5f248875-c91e-42d8-8c0d-f3dc43c401d0"
+      ],
+      "outgoing": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ]
+    },
+    {
+      "id": "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [
+        "Id_8079de12-f9c5-424d-b001-6c147c2c793b"
+      ],
+      "outgoing": [
+        "Id_8e9d55a3-94c6-46b4-8f99-d57be3588964",
+        "Id_db074e20-cd77-4ee7-a6c8-9509ada3ef71",
+        "Id_b82827e7-13c1-4f35-aecb-0b1c44ab20a6"
+      ]
+    },
+    {
+      "id": "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [
+        "Id_d70c614d-339f-4ddc-84f6-68d740922461",
+        "Id_ee3132f7-918a-4d5d-abff-935b99d5cbb1",
+        "Id_b82827e7-13c1-4f35-aecb-0b1c44ab20a6"
+      ],
+      "outgoing": [
+        "Id_deeeaaf5-5210-4a09-9c71-df4cc87ed31d"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make customer payments",
+      "laneName": "Cashier",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make customer payments",
+      "laneName": "System",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815",
+      "incoming": [
+        "Id_deeeaaf5-5210-4a09-9c71-df4cc87ed31d"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_771aa8c0-ca33-45b5-bef3-ab327a913db3",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_f5cefc12-deef-47e1-aadf-36e12d213469",
+      "source": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "target": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_8079de12-f9c5-424d-b001-6c147c2c793b",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_d5cac669-4b45-45f7-9157-887cb3103371",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_9bb7d1b0-116b-4a78-a1f3-6a5a161d06fb",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_a42bae54-b24a-4965-b828-5da99a834ee0",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e3da4594-b31d-4b45-955a-add2770d4fc0",
+      "condition": "Cash",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_0f5e98e0-17e1-4e48-af95-b73de7a266c9",
+      "source": "Id_e3da4594-b31d-4b45-955a-add2770d4fc0",
+      "target": "Id_22969b9e-a84f-4b39-9a95-15e157a58d4e",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_eaec6519-56c3-4dc6-b22c-ea2fba9f6d04",
+      "source": "Id_22969b9e-a84f-4b39-9a95-15e157a58d4e",
+      "target": "Id_afcc5899-7b81-4063-a779-4bff26ed51ae",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_d0c2f921-3d65-42af-9c45-d7084fe28ccc",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_a6a23e77-75d6-447f-9bf7-38862c15ccb3",
+      "condition": "Credit",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_801f98f6-5bb5-42d7-a731-bdc0eed8101b",
+      "source": "Id_a6a23e77-75d6-447f-9bf7-38862c15ccb3",
+      "target": "Id_1c5d716a-6c7d-4aaf-b426-eb39d6eaa963",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_6c21f220-2727-4934-87a7-41a34afe05eb",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_8ab6a937-64f9-49d0-a006-5943c7d7bfa2",
+      "source": "Id_1c5d716a-6c7d-4aaf-b426-eb39d6eaa963",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_5f248875-c91e-42d8-8c0d-f3dc43c401d0",
+      "source": "Id_afcc5899-7b81-4063-a779-4bff26ed51ae",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_8e9d55a3-94c6-46b4-8f99-d57be3588964",
+      "source": "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+      "target": "Id_0759c59e-f7ef-448d-882a-db1ea9aafe20",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_db074e20-cd77-4ee7-a6c8-9509ada3ef71",
+      "source": "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+      "target": "Id_85a99f97-4a5a-49fa-9bb0-70af0e3a1018",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_deeeaaf5-5210-4a09-9c71-df4cc87ed31d",
+      "source": "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_d70c614d-339f-4ddc-84f6-68d740922461",
+      "source": "Id_0759c59e-f7ef-448d-882a-db1ea9aafe20",
+      "target": "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_ee3132f7-918a-4d5d-abff-935b99d5cbb1",
+      "source": "Id_85a99f97-4a5a-49fa-9bb0-70af0e3a1018",
+      "target": "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    },
+    {
+      "id": "Id_b82827e7-13c1-4f35-aecb-0b1c44ab20a6",
+      "source": "Id_b6ed470a-af01-4a0c-ad0d-254c8f62150f",
+      "target": "Id_d7b6f535-15a8-498e-9c57-f946d81b1feb",
+      "condition": "",
+      "processId": "Id_a247a61f-8c4e-49d9-b087-f3bb800c7815"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_customer_payments_completed": false,
+    "queries_the_member_database_completed": false,
+    "enters_the_member_s_id_or_name_completed": false,
+    "displays_form_of_the_making_customer_payments_completed": false,
+    "displays_the_query_results_completed": false,
+    "chooses_payment_type_completed": false,
+    "displays_a_cash_payment_form_completed": false,
+    "enters_the_payment_value_completed": false,
+    "calculates_change_completed": false,
+    "displays_a_credit_payment_form_completed": false,
+    "enters_credit_information_completed": false,
+    "prints_and_saves_the_payment_information_completed": false,
+    "saves_the_payment_information_completed": false
+  }
+}

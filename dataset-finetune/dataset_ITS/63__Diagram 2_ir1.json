@@ -1,0 +1,342 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_225967ba-fac0-4829-8897-ef3f4c4084d6"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Updates Patient Information",
+      "processRef": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_225967ba-fac0-4829-8897-ef3f4c4084d6": "Main Process",
+    "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4": "Updates Patient Information"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+        "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+        "Id_e024b86e-10e6-46f3-891a-4cf17601323b"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+        "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+        "Id_082521f7-2373-493e-b116-ed46f8443646",
+        "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+        "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+        "Id_7a3f28d2-8c48-4551-9672-ee6753bda510"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "ED",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "ED",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646": "System",
+    "Id_b210868a-cf5c-4157-b86e-b21d426d3851": "System",
+    "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde": "ED",
+    "Id_082521f7-2373-493e-b116-ed46f8443646": "System",
+    "Id_d7a120da-02a8-4de0-b984-e63dd5cda792": "ED",
+    "Id_e024b86e-10e6-46f3-891a-4cf17601323b": "ED",
+    "Id_259b95ad-426d-4d16-8f7b-6371212aaf57": "System",
+    "Id_ccb484c1-0a50-4c27-be4e-ac809400520e": "System",
+    "Id_7a3f28d2-8c48-4551-9672-ee6753bda510": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to Update Patient Information",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the query result",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ],
+      "outgoing": [
+        "Id_316cee39-5efc-410c-b1eb-afa879cdfaa5"
+      ]
+    },
+    {
+      "id": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "name": "Displays form of Updates Patient Information",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ]
+    },
+    {
+      "id": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "name": "Enters the medical record ID number",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e"
+      ],
+      "outgoing": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ]
+    },
+    {
+      "id": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "name": "Queries database",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e"
+      ],
+      "outgoing": [
+        "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82"
+      ]
+    },
+    {
+      "id": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "name": "Enter an update information",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_316cee39-5efc-410c-b1eb-afa879cdfaa5"
+      ],
+      "outgoing": [
+        "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f"
+      ]
+    },
+    {
+      "id": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "name": "Select  an update button",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f"
+      ],
+      "outgoing": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ]
+    },
+    {
+      "id": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "name": "Saves the Patient information",
+      "type": "task",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_43f5c04e-075e-4220-9295-d43d3b5d64db"
+      ],
+      "outgoing": [
+        "Id_4073648d-1456-40f1-847c-8cc97a261566"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "incoming": [
+        "Id_3d1beec5-cff3-4443-bdcf-5426c230101a"
+      ],
+      "outgoing": [
+        "Id_43f5c04e-075e-4220-9295-d43d3b5d64db",
+        "Id_320f95a9-0342-4016-abc5-df9cf0e487ce"
+      ]
+    },
+    {
+      "id": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "incoming": [
+        "Id_4073648d-1456-40f1-847c-8cc97a261566",
+        "Id_320f95a9-0342-4016-abc5-df9cf0e487ce"
+      ],
+      "outgoing": [
+        "Id_a0852cc5-b4ac-4aa9-b699-2d95bcbc575c"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Updates Patient Information",
+      "laneName": "ED",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Updates Patient Information",
+      "laneName": "System",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4",
+      "incoming": [
+        "Id_a0852cc5-b4ac-4aa9-b699-2d95bcbc575c"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_739f5192-fc11-40f2-ac80-85fe8c9b451e",
+      "source": "Id_baf5345e-3bb0-4235-bb5f-c58fa8217646",
+      "target": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_14e6c8c4-2f0b-4f12-9e4b-62e572470b82",
+      "source": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_e29daf31-62e9-443d-8ee5-d3f44a4dae8e",
+      "source": "Id_0a7a1082-affb-4bc8-bfb1-91f073d72dde",
+      "target": "Id_082521f7-2373-493e-b116-ed46f8443646",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_316cee39-5efc-410c-b1eb-afa879cdfaa5",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_bbeaf349-a5eb-41e0-a925-68f6b8de574f",
+      "source": "Id_d7a120da-02a8-4de0-b984-e63dd5cda792",
+      "target": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_3d1beec5-cff3-4443-bdcf-5426c230101a",
+      "source": "Id_e024b86e-10e6-46f3-891a-4cf17601323b",
+      "target": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_43f5c04e-075e-4220-9295-d43d3b5d64db",
+      "source": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "target": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_4073648d-1456-40f1-847c-8cc97a261566",
+      "source": "Id_259b95ad-426d-4d16-8f7b-6371212aaf57",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_a0852cc5-b4ac-4aa9-b699-2d95bcbc575c",
+      "source": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "target": "Id_b210868a-cf5c-4157-b86e-b21d426d3851",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    },
+    {
+      "id": "Id_320f95a9-0342-4016-abc5-df9cf0e487ce",
+      "source": "Id_ccb484c1-0a50-4c27-be4e-ac809400520e",
+      "target": "Id_7a3f28d2-8c48-4551-9672-ee6753bda510",
+      "condition": "",
+      "processId": "Id_d7f5b370-9795-48a2-b20f-ac97cbe211a4"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_update_patient_information_completed": false,
+    "displays_the_query_result_completed": false,
+    "displays_form_of_updates_patient_information_completed": false,
+    "enters_the_medical_record_id_number_completed": false,
+    "queries_database_completed": false,
+    "enter_an_update_information_completed": false,
+    "select_an_update_button_completed": false,
+    "saves_the_patient_information_completed": false
+  }
+}

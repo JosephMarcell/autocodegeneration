@@ -1,0 +1,562 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "General patient cashier",
+        "value": "generalpatientcashier",
+        "internal": "generalpatientcashier"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "generalpatientcashier": "/general-patient-cashier/wants-to-make-a-general-patient-payment"
+    },
+    "stateSchema": {
+      "wants_to_make_a_general_patient_payment_completed": false,
+      "displays_a_general_patient_payment_form_completed": false,
+      "enter_the_medical_record_id_completed": false,
+      "enters_the_transaction_code_transaction_type_quantity_completed": false,
+      "displays_the_query_results_completed": false,
+      "reads_the_patient_and_registration_database_completed": false,
+      "displays_it_to_the_table_completed": false,
+      "chooses_the_type_of_payment_completed": false,
+      "reads_the_transaction_master_database_completed": false,
+      "adds_it_to_the_list_completed": false,
+      "displays_the_price_completed": false,
+      "selects_an_add_button_completed": false,
+      "selects_a_save_button_completed": false,
+      "saves_the_transaction_completed": false,
+      "prints_the_transaction_to_the_printer_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/general-patient-cashier/wants-to-make-a-general-patient-payment",
+        "role": "generalpatientcashier",
+        "component": "WantsToMakeAGeneralPatientPaymentPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/displays-a-general-patient-payment-form",
+        "role": "generalpatientcashier",
+        "component": "DisplaysAGeneralPatientPaymentFormPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/enter-the-medical-record-id",
+        "role": "generalpatientcashier",
+        "component": "EnterTheMedicalRecordIdPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/enters-the-transaction-code-transaction-type-quantity",
+        "role": "generalpatientcashier",
+        "component": "EntersTheTransactionCode,TransactionType,QuantityPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/displays-the-query-results",
+        "role": "generalpatientcashier",
+        "component": "DisplaysTheQueryResultsPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/reads-the-patient-and-registration-database",
+        "role": "generalpatientcashier",
+        "component": "ReadsThePatientAndRegistrationDatabasePage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/displays-it-to-the-table",
+        "role": "generalpatientcashier",
+        "component": "DisplaysItToTheTablePage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/chooses-the-type-of-payment",
+        "role": "generalpatientcashier",
+        "component": "ChoosesTheTypeOfPaymentPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/reads-the-transaction-master-database",
+        "role": "generalpatientcashier",
+        "component": "ReadsTheTransactionMasterDatabasePage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/adds-it-to-the-list",
+        "role": "generalpatientcashier",
+        "component": "AddsItToTheListPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/displays-the-price",
+        "role": "generalpatientcashier",
+        "component": "DisplaysThePricePage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/selects-an-add-button",
+        "role": "generalpatientcashier",
+        "component": "SelectsAnAddButtonPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/selects-a-save-button",
+        "role": "generalpatientcashier",
+        "component": "SelectsASaveButtonPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/saves-the-transaction",
+        "role": "generalpatientcashier",
+        "component": "SavesTheTransactionPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/saves-the-transaction",
+        "role": "generalpatientcashier",
+        "component": "SavesTheTransactionPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      },
+      {
+        "route": "/general-patient-cashier/prints-the-transaction-to-the-printer",
+        "role": "generalpatientcashier",
+        "component": "PrintsTheTransactionToThePrinterPage",
+        "allowedRoles": [
+          "generalpatientcashier"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "GeneralPatientCashier",
+      "role": "generalpatientcashier",
+      "defaultRoute": "/general-patient-cashier/wants-to-make-a-general-patient-payment",
+      "tasks": [
+        {
+          "taskId": "generalpatientcashier-wants-to-make-a-general-patient-payment",
+          "name": "WantsToMakeAGeneralPatientPayment",
+          "route": "/general-patient-cashier/wants-to-make-a-general-patient-payment",
+          "component": "WantsToMakeAGeneralPatientPaymentPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Wants to make a general patient payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_make_a_general_patient_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/displays-a-general-patient-payment-form",
+          "ui": {
+            "title": "Wants to make a general patient payment",
+            "hint": "Page for BPMN task 'Wants to make a general patient payment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-displays-a-general-patient-payment-form",
+          "name": "DisplaysAGeneralPatientPaymentForm",
+          "route": "/general-patient-cashier/displays-a-general-patient-payment-form",
+          "component": "DisplaysAGeneralPatientPaymentFormPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Displays a general patient payment  form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_general_patient_payment_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/enter-the-medical-record-id",
+          "ui": {
+            "title": "Displays a general patient payment  form",
+            "hint": "Page for BPMN task 'Displays a general patient payment  form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-enter-the-medical-record-id",
+          "name": "EnterTheMedicalRecordId",
+          "route": "/general-patient-cashier/enter-the-medical-record-id",
+          "component": "EnterTheMedicalRecordIdPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Enter the medical record ID.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enter_the_medical_record_id_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/reads-the-patient-and-registration-database",
+          "ui": {
+            "title": "Enter the medical record ID",
+            "hint": "Page for BPMN task 'Enter the medical record ID' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-reads-the-patient-and-registration-database",
+          "name": "ReadsThePatientAndRegistrationDatabase",
+          "route": "/general-patient-cashier/reads-the-patient-and-registration-database",
+          "component": "ReadsThePatientAndRegistrationDatabasePage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Reads the Patient and Registration Database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_patient_and_registration_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/displays-the-query-results",
+          "ui": {
+            "title": "Reads the Patient and Registration Database",
+            "hint": "Page for BPMN task 'Reads the Patient and Registration Database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-displays-the-query-results",
+          "name": "DisplaysTheQueryResults",
+          "route": "/general-patient-cashier/displays-the-query-results",
+          "component": "DisplaysTheQueryResultsPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Displays the query results.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/chooses-the-type-of-payment",
+          "ui": {
+            "title": "Displays the query results",
+            "hint": "Page for BPMN task 'Displays the query results' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-chooses-the-type-of-payment",
+          "name": "ChoosesTheTypeOfPayment",
+          "route": "/general-patient-cashier/chooses-the-type-of-payment",
+          "component": "ChoosesTheTypeOfPaymentPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Chooses the type of payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_the_type_of_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/reads-the-transaction-master-database",
+          "ui": {
+            "title": "Chooses the type of payment",
+            "hint": "Page for BPMN task 'Chooses the type of payment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-reads-the-transaction-master-database",
+          "name": "ReadsTheTransactionMasterDatabase",
+          "route": "/general-patient-cashier/reads-the-transaction-master-database",
+          "component": "ReadsTheTransactionMasterDatabasePage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Reads the Transaction Master database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_transaction_master_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/enters-the-transaction-code-transaction-type-quantity",
+          "ui": {
+            "title": "Reads the Transaction Master database",
+            "hint": "Page for BPMN task 'Reads the Transaction Master database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-enters-the-transaction-code-transaction-type-quantity",
+          "name": "EntersTheTransactionCode,TransactionType,Quantity",
+          "route": "/general-patient-cashier/enters-the-transaction-code-transaction-type-quantity",
+          "component": "EntersTheTransactionCode,TransactionType,QuantityPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Enters the transaction code, transaction type, quantity.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_transaction_code_transaction_type_quantity_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/displays-the-price",
+          "ui": {
+            "title": "Enters the transaction code, transaction type, quantity",
+            "hint": "Page for BPMN task 'Enters the transaction code, transaction type, quantity' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-displays-it-to-the-table",
+          "name": "DisplaysItToTheTable",
+          "route": "/general-patient-cashier/displays-it-to-the-table",
+          "component": "DisplaysItToTheTablePage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Displays it to the table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_it_to_the_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/selects-an-add-button",
+          "ui": {
+            "title": "Displays it to the table",
+            "hint": "Page for BPMN task 'Displays it to the table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-adds-it-to-the-list",
+          "name": "AddsItToTheList",
+          "route": "/general-patient-cashier/adds-it-to-the-list",
+          "component": "AddsItToTheListPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Adds it to the list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "adds_it_to_the_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/displays-it-to-the-table",
+          "ui": {
+            "title": "Adds it to the list",
+            "hint": "Page for BPMN task 'Adds it to the list' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-displays-the-price",
+          "name": "DisplaysThePrice",
+          "route": "/general-patient-cashier/displays-the-price",
+          "component": "DisplaysThePricePage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Displays the price.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_price_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/adds-it-to-the-list",
+          "ui": {
+            "title": "Displays the price",
+            "hint": "Page for BPMN task 'Displays the price' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-selects-an-add-button",
+          "name": "SelectsAnAddButton",
+          "route": "/general-patient-cashier/selects-an-add-button",
+          "component": "SelectsAnAddButtonPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Selects an add button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_an_add_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/selects-a-save-button",
+          "ui": {
+            "title": "Selects an add button",
+            "hint": "Page for BPMN task 'Selects an add button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-patient-cashier/selects-a-save-button",
+              "condition": "SelectsASaveButton"
+            },
+            {
+              "route": "/general-patient-cashier/enters-the-transaction-code-transaction-type-quantity",
+              "condition": "EntersTheTransactionCode,TransactionType,Quantity"
+            }
+          ]
+        },
+        {
+          "taskId": "generalpatientcashier-selects-a-save-button",
+          "name": "SelectsASaveButton",
+          "route": "/general-patient-cashier/selects-a-save-button",
+          "component": "SelectsASaveButtonPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Selects a save button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_a_save_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/saves-the-transaction",
+          "ui": {
+            "title": "Selects a save button",
+            "hint": "Page for BPMN task 'Selects a save button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/general-patient-cashier/saves-the-transaction",
+              "condition": "SavesTheTransaction"
+            },
+            {
+              "route": "/general-patient-cashier/saves-the-transaction",
+              "condition": "SavesTheTransaction"
+            }
+          ]
+        },
+        {
+          "taskId": "generalpatientcashier-saves-the-transaction",
+          "name": "SavesTheTransaction",
+          "route": "/general-patient-cashier/saves-the-transaction",
+          "component": "SavesTheTransactionPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Saves the Transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/complete",
+          "ui": {
+            "title": "Saves the Transaction",
+            "hint": "Page for BPMN task 'Saves the Transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-saves-the-transaction",
+          "name": "SavesTheTransaction",
+          "route": "/general-patient-cashier/saves-the-transaction",
+          "component": "SavesTheTransactionPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Saves the Transaction.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_transaction_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/prints-the-transaction-to-the-printer",
+          "ui": {
+            "title": "Saves the Transaction",
+            "hint": "Page for BPMN task 'Saves the Transaction' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "generalpatientcashier-prints-the-transaction-to-the-printer",
+          "name": "PrintsTheTransactionToThePrinter",
+          "route": "/general-patient-cashier/prints-the-transaction-to-the-printer",
+          "component": "PrintsTheTransactionToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "General patient cashier: Prints the transaction to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_transaction_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/general-patient-cashier/complete",
+          "ui": {
+            "title": "Prints the transaction to the printer",
+            "hint": "Page for BPMN task 'Prints the transaction to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

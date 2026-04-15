@@ -1,0 +1,300 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make monthly reports",
+        "value": "makemonthlyreports",
+        "internal": "makemonthlyreports"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makemonthlyreports": "/make-monthly-reports/asks-to-make-monthly-reports"
+    },
+    "stateSchema": {
+      "asks_to_make_monthly_reports_completed": false,
+      "queries_the_sales_database_completed": false,
+      "selects_sales_list_completed": false,
+      "displays_form_of_the_making_monthly_reports_completed": false,
+      "displays_the_query_results_to_a_table_completed": false,
+      "prints_the_sales_of_the_month_completed": false,
+      "queries_the_sales_and_goods_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-monthly-reports/asks-to-make-monthly-reports",
+        "role": "makemonthlyreports",
+        "component": "AsksToMakeMonthlyReportsPage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/queries-the-sales-database",
+        "role": "makemonthlyreports",
+        "component": "QueriesTheSalesDatabasePage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/selects-sales-list",
+        "role": "makemonthlyreports",
+        "component": "Selects\"salesList\",Page",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/displays-form-of-the-making-monthly-reports",
+        "role": "makemonthlyreports",
+        "component": "DisplaysFormOfTheMakingMonthlyReportsPage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/displays-the-query-results-to-a-table",
+        "role": "makemonthlyreports",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/prints-the-sales-of-the-month",
+        "role": "makemonthlyreports",
+        "component": "PrintsTheSalesOfTheMonthPage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/queries-the-sales-and-goods",
+        "role": "makemonthlyreports",
+        "component": "QueriesTheSalesAndGoodsPage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      },
+      {
+        "route": "/make-monthly-reports/displays-the-query-results-to-a-table",
+        "role": "makemonthlyreports",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "makemonthlyreports"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeMonthlyReports",
+      "role": "makemonthlyreports",
+      "defaultRoute": "/make-monthly-reports/asks-to-make-monthly-reports",
+      "tasks": [
+        {
+          "taskId": "makemonthlyreports-asks-to-make-monthly-reports",
+          "name": "AsksToMakeMonthlyReports",
+          "route": "/make-monthly-reports/asks-to-make-monthly-reports",
+          "component": "AsksToMakeMonthlyReportsPage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Asks to make monthly reports.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_monthly_reports_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/displays-form-of-the-making-monthly-reports",
+          "ui": {
+            "title": "Asks to make monthly reports",
+            "hint": "Page for BPMN task 'Asks to make monthly reports' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-displays-form-of-the-making-monthly-reports",
+          "name": "DisplaysFormOfTheMakingMonthlyReports",
+          "route": "/make-monthly-reports/displays-form-of-the-making-monthly-reports",
+          "component": "DisplaysFormOfTheMakingMonthlyReportsPage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Displays form of  the making monthly reports.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_the_making_monthly_reports_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/selects-sales-list",
+          "ui": {
+            "title": "Displays form of  the making monthly reports",
+            "hint": "Page for BPMN task 'Displays form of  the making monthly reports' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-selects-sales-list",
+          "name": "Selects\"salesList\",",
+          "route": "/make-monthly-reports/selects-sales-list",
+          "component": "Selects\"salesList\",Page",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Selects \"sales list\",.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_sales_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/queries-the-sales-database",
+          "ui": {
+            "title": "Selects \"sales list\",",
+            "hint": "Page for BPMN task 'Selects \"sales list\",' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-queries-the-sales-database",
+          "name": "QueriesTheSalesDatabase",
+          "route": "/make-monthly-reports/queries-the-sales-database",
+          "component": "QueriesTheSalesDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Queries the Sales database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_sales_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the Sales database",
+            "hint": "Page for BPMN task 'Queries the Sales database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/make-monthly-reports/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/prints-the-sales-of-the-month",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-monthly-reports/prints-the-sales-of-the-month",
+              "condition": "Print sales"
+            }
+          ]
+        },
+        {
+          "taskId": "makemonthlyreports-prints-the-sales-of-the-month",
+          "name": "PrintsTheSalesOfTheMonth",
+          "route": "/make-monthly-reports/prints-the-sales-of-the-month",
+          "component": "PrintsTheSalesOfTheMonthPage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Prints the sales of the month.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_sales_of_the_month_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/complete",
+          "ui": {
+            "title": "Prints the sales of the month",
+            "hint": "Page for BPMN task 'Prints the sales of the month' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-queries-the-sales-and-goods",
+          "name": "QueriesTheSalesAndGoods",
+          "route": "/make-monthly-reports/queries-the-sales-and-goods",
+          "component": "QueriesTheSalesAndGoodsPage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Queries the Sales and Goods.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_sales_and_goods_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the Sales and Goods",
+            "hint": "Page for BPMN task 'Queries the Sales and Goods' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makemonthlyreports-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/make-monthly-reports/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make monthly reports: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-monthly-reports/complete",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Update item",
+        "value": "updateitem",
+        "internal": "updateitem"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "updateitem": "/update-item/asks-to-update-new-item"
+    },
+    "stateSchema": {
+      "asks_to_update_new_item_completed": false,
+      "queries_for_goods_in_the_goods_database_completed": false,
+      "enters_a_barcode_completed": false,
+      "displays_form_of_update_item_completed": false,
+      "displays_the_query_results_completed": false,
+      "updates_the_item_information_completed": false,
+      "save_the_new_item_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/update-item/asks-to-update-new-item",
+        "role": "updateitem",
+        "component": "AsksToUpdateNewItemPage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/queries-for-goods-in-the-goods-database",
+        "role": "updateitem",
+        "component": "QueriesForGoodsInTheGoodsDatabasePage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/enters-a-barcode",
+        "role": "updateitem",
+        "component": "EntersABarcodePage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/displays-form-of-update-item",
+        "role": "updateitem",
+        "component": "DisplaysFormOfUpdateItemPage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/displays-the-query-results",
+        "role": "updateitem",
+        "component": "DisplaysTheQueryResultsPage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/updates-the-item-information",
+        "role": "updateitem",
+        "component": "UpdatesTheItemInformationPage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      },
+      {
+        "route": "/update-item/save-the-new-item-information",
+        "role": "updateitem",
+        "component": "SaveTheNewItemInformationPage",
+        "allowedRoles": [
+          "updateitem"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "UpdateItem",
+      "role": "updateitem",
+      "defaultRoute": "/update-item/asks-to-update-new-item",
+      "tasks": [
+        {
+          "taskId": "updateitem-asks-to-update-new-item",
+          "name": "AsksToUpdateNewItem",
+          "route": "/update-item/asks-to-update-new-item",
+          "component": "AsksToUpdateNewItemPage",
+          "pageType": "write-navigate",
+          "description": "Update item: Asks to update new item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_update_new_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/displays-form-of-update-item",
+          "ui": {
+            "title": "Asks to update new item",
+            "hint": "Page for BPMN task 'Asks to update new item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updateitem-displays-form-of-update-item",
+          "name": "DisplaysFormOfUpdateItem",
+          "route": "/update-item/displays-form-of-update-item",
+          "component": "DisplaysFormOfUpdateItemPage",
+          "pageType": "write-navigate",
+          "description": "Update item: Displays form of update item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_update_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/enters-a-barcode",
+          "ui": {
+            "title": "Displays form of update item",
+            "hint": "Page for BPMN task 'Displays form of update item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updateitem-enters-a-barcode",
+          "name": "EntersABarcode",
+          "route": "/update-item/enters-a-barcode",
+          "component": "EntersABarcodePage",
+          "pageType": "write-navigate",
+          "description": "Update item: Enters a barcode.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_a_barcode_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/queries-for-goods-in-the-goods-database",
+          "ui": {
+            "title": "Enters a barcode",
+            "hint": "Page for BPMN task 'Enters a barcode' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updateitem-queries-for-goods-in-the-goods-database",
+          "name": "QueriesForGoodsInTheGoodsDatabase",
+          "route": "/update-item/queries-for-goods-in-the-goods-database",
+          "component": "QueriesForGoodsInTheGoodsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Update item: Queries for goods in the Goods database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_goods_in_the_goods_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/displays-the-query-results",
+          "ui": {
+            "title": "Queries for goods in the Goods database",
+            "hint": "Page for BPMN task 'Queries for goods in the Goods database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updateitem-displays-the-query-results",
+          "name": "DisplaysTheQueryResults",
+          "route": "/update-item/displays-the-query-results",
+          "component": "DisplaysTheQueryResultsPage",
+          "pageType": "write-navigate",
+          "description": "Update item: Displays the query results.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/updates-the-item-information",
+          "ui": {
+            "title": "Displays the query results",
+            "hint": "Page for BPMN task 'Displays the query results' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "updateitem-updates-the-item-information",
+          "name": "UpdatesTheItemInformation",
+          "route": "/update-item/updates-the-item-information",
+          "component": "UpdatesTheItemInformationPage",
+          "pageType": "write-navigate",
+          "description": "Update item: Updates the item information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "updates_the_item_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/save-the-new-item-information",
+          "ui": {
+            "title": "Updates the item information",
+            "hint": "Page for BPMN task 'Updates the item information' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/update-item/save-the-new-item-information",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "updateitem-save-the-new-item-information",
+          "name": "SaveTheNewItemInformation",
+          "route": "/update-item/save-the-new-item-information",
+          "component": "SaveTheNewItemInformationPage",
+          "pageType": "write-navigate",
+          "description": "Update item: Save the new item information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "save_the_new_item_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/update-item/complete",
+          "ui": {
+            "title": "Save the new item information",
+            "hint": "Page for BPMN task 'Save the new item information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

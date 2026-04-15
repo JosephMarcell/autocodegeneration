@@ -1,0 +1,301 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View items",
+        "value": "viewitems",
+        "internal": "viewitems"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewitems": "/view-items/asks-to-view-items-in-the-store"
+    },
+    "stateSchema": {
+      "asks_to_view_items_in_the_store_completed": false,
+      "displays_the_query_results_to_a_table_completed": false,
+      "enters_the_id_or_name_of_the_item_completed": false,
+      "displays_form_of_view_items_in_the_store_completed": false,
+      "runs_the_add_data_form_completed": false,
+      "queries_for_the_item_completed": false,
+      "runs_the_edit_data_form_completed": false,
+      "deletes_the_item_from_the_item_database_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-items/asks-to-view-items-in-the-store",
+        "role": "viewitems",
+        "component": "AsksToViewItemsInTheStorePage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/displays-the-query-results-to-a-table",
+        "role": "viewitems",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/enters-the-id-or-name-of-the-item",
+        "role": "viewitems",
+        "component": "EntersTheIdOrNameOfTheItemPage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/displays-form-of-view-items-in-the-store",
+        "role": "viewitems",
+        "component": "DisplaysFormOfViewItemsInTheStorePage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/runs-the-add-data-form",
+        "role": "viewitems",
+        "component": "RunsTheAddDataFormPage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/queries-for-the-item",
+        "role": "viewitems",
+        "component": "QueriesForTheItemPage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/runs-the-edit-data-form",
+        "role": "viewitems",
+        "component": "RunsTheEditDataFormPage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      },
+      {
+        "route": "/view-items/deletes-the-item-from-the-item-database",
+        "role": "viewitems",
+        "component": "DeletesTheItemFromTheItemDatabasePage",
+        "allowedRoles": [
+          "viewitems"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewItems",
+      "role": "viewitems",
+      "defaultRoute": "/view-items/asks-to-view-items-in-the-store",
+      "tasks": [
+        {
+          "taskId": "viewitems-asks-to-view-items-in-the-store",
+          "name": "AsksToViewItemsInTheStore",
+          "route": "/view-items/asks-to-view-items-in-the-store",
+          "component": "AsksToViewItemsInTheStorePage",
+          "pageType": "write-navigate",
+          "description": "View items: Asks to view items in the store.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_view_items_in_the_store_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/displays-form-of-view-items-in-the-store",
+          "ui": {
+            "title": "Asks to view items in the store",
+            "hint": "Page for BPMN task 'Asks to view items in the store' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-displays-form-of-view-items-in-the-store",
+          "name": "DisplaysFormOfViewItemsInTheStore",
+          "route": "/view-items/displays-form-of-view-items-in-the-store",
+          "component": "DisplaysFormOfViewItemsInTheStorePage",
+          "pageType": "write-navigate",
+          "description": "View items: Displays form of  view items in the store.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_view_items_in_the_store_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/enters-the-id-or-name-of-the-item",
+          "ui": {
+            "title": "Displays form of  view items in the store",
+            "hint": "Page for BPMN task 'Displays form of  view items in the store' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-enters-the-id-or-name-of-the-item",
+          "name": "EntersTheIdOrNameOfTheItem",
+          "route": "/view-items/enters-the-id-or-name-of-the-item",
+          "component": "EntersTheIdOrNameOfTheItemPage",
+          "pageType": "write-navigate",
+          "description": "View items: Enters the ID or name of the item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_id_or_name_of_the_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/queries-for-the-item",
+          "ui": {
+            "title": "Enters the ID or name of the item",
+            "hint": "Page for BPMN task 'Enters the ID or name of the item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-queries-for-the-item",
+          "name": "QueriesForTheItem",
+          "route": "/view-items/queries-for-the-item",
+          "component": "QueriesForTheItemPage",
+          "pageType": "write-navigate",
+          "description": "View items: Queries for the item.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_for_the_item_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries for the item",
+            "hint": "Page for BPMN task 'Queries for the item' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/view-items/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "View items: Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/runs-the-add-data-form",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/view-items/runs-the-add-data-form",
+              "condition": "RunsTheAddDataForm"
+            }
+          ]
+        },
+        {
+          "taskId": "viewitems-runs-the-add-data-form",
+          "name": "RunsTheAddDataForm",
+          "route": "/view-items/runs-the-add-data-form",
+          "component": "RunsTheAddDataFormPage",
+          "pageType": "write-navigate",
+          "description": "View items: Runs the add data form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_add_data_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/complete",
+          "ui": {
+            "title": "Runs the add data form",
+            "hint": "Page for BPMN task 'Runs the add data form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-runs-the-edit-data-form",
+          "name": "RunsTheEditDataForm",
+          "route": "/view-items/runs-the-edit-data-form",
+          "component": "RunsTheEditDataFormPage",
+          "pageType": "write-navigate",
+          "description": "View items: Runs the edit data form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_edit_data_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/complete",
+          "ui": {
+            "title": "Runs the edit data form",
+            "hint": "Page for BPMN task 'Runs the edit data form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewitems-deletes-the-item-from-the-item-database",
+          "name": "DeletesTheItemFromTheItemDatabase",
+          "route": "/view-items/deletes-the-item-from-the-item-database",
+          "component": "DeletesTheItemFromTheItemDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View items: Deletes the item from the Item database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "deletes_the_item_from_the_item_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-items/complete",
+          "ui": {
+            "title": "Deletes the item from the Item database",
+            "hint": "Page for BPMN task 'Deletes the item from the Item database' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

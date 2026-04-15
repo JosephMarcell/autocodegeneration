@@ -1,0 +1,769 @@
+{
+  "project_name": "App",
+  "participants": [
+    {
+      "id": "Participant_10vg9sk",
+      "name": "Guest\nfood consumption",
+      "processRef": "Process_1"
+    },
+    {
+      "id": "Participant_1peiire",
+      "name": "Employee\norder processing",
+      "processRef": "Process_1815csu"
+    },
+    {
+      "id": "Participant_0tgezdl",
+      "name": "Chef\nmeal preparation",
+      "processRef": "Process_1dpgid4"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_1": "Guest\nfood consumption",
+    "Process_1815csu": "Employee\norder processing",
+    "Process_1dpgid4": "Chef\nmeal preparation"
+  },
+  "lanes": [],
+  "node_to_lane": {},
+  "tasks": [
+    {
+      "id": "Task_1kt8dzo",
+      "name": "Enter restaurant",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0zyokrw"
+      ],
+      "outgoing": [
+        "SequenceFlow_04y6oom"
+      ]
+    },
+    {
+      "id": "Task_1udyby3",
+      "name": "Choose dish",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_04y6oom"
+      ],
+      "outgoing": [
+        "SequenceFlow_01zmlbv"
+      ]
+    },
+    {
+      "id": "Task_0a2rm9v",
+      "name": "Place order",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1y1wgan"
+      ],
+      "outgoing": [
+        "SequenceFlow_00exxjf"
+      ]
+    },
+    {
+      "id": "Task_12h2fs9",
+      "name": "Pay money",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_00exxjf"
+      ],
+      "outgoing": [
+        "SequenceFlow_1hg9yiz"
+      ]
+    },
+    {
+      "id": "Task_1jlgbwe",
+      "name": "Take buzzer",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1hg9yiz"
+      ],
+      "outgoing": [
+        "SequenceFlow_0eg6b92"
+      ]
+    },
+    {
+      "id": "Task_0o0pue9",
+      "name": "Get meal",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1ts7b2y"
+      ],
+      "outgoing": [
+        "SequenceFlow_09fdw8x"
+      ]
+    },
+    {
+      "id": "Task_07amhtq",
+      "name": "Eat meal",
+      "type": "task",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_09fdw8x"
+      ],
+      "outgoing": [
+        "SequenceFlow_1md00g7"
+      ]
+    },
+    {
+      "id": "Task_1y7mm27",
+      "name": "Enter order",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1ua89s7"
+      ],
+      "outgoing": [
+        "SequenceFlow_13ptpjj"
+      ]
+    },
+    {
+      "id": "Task_1ng51gy",
+      "name": "Collect money",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_13ptpjj"
+      ],
+      "outgoing": [
+        "SequenceFlow_1c5slmc"
+      ]
+    },
+    {
+      "id": "Task_03wsmkw",
+      "name": "Set up buzzer",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1c5slmc"
+      ],
+      "outgoing": [
+        "SequenceFlow_0u2c8zi"
+      ]
+    },
+    {
+      "id": "Task_0ttgn0d",
+      "name": "Hand over buzzer",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0u2c8zi"
+      ],
+      "outgoing": [
+        "SequenceFlow_1k5i83t"
+      ]
+    },
+    {
+      "id": "Task_1wgretj",
+      "name": "Inform chef",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1k5i83t"
+      ],
+      "outgoing": [
+        "SequenceFlow_1fh4hk9"
+      ]
+    },
+    {
+      "id": "Task_12zp7cy",
+      "name": "Set off buzzer",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0i606be"
+      ],
+      "outgoing": [
+        "SequenceFlow_0pjag7x"
+      ]
+    },
+    {
+      "id": "Task_1a48xz1",
+      "name": "Hand over meal",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_16g9tjz"
+      ],
+      "outgoing": [
+        "SequenceFlow_0rw8ula"
+      ]
+    },
+    {
+      "id": "Task_0rpvccw",
+      "name": "Call guest",
+      "type": "task",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1l191hh"
+      ],
+      "outgoing": [
+        "SequenceFlow_1v3ql78"
+      ]
+    },
+    {
+      "id": "Task_0av6xl6",
+      "name": "Prepare meal",
+      "type": "task",
+      "participantName": "Chef\nmeal preparation",
+      "laneName": "",
+      "processId": "Process_1dpgid4",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_0t50408"
+      ],
+      "outgoing": [
+        "SequenceFlow_1efv1k0"
+      ]
+    },
+    {
+      "id": "Task_1tdsk5o",
+      "name": "Place meal in hatch",
+      "type": "task",
+      "participantName": "Chef\nmeal preparation",
+      "laneName": "",
+      "processId": "Process_1dpgid4",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1efv1k0"
+      ],
+      "outgoing": [
+        "SequenceFlow_04e9z1y"
+      ]
+    },
+    {
+      "id": "Task_0ot5dif",
+      "name": "Inform employee",
+      "type": "task",
+      "participantName": "Chef\nmeal preparation",
+      "laneName": "",
+      "processId": "Process_1dpgid4",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_04e9z1y"
+      ],
+      "outgoing": [
+        "SequenceFlow_1niutyd"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "EventBasedGateway_1qyi8l9",
+      "name": "",
+      "gatewayType": "eventBased",
+      "gatewayDirection": "Diverging",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [
+        "SequenceFlow_0pjag7x",
+        "SequenceFlow_1v3ql78"
+      ],
+      "outgoing": [
+        "SequenceFlow_0ackvee",
+        "SequenceFlow_0zy1vbv"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "StartEvent_1jrp9jr",
+      "name": "Hunger noticed",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "conditionalEventDefinition"
+      ],
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_0zyokrw"
+      ]
+    },
+    {
+      "id": "EndEvent_0t0z07x",
+      "name": "Not hungry anymore",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_1md00g7"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "IntermediateCatchEvent_1nu2fvu",
+      "name": "wait for turn",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "conditionalEventDefinition"
+      ],
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_01zmlbv"
+      ],
+      "outgoing": [
+        "SequenceFlow_1y1wgan"
+      ]
+    },
+    {
+      "id": "IntermediateCatchEvent_1r5wlb4",
+      "name": "Meal ready",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Guest\nfood consumption",
+      "laneName": "",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0eg6b92"
+      ],
+      "outgoing": [
+        "SequenceFlow_1ts7b2y"
+      ]
+    },
+    {
+      "id": "StartEvent_02hitoh",
+      "name": "Order received",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_1ua89s7"
+      ]
+    },
+    {
+      "id": "EndEvent_1mxdcfl",
+      "name": "Order processed",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [
+        "SequenceFlow_0rw8ula"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "IntermediateCatchEvent_1pl0nlh",
+      "name": "Meal ready",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [
+        "SequenceFlow_1fh4hk9"
+      ],
+      "outgoing": [
+        "SequenceFlow_0i606be"
+      ]
+    },
+    {
+      "id": "IntermediateCatchEvent_1rch6yh",
+      "name": "Guest \nappears",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [
+        "SequenceFlow_0ackvee"
+      ],
+      "outgoing": [
+        "SequenceFlow_16g9tjz"
+      ]
+    },
+    {
+      "id": "IntermediateCatchEvent_0nhl104",
+      "name": "5 minutes",
+      "eventType": "intermediateCatchEvent",
+      "eventDefinitionType": [
+        "timerEventDefinition"
+      ],
+      "participantName": "Employee\norder processing",
+      "laneName": "",
+      "processId": "Process_1815csu",
+      "incoming": [
+        "SequenceFlow_0zy1vbv"
+      ],
+      "outgoing": [
+        "SequenceFlow_1l191hh"
+      ]
+    },
+    {
+      "id": "StartEvent_0zymmrx",
+      "name": "Meal needed",
+      "eventType": "startEvent",
+      "eventDefinitionType": [
+        "messageEventDefinition"
+      ],
+      "participantName": "Chef\nmeal preparation",
+      "laneName": "",
+      "processId": "Process_1dpgid4",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_0t50408"
+      ]
+    },
+    {
+      "id": "EndEvent_1pmnzaw",
+      "name": "Meal prepared",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Chef\nmeal preparation",
+      "laneName": "",
+      "processId": "Process_1dpgid4",
+      "incoming": [
+        "SequenceFlow_1niutyd"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "SequenceFlow_0zyokrw",
+      "source": "StartEvent_1jrp9jr",
+      "target": "Task_1kt8dzo",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_04y6oom",
+      "source": "Task_1kt8dzo",
+      "target": "Task_1udyby3",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_01zmlbv",
+      "source": "Task_1udyby3",
+      "target": "IntermediateCatchEvent_1nu2fvu",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1y1wgan",
+      "source": "IntermediateCatchEvent_1nu2fvu",
+      "target": "Task_0a2rm9v",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_00exxjf",
+      "source": "Task_0a2rm9v",
+      "target": "Task_12h2fs9",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1hg9yiz",
+      "source": "Task_12h2fs9",
+      "target": "Task_1jlgbwe",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0eg6b92",
+      "source": "Task_1jlgbwe",
+      "target": "IntermediateCatchEvent_1r5wlb4",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1ts7b2y",
+      "source": "IntermediateCatchEvent_1r5wlb4",
+      "target": "Task_0o0pue9",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_09fdw8x",
+      "source": "Task_0o0pue9",
+      "target": "Task_07amhtq",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1md00g7",
+      "source": "Task_07amhtq",
+      "target": "EndEvent_0t0z07x",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1ua89s7",
+      "source": "StartEvent_02hitoh",
+      "target": "Task_1y7mm27",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_13ptpjj",
+      "source": "Task_1y7mm27",
+      "target": "Task_1ng51gy",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_1c5slmc",
+      "source": "Task_1ng51gy",
+      "target": "Task_03wsmkw",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0u2c8zi",
+      "source": "Task_03wsmkw",
+      "target": "Task_0ttgn0d",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_1k5i83t",
+      "source": "Task_0ttgn0d",
+      "target": "Task_1wgretj",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_1fh4hk9",
+      "source": "Task_1wgretj",
+      "target": "IntermediateCatchEvent_1pl0nlh",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0i606be",
+      "source": "IntermediateCatchEvent_1pl0nlh",
+      "target": "Task_12zp7cy",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0pjag7x",
+      "source": "Task_12zp7cy",
+      "target": "EventBasedGateway_1qyi8l9",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0ackvee",
+      "source": "EventBasedGateway_1qyi8l9",
+      "target": "IntermediateCatchEvent_1rch6yh",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_16g9tjz",
+      "source": "IntermediateCatchEvent_1rch6yh",
+      "target": "Task_1a48xz1",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0rw8ula",
+      "source": "Task_1a48xz1",
+      "target": "EndEvent_1mxdcfl",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0zy1vbv",
+      "source": "EventBasedGateway_1qyi8l9",
+      "target": "IntermediateCatchEvent_0nhl104",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_1l191hh",
+      "source": "IntermediateCatchEvent_0nhl104",
+      "target": "Task_0rpvccw",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_1v3ql78",
+      "source": "Task_0rpvccw",
+      "target": "EventBasedGateway_1qyi8l9",
+      "condition": "",
+      "processId": "Process_1815csu"
+    },
+    {
+      "id": "SequenceFlow_0t50408",
+      "source": "StartEvent_0zymmrx",
+      "target": "Task_0av6xl6",
+      "condition": "",
+      "processId": "Process_1dpgid4"
+    },
+    {
+      "id": "SequenceFlow_1efv1k0",
+      "source": "Task_0av6xl6",
+      "target": "Task_1tdsk5o",
+      "condition": "",
+      "processId": "Process_1dpgid4"
+    },
+    {
+      "id": "SequenceFlow_04e9z1y",
+      "source": "Task_1tdsk5o",
+      "target": "Task_0ot5dif",
+      "condition": "",
+      "processId": "Process_1dpgid4"
+    },
+    {
+      "id": "SequenceFlow_1niutyd",
+      "source": "Task_0ot5dif",
+      "target": "EndEvent_1pmnzaw",
+      "condition": "",
+      "processId": "Process_1dpgid4"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "MessageFlow_0f4weom",
+      "sourceRef": "Task_0a2rm9v",
+      "targetRef": "StartEvent_02hitoh",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1rbcw1l",
+      "sourceRef": "Task_1ng51gy",
+      "targetRef": "Task_12h2fs9",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_11f80hy",
+      "sourceRef": "Task_12h2fs9",
+      "targetRef": "Task_1ng51gy",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_0q0a7uy",
+      "sourceRef": "Task_0ttgn0d",
+      "targetRef": "Task_1jlgbwe",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_0vplntf",
+      "sourceRef": "Task_12zp7cy",
+      "targetRef": "IntermediateCatchEvent_1r5wlb4",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_0ujos29",
+      "sourceRef": "Task_0o0pue9",
+      "targetRef": "IntermediateCatchEvent_1rch6yh",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_16dowp1",
+      "sourceRef": "Task_1a48xz1",
+      "targetRef": "Task_0o0pue9",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_0vgnk9g",
+      "sourceRef": "Task_1wgretj",
+      "targetRef": "StartEvent_0zymmrx",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1yc24r1",
+      "sourceRef": "Task_0ot5dif",
+      "targetRef": "IntermediateCatchEvent_1pl0nlh",
+      "name": ""
+    },
+    {
+      "id": "MessageFlow_1kimdbt",
+      "sourceRef": "Task_0rpvccw",
+      "targetRef": "Participant_10vg9sk",
+      "name": ""
+    }
+  ],
+  "stateSchema": {
+    "enter_restaurant_completed": false,
+    "choose_dish_completed": false,
+    "place_order_completed": false,
+    "pay_money_completed": false,
+    "take_buzzer_completed": false,
+    "get_meal_completed": false,
+    "eat_meal_completed": false,
+    "enter_order_completed": false,
+    "collect_money_completed": false,
+    "set_up_buzzer_completed": false,
+    "hand_over_buzzer_completed": false,
+    "inform_chef_completed": false,
+    "set_off_buzzer_completed": false,
+    "hand_over_meal_completed": false,
+    "call_guest_completed": false,
+    "prepare_meal_completed": false,
+    "place_meal_in_hatch_completed": false,
+    "inform_employee_completed": false
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "View emergency room action reports",
+        "value": "viewemergencyroomactionreports",
+        "internal": "viewemergencyroomactionreports"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "viewemergencyroomactionreports": "/view-emergency-room-action-reports/wants-to-create-view-emergency-room-action-report"
+    },
+    "stateSchema": {
+      "wants_to_create_view_emergency_room_action_report_completed": false,
+      "displays_the_query_result_completed": false,
+      "displays_the_view_emergency_room_action_reports_form_completed": false,
+      "includes_the_start_date_end_date_and_category_completed": false,
+      "queries_the_igd_actions_database_completed": false,
+      "selects_the_print_button_completed": false,
+      "prints_the_query_result_to_the_printer_completed": false,
+      "prints_the_query_result_to_an_excel_file_completed": false,
+      "selects_the_search_button_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/view-emergency-room-action-reports/wants-to-create-view-emergency-room-action-report",
+        "role": "viewemergencyroomactionreports",
+        "component": "WantsToCreateViewEmergencyRoomActionReportPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/displays-the-query-result",
+        "role": "viewemergencyroomactionreports",
+        "component": "DisplaysTheQueryResultPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/displays-the-view-emergency-room-action-reports-form",
+        "role": "viewemergencyroomactionreports",
+        "component": "DisplaysTheViewEmergencyRoomActionReportsFormPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/includes-the-start-date-end-date-and-category",
+        "role": "viewemergencyroomactionreports",
+        "component": "IncludesTheStartDate,EndDate,AndCategoryPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/queries-the-igd-actions-database",
+        "role": "viewemergencyroomactionreports",
+        "component": "QueriesTheIgdActionsDatabasePage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/selects-the-print-button",
+        "role": "viewemergencyroomactionreports",
+        "component": "SelectsThePrintButtonPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/prints-the-query-result-to-the-printer",
+        "role": "viewemergencyroomactionreports",
+        "component": "PrintsTheQueryResultToThePrinterPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/prints-the-query-result-to-an-excel-file",
+        "role": "viewemergencyroomactionreports",
+        "component": "PrintsTheQueryResultToAnExcelFilePage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      },
+      {
+        "route": "/view-emergency-room-action-reports/selects-the-search-button",
+        "role": "viewemergencyroomactionreports",
+        "component": "SelectsTheSearchButtonPage",
+        "allowedRoles": [
+          "viewemergencyroomactionreports"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ViewEmergencyRoomActionReports",
+      "role": "viewemergencyroomactionreports",
+      "defaultRoute": "/view-emergency-room-action-reports/wants-to-create-view-emergency-room-action-report",
+      "tasks": [
+        {
+          "taskId": "viewemergencyroomactionreports-wants-to-create-view-emergency-room-action-report",
+          "name": "WantsToCreateViewEmergencyRoomActionReport",
+          "route": "/view-emergency-room-action-reports/wants-to-create-view-emergency-room-action-report",
+          "component": "WantsToCreateViewEmergencyRoomActionReportPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Wants to create View emergency room action report.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "wants_to_create_view_emergency_room_action_report_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/displays-the-view-emergency-room-action-reports-form",
+          "ui": {
+            "title": "Wants to create View emergency room action report",
+            "hint": "Page for BPMN task 'Wants to create View emergency room action report' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-displays-the-view-emergency-room-action-reports-form",
+          "name": "DisplaysTheViewEmergencyRoomActionReportsForm",
+          "route": "/view-emergency-room-action-reports/displays-the-view-emergency-room-action-reports-form",
+          "component": "DisplaysTheViewEmergencyRoomActionReportsFormPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Displays the View emergency room action reports form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_view_emergency_room_action_reports_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/includes-the-start-date-end-date-and-category",
+          "ui": {
+            "title": "Displays the View emergency room action reports form",
+            "hint": "Page for BPMN task 'Displays the View emergency room action reports form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-includes-the-start-date-end-date-and-category",
+          "name": "IncludesTheStartDate,EndDate,AndCategory",
+          "route": "/view-emergency-room-action-reports/includes-the-start-date-end-date-and-category",
+          "component": "IncludesTheStartDate,EndDate,AndCategoryPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Includes the start date, end date, and category.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "includes_the_start_date_end_date_and_category_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/selects-the-search-button",
+          "ui": {
+            "title": "Includes the start date, end date, and category",
+            "hint": "Page for BPMN task 'Includes the start date, end date, and category' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-selects-the-search-button",
+          "name": "SelectsTheSearchButton",
+          "route": "/view-emergency-room-action-reports/selects-the-search-button",
+          "component": "SelectsTheSearchButtonPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Selects the search button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_search_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/queries-the-igd-actions-database",
+          "ui": {
+            "title": "Selects the search button",
+            "hint": "Page for BPMN task 'Selects the search button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/view-emergency-room-action-reports/queries-the-igd-actions-database",
+              "condition": "Search"
+            },
+            {
+              "route": "/view-emergency-room-action-reports/selects-the-print-button",
+              "condition": "SelectsThePrintButton"
+            }
+          ]
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-queries-the-igd-actions-database",
+          "name": "QueriesTheIgdActionsDatabase",
+          "route": "/view-emergency-room-action-reports/queries-the-igd-actions-database",
+          "component": "QueriesTheIgdActionsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Queries the IGD Actions database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_igd_actions_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/displays-the-query-result",
+          "ui": {
+            "title": "Queries the IGD Actions database",
+            "hint": "Page for BPMN task 'Queries the IGD Actions database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-displays-the-query-result",
+          "name": "DisplaysTheQueryResult",
+          "route": "/view-emergency-room-action-reports/displays-the-query-result",
+          "component": "DisplaysTheQueryResultPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Displays the query result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_result_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/selects-the-print-button",
+          "ui": {
+            "title": "Displays the query result",
+            "hint": "Page for BPMN task 'Displays the query result' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-selects-the-print-button",
+          "name": "SelectsThePrintButton",
+          "route": "/view-emergency-room-action-reports/selects-the-print-button",
+          "component": "SelectsThePrintButtonPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Selects the print button.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_print_button_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/prints-the-query-result-to-an-excel-file",
+          "ui": {
+            "title": "Selects the print button",
+            "hint": "Page for BPMN task 'Selects the print button' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/view-emergency-room-action-reports/prints-the-query-result-to-an-excel-file",
+              "condition": "PrintsTheQueryResultToAnExcelFile"
+            },
+            {
+              "route": "/view-emergency-room-action-reports/prints-the-query-result-to-the-printer",
+              "condition": "PrintsTheQueryResultToThePrinter"
+            }
+          ]
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-prints-the-query-result-to-an-excel-file",
+          "name": "PrintsTheQueryResultToAnExcelFile",
+          "route": "/view-emergency-room-action-reports/prints-the-query-result-to-an-excel-file",
+          "component": "PrintsTheQueryResultToAnExcelFilePage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Prints the query result to an excel file.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_query_result_to_an_excel_file_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/complete",
+          "ui": {
+            "title": "Prints the query result to an excel file",
+            "hint": "Page for BPMN task 'Prints the query result to an excel file' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "viewemergencyroomactionreports-prints-the-query-result-to-the-printer",
+          "name": "PrintsTheQueryResultToThePrinter",
+          "route": "/view-emergency-room-action-reports/prints-the-query-result-to-the-printer",
+          "component": "PrintsTheQueryResultToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "View emergency room action reports: Prints the query result to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_the_query_result_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/view-emergency-room-action-reports/complete",
+          "ui": {
+            "title": "Prints the query result to the printer",
+            "hint": "Page for BPMN task 'Prints the query result to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

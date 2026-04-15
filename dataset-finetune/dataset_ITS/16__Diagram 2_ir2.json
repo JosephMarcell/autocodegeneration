@@ -1,0 +1,301 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Pay principal deposit",
+        "value": "payprincipaldeposit",
+        "internal": "payprincipaldeposit"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "payprincipaldeposit": "/pay-principal-deposit/asks-for-a-paying-principal-deposit"
+    },
+    "stateSchema": {
+      "asks_for_a_paying_principal_deposit_completed": false,
+      "queries_the_member_database_completed": false,
+      "selects_the_work_unit_completed": false,
+      "displays_a_paying_principal_deposit_form_completed": false,
+      "saves_the_payment_data_completed": false,
+      "displays_the_quey_result_member_name_to_the_list_completed": false,
+      "selects_the_member_s_name_completed": false,
+      "enters_the_value_of_the_payment_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/pay-principal-deposit/asks-for-a-paying-principal-deposit",
+        "role": "payprincipaldeposit",
+        "component": "AsksForAPayingPrincipalDepositPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/queries-the-member-database",
+        "role": "payprincipaldeposit",
+        "component": "QueriesTheMemberDatabasePage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/selects-the-work-unit",
+        "role": "payprincipaldeposit",
+        "component": "SelectsTheWorkUnitPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/displays-a-paying-principal-deposit-form",
+        "role": "payprincipaldeposit",
+        "component": "DisplaysAPayingPrincipalDepositFormPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/saves-the-payment-data",
+        "role": "payprincipaldeposit",
+        "component": "SavesThePaymentDataPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/displays-the-quey-result-member-name-to-the-list",
+        "role": "payprincipaldeposit",
+        "component": "DisplaysTheQueyResultMemberNameToTheListPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/selects-the-members-name",
+        "role": "payprincipaldeposit",
+        "component": "SelectsTheMember'sNamePage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      },
+      {
+        "route": "/pay-principal-deposit/enters-the-value-of-the-payment",
+        "role": "payprincipaldeposit",
+        "component": "EntersTheValueOfThePaymentPage",
+        "allowedRoles": [
+          "payprincipaldeposit"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "PayPrincipalDeposit",
+      "role": "payprincipaldeposit",
+      "defaultRoute": "/pay-principal-deposit/asks-for-a-paying-principal-deposit",
+      "tasks": [
+        {
+          "taskId": "payprincipaldeposit-asks-for-a-paying-principal-deposit",
+          "name": "AsksForAPayingPrincipalDeposit",
+          "route": "/pay-principal-deposit/asks-for-a-paying-principal-deposit",
+          "component": "AsksForAPayingPrincipalDepositPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Asks for a paying principal deposit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_for_a_paying_principal_deposit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/displays-a-paying-principal-deposit-form",
+          "ui": {
+            "title": "Asks for a paying principal deposit",
+            "hint": "Page for BPMN task 'Asks for a paying principal deposit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-displays-a-paying-principal-deposit-form",
+          "name": "DisplaysAPayingPrincipalDepositForm",
+          "route": "/pay-principal-deposit/displays-a-paying-principal-deposit-form",
+          "component": "DisplaysAPayingPrincipalDepositFormPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Displays a paying principal deposit form.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_paying_principal_deposit_form_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/selects-the-work-unit",
+          "ui": {
+            "title": "Displays a paying principal deposit form",
+            "hint": "Page for BPMN task 'Displays a paying principal deposit form' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-selects-the-work-unit",
+          "name": "SelectsTheWorkUnit",
+          "route": "/pay-principal-deposit/selects-the-work-unit",
+          "component": "SelectsTheWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Selects the work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/queries-the-member-database",
+          "ui": {
+            "title": "Selects the work unit",
+            "hint": "Page for BPMN task 'Selects the work unit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-queries-the-member-database",
+          "name": "QueriesTheMemberDatabase",
+          "route": "/pay-principal-deposit/queries-the-member-database",
+          "component": "QueriesTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Queries the member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/displays-the-quey-result-member-name-to-the-list",
+          "ui": {
+            "title": "Queries the member database",
+            "hint": "Page for BPMN task 'Queries the member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-displays-the-quey-result-member-name-to-the-list",
+          "name": "DisplaysTheQueyResultMemberNameToTheList",
+          "route": "/pay-principal-deposit/displays-the-quey-result-member-name-to-the-list",
+          "component": "DisplaysTheQueyResultMemberNameToTheListPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Displays the quey result member name to the list.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_quey_result_member_name_to_the_list_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/selects-the-members-name",
+          "ui": {
+            "title": "Displays the quey result member name to the list",
+            "hint": "Page for BPMN task 'Displays the quey result member name to the list' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-selects-the-members-name",
+          "name": "SelectsTheMember'sName",
+          "route": "/pay-principal-deposit/selects-the-members-name",
+          "component": "SelectsTheMember'sNamePage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Selects the member's name.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_members_name_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/enters-the-value-of-the-payment",
+          "ui": {
+            "title": "Selects the member's name",
+            "hint": "Page for BPMN task 'Selects the member's name' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "payprincipaldeposit-enters-the-value-of-the-payment",
+          "name": "EntersTheValueOfThePayment",
+          "route": "/pay-principal-deposit/enters-the-value-of-the-payment",
+          "component": "EntersTheValueOfThePaymentPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Enters the value of the payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_value_of_the_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/saves-the-payment-data",
+          "ui": {
+            "title": "Enters the value of the payment",
+            "hint": "Page for BPMN task 'Enters the value of the payment' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/pay-principal-deposit/saves-the-payment-data",
+              "condition": "Save"
+            }
+          ]
+        },
+        {
+          "taskId": "payprincipaldeposit-saves-the-payment-data",
+          "name": "SavesThePaymentData",
+          "route": "/pay-principal-deposit/saves-the-payment-data",
+          "component": "SavesThePaymentDataPage",
+          "pageType": "write-navigate",
+          "description": "Pay principal deposit: Saves the payment data.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "saves_the_payment_data_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/pay-principal-deposit/complete",
+          "ui": {
+            "title": "Saves the payment data",
+            "hint": "Page for BPMN task 'Saves the payment data' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

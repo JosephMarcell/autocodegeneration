@@ -1,0 +1,311 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Change work unit",
+        "value": "changeworkunit",
+        "internal": "changeworkunit"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "changeworkunit": "/change-work-unit/asks-to-move-the-member-work-unit"
+    },
+    "stateSchema": {
+      "asks_to_move_the_member_work_unit_completed": false,
+      "searches_information_of_member_completed": false,
+      "fills_in_information_about_the_member_completed": false,
+      "displays_a_form_to_move_work_units_completed": false,
+      "enters_a_new_work_unit_completed": false,
+      "displays_information_of_member_completed": false,
+      "verifies_information_of_new_work_completed": false,
+      "stores_member_information_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/change-work-unit/asks-to-move-the-member-work-unit",
+        "role": "changeworkunit",
+        "component": "AsksToMoveTheMemberWorkUnitPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/searches-information-of-member",
+        "role": "changeworkunit",
+        "component": "SearchesInformationOfMemberPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/fills-in-information-about-the-member",
+        "role": "changeworkunit",
+        "component": "FillsInInformationAboutTheMemberPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/displays-a-form-to-move-work-units",
+        "role": "changeworkunit",
+        "component": "DisplaysAFormToMoveWorkUnitsPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/enters-a-new-work-unit",
+        "role": "changeworkunit",
+        "component": "EntersANewWorkUnitPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/displays-information-of-member",
+        "role": "changeworkunit",
+        "component": "DisplaysInformationOfMemberPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/verifies-information-of-new-work",
+        "role": "changeworkunit",
+        "component": "VerifiesInformationOfNewWorkPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      },
+      {
+        "route": "/change-work-unit/stores-member-information",
+        "role": "changeworkunit",
+        "component": "StoresMemberInformationPage",
+        "allowedRoles": [
+          "changeworkunit"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "ChangeWorkUnit",
+      "role": "changeworkunit",
+      "defaultRoute": "/change-work-unit/asks-to-move-the-member-work-unit",
+      "tasks": [
+        {
+          "taskId": "changeworkunit-asks-to-move-the-member-work-unit",
+          "name": "AsksToMoveTheMemberWorkUnit",
+          "route": "/change-work-unit/asks-to-move-the-member-work-unit",
+          "component": "AsksToMoveTheMemberWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Asks to move the member work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_move_the_member_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/displays-a-form-to-move-work-units",
+          "ui": {
+            "title": "Asks to move the member work unit",
+            "hint": "Page for BPMN task 'Asks to move the member work unit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "changeworkunit-displays-a-form-to-move-work-units",
+          "name": "DisplaysAFormToMoveWorkUnits",
+          "route": "/change-work-unit/displays-a-form-to-move-work-units",
+          "component": "DisplaysAFormToMoveWorkUnitsPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Displays a form to move work units.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_to_move_work_units_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/fills-in-information-about-the-member",
+          "ui": {
+            "title": "Displays a form to move work units",
+            "hint": "Page for BPMN task 'Displays a form to move work units' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "changeworkunit-searches-information-of-member",
+          "name": "SearchesInformationOfMember",
+          "route": "/change-work-unit/searches-information-of-member",
+          "component": "SearchesInformationOfMemberPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: searches information of member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "searches_information_of_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/displays-information-of-member",
+          "ui": {
+            "title": "searches information of member",
+            "hint": "Page for BPMN task 'searches information of member' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/change-work-unit/displays-information-of-member",
+              "condition": "Present"
+            },
+            {
+              "route": "/change-work-unit/fills-in-information-about-the-member",
+              "condition": "FillsInInformationAboutTheMember"
+            }
+          ]
+        },
+        {
+          "taskId": "changeworkunit-fills-in-information-about-the-member",
+          "name": "FillsInInformationAboutTheMember",
+          "route": "/change-work-unit/fills-in-information-about-the-member",
+          "component": "FillsInInformationAboutTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Fills in information about the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "fills_in_information_about_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/searches-information-of-member",
+          "ui": {
+            "title": "Fills in information about the member",
+            "hint": "Page for BPMN task 'Fills in information about the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "changeworkunit-enters-a-new-work-unit",
+          "name": "EntersANewWorkUnit",
+          "route": "/change-work-unit/enters-a-new-work-unit",
+          "component": "EntersANewWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Enters a new work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_a_new_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/verifies-information-of-new-work",
+          "ui": {
+            "title": "Enters a new work unit",
+            "hint": "Page for BPMN task 'Enters a new work unit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "changeworkunit-displays-information-of-member",
+          "name": "DisplaysInformationOfMember",
+          "route": "/change-work-unit/displays-information-of-member",
+          "component": "DisplaysInformationOfMemberPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Displays information  of member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_information_of_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/enters-a-new-work-unit",
+          "ui": {
+            "title": "Displays information  of member",
+            "hint": "Page for BPMN task 'Displays information  of member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "changeworkunit-verifies-information-of-new-work",
+          "name": "VerifiesInformationOfNewWork",
+          "route": "/change-work-unit/verifies-information-of-new-work",
+          "component": "VerifiesInformationOfNewWorkPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Verifies information of new work.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "verifies_information_of_new_work_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/stores-member-information",
+          "ui": {
+            "title": "Verifies information of new work",
+            "hint": "Page for BPMN task 'Verifies information of new work' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/change-work-unit/stores-member-information",
+              "condition": "Valid"
+            }
+          ]
+        },
+        {
+          "taskId": "changeworkunit-stores-member-information",
+          "name": "StoresMemberInformation",
+          "route": "/change-work-unit/stores-member-information",
+          "component": "StoresMemberInformationPage",
+          "pageType": "write-navigate",
+          "description": "Change work unit: Stores member information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_member_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/change-work-unit/complete",
+          "ui": {
+            "title": "Stores member information",
+            "hint": "Page for BPMN task 'Stores member information' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,394 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_32634156-ae8d-44ff-bc05-d9366a3c96fd"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make recapitulation",
+      "processRef": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_32634156-ae8d-44ff-bc05-d9366a3c96fd": "Main Process",
+    "Id_982b0a4f-2323-40b7-9473-af71c727704d": "Make recapitulation"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_f644f3cd-8736-4c59-882f-d5d72403cbcb",
+        "Id_aff664b5-a1ef-4145-81f1-d3cec9b5aedf"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "flowNodeRefs": [
+        "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35",
+        "Id_1cb3c6ca-eb50-438f-9a6a-24816225a8dc",
+        "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_c5b40bd5-1819-486f-9655-9daf5f38a079",
+        "Id_dbddbd39-b238-4f84-b7a5-5bf5d6e26a0e",
+        "Id_9cf3b377-6977-4b1a-b46b-de90008e3206"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35": "System",
+    "Id_1cb3c6ca-eb50-438f-9a6a-24816225a8dc": "System",
+    "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_c5b40bd5-1819-486f-9655-9daf5f38a079": "System",
+    "Id_f644f3cd-8736-4c59-882f-d5d72403cbcb": "Cashier",
+    "Id_dbddbd39-b238-4f84-b7a5-5bf5d6e26a0e": "System",
+    "Id_9cf3b377-6977-4b1a-b46b-de90008e3206": "System",
+    "Id_aff664b5-a1ef-4145-81f1-d3cec9b5aedf": "Cashier"
+  },
+  "tasks": [
+    {
+      "id": "Id_1cb3c6ca-eb50-438f-9a6a-24816225a8dc",
+      "name": "Queries the current month's sales",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8faff871-e2ec-440b-bda2-3ceef86eae0a"
+      ],
+      "outgoing": [
+        "Id_c57dbe2f-2571-4b52-a81b-57c462d1c0ee"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the query results to a table",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_c57dbe2f-2571-4b52-a81b-57c462d1c0ee",
+        "Id_c66cb665-5768-4f94-a0fd-441182a53f73",
+        "Id_4e5ede49-e800-470a-99a0-cdc4410a9c23",
+        "Id_37271e06-a5f0-49ad-84c8-d95967d7a7fc"
+      ],
+      "outgoing": [
+        "Id_767c1ef1-d1ad-4a33-bd3b-da6e9a099740"
+      ]
+    },
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make recapitulation",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "Cashier",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of  the making recapitulation",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_504bb6a9-a7a0-4d3d-8bf3-1010a9e46878"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries today's sales",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_24eaf2cf-944b-4f56-a07c-b9e36ef0c536"
+      ],
+      "outgoing": [
+        "Id_37271e06-a5f0-49ad-84c8-d95967d7a7fc"
+      ]
+    },
+    {
+      "id": "Id_c5b40bd5-1819-486f-9655-9daf5f38a079",
+      "name": "Queries the daily recap of this month",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b0883a43-e5de-4c1b-aead-64b3ab63869f"
+      ],
+      "outgoing": [
+        "Id_c66cb665-5768-4f94-a0fd-441182a53f73"
+      ]
+    },
+    {
+      "id": "Id_f644f3cd-8736-4c59-882f-d5d72403cbcb",
+      "name": "Chooses option",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "Cashier",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_504bb6a9-a7a0-4d3d-8bf3-1010a9e46878"
+      ],
+      "outgoing": [
+        "Id_a062ba31-f0f3-424a-81a7-cdf7ac85cecb"
+      ]
+    },
+    {
+      "id": "Id_dbddbd39-b238-4f84-b7a5-5bf5d6e26a0e",
+      "name": "Queries the spesific date",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_0a8cbd75-e47d-4136-91a8-903a22ed3990"
+      ],
+      "outgoing": [
+        "Id_4e5ede49-e800-470a-99a0-cdc4410a9c23"
+      ]
+    },
+    {
+      "id": "Id_aff664b5-a1ef-4145-81f1-d3cec9b5aedf",
+      "name": "Enters the spesific date",
+      "type": "task",
+      "participantName": "Make recapitulation",
+      "laneName": "Cashier",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_262a3a6a-bc85-460b-96a0-8dc95740cc3a"
+      ],
+      "outgoing": [
+        "Id_0a8cbd75-e47d-4136-91a8-903a22ed3990"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "incoming": [
+        "Id_6b700c51-ceac-4636-a9fa-ed5f5955fdb8",
+        "Id_767c1ef1-d1ad-4a33-bd3b-da6e9a099740"
+      ],
+      "outgoing": [
+        "Id_8d0a0bb1-c07c-4374-acf3-1d4f86494dd9"
+      ]
+    },
+    {
+      "id": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "incoming": [
+        "Id_a062ba31-f0f3-424a-81a7-cdf7ac85cecb"
+      ],
+      "outgoing": [
+        "Id_6b700c51-ceac-4636-a9fa-ed5f5955fdb8",
+        "Id_24eaf2cf-944b-4f56-a07c-b9e36ef0c536",
+        "Id_8faff871-e2ec-440b-bda2-3ceef86eae0a",
+        "Id_b0883a43-e5de-4c1b-aead-64b3ab63869f",
+        "Id_262a3a6a-bc85-460b-96a0-8dc95740cc3a"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make recapitulation",
+      "laneName": "Cashier",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_9cf3b377-6977-4b1a-b46b-de90008e3206",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make recapitulation",
+      "laneName": "System",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d",
+      "incoming": [
+        "Id_8d0a0bb1-c07c-4374-acf3-1d4f86494dd9"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_504bb6a9-a7a0-4d3d-8bf3-1010a9e46878",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_f644f3cd-8736-4c59-882f-d5d72403cbcb",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_6b700c51-ceac-4636-a9fa-ed5f5955fdb8",
+      "source": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "target": "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_24eaf2cf-944b-4f56-a07c-b9e36ef0c536",
+      "source": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "today",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_a062ba31-f0f3-424a-81a7-cdf7ac85cecb",
+      "source": "Id_f644f3cd-8736-4c59-882f-d5d72403cbcb",
+      "target": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_8faff871-e2ec-440b-bda2-3ceef86eae0a",
+      "source": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "target": "Id_1cb3c6ca-eb50-438f-9a6a-24816225a8dc",
+      "condition": "This month",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_b0883a43-e5de-4c1b-aead-64b3ab63869f",
+      "source": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "target": "Id_c5b40bd5-1819-486f-9655-9daf5f38a079",
+      "condition": "Daily recap of this month",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_767c1ef1-d1ad-4a33-bd3b-da6e9a099740",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_c57dbe2f-2571-4b52-a81b-57c462d1c0ee",
+      "source": "Id_1cb3c6ca-eb50-438f-9a6a-24816225a8dc",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_c66cb665-5768-4f94-a0fd-441182a53f73",
+      "source": "Id_c5b40bd5-1819-486f-9655-9daf5f38a079",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_262a3a6a-bc85-460b-96a0-8dc95740cc3a",
+      "source": "Id_3b4bb8a5-45cb-4fb2-b71b-d10f468d722d",
+      "target": "Id_aff664b5-a1ef-4145-81f1-d3cec9b5aedf",
+      "condition": "Recap a specific date",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_4e5ede49-e800-470a-99a0-cdc4410a9c23",
+      "source": "Id_dbddbd39-b238-4f84-b7a5-5bf5d6e26a0e",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_37271e06-a5f0-49ad-84c8-d95967d7a7fc",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_8d0a0bb1-c07c-4374-acf3-1d4f86494dd9",
+      "source": "Id_593d01ff-9bdd-4d97-8708-3e5155ce4f35",
+      "target": "Id_9cf3b377-6977-4b1a-b46b-de90008e3206",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    },
+    {
+      "id": "Id_0a8cbd75-e47d-4136-91a8-903a22ed3990",
+      "source": "Id_aff664b5-a1ef-4145-81f1-d3cec9b5aedf",
+      "target": "Id_dbddbd39-b238-4f84-b7a5-5bf5d6e26a0e",
+      "condition": "",
+      "processId": "Id_982b0a4f-2323-40b7-9473-af71c727704d"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "queries_the_current_month_s_sales_completed": false,
+    "displays_the_query_results_to_a_table_completed": false,
+    "asks_to_make_recapitulation_completed": false,
+    "displays_form_of_the_making_recapitulation_completed": false,
+    "queries_today_s_sales_completed": false,
+    "queries_the_daily_recap_of_this_month_completed": false,
+    "chooses_option_completed": false,
+    "queries_the_spesific_date_completed": false,
+    "enters_the_spesific_date_completed": false
+  }
+}

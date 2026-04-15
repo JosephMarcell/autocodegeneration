@@ -1,0 +1,392 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_13c7b888-8900-4f89-849f-f698f4ecdb73"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a report on mandatory savings account book",
+      "processRef": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_13c7b888-8900-4f89-849f-f698f4ecdb73": "Main Process",
+    "Id_291ea627-971f-4814-8841-d2fcee58d153": "Make a report on mandatory savings account book"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+        "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+        "Id_311c63a7-e2e7-4d8a-a167-caa97e254958",
+        "Id_9704207c-6930-4415-8e14-0f9e2fdae9ed",
+        "Id_a638b2b5-0a72-4e92-8419-28172b8fec93",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_70905213-6328-4efb-bf16-a5634f9862c4"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8": "Officer",
+    "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4": "System",
+    "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78": "System",
+    "Id_311c63a7-e2e7-4d8a-a167-caa97e254958": "System",
+    "Id_9704207c-6930-4415-8e14-0f9e2fdae9ed": "System",
+    "Id_a638b2b5-0a72-4e92-8419-28172b8fec93": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_70905213-6328-4efb-bf16-a5634f9862c4": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a report on validation of mandatory savings",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "Officer",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries for the member's information",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the work unit and the member's ID or name",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "Officer",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the form of making a report on validation of mandatory savings",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays member list",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec"
+      ],
+      "outgoing": [
+        "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d"
+      ]
+    },
+    {
+      "id": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "name": "Selects one of the members",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "Officer",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d"
+      ],
+      "outgoing": [
+        "Id_72680729-c144-48b1-9409-ae906d7b5e4e"
+      ]
+    },
+    {
+      "id": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "name": "Queries the Mandatory Savings",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_72680729-c144-48b1-9409-ae906d7b5e4e"
+      ],
+      "outgoing": [
+        "Id_b9628d1a-d844-4228-9df3-0bf4da68d5b4"
+      ]
+    },
+    {
+      "id": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "name": "Displays the list of mandatory savings to a table",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_db6bdbdc-56e5-459c-a58b-3f0e49a2e473"
+      ],
+      "outgoing": [
+        "Id_37f4337f-5304-4bad-b55e-b1ec51e2abd3"
+      ]
+    },
+    {
+      "id": "Id_9704207c-6930-4415-8e14-0f9e2fdae9ed",
+      "name": "Prints the mandatory savings account book",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_e4990d83-4028-4690-b302-6a4f2a4e6d70"
+      ],
+      "outgoing": [
+        "Id_2c4e7587-02a7-4a37-adb5-56ea8733cf85"
+      ]
+    },
+    {
+      "id": "Id_70905213-6328-4efb-bf16-a5634f9862c4",
+      "name": "Displays the selected member to a form",
+      "type": "task",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_b9628d1a-d844-4228-9df3-0bf4da68d5b4"
+      ],
+      "outgoing": [
+        "Id_db6bdbdc-56e5-459c-a58b-3f0e49a2e473"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_311c63a7-e2e7-4d8a-a167-caa97e254958",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "incoming": [
+        "Id_37f4337f-5304-4bad-b55e-b1ec51e2abd3"
+      ],
+      "outgoing": [
+        "Id_e4990d83-4028-4690-b302-6a4f2a4e6d70",
+        "Id_a4fecbcf-b52e-47d6-acfc-a08261c6a422"
+      ]
+    },
+    {
+      "id": "Id_a638b2b5-0a72-4e92-8419-28172b8fec93",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "incoming": [
+        "Id_a4fecbcf-b52e-47d6-acfc-a08261c6a422",
+        "Id_2c4e7587-02a7-4a37-adb5-56ea8733cf85"
+      ],
+      "outgoing": [
+        "Id_46389c2a-0b20-46ec-a027-1978f5fa37e0"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "Officer",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report on mandatory savings account book",
+      "laneName": "System",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153",
+      "incoming": [
+        "Id_46389c2a-0b20-46ec-a027-1978f5fa37e0"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_6d13b8a8-3818-4c3d-bb25-d3288a17c9ec",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_8be71bb4-c7d2-48b1-b59c-64748bbc091d",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_72680729-c144-48b1-9409-ae906d7b5e4e",
+      "source": "Id_3699b1d0-20a3-4ee2-a24d-c50c0e0683f8",
+      "target": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_b9628d1a-d844-4228-9df3-0bf4da68d5b4",
+      "source": "Id_517bfaef-f1ea-4a0d-b66d-05cc5d13f7c4",
+      "target": "Id_70905213-6328-4efb-bf16-a5634f9862c4",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_37f4337f-5304-4bad-b55e-b1ec51e2abd3",
+      "source": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "target": "Id_311c63a7-e2e7-4d8a-a167-caa97e254958",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_e4990d83-4028-4690-b302-6a4f2a4e6d70",
+      "source": "Id_311c63a7-e2e7-4d8a-a167-caa97e254958",
+      "target": "Id_9704207c-6930-4415-8e14-0f9e2fdae9ed",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_a4fecbcf-b52e-47d6-acfc-a08261c6a422",
+      "source": "Id_311c63a7-e2e7-4d8a-a167-caa97e254958",
+      "target": "Id_a638b2b5-0a72-4e92-8419-28172b8fec93",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_2c4e7587-02a7-4a37-adb5-56ea8733cf85",
+      "source": "Id_9704207c-6930-4415-8e14-0f9e2fdae9ed",
+      "target": "Id_a638b2b5-0a72-4e92-8419-28172b8fec93",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_46389c2a-0b20-46ec-a027-1978f5fa37e0",
+      "source": "Id_a638b2b5-0a72-4e92-8419-28172b8fec93",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    },
+    {
+      "id": "Id_db6bdbdc-56e5-459c-a58b-3f0e49a2e473",
+      "source": "Id_70905213-6328-4efb-bf16-a5634f9862c4",
+      "target": "Id_6290c23b-c640-4ee6-b430-d7bd5fe6cc78",
+      "condition": "",
+      "processId": "Id_291ea627-971f-4814-8841-d2fcee58d153"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_report_on_validation_of_mandatory_savings_completed": false,
+    "queries_for_the_member_s_information_completed": false,
+    "enters_the_work_unit_and_the_member_s_id_or_name_completed": false,
+    "displays_the_form_of_making_a_report_on_validation_of_mandatory_savings_completed": false,
+    "displays_member_list_completed": false,
+    "selects_one_of_the_members_completed": false,
+    "queries_the_mandatory_savings_completed": false,
+    "displays_the_list_of_mandatory_savings_to_a_table_completed": false,
+    "prints_the_mandatory_savings_account_book_completed": false,
+    "displays_the_selected_member_to_a_form_completed": false
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "project": "App",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Recourse \nClerk",
+        "value": "recourseclerk",
+        "internal": "recourseclerk"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "recourseclerk": "/recourse-clerk/check-case"
+    },
+    "stateSchema": {
+      "check_case_completed": false,
+      "send_request_for_payment_completed": false,
+      "close_case_completed": false,
+      "send_reminder_completed": false,
+      "check_reasoning_completed": false,
+      "hand_over_to_collection_agency_completed": false,
+      "make_booking_completed": false,
+      "recourse_possible_result": "",
+      "ok_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/recourse-clerk/check-case",
+        "role": "recourseclerk",
+        "component": "CheckCasePage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/send-request-for-payment",
+        "role": "recourseclerk",
+        "component": "SendRequestForPaymentPage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/close-case",
+        "role": "recourseclerk",
+        "component": "CloseCasePage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/send-reminder",
+        "role": "recourseclerk",
+        "component": "SendReminderPage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/check-reasoning",
+        "role": "recourseclerk",
+        "component": "CheckReasoningPage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/close-case",
+        "role": "recourseclerk",
+        "component": "CloseCasePage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/hand-over-to-collection-agency",
+        "role": "recourseclerk",
+        "component": "HandOverToCollectionAgencyPage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/make-booking",
+        "role": "recourseclerk",
+        "component": "MakeBookingPage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      },
+      {
+        "route": "/recourse-clerk/close-case",
+        "role": "recourseclerk",
+        "component": "CloseCasePage",
+        "allowedRoles": [
+          "recourseclerk"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "RecourseClerk",
+      "role": "recourseclerk",
+      "defaultRoute": "/recourse-clerk/check-case",
+      "tasks": [
+        {
+          "taskId": "recourseclerk-make-booking",
+          "name": "MakeBooking",
+          "route": "/recourse-clerk/make-booking",
+          "component": "MakeBookingPage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: make booking.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "make_booking_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/close-case",
+          "ui": {
+            "title": "make booking",
+            "hint": "Page for BPMN task 'make booking' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-check-case",
+          "name": "CheckCase",
+          "route": "/recourse-clerk/check-case",
+          "component": "CheckCasePage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: check case.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "check_case_completed",
+              "value": true
+            },
+            {
+              "field": "recourse_possible_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/send-request-for-payment",
+          "ui": {
+            "title": "check case",
+            "hint": "Page for BPMN task 'check case' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/recourse-clerk/send-request-for-payment",
+              "condition": "yes"
+            },
+            {
+              "route": "/recourse-clerk/close-case",
+              "condition": "no"
+            }
+          ]
+        },
+        {
+          "taskId": "recourseclerk-check-reasoning",
+          "name": "CheckReasoning",
+          "route": "/recourse-clerk/check-reasoning",
+          "component": "CheckReasoningPage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: check reasoning.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "check_reasoning_completed",
+              "value": true
+            },
+            {
+              "field": "ok_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/close-case",
+          "ui": {
+            "title": "check reasoning",
+            "hint": "Page for BPMN task 'check reasoning' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/recourse-clerk/close-case",
+              "condition": "yes"
+            },
+            {
+              "route": "/recourse-clerk/hand-over-to-collection-agency",
+              "condition": "no"
+            }
+          ]
+        },
+        {
+          "taskId": "recourseclerk-close-case",
+          "name": "CloseCase",
+          "route": "/recourse-clerk/close-case",
+          "component": "CloseCasePage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: close case.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "close_case_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/complete",
+          "ui": {
+            "title": "close case",
+            "hint": "Page for BPMN task 'close case' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-send-request-for-payment",
+          "name": "SendRequestForPayment",
+          "route": "/recourse-clerk/send-request-for-payment",
+          "component": "SendRequestForPaymentPage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: send request for payment.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_request_for_payment_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/send-reminder",
+          "ui": {
+            "title": "send request for payment",
+            "hint": "Page for BPMN task 'send request for payment' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-close-case",
+          "name": "CloseCase",
+          "route": "/recourse-clerk/close-case",
+          "component": "CloseCasePage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: close case.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "close_case_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/complete",
+          "ui": {
+            "title": "close case",
+            "hint": "Page for BPMN task 'close case' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-close-case",
+          "name": "CloseCase",
+          "route": "/recourse-clerk/close-case",
+          "component": "CloseCasePage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: close case.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "close_case_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/complete",
+          "ui": {
+            "title": "close case",
+            "hint": "Page for BPMN task 'close case' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-hand-over-to-collection-agency",
+          "name": "HandOverToCollectionAgency",
+          "route": "/recourse-clerk/hand-over-to-collection-agency",
+          "component": "HandOverToCollectionAgencyPage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: hand over to collection agency.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "hand_over_to_collection_agency_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/complete",
+          "ui": {
+            "title": "hand over to collection agency",
+            "hint": "Page for BPMN task 'hand over to collection agency' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "recourseclerk-send-reminder",
+          "name": "SendReminder",
+          "route": "/recourse-clerk/send-reminder",
+          "component": "SendReminderPage",
+          "pageType": "write-navigate",
+          "description": "Recourse \nClerk: send reminder.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_reminder_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/recourse-clerk/check-reasoning",
+          "ui": {
+            "title": "send reminder",
+            "hint": "Page for BPMN task 'send reminder' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/recourse-clerk/check-reasoning",
+              "condition": "__eventBased__disagreement letter received"
+            },
+            {
+              "route": "/recourse-clerk/hand-over-to-collection-agency",
+              "condition": "__eventBased__Reminder is due"
+            },
+            {
+              "route": "/recourse-clerk/make-booking",
+              "condition": "__eventBased__Money received"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

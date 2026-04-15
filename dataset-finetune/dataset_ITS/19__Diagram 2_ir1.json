@@ -1,0 +1,292 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_dde29fb5-8c79-477c-99af-2d570f3cde84"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Display cash inflow",
+      "processRef": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_dde29fb5-8c79-477c-99af-2d570f3cde84": "Main Process",
+    "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c": "Display cash inflow"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+        "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+        "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+        "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+        "Id_6e01f2e6-ef04-43e4-8794-2410499d25be"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f": "System",
+    "Id_09171f7a-43da-4930-be39-5281a0e344d1": "System",
+    "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531": "System",
+    "Id_bf8db104-94fe-43d9-b858-43e2e47663dd": "System",
+    "Id_6e01f2e6-ef04-43e4-8794-2410499d25be": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Wants to display cash inflow",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "Officer",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Queries about the cash inflow in the cash database",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Fills in the year and month",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "Officer",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays the cash inflow form",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "name": "Displays the query result",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1"
+      ],
+      "outgoing": [
+        "Id_62057387-9b64-451e-9fcd-2a9203b62555"
+      ]
+    },
+    {
+      "id": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "name": "Prints a report to the printer",
+      "type": "task",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336"
+      ],
+      "outgoing": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "incoming": [
+        "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ],
+      "outgoing": [
+        "Id_13959d94-f5a9-48b8-a3e0-664f3576067d"
+      ]
+    },
+    {
+      "id": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "incoming": [
+        "Id_62057387-9b64-451e-9fcd-2a9203b62555"
+      ],
+      "outgoing": [
+        "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+        "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Display cash inflow",
+      "laneName": "Officer",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Display cash inflow",
+      "laneName": "System",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c",
+      "incoming": [
+        "Id_13959d94-f5a9-48b8-a3e0-664f3576067d"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_94aabf9b-caea-4a56-9ecf-c202a1fd9ab1",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_62057387-9b64-451e-9fcd-2a9203b62555",
+      "source": "Id_d358eef3-58e8-429f-ba6e-e97a9a0ec32f",
+      "target": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_3d9b4a99-b652-499c-881e-9e1b5a146336",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_31bf0088-f88d-41dc-99ce-6d0f58a92081",
+      "source": "Id_6e01f2e6-ef04-43e4-8794-2410499d25be",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_daebc073-2cf2-429e-97cb-c8083bfe3c04",
+      "source": "Id_bf8db104-94fe-43d9-b858-43e2e47663dd",
+      "target": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    },
+    {
+      "id": "Id_13959d94-f5a9-48b8-a3e0-664f3576067d",
+      "source": "Id_e8510fe5-4429-4b46-8ca7-bd0ad5201531",
+      "target": "Id_09171f7a-43da-4930-be39-5281a0e344d1",
+      "condition": "",
+      "processId": "Id_a1afed34-63f9-4836-869a-5aa6b8d41b0c"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "wants_to_display_cash_inflow_completed": false,
+    "queries_about_the_cash_inflow_in_the_cash_database_completed": false,
+    "fills_in_the_year_and_month_completed": false,
+    "displays_the_cash_inflow_form_completed": false,
+    "displays_the_query_result_completed": false,
+    "prints_a_report_to_the_printer_completed": false
+  }
+}

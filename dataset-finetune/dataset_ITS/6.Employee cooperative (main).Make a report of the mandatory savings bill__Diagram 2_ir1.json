@@ -1,0 +1,351 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_10522764-ea7d-44a2-9dc5-29a2b1d3b770"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Make a report of the mandatory savings bill",
+      "processRef": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_10522764-ea7d-44a2-9dc5-29a2b1d3b770": "Main Process",
+    "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de": "Make a report of the mandatory savings bill"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+        "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_28177b60-9fdb-4316-ab00-0e0c0b955153": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to make a report of the mandatory savings bill",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "Officer",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Reads the mandatory savings database",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Selects the billing data",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "Officer",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a form to make a report of the mandatory savinggs bill",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Displays ithe billing details in the table",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7"
+      ],
+      "outgoing": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915"
+      ]
+    },
+    {
+      "id": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "name": "Prints to the printer",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_cfd8950e-7748-4895-be7f-037980921e85"
+      ],
+      "outgoing": [
+        "Id_a13767c8-1e6d-4149-accb-0b23f8831b38"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "name": "Displays the total bill",
+      "type": "task",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ],
+      "outgoing": [
+        "Id_6f47e717-f19a-4c76-927a-b6f76dd4476a"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "incoming": [
+        "Id_6f47e717-f19a-4c76-927a-b6f76dd4476a"
+      ],
+      "outgoing": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+        "Id_cfd8950e-7748-4895-be7f-037980921e85"
+      ]
+    },
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "incoming": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915",
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+        "Id_a13767c8-1e6d-4149-accb-0b23f8831b38"
+      ],
+      "outgoing": [
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "Officer",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Make a report of the mandatory savings bill",
+      "laneName": "System",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de",
+      "incoming": [
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_265c0788-445b-4639-88a2-b0df8456a915",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_6f47e717-f19a-4c76-927a-b6f76dd4476a",
+      "source": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "target": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_cfd8950e-7748-4895-be7f-037980921e85",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    },
+    {
+      "id": "Id_a13767c8-1e6d-4149-accb-0b23f8831b38",
+      "source": "Id_28177b60-9fdb-4316-ab00-0e0c0b955153",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_6235986e-5de7-4b1f-97a5-53f479b3f0de"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_make_a_report_of_the_mandatory_savings_bill_completed": false,
+    "reads_the_mandatory_savings_database_completed": false,
+    "selects_the_billing_data_completed": false,
+    "displays_a_form_to_make_a_report_of_the_mandatory_savinggs_bill_completed": false,
+    "displays_ithe_billing_details_in_the_table_completed": false,
+    "prints_to_the_printer_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "displays_the_total_bill_completed": false
+  }
+}

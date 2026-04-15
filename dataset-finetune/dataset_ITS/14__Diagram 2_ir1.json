@@ -1,0 +1,397 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_20ba2c05-844d-4bfe-a229-6e13afcdc2cd"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Resign member",
+      "processRef": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_20ba2c05-844d-4bfe-a229-6e13afcdc2cd": "Main Process",
+    "Id_8202cac2-a6ea-4170-9e8d-cede27e22240": "Resign member"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_1762430f-3557-43dc-b130-0c7604e26698",
+        "Id_971009e2-3946-424e-885f-e7e52a5335d5"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "flowNodeRefs": [
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+        "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+        "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+        "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Officer",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Officer",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "System",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "Officer",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264": "System",
+    "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4": "System",
+    "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4": "System",
+    "Id_1762430f-3557-43dc-b130-0c7604e26698": "Officer",
+    "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3": "System",
+    "Id_971009e2-3946-424e-885f-e7e52a5335d5": "Officer"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to resign the cooperative member",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Searches for information about the member",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Enters the ID or name",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_219f4458-aaed-4ee6-9d66-dbe05b2106be"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays a form to resign the cooperative member",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "name": "Stores information about resign member",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915"
+      ],
+      "outgoing": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Reads the work unit database",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "name": "Displays information about the member",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_6e204ea0-9cdf-40f5-90dc-7f12a8f45b46"
+      ],
+      "outgoing": [
+        "Id_fdc65895-8ab2-4298-a6d4-a8efa2429189"
+      ]
+    },
+    {
+      "id": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "name": "Selects one of the descriptions",
+      "type": "task",
+      "participantName": "Resign member",
+      "laneName": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_fdc65895-8ab2-4298-a6d4-a8efa2429189"
+      ],
+      "outgoing": [
+        "Id_031dd474-dda6-4666-952b-ae5513893c7a"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [
+        "Id_031dd474-dda6-4666-952b-ae5513893c7a"
+      ],
+      "outgoing": [
+        "Id_265c0788-445b-4639-88a2-b0df8456a915",
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7"
+      ]
+    },
+    {
+      "id": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [
+        "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+        "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7"
+      ],
+      "outgoing": [
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ]
+    },
+    {
+      "id": "Id_1762430f-3557-43dc-b130-0c7604e26698",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Resign member",
+      "laneName": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+        "Id_c3efe465-54ed-448d-b52e-fc1ce178d0c9"
+      ],
+      "outgoing": [
+        "Id_219f4458-aaed-4ee6-9d66-dbe05b2106be"
+      ]
+    },
+    {
+      "id": "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Resign member",
+      "laneName": "System",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [
+        "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd"
+      ],
+      "outgoing": [
+        "Id_6e204ea0-9cdf-40f5-90dc-7f12a8f45b46",
+        "Id_c3efe465-54ed-448d-b52e-fc1ce178d0c9"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Resign member",
+      "laneName": "Officer",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Resign member",
+      "laneName": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240",
+      "incoming": [
+        "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_1762430f-3557-43dc-b130-0c7604e26698",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_4a7f0ca6-eea9-4c77-b827-86a75f3c3acd",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_265c0788-445b-4639-88a2-b0df8456a915",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "condition": "Process",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_2c4f05f8-7c4b-4bbc-9b72-33d579d12a21",
+      "source": "Id_53565fb5-8d3c-4ada-9fce-daae854c63c4",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_cd4b440c-4d90-4491-9f60-8fc0070829e7",
+      "source": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "target": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_6d81e7c3-bde8-4fb7-93fe-1c3985280c4f",
+      "source": "Id_afc65e35-2f6b-412d-8456-c1dccbf00e55",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_219f4458-aaed-4ee6-9d66-dbe05b2106be",
+      "source": "Id_1762430f-3557-43dc-b130-0c7604e26698",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_6e204ea0-9cdf-40f5-90dc-7f12a8f45b46",
+      "source": "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3",
+      "target": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "condition": "available",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_c3efe465-54ed-448d-b52e-fc1ce178d0c9",
+      "source": "Id_75b3eed3-3f8a-4135-a325-3cfd222c05b3",
+      "target": "Id_1762430f-3557-43dc-b130-0c7604e26698",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_fdc65895-8ab2-4298-a6d4-a8efa2429189",
+      "source": "Id_81b6c614-2a61-40f1-ae4e-aa8ab40974f4",
+      "target": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    },
+    {
+      "id": "Id_031dd474-dda6-4666-952b-ae5513893c7a",
+      "source": "Id_971009e2-3946-424e-885f-e7e52a5335d5",
+      "target": "Id_c8cb5129-5c20-4f71-a3f3-a87f8b827264",
+      "condition": "",
+      "processId": "Id_8202cac2-a6ea-4170-9e8d-cede27e22240"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_resign_the_cooperative_member_completed": false,
+    "searches_for_information_about_the_member_completed": false,
+    "enters_the_id_or_name_completed": false,
+    "displays_a_form_to_resign_the_cooperative_member_completed": false,
+    "stores_information_about_resign_member_completed": false,
+    "reads_the_work_unit_database_completed": false,
+    "displays_information_about_the_member_completed": false,
+    "selects_one_of_the_descriptions_completed": false
+  }
+}

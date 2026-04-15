@@ -1,0 +1,267 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_00713e85-47c7-4e98-bd77-763a586fa330"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Setup initial stock",
+      "processRef": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_00713e85-47c7-4e98-bd77-763a586fa330": "Main Process",
+    "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa": "Setup initial stock"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Warehouse keeper",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_616e371d-29cb-4336-9fbf-a506439d2aa2"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "flowNodeRefs": [
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+        "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+        "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58",
+        "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452",
+        "Id_47cb1276-7726-4108-a16f-aeb91480ec58"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Warehouse keeper",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Warehouse keeper",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_9059b726-65a2-4279-b24b-f897a5e4a393": "System",
+    "Id_616e371d-29cb-4336-9fbf-a506439d2aa2": "Warehouse keeper",
+    "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742": "System",
+    "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58": "System",
+    "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452": "System",
+    "Id_47cb1276-7726-4108-a16f-aeb91480ec58": "System"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Asks to setup initial stock",
+      "type": "task",
+      "participantName": "Setup initial stock",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Displays form of initial stock setup",
+      "type": "task",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "name": "Queries goods on Goods database",
+      "type": "task",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876"
+      ]
+    },
+    {
+      "id": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "name": "Enters information about the initial stock setup",
+      "type": "task",
+      "participantName": "Setup initial stock",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ],
+      "outgoing": [
+        "Id_e9d78610-53c0-4e13-ba81-275cca608909"
+      ]
+    },
+    {
+      "id": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "name": "Stores information about the stock initials",
+      "type": "task",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5c3a5125-e0c1-4293-89c3-861ffdad06d8"
+      ],
+      "outgoing": [
+        "Id_b3185fb7-7789-47f7-be2f-441d4e0e1eca"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "incoming": [
+        "Id_e9d78610-53c0-4e13-ba81-275cca608909"
+      ],
+      "outgoing": [
+        "Id_5c3a5125-e0c1-4293-89c3-861ffdad06d8",
+        "Id_737220b8-8585-4708-b9be-413942177948"
+      ]
+    },
+    {
+      "id": "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "incoming": [
+        "Id_b3185fb7-7789-47f7-be2f-441d4e0e1eca",
+        "Id_737220b8-8585-4708-b9be-413942177948"
+      ],
+      "outgoing": [
+        "Id_a608de04-f729-4dbd-ae09-263bc4159d6c"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Setup initial stock",
+      "laneName": "Warehouse keeper",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_47cb1276-7726-4108-a16f-aeb91480ec58",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Setup initial stock",
+      "laneName": "System",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa",
+      "incoming": [
+        "Id_a608de04-f729-4dbd-ae09-263bc4159d6c"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_3d57669b-9c0d-43cd-a0a8-f97f8b8c8876",
+      "source": "Id_9059b726-65a2-4279-b24b-f897a5e4a393",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_e9d78610-53c0-4e13-ba81-275cca608909",
+      "source": "Id_616e371d-29cb-4336-9fbf-a506439d2aa2",
+      "target": "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_5c3a5125-e0c1-4293-89c3-861ffdad06d8",
+      "source": "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58",
+      "target": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "condition": "Add",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_b3185fb7-7789-47f7-be2f-441d4e0e1eca",
+      "source": "Id_64e1b2e1-9fb7-47bb-8e60-67b52903f742",
+      "target": "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_737220b8-8585-4708-b9be-413942177948",
+      "source": "Id_3229d056-2ae7-4f2f-9735-f16e4c1aac58",
+      "target": "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    },
+    {
+      "id": "Id_a608de04-f729-4dbd-ae09-263bc4159d6c",
+      "source": "Id_e0d1ee79-52b7-4c48-ab1c-5c4cf9cdc452",
+      "target": "Id_47cb1276-7726-4108-a16f-aeb91480ec58",
+      "condition": "",
+      "processId": "Id_b9159e3d-a511-463e-a6b7-d4eb88b8e9aa"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "asks_to_setup_initial_stock_completed": false,
+    "displays_form_of_initial_stock_setup_completed": false,
+    "queries_goods_on_goods_database_completed": false,
+    "enters_information_about_the_initial_stock_setup_completed": false,
+    "stores_information_about_the_stock_initials_completed": false
+  }
+}

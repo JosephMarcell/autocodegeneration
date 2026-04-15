@@ -1,0 +1,433 @@
+{
+  "project_name": "App",
+  "participants": [
+    {
+      "id": "Participant_0ygkg4f",
+      "name": "Dispatch of goods\nComputer Hardware Shop",
+      "processRef": "Process_1"
+    }
+  ],
+  "proc_to_participant": {
+    "Process_1": "Dispatch of goods\nComputer Hardware Shop"
+  },
+  "lanes": [
+    {
+      "id": "Lane_1viot5w",
+      "name": "Logistics",
+      "processId": "Process_1",
+      "flowNodeRefs": [
+        "Task_12j0pib"
+      ]
+    },
+    {
+      "id": "Lane_1ocseyo",
+      "name": "Secretary",
+      "processId": "Process_1",
+      "flowNodeRefs": [
+        "Task_0jsoxba",
+        "Task_0vaxgaa",
+        "Task_0e6hvnj",
+        "Task_0s79ile",
+        "InclusiveGateway_0p2e5vq",
+        "InclusiveGateway_1dgb4sg",
+        "StartEvent_1",
+        "ParallelGateway_02fgrfq",
+        "ExclusiveGateway_1mpgzhg",
+        "ExclusiveGateway_1ouv9kf"
+      ]
+    },
+    {
+      "id": "Lane_1vl2igx",
+      "name": "Warehouse",
+      "processId": "Process_1",
+      "flowNodeRefs": [
+        "Task_05ftug5",
+        "Task_0sl26uo",
+        "ExclusiveGateway_0z5sib0",
+        "EndEvent_1fx9yp3"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Task_12j0pib": "Logistics",
+    "Task_0jsoxba": "Secretary",
+    "Task_0vaxgaa": "Secretary",
+    "Task_0e6hvnj": "Secretary",
+    "Task_0s79ile": "Secretary",
+    "InclusiveGateway_0p2e5vq": "Secretary",
+    "InclusiveGateway_1dgb4sg": "Secretary",
+    "StartEvent_1": "Secretary",
+    "ParallelGateway_02fgrfq": "Secretary",
+    "ExclusiveGateway_1mpgzhg": "Secretary",
+    "ExclusiveGateway_1ouv9kf": "Secretary",
+    "Task_05ftug5": "Warehouse",
+    "Task_0sl26uo": "Warehouse",
+    "ExclusiveGateway_0z5sib0": "Warehouse",
+    "EndEvent_1fx9yp3": "Warehouse"
+  },
+  "tasks": [
+    {
+      "id": "Task_12j0pib",
+      "name": "Insure parcel",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Logistics",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1j94oja"
+      ],
+      "outgoing": [
+        "SequenceFlow_0kz5g1t"
+      ]
+    },
+    {
+      "id": "Task_0jsoxba",
+      "name": "Write package\nlabel",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1dlbln9"
+      ],
+      "outgoing": [
+        "SequenceFlow_0mp5byl"
+      ]
+    },
+    {
+      "id": "Task_0vaxgaa",
+      "name": "Clarify shipment method",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_023hzxi"
+      ],
+      "outgoing": [
+        "SequenceFlow_1rss71o"
+      ]
+    },
+    {
+      "id": "Task_0e6hvnj",
+      "name": "Get 3 offers\nfrom logistic\ncompanies",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1xv6wk4"
+      ],
+      "outgoing": [
+        "SequenceFlow_1pq8ub3"
+      ]
+    },
+    {
+      "id": "Task_0s79ile",
+      "name": "Select logistic\ncompany and\nplace order",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1pq8ub3"
+      ],
+      "outgoing": [
+        "SequenceFlow_0ajhekx"
+      ]
+    },
+    {
+      "id": "Task_05ftug5",
+      "name": "Package goods",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Warehouse",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_1ujhfx4"
+      ],
+      "outgoing": [
+        "SequenceFlow_0b2nw5c"
+      ]
+    },
+    {
+      "id": "Task_0sl26uo",
+      "name": "Prepare for\npicking up\ngoods",
+      "type": "task",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Warehouse",
+      "processId": "Process_1",
+      "asyncFlag": false,
+      "incoming": [
+        "SequenceFlow_06kfaev"
+      ],
+      "outgoing": [
+        "SequenceFlow_0v64x8b"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "ExclusiveGateway_1mpgzhg",
+      "name": "Special\nsandling?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_1rss71o"
+      ],
+      "outgoing": [
+        "SequenceFlow_0iu9po7",
+        "SequenceFlow_1xv6wk4"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_1ouv9kf",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0ajhekx",
+        "SequenceFlow_0buzwss"
+      ],
+      "outgoing": [
+        "SequenceFlow_035vf60"
+      ]
+    },
+    {
+      "id": "ExclusiveGateway_0z5sib0",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Warehouse",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_035vf60",
+        "SequenceFlow_0b2nw5c"
+      ],
+      "outgoing": [
+        "SequenceFlow_06kfaev"
+      ]
+    },
+    {
+      "id": "ParallelGateway_02fgrfq",
+      "name": "",
+      "gatewayType": "parallel",
+      "gatewayDirection": "Diverging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_14a0oky"
+      ],
+      "outgoing": [
+        "SequenceFlow_023hzxi",
+        "SequenceFlow_1ujhfx4"
+      ]
+    },
+    {
+      "id": "InclusiveGateway_0p2e5vq",
+      "name": "",
+      "gatewayType": "inclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0iu9po7"
+      ],
+      "outgoing": [
+        "SequenceFlow_1j94oja",
+        "SequenceFlow_1dlbln9"
+      ]
+    },
+    {
+      "id": "InclusiveGateway_1dgb4sg",
+      "name": "",
+      "gatewayType": "inclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0mp5byl",
+        "SequenceFlow_0kz5g1t"
+      ],
+      "outgoing": [
+        "SequenceFlow_0buzwss"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "StartEvent_1",
+      "name": "Ship goods",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Secretary",
+      "processId": "Process_1",
+      "incoming": [],
+      "outgoing": [
+        "SequenceFlow_14a0oky"
+      ]
+    },
+    {
+      "id": "EndEvent_1fx9yp3",
+      "name": "Shipment\nprepared",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Dispatch of goods\nComputer Hardware Shop",
+      "laneName": "Warehouse",
+      "processId": "Process_1",
+      "incoming": [
+        "SequenceFlow_0v64x8b"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "SequenceFlow_0iu9po7",
+      "source": "ExclusiveGateway_1mpgzhg",
+      "target": "InclusiveGateway_0p2e5vq",
+      "condition": "no",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1j94oja",
+      "source": "InclusiveGateway_0p2e5vq",
+      "target": "Task_12j0pib",
+      "condition": "If insurance necessary",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1dlbln9",
+      "source": "InclusiveGateway_0p2e5vq",
+      "target": "Task_0jsoxba",
+      "condition": "always",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0mp5byl",
+      "source": "Task_0jsoxba",
+      "target": "InclusiveGateway_1dgb4sg",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0kz5g1t",
+      "source": "Task_12j0pib",
+      "target": "InclusiveGateway_1dgb4sg",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_14a0oky",
+      "source": "StartEvent_1",
+      "target": "ParallelGateway_02fgrfq",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_023hzxi",
+      "source": "ParallelGateway_02fgrfq",
+      "target": "Task_0vaxgaa",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1rss71o",
+      "source": "Task_0vaxgaa",
+      "target": "ExclusiveGateway_1mpgzhg",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1xv6wk4",
+      "source": "ExclusiveGateway_1mpgzhg",
+      "target": "Task_0e6hvnj",
+      "condition": "yes",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1pq8ub3",
+      "source": "Task_0e6hvnj",
+      "target": "Task_0s79ile",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0ajhekx",
+      "source": "Task_0s79ile",
+      "target": "ExclusiveGateway_1ouv9kf",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0buzwss",
+      "source": "InclusiveGateway_1dgb4sg",
+      "target": "ExclusiveGateway_1ouv9kf",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_035vf60",
+      "source": "ExclusiveGateway_1ouv9kf",
+      "target": "ExclusiveGateway_0z5sib0",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0b2nw5c",
+      "source": "Task_05ftug5",
+      "target": "ExclusiveGateway_0z5sib0",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_06kfaev",
+      "source": "ExclusiveGateway_0z5sib0",
+      "target": "Task_0sl26uo",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_0v64x8b",
+      "source": "Task_0sl26uo",
+      "target": "EndEvent_1fx9yp3",
+      "condition": "",
+      "processId": "Process_1"
+    },
+    {
+      "id": "SequenceFlow_1ujhfx4",
+      "source": "ParallelGateway_02fgrfq",
+      "target": "Task_05ftug5",
+      "condition": "",
+      "processId": "Process_1"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "insure_parcel_completed": false,
+    "write_package_label_completed": false,
+    "clarify_shipment_method_completed": false,
+    "get_3_offers_from_logistic_companies_completed": false,
+    "select_logistic_company_and_place_order_completed": false,
+    "package_goods_completed": false,
+    "prepare_for_picking_up_goods_completed": false,
+    "special_sandling_result": ""
+  }
+}

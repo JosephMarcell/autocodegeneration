@@ -1,0 +1,208 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Setup initial stock",
+        "value": "setupinitialstock",
+        "internal": "setupinitialstock"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "setupinitialstock": "/setup-initial-stock/asks-to-setup-initial-stock"
+    },
+    "stateSchema": {
+      "asks_to_setup_initial_stock_completed": false,
+      "displays_form_of_initial_stock_setup_completed": false,
+      "queries_goods_on_goods_database_completed": false,
+      "enters_information_about_the_initial_stock_setup_completed": false,
+      "stores_information_about_the_stock_initials_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/setup-initial-stock/asks-to-setup-initial-stock",
+        "role": "setupinitialstock",
+        "component": "AsksToSetupInitialStockPage",
+        "allowedRoles": [
+          "setupinitialstock"
+        ]
+      },
+      {
+        "route": "/setup-initial-stock/displays-form-of-initial-stock-setup",
+        "role": "setupinitialstock",
+        "component": "DisplaysFormOfInitialStockSetupPage",
+        "allowedRoles": [
+          "setupinitialstock"
+        ]
+      },
+      {
+        "route": "/setup-initial-stock/queries-goods-on-goods-database",
+        "role": "setupinitialstock",
+        "component": "QueriesGoodsOnGoodsDatabasePage",
+        "allowedRoles": [
+          "setupinitialstock"
+        ]
+      },
+      {
+        "route": "/setup-initial-stock/enters-information-about-the-initial-stock-setup",
+        "role": "setupinitialstock",
+        "component": "EntersInformationAboutTheInitialStockSetupPage",
+        "allowedRoles": [
+          "setupinitialstock"
+        ]
+      },
+      {
+        "route": "/setup-initial-stock/stores-information-about-the-stock-initials",
+        "role": "setupinitialstock",
+        "component": "StoresInformationAboutTheStockInitialsPage",
+        "allowedRoles": [
+          "setupinitialstock"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "SetupInitialStock",
+      "role": "setupinitialstock",
+      "defaultRoute": "/setup-initial-stock/asks-to-setup-initial-stock",
+      "tasks": [
+        {
+          "taskId": "setupinitialstock-asks-to-setup-initial-stock",
+          "name": "AsksToSetupInitialStock",
+          "route": "/setup-initial-stock/asks-to-setup-initial-stock",
+          "component": "AsksToSetupInitialStockPage",
+          "pageType": "write-navigate",
+          "description": "Setup initial stock: Asks to setup initial stock.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_setup_initial_stock_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/setup-initial-stock/queries-goods-on-goods-database",
+          "ui": {
+            "title": "Asks to setup initial stock",
+            "hint": "Page for BPMN task 'Asks to setup initial stock' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "setupinitialstock-queries-goods-on-goods-database",
+          "name": "QueriesGoodsOnGoodsDatabase",
+          "route": "/setup-initial-stock/queries-goods-on-goods-database",
+          "component": "QueriesGoodsOnGoodsDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Setup initial stock: Queries goods on Goods database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_goods_on_goods_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/setup-initial-stock/displays-form-of-initial-stock-setup",
+          "ui": {
+            "title": "Queries goods on Goods database",
+            "hint": "Page for BPMN task 'Queries goods on Goods database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "setupinitialstock-displays-form-of-initial-stock-setup",
+          "name": "DisplaysFormOfInitialStockSetup",
+          "route": "/setup-initial-stock/displays-form-of-initial-stock-setup",
+          "component": "DisplaysFormOfInitialStockSetupPage",
+          "pageType": "write-navigate",
+          "description": "Setup initial stock: Displays form of initial stock setup.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_form_of_initial_stock_setup_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/setup-initial-stock/enters-information-about-the-initial-stock-setup",
+          "ui": {
+            "title": "Displays form of initial stock setup",
+            "hint": "Page for BPMN task 'Displays form of initial stock setup' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "setupinitialstock-enters-information-about-the-initial-stock-setup",
+          "name": "EntersInformationAboutTheInitialStockSetup",
+          "route": "/setup-initial-stock/enters-information-about-the-initial-stock-setup",
+          "component": "EntersInformationAboutTheInitialStockSetupPage",
+          "pageType": "write-navigate",
+          "description": "Setup initial stock: Enters information about the initial stock setup.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_information_about_the_initial_stock_setup_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/setup-initial-stock/stores-information-about-the-stock-initials",
+          "ui": {
+            "title": "Enters information about the initial stock setup",
+            "hint": "Page for BPMN task 'Enters information about the initial stock setup' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/setup-initial-stock/stores-information-about-the-stock-initials",
+              "condition": "Add"
+            }
+          ]
+        },
+        {
+          "taskId": "setupinitialstock-stores-information-about-the-stock-initials",
+          "name": "StoresInformationAboutTheStockInitials",
+          "route": "/setup-initial-stock/stores-information-about-the-stock-initials",
+          "component": "StoresInformationAboutTheStockInitialsPage",
+          "pageType": "write-navigate",
+          "description": "Setup initial stock: Stores information about the stock initials.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "stores_information_about_the_stock_initials_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/setup-initial-stock/complete",
+          "ui": {
+            "title": "Stores information about the stock initials",
+            "hint": "Page for BPMN task 'Stores information about the stock initials' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

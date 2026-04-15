@@ -1,0 +1,363 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Withdraw mandatory deposits",
+        "value": "withdrawmandatorydeposits",
+        "internal": "withdrawmandatorydeposits"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "withdrawmandatorydeposits": "/withdraw-mandatory-deposits/asks-to-withdraw-mandatory-deposits"
+    },
+    "stateSchema": {
+      "asks_to_withdraw_mandatory_deposits_completed": false,
+      "queries_the_member_database_completed": false,
+      "enters_the_id_or_name_of_the_member_completed": false,
+      "displays_a_mandatory_deposits_completed": false,
+      "displays_list_of_members_completed": false,
+      "chooses_to_display_it_completed": false,
+      "prints_a_report_to_the_printer_completed": false,
+      "selects_one_of_the_members_completed": false,
+      "reads_the_information_about_the_deposit_completed": false,
+      "displays_the_information_about_the_member_and_the_deposit_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/withdraw-mandatory-deposits/asks-to-withdraw-mandatory-deposits",
+        "role": "withdrawmandatorydeposits",
+        "component": "AsksToWithdrawMandatoryDepositsPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/queries-the-member-database",
+        "role": "withdrawmandatorydeposits",
+        "component": "QueriesTheMemberDatabasePage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/enters-the-id-or-name-of-the-member",
+        "role": "withdrawmandatorydeposits",
+        "component": "EntersTheIdOrNameOfTheMemberPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/displays-a-mandatory-deposits",
+        "role": "withdrawmandatorydeposits",
+        "component": "DisplaysAMandatoryDepositsPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/displays-list-of-members",
+        "role": "withdrawmandatorydeposits",
+        "component": "DisplaysListOfMembersPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/chooses-to-display-it",
+        "role": "withdrawmandatorydeposits",
+        "component": "ChoosesToDisplayItPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/prints-a-report-to-the-printer",
+        "role": "withdrawmandatorydeposits",
+        "component": "PrintsAReportToThePrinterPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/selects-one-of-the-members",
+        "role": "withdrawmandatorydeposits",
+        "component": "SelectsOneOfTheMembersPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/reads-the-information-about-the-deposit",
+        "role": "withdrawmandatorydeposits",
+        "component": "ReadsTheInformationAboutTheDepositPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      },
+      {
+        "route": "/withdraw-mandatory-deposits/displays-the-information-about-the-member-and-the-deposit",
+        "role": "withdrawmandatorydeposits",
+        "component": "DisplaysTheInformationAboutTheMemberAndTheDepositPage",
+        "allowedRoles": [
+          "withdrawmandatorydeposits"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "WithdrawMandatoryDeposits",
+      "role": "withdrawmandatorydeposits",
+      "defaultRoute": "/withdraw-mandatory-deposits/asks-to-withdraw-mandatory-deposits",
+      "tasks": [
+        {
+          "taskId": "withdrawmandatorydeposits-asks-to-withdraw-mandatory-deposits",
+          "name": "AsksToWithdrawMandatoryDeposits",
+          "route": "/withdraw-mandatory-deposits/asks-to-withdraw-mandatory-deposits",
+          "component": "AsksToWithdrawMandatoryDepositsPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Asks to withdraw mandatory deposits.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_withdraw_mandatory_deposits_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/displays-a-mandatory-deposits",
+          "ui": {
+            "title": "Asks to withdraw mandatory deposits",
+            "hint": "Page for BPMN task 'Asks to withdraw mandatory deposits' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-displays-a-mandatory-deposits",
+          "name": "DisplaysAMandatoryDeposits",
+          "route": "/withdraw-mandatory-deposits/displays-a-mandatory-deposits",
+          "component": "DisplaysAMandatoryDepositsPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Displays a mandatory deposits.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_mandatory_deposits_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/enters-the-id-or-name-of-the-member",
+          "ui": {
+            "title": "Displays a mandatory deposits",
+            "hint": "Page for BPMN task 'Displays a mandatory deposits' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-enters-the-id-or-name-of-the-member",
+          "name": "EntersTheIdOrNameOfTheMember",
+          "route": "/withdraw-mandatory-deposits/enters-the-id-or-name-of-the-member",
+          "component": "EntersTheIdOrNameOfTheMemberPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Enters the ID or name of the member.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "enters_the_id_or_name_of_the_member_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/chooses-to-display-it",
+          "ui": {
+            "title": "Enters the ID or name of the member",
+            "hint": "Page for BPMN task 'Enters the ID or name of the member' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-chooses-to-display-it",
+          "name": "ChoosesToDisplayIt",
+          "route": "/withdraw-mandatory-deposits/chooses-to-display-it",
+          "component": "ChoosesToDisplayItPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Chooses to display it.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chooses_to_display_it_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/queries-the-member-database",
+          "ui": {
+            "title": "Chooses to display it",
+            "hint": "Page for BPMN task 'Chooses to display it' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-queries-the-member-database",
+          "name": "QueriesTheMemberDatabase",
+          "route": "/withdraw-mandatory-deposits/queries-the-member-database",
+          "component": "QueriesTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Queries the Member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/displays-list-of-members",
+          "ui": {
+            "title": "Queries the Member database",
+            "hint": "Page for BPMN task 'Queries the Member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-displays-list-of-members",
+          "name": "DisplaysListOfMembers",
+          "route": "/withdraw-mandatory-deposits/displays-list-of-members",
+          "component": "DisplaysListOfMembersPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Displays list of  members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_list_of_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/selects-one-of-the-members",
+          "ui": {
+            "title": "Displays list of  members",
+            "hint": "Page for BPMN task 'Displays list of  members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-selects-one-of-the-members",
+          "name": "SelectsOneOfTheMembers",
+          "route": "/withdraw-mandatory-deposits/selects-one-of-the-members",
+          "component": "SelectsOneOfTheMembersPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Selects one of the members.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_of_the_members_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/reads-the-information-about-the-deposit",
+          "ui": {
+            "title": "Selects one of the members",
+            "hint": "Page for BPMN task 'Selects one of the members' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-reads-the-information-about-the-deposit",
+          "name": "ReadsTheInformationAboutTheDeposit",
+          "route": "/withdraw-mandatory-deposits/reads-the-information-about-the-deposit",
+          "component": "ReadsTheInformationAboutTheDepositPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Reads the information about the deposit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_information_about_the_deposit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/displays-the-information-about-the-member-and-the-deposit",
+          "ui": {
+            "title": "Reads the information about the deposit",
+            "hint": "Page for BPMN task 'Reads the information about the deposit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-displays-the-information-about-the-member-and-the-deposit",
+          "name": "DisplaysTheInformationAboutTheMemberAndTheDeposit",
+          "route": "/withdraw-mandatory-deposits/displays-the-information-about-the-member-and-the-deposit",
+          "component": "DisplaysTheInformationAboutTheMemberAndTheDepositPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Displays the information about the member and the deposit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_information_about_the_member_and_the_deposit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/prints-a-report-to-the-printer",
+          "ui": {
+            "title": "Displays the information about the member and the deposit",
+            "hint": "Page for BPMN task 'Displays the information about the member and the deposit' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/withdraw-mandatory-deposits/prints-a-report-to-the-printer",
+              "condition": "PrintsAReportToThePrinter"
+            }
+          ]
+        },
+        {
+          "taskId": "withdrawmandatorydeposits-prints-a-report-to-the-printer",
+          "name": "PrintsAReportToThePrinter",
+          "route": "/withdraw-mandatory-deposits/prints-a-report-to-the-printer",
+          "component": "PrintsAReportToThePrinterPage",
+          "pageType": "write-navigate",
+          "description": "Withdraw mandatory deposits: Prints a report to the printer.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "prints_a_report_to_the_printer_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/withdraw-mandatory-deposits/complete",
+          "ui": {
+            "title": "Prints a report to the printer",
+            "hint": "Page for BPMN task 'Prints a report to the printer' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

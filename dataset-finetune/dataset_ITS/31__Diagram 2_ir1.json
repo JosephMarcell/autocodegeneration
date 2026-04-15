@@ -1,0 +1,292 @@
+{
+  "project_name": "Diagram 2",
+  "participants": [
+    {
+      "id": "Id_929e6ad2-eab7-48ad-8b91-8b8399bddfae",
+      "name": "Main Process",
+      "processRef": "Id_00f94b48-f5c5-4fb3-a475-2fa26eb3f285"
+    },
+    {
+      "id": "Id_8d7d55fb-f721-4e96-be21-e0821b49d48e",
+      "name": "Login",
+      "processRef": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    }
+  ],
+  "proc_to_participant": {
+    "Id_00f94b48-f5c5-4fb3-a475-2fa26eb3f285": "Main Process",
+    "Id_e74c725f-67e5-402f-a559-7fc063446875": "Login"
+  },
+  "lanes": [
+    {
+      "id": "Id_ad748ac8-5343-4416-a054-c2c0d65a472d",
+      "name": "Cashier",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "flowNodeRefs": [
+        "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+        "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+        "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+        "Id_07ab69f0-b048-4042-a7c3-163f1c279be5"
+      ]
+    },
+    {
+      "id": "Id_3a39d5b6-9665-434e-be56-aaccc17d555c",
+      "name": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "flowNodeRefs": [
+        "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+        "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f",
+        "Id_b95890b5-92e4-432a-b709-a96b40733427",
+        "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+        "Id_6e6dd081-45a2-4802-8ac7-14dbe35519f2",
+        "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef"
+      ]
+    }
+  ],
+  "node_to_lane": {
+    "Id_92cb515c-ae81-4364-a587-772f1bcc50f5": "Cashier",
+    "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7": "Cashier",
+    "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877": "Cashier",
+    "Id_1164e919-3f27-4d09-9a69-2a33a2e98847": "System",
+    "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f": "System",
+    "Id_b95890b5-92e4-432a-b709-a96b40733427": "System",
+    "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8": "System",
+    "Id_6e6dd081-45a2-4802-8ac7-14dbe35519f2": "System",
+    "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef": "System",
+    "Id_07ab69f0-b048-4042-a7c3-163f1c279be5": "Cashier"
+  },
+  "tasks": [
+    {
+      "id": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "name": "Request to login",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "Cashier",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ],
+      "outgoing": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ]
+    },
+    {
+      "id": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "name": "Enters username and password",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "Cashier",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_a71aeeff-8be4-4e29-94ab-355ddd2cbe3a"
+      ],
+      "outgoing": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ]
+    },
+    {
+      "id": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "name": "Verifies the username and password",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb"
+      ],
+      "outgoing": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ]
+    },
+    {
+      "id": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "name": "Display a login form",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e"
+      ],
+      "outgoing": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915"
+      ]
+    },
+    {
+      "id": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "name": "Display the main menu",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_54389ea7-c5a2-4201-b7c2-88bcb44680a9"
+      ],
+      "outgoing": [
+        "Id_a934591d-b94e-4e97-a15f-a4e1ad636760"
+      ]
+    },
+    {
+      "id": "Id_6e6dd081-45a2-4802-8ac7-14dbe35519f2",
+      "name": "Confirm to the user",
+      "type": "task",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "asyncFlag": false,
+      "incoming": [
+        "Id_4008eb01-069a-4660-8d7d-155d26002e8b"
+      ],
+      "outgoing": [
+        "Id_53bfe70c-6836-4a07-8b06-d4e8613fb684"
+      ]
+    }
+  ],
+  "gateways": [
+    {
+      "id": "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "incoming": [
+        "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50"
+      ],
+      "outgoing": [
+        "Id_54389ea7-c5a2-4201-b7c2-88bcb44680a9",
+        "Id_4008eb01-069a-4660-8d7d-155d26002e8b"
+      ]
+    },
+    {
+      "id": "Id_07ab69f0-b048-4042-a7c3-163f1c279be5",
+      "name": "",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Converging",
+      "participantName": "Login",
+      "laneName": "Cashier",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "incoming": [
+        "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+        "Id_53bfe70c-6836-4a07-8b06-d4e8613fb684"
+      ],
+      "outgoing": [
+        "Id_a71aeeff-8be4-4e29-94ab-355ddd2cbe3a"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "name": "",
+      "eventType": "startEvent",
+      "eventDefinitionType": "",
+      "participantName": "Login",
+      "laneName": "Cashier",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "incoming": [],
+      "outgoing": [
+        "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5"
+      ]
+    },
+    {
+      "id": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "name": "",
+      "eventType": "endEvent",
+      "eventDefinitionType": "",
+      "participantName": "Login",
+      "laneName": "System",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875",
+      "incoming": [
+        "Id_a934591d-b94e-4e97-a15f-a4e1ad636760"
+      ],
+      "outgoing": []
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "Id_7fbedbf6-20fc-4052-9783-fa817b6119e5",
+      "source": "Id_92cb515c-ae81-4364-a587-772f1bcc50f5",
+      "target": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_941b5dd8-22eb-4537-aede-cfd6861ae915",
+      "source": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "target": "Id_07ab69f0-b048-4042-a7c3-163f1c279be5",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_5a759be9-599d-44ba-ba79-4a8f7f7d3dcb",
+      "source": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "target": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_7f1ae049-4f41-45a3-aae0-60aee9c90e50",
+      "source": "Id_1164e919-3f27-4d09-9a69-2a33a2e98847",
+      "target": "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_15bcca8b-3b05-487f-a438-8bd6c9aa6f6e",
+      "source": "Id_8d8ff637-b07c-4252-a38a-d6864657c6a7",
+      "target": "Id_b95890b5-92e4-432a-b709-a96b40733427",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_54389ea7-c5a2-4201-b7c2-88bcb44680a9",
+      "source": "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f",
+      "target": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "condition": "Valid",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_4008eb01-069a-4660-8d7d-155d26002e8b",
+      "source": "Id_cdf9154b-0635-49a1-9622-d0a937ad5a6f",
+      "target": "Id_6e6dd081-45a2-4802-8ac7-14dbe35519f2",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_a934591d-b94e-4e97-a15f-a4e1ad636760",
+      "source": "Id_66d8d890-f7ad-4487-8097-689c59b3c5d8",
+      "target": "Id_25c12c94-33a5-44b8-88bd-efc05202a1ef",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_53bfe70c-6836-4a07-8b06-d4e8613fb684",
+      "source": "Id_6e6dd081-45a2-4802-8ac7-14dbe35519f2",
+      "target": "Id_07ab69f0-b048-4042-a7c3-163f1c279be5",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    },
+    {
+      "id": "Id_a71aeeff-8be4-4e29-94ab-355ddd2cbe3a",
+      "source": "Id_07ab69f0-b048-4042-a7c3-163f1c279be5",
+      "target": "Id_70608fd7-f73a-4883-b9e0-1fa8e6f5b877",
+      "condition": "",
+      "processId": "Id_e74c725f-67e5-402f-a559-7fc063446875"
+    }
+  ],
+  "messageFlows": [],
+  "stateSchema": {
+    "request_to_login_completed": false,
+    "enters_username_and_password_completed": false,
+    "verifies_the_username_and_password_completed": false,
+    "display_a_login_form_completed": false,
+    "display_the_main_menu_completed": false,
+    "confirm_to_the_user_completed": false
+  }
+}

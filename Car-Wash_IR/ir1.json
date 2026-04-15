@@ -1,0 +1,404 @@
+{
+  "process": {
+    "id": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+    "name": "Customer",
+    "type": "collaboration",
+    "participants": [
+      {
+        "id": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+        "name": "Customer",
+        "processRef": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+      },
+      {
+        "id": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+        "name": "Car Wash Machine",
+        "processRef": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+      }
+    ]
+  },
+  "roles": [
+    {
+      "id": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "name": "Customer",
+      "participant": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processRef": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "name": "Car Wash Machine",
+      "participant": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processRef": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "id-c14199c8-b786-4fa5-b985-bbb856303824",
+      "name": "Drives away",
+      "type": "task",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [],
+      "outgoing": [
+        "id-c25381f4-76c6-4098-885a-8fc28c7c6d05"
+      ]
+    },
+    {
+      "id": "id-3921bc36-892b-410f-a1c6-2a043833d753",
+      "name": "Pulls car up to car wash",
+      "type": "task",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-1258cd0e-8bc5-4c52-85b8-567500708524"
+      ],
+      "outgoing": [
+        "id-25164739-c8de-4780-8bca-9a02c2340979"
+      ]
+    },
+    {
+      "id": "id-91a31efc-38eb-4075-ba95-8eecebe90a48",
+      "name": "Chooses wash ",
+      "type": "task",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-25164739-c8de-4780-8bca-9a02c2340979"
+      ],
+      "outgoing": [
+        "id-c9a4b533-5a8b-4a30-b9c4-bf300bd9f6e4"
+      ]
+    },
+    {
+      "id": "id-f8d9d1e1-c93c-4092-bebb-038274d493b7",
+      "name": "Pay 8",
+      "type": "task",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-205183a7-69dd-425b-af32-cbfcd0b7c740"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-de9b2fec-0186-4892-aefa-b6a905e4db1e",
+      "name": "Pays 15",
+      "type": "task",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-88ed032f-2ad4-4688-987e-77b41bb11ede"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-6d5ef94f-fbf3-4a8a-b2ae-d456469c1895",
+      "name": "Double Polish",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-de245238-6e8a-4d57-b623-72f986474d09"
+      ],
+      "outgoing": [
+        "id-8a6a0d49-851e-465d-9659-f592a8a5c9be"
+      ]
+    },
+    {
+      "id": "id-5953c915-9df3-4c62-b85e-5ac1aa52a21b",
+      "name": "Dry",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-79bb7477-c416-4163-9f93-7888a2dba8eb",
+        "id-9b9aa774-0225-4a45-b8a5-0a4060c75cc2"
+      ],
+      "outgoing": []
+    },
+    {
+      "id": "id-740aff66-728c-497b-81e8-cfcdf074d3de",
+      "name": "Wheel Luster Wheel Clean",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-ad7f7a53-cfc9-433e-834b-265393ef2cc3"
+      ],
+      "outgoing": [
+        "id-9b9aa774-0225-4a45-b8a5-0a4060c75cc2"
+      ]
+    },
+    {
+      "id": "id-394d3246-4552-4999-b0f4-2c11960a843e",
+      "name": "Soft Cloth Wash",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [],
+      "outgoing": [
+        "id-661afac8-579e-4dc0-9b7a-5f5dd50b96eb"
+      ]
+    },
+    {
+      "id": "id-e5d2c95a-7d1d-450a-bc94-7fadc95d356c",
+      "name": "Wheel Clean",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-7297e7a8-c9b6-4154-93e0-02fec7ce9b85"
+      ],
+      "outgoing": [
+        "id-79bb7477-c416-4163-9f93-7888a2dba8eb"
+      ]
+    },
+    {
+      "id": "id-b069b6b0-8929-4de3-bb09-b5719c98c5a7",
+      "name": "Clear Coat Protection",
+      "type": "task",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "interactionHint": "action",
+      "stateModel": [],
+      "asyncFlag": false,
+      "incoming": [
+        "id-8a6a0d49-851e-465d-9659-f592a8a5c9be"
+      ],
+      "outgoing": [
+        "id-ad7f7a53-cfc9-433e-834b-265393ef2cc3"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "id-add7903c-fc54-40ce-9fa5-d7f5894d584c",
+      "name": "",
+      "eventType": "startEvent",
+      "trigger": "",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "incoming": [],
+      "outgoing": [
+        "id-1258cd0e-8bc5-4c52-85b8-567500708524"
+      ]
+    },
+    {
+      "id": "id-d4d348ba-02b9-4f83-8106-257e0e1a5500",
+      "name": "",
+      "eventType": "endEvent",
+      "trigger": "",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "incoming": [
+        "id-c25381f4-76c6-4098-885a-8fc28c7c6d05"
+      ],
+      "outgoing": []
+    }
+  ],
+  "gateways": [
+    {
+      "id": "id-6bd3013b-8646-4137-ade7-499b31893131",
+      "name": "Which wash program?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "controlHint": "split",
+      "role": "Customer",
+      "participantId": "id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303",
+      "incoming": [
+        "id-c9a4b533-5a8b-4a30-b9c4-bf300bd9f6e4"
+      ],
+      "outgoing": [
+        "id-88ed032f-2ad4-4688-987e-77b41bb11ede",
+        "id-205183a7-69dd-425b-af32-cbfcd0b7c740"
+      ]
+    },
+    {
+      "id": "id-eb413d52-5649-47d4-9c0a-1fe4b0fdbf98",
+      "name": "Which wash program?",
+      "gatewayType": "exclusive",
+      "gatewayDirection": "Diverging",
+      "controlHint": "split",
+      "role": "Car Wash Machine",
+      "participantId": "id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458",
+      "incoming": [
+        "id-661afac8-579e-4dc0-9b7a-5f5dd50b96eb"
+      ],
+      "outgoing": [
+        "id-7297e7a8-c9b6-4154-93e0-02fec7ce9b85",
+        "id-de245238-6e8a-4d57-b623-72f986474d09"
+      ]
+    }
+  ],
+  "sequenceFlows": [
+    {
+      "id": "id-c25381f4-76c6-4098-885a-8fc28c7c6d05",
+      "source": "id-c14199c8-b786-4fa5-b985-bbb856303824",
+      "target": "id-d4d348ba-02b9-4f83-8106-257e0e1a5500",
+      "condition": "",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-88ed032f-2ad4-4688-987e-77b41bb11ede",
+      "source": "id-6bd3013b-8646-4137-ade7-499b31893131",
+      "target": "id-de9b2fec-0186-4892-aefa-b6a905e4db1e",
+      "condition": "Polish Plus",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-1258cd0e-8bc5-4c52-85b8-567500708524",
+      "source": "id-add7903c-fc54-40ce-9fa5-d7f5894d584c",
+      "target": "id-3921bc36-892b-410f-a1c6-2a043833d753",
+      "condition": "",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-205183a7-69dd-425b-af32-cbfcd0b7c740",
+      "source": "id-6bd3013b-8646-4137-ade7-499b31893131",
+      "target": "id-f8d9d1e1-c93c-4092-bebb-038274d493b7",
+      "condition": "ECO",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-25164739-c8de-4780-8bca-9a02c2340979",
+      "source": "id-3921bc36-892b-410f-a1c6-2a043833d753",
+      "target": "id-91a31efc-38eb-4075-ba95-8eecebe90a48",
+      "condition": "",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-c9a4b533-5a8b-4a30-b9c4-bf300bd9f6e4",
+      "source": "id-91a31efc-38eb-4075-ba95-8eecebe90a48",
+      "target": "id-6bd3013b-8646-4137-ade7-499b31893131",
+      "condition": "",
+      "processId": "Process_id-54d8a5a1-c344-492c-bf9f-b29ad9662303"
+    },
+    {
+      "id": "id-8a6a0d49-851e-465d-9659-f592a8a5c9be",
+      "source": "id-6d5ef94f-fbf3-4a8a-b2ae-d456469c1895",
+      "target": "id-b069b6b0-8929-4de3-bb09-b5719c98c5a7",
+      "condition": "",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-79bb7477-c416-4163-9f93-7888a2dba8eb",
+      "source": "id-e5d2c95a-7d1d-450a-bc94-7fadc95d356c",
+      "target": "id-5953c915-9df3-4c62-b85e-5ac1aa52a21b",
+      "condition": "",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-ad7f7a53-cfc9-433e-834b-265393ef2cc3",
+      "source": "id-b069b6b0-8929-4de3-bb09-b5719c98c5a7",
+      "target": "id-740aff66-728c-497b-81e8-cfcdf074d3de",
+      "condition": "",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-7297e7a8-c9b6-4154-93e0-02fec7ce9b85",
+      "source": "id-eb413d52-5649-47d4-9c0a-1fe4b0fdbf98",
+      "target": "id-e5d2c95a-7d1d-450a-bc94-7fadc95d356c",
+      "condition": "ECO",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-de245238-6e8a-4d57-b623-72f986474d09",
+      "source": "id-eb413d52-5649-47d4-9c0a-1fe4b0fdbf98",
+      "target": "id-6d5ef94f-fbf3-4a8a-b2ae-d456469c1895",
+      "condition": "Polish Plus",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-9b9aa774-0225-4a45-b8a5-0a4060c75cc2",
+      "source": "id-740aff66-728c-497b-81e8-cfcdf074d3de",
+      "target": "id-5953c915-9df3-4c62-b85e-5ac1aa52a21b",
+      "condition": "",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    },
+    {
+      "id": "id-661afac8-579e-4dc0-9b7a-5f5dd50b96eb",
+      "source": "id-394d3246-4552-4999-b0f4-2c11960a843e",
+      "target": "id-eb413d52-5649-47d4-9c0a-1fe4b0fdbf98",
+      "condition": "",
+      "processId": "Process_id-ba446fe3-fc5a-468a-879f-636efa8ae458"
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "id-4d638cc4-851d-4b91-b5af-9e6957efa908",
+      "sourceRef": "id-f8d9d1e1-c93c-4092-bebb-038274d493b7",
+      "targetRef": "id-394d3246-4552-4999-b0f4-2c11960a843e",
+      "messageType": ""
+    },
+    {
+      "id": "id-9ab5afb1-3d22-4a19-8630-b1231247348d",
+      "sourceRef": "id-5953c915-9df3-4c62-b85e-5ac1aa52a21b",
+      "targetRef": "id-c14199c8-b786-4fa5-b985-bbb856303824",
+      "messageType": ""
+    },
+    {
+      "id": "id-cfeb8788-b62b-4cf5-8592-1fce0893264f",
+      "sourceRef": "id-de9b2fec-0186-4892-aefa-b6a905e4db1e",
+      "targetRef": "id-394d3246-4552-4999-b0f4-2c11960a843e",
+      "messageType": ""
+    }
+  ],
+  "stateSchema": {
+    "drives_away_completed": false,
+    "pulls_car_up_to_car_wash_completed": false,
+    "chooses_wash_completed": false,
+    "pay_8_completed": false,
+    "pays_15_completed": false,
+    "double_polish_completed": false,
+    "dry_completed": false,
+    "wheel_luster_wheel_clean_completed": false,
+    "soft_cloth_wash_completed": false,
+    "wheel_clean_completed": false,
+    "clear_coat_protection_completed": false,
+    "which_wash_program_result": ""
+  }
+}

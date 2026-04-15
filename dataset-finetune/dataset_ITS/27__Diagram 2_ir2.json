@@ -1,0 +1,394 @@
+{
+  "project": "Diagram2",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Main Process",
+        "value": "mainprocess",
+        "internal": "mainprocess"
+      },
+      {
+        "display": "Make a list of member loans (SIPA unit)",
+        "value": "makealistofmemberloans(sipaunit)",
+        "internal": "makealistofmemberloans(sipaunit)"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "makealistofmemberloans(sipaunit)": "/make-a-list-of-member-loans-sipa-unit/asks-to-make-a-list-of-member-loans"
+    },
+    "stateSchema": {
+      "asks_to_make_a_list_of_member_loans_completed": false,
+      "displays_a_form_of_making_a_list_of_member_loans_completed": false,
+      "deletes_the_information_from_the_loan_database_completed": false,
+      "reads_the_work_unit_database_completed": false,
+      "selects_the_work_unit_completed": false,
+      "runs_the_repayment_component_completed": false,
+      "queries_the_member_database_completed": false,
+      "displays_the_query_results_to_a_table_completed": false,
+      "selects_one_member_from_a_table_completed": false,
+      "queries_the_loan_database_completed": false,
+      "displays_the_loan_information_to_a_table_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/asks-to-make-a-list-of-member-loans",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "AsksToMakeAListOfMemberLoansPage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/displays-a-form-of-making-a-list-of-member-loans",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "DisplaysAFormOfMakingAListOfMemberLoansPage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/deletes-the-information-from-the-loan-database",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "DeletesTheInformationFromTheLoanDatabasePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/reads-the-work-unit-database",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "ReadsTheWorkUnitDatabasePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/selects-the-work-unit",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "SelectsTheWorkUnitPage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/runs-the-repayment-component",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "RunsTheRepaymentComponentPage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/queries-the-member-database",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "QueriesTheMemberDatabasePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/displays-the-query-results-to-a-table",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "DisplaysTheQueryResultsToATablePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/selects-one-member-from-a-table",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "SelectsOneMemberFromATablePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/queries-the-loan-database",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "QueriesTheLoanDatabasePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      },
+      {
+        "route": "/make-a-list-of-member-loans-sipa-unit/displays-the-loan-information-to-a-table",
+        "role": "makealistofmemberloans(sipaunit)",
+        "component": "DisplaysTheLoanInformationToATablePage",
+        "allowedRoles": [
+          "makealistofmemberloans(sipaunit)"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "MainProcess",
+      "role": "mainprocess",
+      "defaultRoute": "/main-process/complete",
+      "tasks": []
+    },
+    {
+      "name": "MakeAListOfMemberLoans(sipaUnit)",
+      "role": "makealistofmemberloans(sipaunit)",
+      "defaultRoute": "/make-a-list-of-member-loans-sipa-unit/asks-to-make-a-list-of-member-loans",
+      "tasks": [
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-asks-to-make-a-list-of-member-loans",
+          "name": "AsksToMakeAListOfMemberLoans",
+          "route": "/make-a-list-of-member-loans-sipa-unit/asks-to-make-a-list-of-member-loans",
+          "component": "AsksToMakeAListOfMemberLoansPage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Asks to make a list of member loans.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "asks_to_make_a_list_of_member_loans_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/reads-the-work-unit-database",
+          "ui": {
+            "title": "Asks to make a list of member loans",
+            "hint": "Page for BPMN task 'Asks to make a list of member loans' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-reads-the-work-unit-database",
+          "name": "ReadsTheWorkUnitDatabase",
+          "route": "/make-a-list-of-member-loans-sipa-unit/reads-the-work-unit-database",
+          "component": "ReadsTheWorkUnitDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Reads the work unit database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reads_the_work_unit_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/displays-a-form-of-making-a-list-of-member-loans",
+          "ui": {
+            "title": "Reads the work unit database",
+            "hint": "Page for BPMN task 'Reads the work unit database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-displays-a-form-of-making-a-list-of-member-loans",
+          "name": "DisplaysAFormOfMakingAListOfMemberLoans",
+          "route": "/make-a-list-of-member-loans-sipa-unit/displays-a-form-of-making-a-list-of-member-loans",
+          "component": "DisplaysAFormOfMakingAListOfMemberLoansPage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Displays a form of making a list of member loans.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_a_form_of_making_a_list_of_member_loans_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/selects-the-work-unit",
+          "ui": {
+            "title": "Displays a form of making a list of member loans",
+            "hint": "Page for BPMN task 'Displays a form of making a list of member loans' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-selects-the-work-unit",
+          "name": "SelectsTheWorkUnit",
+          "route": "/make-a-list-of-member-loans-sipa-unit/selects-the-work-unit",
+          "component": "SelectsTheWorkUnitPage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Selects the work unit.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_the_work_unit_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/queries-the-member-database",
+          "ui": {
+            "title": "Selects the work unit",
+            "hint": "Page for BPMN task 'Selects the work unit' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-queries-the-member-database",
+          "name": "QueriesTheMemberDatabase",
+          "route": "/make-a-list-of-member-loans-sipa-unit/queries-the-member-database",
+          "component": "QueriesTheMemberDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Queries the Member database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_member_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/displays-the-query-results-to-a-table",
+          "ui": {
+            "title": "Queries the Member database",
+            "hint": "Page for BPMN task 'Queries the Member database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-displays-the-query-results-to-a-table",
+          "name": "DisplaysTheQueryResultsToATable",
+          "route": "/make-a-list-of-member-loans-sipa-unit/displays-the-query-results-to-a-table",
+          "component": "DisplaysTheQueryResultsToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Displays the query results to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_query_results_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/selects-one-member-from-a-table",
+          "ui": {
+            "title": "Displays the query results to a table",
+            "hint": "Page for BPMN task 'Displays the query results to a table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-selects-one-member-from-a-table",
+          "name": "SelectsOneMemberFromATable",
+          "route": "/make-a-list-of-member-loans-sipa-unit/selects-one-member-from-a-table",
+          "component": "SelectsOneMemberFromATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Selects one member from a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "selects_one_member_from_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/queries-the-loan-database",
+          "ui": {
+            "title": "Selects one member from a table",
+            "hint": "Page for BPMN task 'Selects one member from a table' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-queries-the-loan-database",
+          "name": "QueriesTheLoanDatabase",
+          "route": "/make-a-list-of-member-loans-sipa-unit/queries-the-loan-database",
+          "component": "QueriesTheLoanDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Queries the Loan database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "queries_the_loan_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/displays-the-loan-information-to-a-table",
+          "ui": {
+            "title": "Queries the Loan database",
+            "hint": "Page for BPMN task 'Queries the Loan database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-displays-the-loan-information-to-a-table",
+          "name": "DisplaysTheLoanInformationToATable",
+          "route": "/make-a-list-of-member-loans-sipa-unit/displays-the-loan-information-to-a-table",
+          "component": "DisplaysTheLoanInformationToATablePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Displays the loan information to a table.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "displays_the_loan_information_to_a_table_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/deletes-the-information-from-the-loan-database",
+          "ui": {
+            "title": "Displays the loan information to a table",
+            "hint": "Page for BPMN task 'Displays the loan information to a table' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/make-a-list-of-member-loans-sipa-unit/deletes-the-information-from-the-loan-database",
+              "condition": "DeletesTheInformationFromTheLoanDatabase"
+            }
+          ]
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-deletes-the-information-from-the-loan-database",
+          "name": "DeletesTheInformationFromTheLoanDatabase",
+          "route": "/make-a-list-of-member-loans-sipa-unit/deletes-the-information-from-the-loan-database",
+          "component": "DeletesTheInformationFromTheLoanDatabasePage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Deletes the information from the Loan database.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "deletes_the_information_from_the_loan_database_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/complete",
+          "ui": {
+            "title": "Deletes the information from the Loan database",
+            "hint": "Page for BPMN task 'Deletes the information from the Loan database' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "makealistofmemberloans(sipaunit)-runs-the-repayment-component",
+          "name": "RunsTheRepaymentComponent",
+          "route": "/make-a-list-of-member-loans-sipa-unit/runs-the-repayment-component",
+          "component": "RunsTheRepaymentComponentPage",
+          "pageType": "write-navigate",
+          "description": "Make a list of member loans (SIPA unit): Runs the repayment component.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "runs_the_repayment_component_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/make-a-list-of-member-loans-sipa-unit/complete",
+          "ui": {
+            "title": "Runs the repayment component",
+            "hint": "Page for BPMN task 'Runs the repayment component' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

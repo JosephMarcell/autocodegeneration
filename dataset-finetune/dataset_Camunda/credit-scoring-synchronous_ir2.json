@@ -1,0 +1,309 @@
+{
+  "project": "App",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "credit scoring frontend (bank)",
+        "value": "creditscoringfrontend(bank)",
+        "internal": "creditscoringfrontend(bank)"
+      },
+      {
+        "display": "credit scoring (bank)",
+        "value": "creditscoring(bank)",
+        "internal": "creditscoring(bank)"
+      },
+      {
+        "display": "scoring service",
+        "value": "scoringservice",
+        "internal": "scoringservice"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "creditscoring(bank)": "/credit-scoring-bank/request-credit-score",
+      "scoringservice": "/scoring-service/compute-credit-score-level-1"
+    },
+    "stateSchema": {
+      "request_credit_score_completed": false,
+      "send_credit_score_completed": false,
+      "report_delay_completed": false,
+      "compute_credit_score_level_1_completed": false,
+      "send_result_completed": false,
+      "compute_credit_score_level_2_completed": false,
+      "score_received_result": "",
+      "score_available_result": ""
+    },
+    "allRoutes": [
+      {
+        "route": "/credit-scoring-bank/request-credit-score",
+        "role": "creditscoring(bank)",
+        "component": "RequestCreditScorePage",
+        "allowedRoles": [
+          "creditscoring(bank)"
+        ]
+      },
+      {
+        "route": "/credit-scoring-bank/send-credit-score",
+        "role": "creditscoring(bank)",
+        "component": "SendCreditScorePage",
+        "allowedRoles": [
+          "creditscoring(bank)"
+        ]
+      },
+      {
+        "route": "/credit-scoring-bank/report-delay",
+        "role": "creditscoring(bank)",
+        "component": "ReportDelayPage",
+        "allowedRoles": [
+          "creditscoring(bank)"
+        ]
+      },
+      {
+        "route": "/scoring-service/compute-credit-score-level-1",
+        "role": "scoringservice",
+        "component": "ComputeCreditScore(level1)Page",
+        "allowedRoles": [
+          "scoringservice"
+        ]
+      },
+      {
+        "route": "/scoring-service/send-result",
+        "role": "scoringservice",
+        "component": "SendResultPage",
+        "allowedRoles": [
+          "scoringservice"
+        ]
+      },
+      {
+        "route": "/scoring-service/compute-credit-score-level-2",
+        "role": "scoringservice",
+        "component": "ComputeCreditScore(level2)Page",
+        "allowedRoles": [
+          "scoringservice"
+        ]
+      },
+      {
+        "route": "/scoring-service/send-credit-score",
+        "role": "scoringservice",
+        "component": "SendCreditScorePage",
+        "allowedRoles": [
+          "scoringservice"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "CreditScoringFrontend(bank)",
+      "role": "creditscoringfrontend(bank)",
+      "defaultRoute": "/credit-scoring-frontend-bank/complete",
+      "tasks": []
+    },
+    {
+      "name": "CreditScoring(bank)",
+      "role": "creditscoring(bank)",
+      "defaultRoute": "/credit-scoring-bank/request-credit-score",
+      "tasks": [
+        {
+          "taskId": "creditscoring(bank)-report-delay",
+          "name": "ReportDelay",
+          "route": "/credit-scoring-bank/report-delay",
+          "component": "ReportDelayPage",
+          "pageType": "write-navigate",
+          "description": "credit scoring (bank): report delay.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "report_delay_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/credit-scoring-bank/complete",
+          "ui": {
+            "title": "report delay",
+            "hint": "Page for BPMN task 'report delay' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "creditscoring(bank)-send-credit-score",
+          "name": "SendCreditScore",
+          "route": "/credit-scoring-bank/send-credit-score",
+          "component": "SendCreditScorePage",
+          "pageType": "write-navigate",
+          "description": "credit scoring (bank): send credit score.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_credit_score_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/credit-scoring-bank/complete",
+          "ui": {
+            "title": "send credit score",
+            "hint": "Page for BPMN task 'send credit score' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "creditscoring(bank)-request-credit-score",
+          "name": "RequestCreditScore",
+          "route": "/credit-scoring-bank/request-credit-score",
+          "component": "RequestCreditScorePage",
+          "pageType": "wait-then-write",
+          "description": "credit scoring (bank): request credit score.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "request_credit_score_completed",
+              "value": true
+            },
+            {
+              "field": "score_received_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": {
+            "field": "send_result_completed",
+            "readableLabel": "Waiting for send result..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/credit-scoring-bank/report-delay",
+          "ui": {
+            "title": "request credit score",
+            "hint": "Page for BPMN task 'request credit score' (wait-then-write)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/credit-scoring-bank/report-delay",
+              "condition": "no"
+            },
+            {
+              "route": "/credit-scoring-bank/send-credit-score",
+              "condition": "SendCreditScore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ScoringService",
+      "role": "scoringservice",
+      "defaultRoute": "/scoring-service/compute-credit-score-level-1",
+      "tasks": [
+        {
+          "taskId": "scoringservice-compute-credit-score-level-1",
+          "name": "ComputeCreditScore(level1)",
+          "route": "/scoring-service/compute-credit-score-level-1",
+          "component": "ComputeCreditScore(level1)Page",
+          "pageType": "write-navigate",
+          "description": "scoring service: compute credit score (level 1).",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "compute_credit_score_level_1_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/scoring-service/send-result",
+          "ui": {
+            "title": "compute credit score (level 1)",
+            "hint": "Page for BPMN task 'compute credit score (level 1)' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "scoringservice-send-result",
+          "name": "SendResult",
+          "route": "/scoring-service/send-result",
+          "component": "SendResultPage",
+          "pageType": "write-navigate",
+          "description": "scoring service: send result.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_result_completed",
+              "value": true
+            },
+            {
+              "field": "send_result_completed",
+              "value": true
+            },
+            {
+              "field": "score_available_result",
+              "value": "selected condition label"
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/scoring-service/compute-credit-score-level-2",
+          "ui": {
+            "title": "send result",
+            "hint": "Page for BPMN task 'send result' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/scoring-service/compute-credit-score-level-2",
+              "condition": "no"
+            }
+          ]
+        },
+        {
+          "taskId": "scoringservice-compute-credit-score-level-2",
+          "name": "ComputeCreditScore(level2)",
+          "route": "/scoring-service/compute-credit-score-level-2",
+          "component": "ComputeCreditScore(level2)Page",
+          "pageType": "write-navigate",
+          "description": "scoring service: compute credit score (level 2).",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "compute_credit_score_level_2_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/scoring-service/send-credit-score",
+          "ui": {
+            "title": "compute credit score (level 2)",
+            "hint": "Page for BPMN task 'compute credit score (level 2)' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "scoringservice-send-credit-score",
+          "name": "SendCreditScore",
+          "route": "/scoring-service/send-credit-score",
+          "component": "SendCreditScorePage",
+          "pageType": "write-navigate",
+          "description": "scoring service: send credit score.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_credit_score_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/scoring-service/complete",
+          "ui": {
+            "title": "send credit score",
+            "hint": "Page for BPMN task 'send credit score' (write-navigate)."
+          }
+        }
+      ]
+    }
+  ]
+}

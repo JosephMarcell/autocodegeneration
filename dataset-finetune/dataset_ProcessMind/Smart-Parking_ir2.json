@@ -1,0 +1,695 @@
+{
+  "project": "Motorists",
+  "stack": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "router": "React Router v6",
+    "styling": "Tailwind CSS",
+    "stateLib": "Zustand",
+    "stateImport": "src/shared/state/globalState.ts"
+  },
+  "sharedContext": {
+    "roles": [
+      {
+        "display": "Motorists",
+        "value": "motorists",
+        "internal": "motorists"
+      },
+      {
+        "display": "Parking Partners",
+        "value": "parkingpartners",
+        "internal": "parkingpartners"
+      },
+      {
+        "display": "Ford Smart Parking system",
+        "value": "fordsmartparkingsystem",
+        "internal": "fordsmartparkingsystem"
+      }
+    ],
+    "defaultRoutesPerRole": {
+      "motorists": "/motorists/load-fsm-app",
+      "parkingpartners": "/parking-partners/track-car-park-spaces",
+      "fordsmartparkingsystem": "/ford-smart-parking-system/help-motorists-navigate-to-avaliable-space"
+    },
+    "stateSchema": {
+      "search_parking_spaces_completed": false,
+      "load_fsm_app_completed": false,
+      "view_available_spots_nearby_prices_competitive_rates_completed": false,
+      "find_their_location_completed": false,
+      "call_or_online_chat_faqs_completed": false,
+      "pay_by_my_wallet_online_completed": false,
+      "park_in_parking_space_completed": false,
+      "book_a_space_completed": false,
+      "track_car_park_spaces_completed": false,
+      "reserve_parking_space_in_advance_completed": false,
+      "reserve_realtime_parking_space_completed": false,
+      "reserve_a_place_for_motorists_completed": false,
+      "provide_availability_information_completed": false,
+      "chat_answer_faqs_completed": false,
+      "send_requirements_to_parking_partners_completed": false,
+      "help_motorists_navigate_to_avaliable_space_completed": false,
+      "help_motorists_book_space_completed": false,
+      "received_money_completed": false,
+      "receive_requirements_from_motorists_completed": false
+    },
+    "allRoutes": [
+      {
+        "route": "/motorists/search-parking-spaces",
+        "role": "motorists",
+        "component": "SearchParkingSpacesPage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/load-fsm-app",
+        "role": "motorists",
+        "component": "LoadFsmAppPage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/view-available-spots-nearby-pricescompetitive-rates",
+        "role": "motorists",
+        "component": "ViewAvailableSpotsNearby/Prices/competitiveRatesPage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/find-their-location",
+        "role": "motorists",
+        "component": "FindTheirLocationPage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/call-or-online-chatfaqs",
+        "role": "motorists",
+        "component": "CallOrOnlineChat/faqsPage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/pay-by-my-wallet-online",
+        "role": "motorists",
+        "component": "PayByMyWallet(online)Page",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/park-in-parking-space",
+        "role": "motorists",
+        "component": "ParkInParkingSpacePage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/motorists/book-a-space",
+        "role": "motorists",
+        "component": "BookASpacePage",
+        "allowedRoles": [
+          "motorists"
+        ]
+      },
+      {
+        "route": "/parking-partners/track-car-park-spaces",
+        "role": "parkingpartners",
+        "component": "TrackCarParkSpacesPage",
+        "allowedRoles": [
+          "parkingpartners"
+        ]
+      },
+      {
+        "route": "/parking-partners/reserve-parking-space-in-advance",
+        "role": "parkingpartners",
+        "component": "ReserveParkingSpaceInAdvancePage",
+        "allowedRoles": [
+          "parkingpartners"
+        ]
+      },
+      {
+        "route": "/parking-partners/reserve-realtime-parking-space",
+        "role": "parkingpartners",
+        "component": "ReserveRealtimeParkingSpacePage",
+        "allowedRoles": [
+          "parkingpartners"
+        ]
+      },
+      {
+        "route": "/parking-partners/reserve-a-place-for-motorists",
+        "role": "parkingpartners",
+        "component": "ReserveAPlaceForMotoristsPage",
+        "allowedRoles": [
+          "parkingpartners"
+        ]
+      },
+      {
+        "route": "/parking-partners/provide-availability-information",
+        "role": "parkingpartners",
+        "component": "ProvideAvailabilityInformationPage",
+        "allowedRoles": [
+          "parkingpartners"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/chatanswer-faqs",
+        "role": "fordsmartparkingsystem",
+        "component": "Chat/answerFaqsPage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/send-requirements-to-parking-partners",
+        "role": "fordsmartparkingsystem",
+        "component": "SendRequirementsToParkingPartnersPage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/help-motorists-navigate-to-avaliable-space",
+        "role": "fordsmartparkingsystem",
+        "component": "HelpMotoristsNavigateToAvaliableSpacePage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/help-motorists-book-space",
+        "role": "fordsmartparkingsystem",
+        "component": "HelpMotoristsBookSpacePage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/received-money",
+        "role": "fordsmartparkingsystem",
+        "component": "ReceivedMoneyPage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      },
+      {
+        "route": "/ford-smart-parking-system/receive-requirements-from-motorists",
+        "role": "fordsmartparkingsystem",
+        "component": "ReceiveRequirementsFromMotoristsPage",
+        "allowedRoles": [
+          "fordsmartparkingsystem"
+        ]
+      }
+    ]
+  },
+  "participants": [
+    {
+      "name": "Motorists",
+      "role": "motorists",
+      "defaultRoute": "/motorists/load-fsm-app",
+      "tasks": [
+        {
+          "taskId": "motorists-load-fsm-app",
+          "name": "LoadFsmApp",
+          "route": "/motorists/load-fsm-app",
+          "component": "LoadFsmAppPage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Load FSM App.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "load_fsm_app_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/find-their-location",
+          "ui": {
+            "title": "Load FSM App",
+            "hint": "Page for BPMN task 'Load FSM App' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-find-their-location",
+          "name": "FindTheirLocation",
+          "route": "/motorists/find-their-location",
+          "component": "FindTheirLocationPage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Find their location.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "find_their_location_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/search-parking-spaces",
+          "ui": {
+            "title": "Find their location",
+            "hint": "Page for BPMN task 'Find their location' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/motorists/search-parking-spaces",
+              "condition": "Search by App"
+            },
+            {
+              "route": "/motorists/call-or-online-chatfaqs",
+              "condition": "Call Centre"
+            }
+          ]
+        },
+        {
+          "taskId": "motorists-search-parking-spaces",
+          "name": "SearchParkingSpaces",
+          "route": "/motorists/search-parking-spaces",
+          "component": "SearchParkingSpacesPage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Search parking spaces.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "search_parking_spaces_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/view-available-spots-nearby-pricescompetitive-rates",
+          "ui": {
+            "title": "Search parking spaces",
+            "hint": "Page for BPMN task 'Search parking spaces' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-call-or-online-chatfaqs",
+          "name": "CallOrOnlineChat/faqs",
+          "route": "/motorists/call-or-online-chatfaqs",
+          "component": "CallOrOnlineChat/faqsPage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Call or online chat/FAQs.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "call_or_online_chatfaqs_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/book-a-space",
+          "ui": {
+            "title": "Call or online chat/FAQs",
+            "hint": "Page for BPMN task 'Call or online chat/FAQs' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-book-a-space",
+          "name": "BookASpace",
+          "route": "/motorists/book-a-space",
+          "component": "BookASpacePage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Book a space.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "book_a_space_completed",
+              "value": true
+            },
+            {
+              "field": "book_a_space_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/park-in-parking-space",
+          "ui": {
+            "title": "Book a space",
+            "hint": "Page for BPMN task 'Book a space' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-park-in-parking-space",
+          "name": "ParkInParkingSpace",
+          "route": "/motorists/park-in-parking-space",
+          "component": "ParkInParkingSpacePage",
+          "pageType": "write-navigate",
+          "description": "Motorists: Park in parking space.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "park_in_parking_space_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/pay-by-my-wallet-online",
+          "ui": {
+            "title": "Park in parking space",
+            "hint": "Page for BPMN task 'Park in parking space' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-pay-by-my-wallet-online",
+          "name": "PayByMyWallet(online)",
+          "route": "/motorists/pay-by-my-wallet-online",
+          "component": "PayByMyWallet(online)Page",
+          "pageType": "write-navigate",
+          "description": "Motorists: Pay by My Wallet (online).",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "pay_by_my_wallet_online_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/complete",
+          "ui": {
+            "title": "Pay by My Wallet (online)",
+            "hint": "Page for BPMN task 'Pay by My Wallet (online)' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "motorists-view-available-spots-nearby-pricescompetitive-rates",
+          "name": "ViewAvailableSpotsNearby/Prices/competitiveRates",
+          "route": "/motorists/view-available-spots-nearby-pricescompetitive-rates",
+          "component": "ViewAvailableSpotsNearby/Prices/competitiveRatesPage",
+          "pageType": "write-navigate",
+          "description": "Motorists: View available spots nearby/ Prices/Competitive rates.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "view_available_spots_nearby_pricescompetitive_rates_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/motorists/book-a-space",
+          "ui": {
+            "title": "View available spots nearby/ Prices/Competitive rates",
+            "hint": "Page for BPMN task 'View available spots nearby/ Prices/Competitive rates' (write-navigate)."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingPartners",
+      "role": "parkingpartners",
+      "defaultRoute": "/parking-partners/track-car-park-spaces",
+      "tasks": [
+        {
+          "taskId": "parkingpartners-reserve-realtime-parking-space",
+          "name": "ReserveRealtimeParkingSpace",
+          "route": "/parking-partners/reserve-realtime-parking-space",
+          "component": "ReserveRealtimeParkingSpacePage",
+          "pageType": "write-navigate",
+          "description": "Parking Partners: Reserve realtime parking space.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reserve_realtime_parking_space_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/parking-partners/complete",
+          "ui": {
+            "title": "Reserve realtime parking space",
+            "hint": "Page for BPMN task 'Reserve realtime parking space' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "parkingpartners-reserve-parking-space-in-advance",
+          "name": "ReserveParkingSpaceInAdvance",
+          "route": "/parking-partners/reserve-parking-space-in-advance",
+          "component": "ReserveParkingSpaceInAdvancePage",
+          "pageType": "write-navigate",
+          "description": "Parking Partners: Reserve parking space in advance.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reserve_parking_space_in_advance_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/parking-partners/complete",
+          "ui": {
+            "title": "Reserve parking space in advance",
+            "hint": "Page for BPMN task 'Reserve parking space in advance' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "parkingpartners-track-car-park-spaces",
+          "name": "TrackCarParkSpaces",
+          "route": "/parking-partners/track-car-park-spaces",
+          "component": "TrackCarParkSpacesPage",
+          "pageType": "write-navigate",
+          "description": "Parking Partners: Track car park spaces.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "track_car_park_spaces_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/parking-partners/track-car-park-spaces",
+          "ui": {
+            "title": "Track car park spaces",
+            "hint": "Page for BPMN task 'Track car park spaces' (write-navigate)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/parking-partners/track-car-park-spaces",
+              "condition": "Do not find any places"
+            },
+            {
+              "route": "/parking-partners/provide-availability-information",
+              "condition": "Find a place"
+            }
+          ]
+        },
+        {
+          "taskId": "parkingpartners-provide-availability-information",
+          "name": "ProvideAvailabilityInformation",
+          "route": "/parking-partners/provide-availability-information",
+          "component": "ProvideAvailabilityInformationPage",
+          "pageType": "write-navigate",
+          "description": "Parking Partners: Provide availability information.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "provide_availability_information_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/parking-partners/reserve-a-place-for-motorists",
+          "ui": {
+            "title": "Provide availability information",
+            "hint": "Page for BPMN task 'Provide availability information' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "parkingpartners-reserve-a-place-for-motorists",
+          "name": "ReserveAPlaceForMotorists",
+          "route": "/parking-partners/reserve-a-place-for-motorists",
+          "component": "ReserveAPlaceForMotoristsPage",
+          "pageType": "wait-then-write",
+          "description": "Parking Partners: Reserve a place for motorists.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "reserve_a_place_for_motorists_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "help_motorists_book_space_completed",
+            "readableLabel": "Waiting for help motorists book space..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/parking-partners/reserve-realtime-parking-space",
+          "ui": {
+            "title": "Reserve a place for motorists",
+            "hint": "Page for BPMN task 'Reserve a place for motorists' (wait-then-write)."
+          },
+          "conditionalRoutes": [
+            {
+              "route": "/parking-partners/reserve-realtime-parking-space",
+              "condition": "ReserveRealtimeParkingSpace"
+            },
+            {
+              "route": "/parking-partners/reserve-parking-space-in-advance",
+              "condition": "Specific time"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FordSmartParkingSystem",
+      "role": "fordsmartparkingsystem",
+      "defaultRoute": "/ford-smart-parking-system/help-motorists-navigate-to-avaliable-space",
+      "tasks": [
+        {
+          "taskId": "fordsmartparkingsystem-chatanswer-faqs",
+          "name": "Chat/answerFaqs",
+          "route": "/ford-smart-parking-system/chatanswer-faqs",
+          "component": "Chat/answerFaqsPage",
+          "pageType": "write-navigate",
+          "description": "Ford Smart Parking system: Chat/Answer FAQs.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "chatanswer_faqs_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/send-requirements-to-parking-partners",
+          "ui": {
+            "title": "Chat/Answer FAQs",
+            "hint": "Page for BPMN task 'Chat/Answer FAQs' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "fordsmartparkingsystem-received-money",
+          "name": "ReceivedMoney",
+          "route": "/ford-smart-parking-system/received-money",
+          "component": "ReceivedMoneyPage",
+          "pageType": "write-navigate",
+          "description": "Ford Smart Parking system: Received money.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "received_money_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/complete",
+          "ui": {
+            "title": "Received money",
+            "hint": "Page for BPMN task 'Received money' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "fordsmartparkingsystem-receive-requirements-from-motorists",
+          "name": "ReceiveRequirementsFromMotorists",
+          "route": "/ford-smart-parking-system/receive-requirements-from-motorists",
+          "component": "ReceiveRequirementsFromMotoristsPage",
+          "pageType": "write-navigate",
+          "description": "Ford Smart Parking system: Receive requirements from motorists.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "receive_requirements_from_motorists_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/send-requirements-to-parking-partners",
+          "ui": {
+            "title": "Receive requirements from motorists",
+            "hint": "Page for BPMN task 'Receive requirements from motorists' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "fordsmartparkingsystem-send-requirements-to-parking-partners",
+          "name": "SendRequirementsToParkingPartners",
+          "route": "/ford-smart-parking-system/send-requirements-to-parking-partners",
+          "component": "SendRequirementsToParkingPartnersPage",
+          "pageType": "write-navigate",
+          "description": "Ford Smart Parking system: Send requirements to parking partners.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "send_requirements_to_parking_partners_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/complete",
+          "ui": {
+            "title": "Send requirements to parking partners",
+            "hint": "Page for BPMN task 'Send requirements to parking partners' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "fordsmartparkingsystem-help-motorists-navigate-to-avaliable-space",
+          "name": "HelpMotoristsNavigateToAvaliableSpace",
+          "route": "/ford-smart-parking-system/help-motorists-navigate-to-avaliable-space",
+          "component": "HelpMotoristsNavigateToAvaliableSpacePage",
+          "pageType": "write-navigate",
+          "description": "Ford Smart Parking system: Help motorists navigate to avaliable space.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "help_motorists_navigate_to_avaliable_space_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": null,
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/received-money",
+          "ui": {
+            "title": "Help motorists navigate to avaliable space",
+            "hint": "Page for BPMN task 'Help motorists navigate to avaliable space' (write-navigate)."
+          }
+        },
+        {
+          "taskId": "fordsmartparkingsystem-help-motorists-book-space",
+          "name": "HelpMotoristsBookSpace",
+          "route": "/ford-smart-parking-system/help-motorists-book-space",
+          "component": "HelpMotoristsBookSpacePage",
+          "pageType": "wait-then-write",
+          "description": "Ford Smart Parking system: Help motorists book space.",
+          "stateReads": [],
+          "stateWrites": [
+            {
+              "field": "help_motorists_book_space_completed",
+              "value": true
+            },
+            {
+              "field": "help_motorists_book_space_completed",
+              "value": true
+            }
+          ],
+          "waitCondition": {
+            "field": "book_a_space_completed",
+            "readableLabel": "Waiting for book a space..."
+          },
+          "autoWriteOnMount": null,
+          "nextRoute": "/ford-smart-parking-system/help-motorists-navigate-to-avaliable-space",
+          "ui": {
+            "title": "Help motorists book space",
+            "hint": "Page for BPMN task 'Help motorists book space' (wait-then-write)."
+          }
+        }
+      ]
+    }
+  ]
+}
